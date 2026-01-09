@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Categories - SoftwarePedia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f1f5f9; line-height: 1.6; }
+
+.navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; }
+.logo { font-size: 1.8rem; font-weight: 800; color: #60a5fa; text-decoration: none; }
+.logo span { color: #f59e0b; }
+.nav-links a { color: #cbd5e1; margin-left: 1.5rem; text-decoration: none; font-weight: 500; }
+
+.categories-container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
+.page-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: #f8fafc; }
+
+.categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+.category-card {
+background: #1e293b;
+padding: 2rem;
+border-radius: 12px;
+transition: transform 0.3s;
+border-top: 4px solid;
+}
+.category-card:hover { transform: translateY(-5px); }
+
+.category-icon { font-size: 3rem; margin-bottom: 1rem; }
+.software-count { background: #3b82f6; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; }
+
+.ai-card { border-color: #10b981; }
+.marketing-card { border-color: #3b82f6; }
+.video-card { border-color: #ef4444; }
+.productivity-card { border-color: #f59e0b; }
+.seo-card { border-color: #8b5cf6; }
+.business-card { border-color: #ec4899; }
+
+footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4rem; }
+
+@media (max-width: 768px) {
+.categories-grid { grid-template-columns: 1fr; }
+.nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="navbar">
+<a href="index.html" class="logo">Software<span>Pedia</span></a>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="categories.html">Categories</a>
+<a href="review.html">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<div class="categories-container">
+<h1 class="page-title">Browse Software by Category</h1>
+
+<div class="categories-grid">
+<!-- AI Tools -->
+<div class="category-card ai-card">
+<div class="category-icon">🤖</div>
+<h2>AI & Machine Learning</h2>
+<p>Artificial Intelligence tools for writing, coding, design, and automation.</p>
+<div style="margin-top: 1rem;">
+<span class="software-count">28 Software</span>
+<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+</div>
+</div>
+
+<!-- Marketing -->
+<div class="category-card marketing-card">
+<div class="category-icon">📈</div>
+<h2>Marketing Tools</h2>
+<p>Email marketing, social media, SEO, and advertising platforms.</p>
+<div style="margin-top: 1rem;">
+<span class="software-count">19 Software</span>
+<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+</div>
+</div>
+
+<!-- Video -->
+<div class="category-card video-card">
+<div class="category-icon">🎬</div>
+<h2>Video Creation</h2>
+<p>Video editing, animation, screen recording, and live streaming tools.</p>
+<div style="margin-top: 1rem;">
+<span class="software-count">15 Software</span>
+<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+</div>
+</div>
+
+<!-- Productivity -->
+<div class="category-card productivity-card">
+<div class="category-icon">⚡</div>
+<h2>Productivity Apps</h2>
+<p>Project management, note-taking, time tracking, and collaboration tools.</p>
+<div style="margin-top: 1rem;">
+<span class="software-count">22 Software</span>
+<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+</div>
+</div>
+
+<!-- SEO Tools -->
+<div class="category-card seo-card">
+<div class="category-icon">🔍</div>
+<h2>SEO & Analytics</h2>
+<p>Keyword research, backlink analysis, website audits, and tracking tools.</p>
+<div style="margin-top: 1rem;">
+<span class="software-count">12 Software</span>
+<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+</div>
+</div>
+
+<!-- Business -->
+<div class="category-card business-card">
+<div class="category-icon">💼</div>
+<h2>Business Software</h2>
+<p>CRM, accounting, e-commerce, invoicing, and customer support tools.</p>
+<div style="margin-top: 1rem;">
+<span class="software-count">17 Software</span>
+<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+</div>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 4rem;">
+<h2>Total: 113+ Software Reviewed</h2>
+<p style="color: #94a3b8;">Updated daily with new software from Digistore24</p>
+</div>
+</div>
+
+<footer>
+<p>© 2024 SoftwarePedia. All rights reserved.</p>
+<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
+<i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases.
+</p>
+<p style="margin-top: 1rem;">
+<a href="index.html" style="color: #60a5fa; margin: 0 1rem;">Home</a> |
+<a href="categories.html" style="color: #60a5fa; margin: 0 1rem;">Categories</a> |
+<a href="review.html" style="color: #60a5fa; margin: 0 1rem;">Reviews</a>
+</p>
+</footer>
+</body>
+</html>
