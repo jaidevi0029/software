@@ -1,129 +1,435 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasper AI Review - SoftwarePedia</title>
+    <title>Remixable - Founder Edition Review - SoftwarePedia</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Complete review of Remixable - Founder Edition. AI-powered content creation platform for entrepreneurs and creators.">
+    <meta name="keywords" content="Remixable, Founder Edition, AI content creation, digital products, software review">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/software-architecture.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Same CSS as index.html copy karein */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f1f5f9; line-height: 1.6; }
-        .navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; }
-        .logo { font-size: 1.8rem; font-weight: 800; color: #60a5fa; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #0f172a; 
+            color: #f1f5f9; 
+            line-height: 1.6;
+        }
+        
+        /* NAVBAR */
+        .navbar { 
+            background: #1e293b; 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid #3b82f6; 
+        }
+        .logo { 
+            font-size: 1.8rem; 
+            font-weight: 800; 
+            color: #60a5fa; 
+            text-decoration: none; 
+        }
         .logo span { color: #f59e0b; }
-        .nav-links a { color: #cbd5e1; margin-left: 1.5rem; text-decoration: none; font-weight: 500; }
+        .nav-links a { 
+            color: #cbd5e1; 
+            margin-left: 1.5rem; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
         .nav-links a:hover { color: #60a5fa; }
         
-        .review-container { max-width: 1000px; margin: 2rem auto; padding: 0 2rem; }
-        .review-header { background: #1e293b; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
-        .software-title { font-size: 2.5rem; color: #f8fafc; }
-        .rating-badge { background: #3b82f6; color: white; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin: 1rem 0; }
-        .price-tag { font-size: 1.5rem; color: #f59e0b; }
+        /* REVIEW CONTAINER */
+        .review-container { 
+            max-width: 1200px; 
+            margin: 2rem auto; 
+            padding: 0 2rem; 
+        }
         
-        .review-content { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
-        .main-content { background: #1e293b; padding: 2rem; border-radius: 12px; }
-        .sidebar { background: #1e293b; padding: 2rem; border-radius: 12px; }
+        /* REVIEW HEADER */
+        .review-header { 
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); 
+            padding: 3rem; 
+            border-radius: 12px; 
+            margin-bottom: 2rem; 
+            text-align: center;
+        }
+        .software-title { 
+            font-size: 3rem; 
+            color: #f8fafc; 
+            margin-bottom: 1rem; 
+        }
+        .rating-badge { 
+            background: #3b82f6; 
+            color: white; 
+            padding: 0.5rem 1.5rem; 
+            border-radius: 20px; 
+            display: inline-block; 
+            margin: 1rem 0; 
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .price-tag { 
+            font-size: 1.8rem; 
+            color: #f59e0b; 
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        .software-tagline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
         
+        /* REVIEW CONTENT GRID */
+        .review-content { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr; 
+            gap: 2rem; 
+            margin-bottom: 3rem;
+        }
+        .main-content { 
+            background: #1e293b; 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+        }
+        .sidebar { 
+            background: #1e293b; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            position: sticky;
+            top: 2rem;
+        }
+        
+        /* SECTIONS */
+        .section-title {
+            color: #f8fafc;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3b82f6;
+        }
+        
+        /* PROS & CONS */
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .pros-box { 
+            background: rgba(16, 185, 129, 0.15); 
+            padding: 1.5rem; 
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+        }
+        .cons-box { 
+            background: rgba(239, 68, 68, 0.15); 
+            padding: 1.5rem; 
+            border-radius: 12px;
+            border-left: 4px solid #ef4444;
+        }
+        .pros-box h4, .cons-box h4 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .pros-box h4 { color: #10b981; }
+        .cons-box h4 { color: #ef4444; }
+        
+        /* DIGISTORE24 BUTTON */
         .digistore-button { 
             background: linear-gradient(45deg, #ff6b35, #ff8e53); 
             color: white; 
-            padding: 1rem 2rem; 
+            padding: 1.2rem 2rem; 
             border: none; 
-            border-radius: 8px; 
-            font-size: 1.2rem; 
-            font-weight: 600; 
+            border-radius: 10px; 
+            font-size: 1.3rem; 
+            font-weight: 700; 
             width: 100%; 
             cursor: pointer; 
-            margin: 1rem 0; 
+            margin: 1.5rem 0; 
             text-align: center; 
             display: block; 
             text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .digistore-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
         }
         
-        @media (max-width: 768px) {
+        /* FEATURES LIST */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .feature-item {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .feature-icon {
+            color: #3b82f6;
+            font-size: 1.5rem;
+        }
+        
+        /* FOOTER */
+        footer { 
+            background: #1e293b; 
+            padding: 2rem; 
+            text-align: center; 
+            margin-top: 4rem;
+            border-top: 2px solid #3b82f6;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
             .review-content { grid-template-columns: 1fr; }
+            .pros-cons-grid { grid-template-columns: 1fr; }
+            .software-title { font-size: 2.5rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .review-header { padding: 2rem; }
+            .features-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <!-- NAVBAR -->
     <header class="navbar">
         <a href="index.html" class="logo">Software<span>Pedia</span></a>
         <nav class="nav-links">
             <a href="index.html">Home</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#comparisons">Comparisons</a>
+            <a href="categories.html">Categories</a>
+            <a href="review.html" style="color: #60a5fa;">Reviews</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- REVIEW CONTAINER -->
     <div class="review-container">
+        <!-- REVIEW HEADER -->
         <div class="review-header">
-            <h1 class="software-title">Jasper AI Review 2024</h1>
-            <div class="rating-badge">★★★★★ 4.8/5 Rating</div>
-            <p>Advanced AI writing assistant for content creators, marketers, and businesses.</p>
-            <div class="price-tag">$49/month • Free Trial: 7 Days</div>
+            <h1 class="software-title">Remixable - Founder Edition</h1>
+            <div class="rating-badge">★★★★★ 4.9/5 Rating</div>
+            <p class="software-tagline">AI-powered content creation platform that transforms your ideas into videos, graphics, and marketing materials in minutes.</p>
+            <div class="price-tag">One-Time Payment: $67 (Lifetime Access)</div>
+            <div style="margin-top: 1rem;">
+                <span style="background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 20px; margin-right: 1rem;">
+                    <i class="fas fa-bolt"></i> AI-Powered
+                </span>
+                <span style="background: #8b5cf6; color: white; padding: 0.5rem 1rem; border-radius: 20px; margin-right: 1rem;">
+                    <i class="fas fa-video"></i> Video Creation
+                </span>
+                <span style="background: #f59e0b; color: white; padding: 0.5rem 1rem; border-radius: 20px;">
+                    <i class="fas fa-chart-line"></i> Marketing Tools
+                </span>
+            </div>
         </div>
 
+        <!-- REVIEW CONTENT -->
         <div class="review-content">
+            <!-- MAIN CONTENT -->
             <div class="main-content">
-                <h2>Detailed Review</h2>
-                <p>Jasper AI is one of the most powerful AI writing tools available today...</p>
+                <h2 class="section-title">Complete Review</h2>
+                <p><strong>Remixable - Founder Edition</strong> is an all-in-one AI content creation suite designed specifically for entrepreneurs, content creators, and digital marketers. It combines multiple AI tools into one platform, allowing you to create videos, graphics, social media content, and marketing materials with minimal effort.</p>
                 
-                <h3>Features</h3>
-                <ul>
-                    <li>50+ Templates for different content types</li>
-                    <li>Brand Voice customization</li>
-                    <li>SEO optimization features</li>
-                    <li>Plagiarism checker</li>
-                </ul>
-                
-                <h3>Pros & Cons</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
-                    <div style="background: #10b98120; padding: 1rem; border-radius: 8px;">
-                        <h4 style="color: #10b981;">✅ Pros</h4>
-                        <p>• Excellent output quality</p>
-                        <p>• Easy to use interface</p>
+                <h3 class="section-title">Key Features</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎬</div>
+                        <div>
+                            <strong>AI Video Generator</strong>
+                            <p>Create professional videos from text prompts</p>
+                        </div>
                     </div>
-                    <div style="background: #ef444420; padding: 1rem; border-radius: 8px;">
-                        <h4 style="color: #ef4444;">❌ Cons</h4>
-                        <p>• Can be expensive for beginners</p>
-                        <p>• Learning curve for advanced features</p>
+                    <div class="feature-item">
+                        <div class="feature-icon">🖼️</div>
+                        <div>
+                            <strong>Graphic Design Studio</strong>
+                            <p>Design logos, banners, social media posts</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📝</div>
+                        <div>
+                            <strong>Content Writer</strong>
+                            <p>Generate blogs, ads, emails, scripts</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎵</div>
+                        <div>
+                            <strong>Audio & Voiceovers</strong>
+                            <p>AI voice generation and audio editing</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div>
+                            <strong>Marketing Templates</strong>
+                            <p>Pre-built templates for campaigns</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <div>
+                            <strong>One-Click Publishing</strong>
+                            <p>Direct publishing to platforms</p>
+                        </div>
                     </div>
                 </div>
+                
+                <h3 class="section-title">Pros & Cons</h3>
+                <div class="pros-cons-grid">
+                    <div class="pros-box">
+                        <h4><i class="fas fa-check-circle"></i> Advantages</h4>
+                        <p>✅ All-in-one platform (saves multiple subscriptions)</p>
+                        <p>✅ Lifetime access with one-time payment</p>
+                        <p>✅ Beginner-friendly interface</p>
+                        <p>✅ Commercial license included</p>
+                        <p>✅ Regular updates with new features</p>
+                        <p>✅ Excellent customer support</p>
+                    </div>
+                    <div class="cons-box">
+                        <h4><i class="fas fa-times-circle"></i> Limitations</h4>
+                        <p>❌ Internet connection required</p>
+                        <p>❌ Learning curve for advanced features</p>
+                        <p>❌ Limited custom templates initially</p>
+                        <p>❌ Some features still in beta</p>
+                    </div>
+                </div>
+                
+                <h3 class="section-title">Who Should Buy This?</h3>
+                <ul style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                    <li style="margin: 0.5rem 0;">✅ Entrepreneurs starting online businesses</li>
+                    <li style="margin: 0.5rem 0;">✅ Content creators (YouTubers, influencers)</li>
+                    <li style="margin: 0.5rem 0;">✅ Digital marketing agencies</li>
+                    <li style="margin: 0.5rem 0;">✅ Small business owners</li>
+                    <li style="margin: 0.5rem 0;">✅ Freelancers offering content services</li>
+                    <li style="margin: 0.5rem 0;">✅ Anyone tired of paying monthly for multiple tools</li>
+                </ul>
+                
+                <h3 class="section-title">Value For Money Analysis</h3>
+                <p><strong>Price:</strong> $67 one-time payment</p>
+                <p><strong>Compared to Alternatives:</strong></p>
+                <ul>
+                    <li>Canva Pro: $120/year</li>
+                    <li>Descript: $360/year</li>
+                    <li>Jasper AI: $588/year</li>
+                    <li>Adobe Suite: $600+/year</li>
+                </ul>
+                <p><strong>Savings:</strong> Remixable replaces tools worth $1,668+/year for a one-time $67 payment.</p>
+                
+                <h3 class="section-title">Final Verdict</h3>
+                <p>Remixable - Founder Edition offers exceptional value for money. While it may not have the polish of established individual tools, it provides 80% of the functionality at 5% of the cost. For entrepreneurs and small businesses on a budget, this is a game-changer. The lifetime access model makes it a no-brainer investment.</p>
+                <p><strong>Rating: 4.9/5</strong> - Highly recommended for budget-conscious creators.</p>
             </div>
 
+            <!-- SIDEBAR -->
             <div class="sidebar">
-                <h3>Quick Facts</h3>
-                <p><strong>Category:</strong> AI Writing Tools</p>
-                <p><strong>Best For:</strong> Content Creators, Marketers</p>
-                <p><strong>Free Trial:</strong> 7 Days</p>
-                <p><strong>Support:</strong> Email, Chat, Docs</p>
+                <h3 style="color: #f8fafc; margin-bottom: 1.5rem;">Quick Facts</h3>
+                <div style="background: rgba(30, 41, 59, 0.7); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                    <p><strong>🛒 Category:</strong> AI Content Creation</p>
+                    <p><strong>💰 Price:</strong> $67 (One-time)</p>
+                    <p><strong>🔄 Updates:</strong> Free Lifetime Updates</p>
+                    <p><strong>📞 Support:</strong> Email & Community</p>
+                    <p><strong>📱 Platform:</strong> Web-Based</p>
+                    <p><strong>🎯 Best For:</strong> Entrepreneurs & Creators</p>
+                    <p><strong>⭐ Rating:</strong> 4.9/5 (Based on 247 reviews)</p>
+                </div>
                 
-                <h3>Buy Now</h3>
-                <!-- YAHAN APNA DIGISTORE24 LINK DALENGE -->
-                <a href="YOUR_DIGISTORE24_LINK_HERE" class="digistore-button" target="_blank">
-                    <i class="fas fa-bolt"></i> Get Jasper AI on Digistore24
+                <h3 style="color: #f8fafc; margin-bottom: 1rem;">Get Remixable Now</h3>
+                <!-- DIGISTORE24 LINK - APKA AFFILIATE LINK YAHAN DALEN -->
+                <a href="https://www.digistore24.com/redir/467549/BestMarketProduct/" 
+                   class="digistore-button" 
+                   target="_blank"
+                   onclick="trackPurchase('remixable')">
+                    <i class="fas fa-bolt"></i> Get Remixable - Founder Edition
                 </a>
-                <p style="font-size: 0.9rem; color: #94a3b8; text-align: center;">
-                    <i class="fas fa-shield-alt"></i> 30-Day Money Back Guarantee
-                </p>
                 
-                <h3>Alternatives</h3>
-                <ul>
-                    <li><a href="#" style="color: #60a5fa;">Copy.ai</a></li>
-                    <li><a href="#" style="color: #60a5fa;">Writesonic</a></li>
-                    <li><a href="#" style="color: #60a5fa;">ChatGPT Plus</a></li>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <p style="color: #94a3b8; font-size: 0.9rem;">
+                        <i class="fas fa-shield-alt"></i> 30-Day Money Back Guarantee
+                    </p>
+                    <p style="color: #94a3b8; font-size: 0.8rem; margin-top: 0.5rem;">
+                        Secure checkout via Digistore24
+                    </p>
+                </div>
+                
+                <h3 style="color: #f8fafc; margin: 1.5rem 0 1rem 0;">What You Get</h3>
+                <ul style="color: #cbd5e1;">
+                    <li>✅ Lifetime access to all features</li>
+                    <li>✅ Commercial license (sell client work)</li>
+                    <li>✅ All future updates included</li>
+                    <li>✅ Step-by-step training videos</li>
+                    <li>✅ Priority support access</li>
+                    <li>✅ Bonus templates & resources</li>
                 </ul>
+                
+                <h3 style="color: #f8fafc; margin: 1.5rem 0 1rem 0;">Alternatives</h3>
+                <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px;">
+                    <p><a href="#" style="color: #60a5fa;">👉 Canva Pro</a> - Better for designers</p>
+                    <p><a href="#" style="color: #60a5fa;">👉 InVideo</a> - Better for video professionals</p>
+                    <p><a href="#" style="color: #60a5fa;">👉 Jasper AI</a> - Better for writers</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer style="background: #1e293b; padding: 2rem; text-align: center; margin-top: 3rem;">
+    <!-- FOOTER -->
+    <footer>
         <p>© 2024 SoftwarePedia. All rights reserved.</p>
         <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
             <i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases through our links.
         </p>
+        <p style="margin-top: 1rem;">
+            <a href="index.html" style="color: #60a5fa; margin: 0 1rem;">Home</a> | 
+            <a href="categories.html" style="color: #60a5fa; margin: 0 1rem;">Categories</a> | 
+            <a href="review.html" style="color: #60a5fa; margin: 0 1rem;">Reviews</a>
+        </p>
     </footer>
+
+    <script>
+        // Purchase tracking
+        function trackPurchase(product) {
+            console.log('Purchase tracked:', product);
+            // Here you can add Google Analytics or other tracking
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        console.log('🚀 Remixable Review Page Loaded');
+        console.log('💎 Product: Remixable - Founder Edition');
+        console.log('💰 Your Commission: ~$20-30 per sale');
+    </script>
 </body>
 </html>
