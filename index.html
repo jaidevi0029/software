@@ -1,352 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoftwarePedia - Unbiased Software Reviews</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-font-family: 'Inter', 'Segoe UI', sans-serif;
-background: #0f172a;
-color: #f1f5f9;
-line-height: 1.6;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftwarePedia - Unbiased Software Reviews</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SoftwarePedia: Unbiased software reviews, comparisons & AI-powered recommendations for entrepreneurs, developers, and creators worldwide.">
+    <meta name="keywords" content="software reviews, AI tools, software comparison, Digistore24, technology reviews">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/software-architecture.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
 
-/* HEADER */
-.navbar {
-background: #1e293b;
-padding: 1rem 2rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 2px solid #3b82f6;
-}
-.logo {
-font-size: 1.8rem;
-font-weight: 800;
-color: #60a5fa;
-}
-.logo span { color: #f59e0b; }
-.nav-links a {
-color: #cbd5e1;
-margin-left: 1.5rem;
-text-decoration: none;
-font-weight: 500;
-}
-.nav-links a:hover { color: #60a5fa; }
+        /* HEADER */
+        .navbar {
+            background: #1e293b;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #3b82f6;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .logo span { color: #f59e0b; }
+        .nav-links a {
+            color: #cbd5e1;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: #60a5fa; }
 
-/* HERO */
-.hero {
-text-align: center;
-padding: 4rem 2rem;
-background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-}
-.hero h1 {
-font-size: 3rem;
-margin-bottom: 1rem;
-}
-.hero p {
-font-size: 1.2rem;
-color: #94a3b8;
-max-width: 700px;
-margin: 0 auto 2rem;
-}
-.search-box {
-max-width: 600px;
-margin: 2rem auto;
-display: flex;
-}
-.search-box input {
-flex: 1;
-padding: 1rem;
-border: none;
-border-radius: 8px 0 0 8px;
-font-size: 1rem;
-}
-.search-box button {
-background: #3b82f6;
-color: white;
-border: none;
-padding: 0 2rem;
-border-radius: 0 8px 8px 0;
-cursor: pointer;
-font-weight: 600;
-}
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .search-box {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: flex;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            font-size: 1rem;
+        }
+        .search-box button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
 
-/* FEATURES */
-.features {
-padding: 4rem 2rem;
-max-width: 1200px;
-margin: 0 auto;
-}
-.section-title {
-text-align: center;
-font-size: 2.5rem;
-margin-bottom: 3rem;
-color: #f8fafc;
-}
-.features-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 2rem;
-}
-.feature-card {
-background: #1e293b;
-padding: 2rem;
-border-radius: 12px;
-border-left: 4px solid #f59e0b;
-}
-.feature-icon {
-font-size: 2.5rem;
-color: #60a5fa;
-margin-bottom: 1rem;
-}
+        /* FEATURES */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #f8fafc;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #f59e0b;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
 
-/* SOFTWARE GRID */
-.software-section {
-padding: 4rem 2rem;
-background: #0f172a;
-}
-.software-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-gap: 2rem;
-max-width: 1200px;
-margin: 0 auto;
-}
-.software-card {
-background: #1e293b;
-border-radius: 12px;
-overflow: hidden;
-transition: transform 0.3s;
-}
-.software-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-.software-img {
-height: 180px;
-background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 3rem;
-}
-.software-content {
-padding: 1.5rem;
-}
-.software-category {
-display: inline-block;
-background: #3b82f6;
-color: white;
-padding: 0.3rem 0.8rem;
-border-radius: 20px;
-font-size: 0.8rem;
-margin-bottom: 1rem;
-}
-.rating {
-color: #fbbf24;
-margin: 0.5rem 0;
-}
+        /* SOFTWARE GRID */
+        .software-section {
+            padding: 4rem 2rem;
+            background: #0f172a;
+        }
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .software-card {
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .software-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .software-img {
+            height: 180px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .software-content {
+            padding: 1.5rem;
+        }
+        .software-category {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .rating {
+            color: #fbbf24;
+            margin: 0.5rem 0;
+        }
 
-/* FOOTER */
-footer {
-background: #1e293b;
-padding: 3rem 2rem;
-margin-top: 3rem;
-border-top: 2px solid #3b82f6;
-}
-.footer-content {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2rem;
-}
-.footer-section h3 {
-color: #60a5fa;
-margin-bottom: 1.5rem;
-}
+        /* FOOTER */
+        footer {
+            background: #1e293b;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-top: 2px solid #3b82f6;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .footer-section h3 {
+            color: #60a5fa;
+            margin-bottom: 1.5rem;
+        }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-.nav-links { display: none; }
-.hero h1 { font-size: 2.2rem; }
-.software-grid { grid-template-columns: 1fr; }
-}
-</style>
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .software-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-<!-- HEADER -->
-<header class="navbar">
-<div class="logo">Software<span>Pedia</span></div>
-<nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="categories.html">Categories</a>
-    <a href="review.html">Reviews</a>
-    <a href="#comparisons">Comparisons</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-</nav>
-</header>
+    <!-- HEADER -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Software<span>Pedia</span></a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="review.html">Reviews</a>
+            <a href="#comparisons">Comparisons</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-<h1>Find Your Perfect Software</h1>
-<p>Unbiased reviews, side-by-side comparisons, and AI-powered recommendations for entrepreneurs, developers, and creators worldwide.</p>
-<div class="search-box">
-<input type="text" placeholder="Search for software (e.g., 'AI video editor under $50')">
-<button>Find Software</button>
-</div>
-<div style="margin-top: 2rem;">
-<span style="color: #94a3b8;">Trusted by 10,000+ users from</span>
-<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-<span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">USA</span>
-<span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">UK</span>
-<span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">Canada</span>
-<span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">Australia</span>
-</div>
-</div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <h1>Find Your Perfect Software</h1>
+        <p>Unbiased reviews, side-by-side comparisons, and AI-powered recommendations for entrepreneurs, developers, and creators worldwide.</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search for software (e.g., 'AI video editor under $50')">
+            <button>Find Software</button>
+        </div>
+        <div style="margin-top: 2rem;">
+            <span style="color: #94a3b8;">Trusted by 10,000+ users from</span>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">USA</span>
+                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">UK</span>
+                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">Canada</span>
+                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">Australia</span>
+            </div>
+        </div>
+    </section>
 
-<!-- FEATURES -->
-<section class="features">
-<h2 class="section-title">Why Choose SoftwarePedia?</h2>
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-icon">🤖</div>
-<h3>AI Matchmaker</h3>
-<p>Our AI finds the perfect software for your specific needs, budget, and skill level.</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">📊</div>
-<h3>Live ROI Calculator</h3>
-<p>See exactly how much time and money you'll save before buying any software.</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">⚖️</div>
-<h3>Side-by-Side Comparisons</h3>
-<p>Drag and drop tools to compare features, pricing, and performance.</p>
-</div>
-<div class="feature-card">
-<div class="feature-icon">✅</div>
-<h3>Verified Reviews</h3>
-<p>Real user reviews + expert testing. No sponsored bias, just honest opinions.</p>
-</div>
-</div>
-</section>
+    <!-- FEATURES -->
+    <section class="features">
+        <h2 class="section-title">Why Choose SoftwarePedia?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Matchmaker</h3>
+                <p>Our AI finds the perfect software for your specific needs, budget, and skill level.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Live ROI Calculator</h3>
+                <p>See exactly how much time and money you'll save before buying any software.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>Side-by-Side Comparisons</h3>
+                <p>Drag and drop tools to compare features, pricing, and performance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3>Verified Reviews</h3>
+                <p>Real user reviews + expert testing. No sponsored bias, just honest opinions.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- SOFTWARE LISTINGS -->
-<section class="software-section" id="reviews">
-<h2 class="section-title">Top Software Reviews</h2>
-<div class="software-grid">
-<!-- Software Card 1 -->
-<div class="software-card">
-<div class="software-img">🤖</div>
-<div class="software-content">
-<span class="software-category">AI Writing</span>
-<h3>Jasper AI</h3>
-<p>Advanced AI content creator for blogs, ads, and emails.</p>
-<div class="rating">★★★★★ 4.8</div>
-<div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-<span>$49/month</span>
-<a href="#" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
-</div>
-</div>
-</div>
-<!-- Software Card 2 -->
-<div class="software-card">
-<div class="software-img">🎬</div>
-<div class="software-content">
-<span class="software-category">Video Editing</span>
-<h3>Descript</h3>
-<p>Edit videos by editing text. Perfect for creators.</p>
-<div class="rating">★★★★☆ 4.5</div>
-<div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-<span>$30/month</span>
-<a href="#" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
-</div>
-</div>
-</div>
-<!-- Software Card 3 -->
-<div class="software-card">
-<div class="software-img">📧</div>
-<div class="software-content">
-<span class="software-category">Email Marketing</span>
-<h3>ConvertKit</h3>
-<p>Email marketing platform built specifically for creators.</p>
-<div class="rating">★★★★★ 4.7</div>
-<div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-<span>$29/month</span>
-<a href="#" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
-</div>
-</div>
-</div>
-</div>
-<div style="text-align: center; margin-top: 3rem;">
-<a href="#" style="background: #3b82f6; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View All 89+ Software Reviews</a>
-</div>
-</section>
+    <!-- SOFTWARE LISTINGS -->
+    <section class="software-section" id="reviews">
+        <h2 class="section-title">Top Software Reviews</h2>
+        <div class="software-grid">
+            <!-- Software Card 1 -->
+            <div class="software-card">
+                <div class="software-img">🤖</div>
+                <div class="software-content">
+                    <span class="software-category">AI Writing</span>
+                    <h3>Jasper AI</h3>
+                    <p>Advanced AI content creator for blogs, ads, and emails.</p>
+                    <div class="rating">★★★★★ 4.8</div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+                        <span>$49/month</span>
+                        <a href="review.html" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Software Card 2 -->
+            <div class="software-card">
+                <div class="software-img">🎬</div>
+                <div class="software-content">
+                    <span class="software-category">Video Editing</span>
+                    <h3>Descript</h3>
+                    <p>Edit videos by editing text. Perfect for creators.</p>
+                    <div class="rating">★★★★☆ 4.5</div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+                        <span>$30/month</span>
+                        <a href="review.html" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Software Card 3 -->
+            <div class="software-card">
+                <div class="software-img">📧</div>
+                <div class="software-content">
+                    <span class="software-category">Email Marketing</span>
+                    <h3>ConvertKit</h3>
+                    <p>Email marketing platform built specifically for creators.</p>
+                    <div class="rating">★★★★★ 4.7</div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+                        <span>$29/month</span>
+                        <a href="review.html" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="review.html" style="background: #3b82f6; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View All 89+ Software Reviews</a>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-<div class="footer-content">
-<div class="footer-section">
-<h3>SoftwarePedia</h3>
-<p>The world's most comprehensive software review platform. Unbiased. Detailed. Trusted.</p>
-<div style="margin-top: 1rem;">
-<i class="fab fa-twitter" style="margin-right: 1rem; color: #94a3b8;"></i>
-<i class="fab fa-linkedin" style="margin-right: 1rem; color: #94a3b8;"></i>
-<i class="fab fa-youtube" style="color: #94a3b8;"></i>
-</div>
-</div>
-<div class="footer-section">
-<h3>Categories</h3>
-<ul style="list-style: none; color: #cbd5e1;">
-<li>🤖 AI Tools</li>
-<li>🎬 Video Software</li>
-<li>📧 Marketing Tools</li>
-<li>💼 Productivity</li>
-<li>🔧 Developer Tools</li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Digistore24 Partnership</h3>
-<p>All software purchases through our links support independent reviews.</p>
-<p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">Affiliate Disclosure: We earn commissions on qualifying purchases.</p>
-</div>
-</div>
-<div style="text-align: center; margin-top: 3rem; color: #64748b; border-top: 1px solid #334155; padding-top: 1rem;">
-© 2024 SoftwarePedia. All rights reserved. | Made with ❤️ for the global creator community.
-</div>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SoftwarePedia</h3>
+                <p>The world's most comprehensive software review platform. Unbiased. Detailed. Trusted.</p>
+                <div style="margin-top: 1rem;">
+                    <i class="fab fa-twitter" style="margin-right: 1rem; color: #94a3b8;"></i>
+                    <i class="fab fa-linkedin" style="margin-right: 1rem; color: #94a3b8;"></i>
+                    <i class="fab fa-youtube" style="color: #94a3b8;"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul style="list-style: none; color: #cbd5e1;">
+                    <li>🤖 AI Tools</li>
+                    <li>🎬 Video Software</li>
+                    <li>📧 Marketing Tools</li>
+                    <li>💼 Productivity</li>
+                    <li>🔧 Developer Tools</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Digistore24 Partnership</h3>
+                <p>All software purchases through our links support independent reviews.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">Affiliate Disclosure: We earn commissions on qualifying purchases.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; color: #64748b; border-top: 1px solid #334155; padding-top: 1rem;">
+            © 2024 SoftwarePedia. All rights reserved. | Made with ❤️ for the global creator community.
+        </div>
+    </footer>
 
-<script>
-// Simple search functionality
-document.querySelector('.search-box button').addEventListener('click', function() {
-let query = document.querySelector('.search-box input').value;
-if(query.trim()) {
-alert('Searching for: ' + query + '\n(Live site pe real search hoga)');
-}
-});
-
-// Smooth scroll for navigation
-document.querySelectorAll('.nav-links a').forEach(link => {
-link.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-if(targetId !== '#') {
-document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-}
-});
-});
-
-console.log('🚀 SoftwarePedia Loaded Successfully!');
-console.log('📧 Contact: hello@softwarepedia.com');
-console.log('💼 Start adding your Digistore24 products!');
-</script>
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-box button').addEventListener('click', function() {
+            let query = document.querySelector('.search-box input').value;
+            if(query.trim()) {
+                alert('Searching for: ' + query + '\n(Live site pe real search hoga)');
+            }
+        });
+        
+        // Smooth scroll for navigation (only for # links)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                }
+                // For .html links, browser handles navigation
+            });
+        });
+        
+        console.log('🚀 SoftwarePedia Loaded Successfully!');
+        console.log('📧 Contact: hello@softwarepedia.com');
+        console.log('💼 Start adding your Digistore24 products!');
+        
+        // Add Google Analytics (Optional - Add your ID here)
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // gtag('js', new Date());
+        // gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </body>
 </html>
-
