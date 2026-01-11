@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - SoftwarePedia | Software Reviews & Support</title>
+<!-- SEO Meta Tags -->
+<meta name="description" content="Contact SoftwarePedia team for software review inquiries, affiliate partnerships, business collaborations, or support questions. We respond within 24 hours.">
+<meta name="keywords" content="contact software reviews, affiliate partnership, business collaboration, software review support, digital product inquiry">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/software-architecture.png">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Inter', sans-serif;
+background: #0f172a;
+color: #f1f5f9;
+line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+background: #1e293b;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #3b82f6;
+}
+.logo {
+font-size: 1.8rem;
+font-weight: 800;
+color: #60a5fa;
+text-decoration: none;
+}
+.logo span { color: #f59e0b; }
+.nav-links a {
+color: #cbd5e1;
+margin-left: 1.5rem;
+text-decoration: none;
+font-weight: 500;
+}
+.nav-links a:hover { color: #60a5fa; }
+
+/* CONTACT CONTAINER */
+.contact-container {
+max-width: 1200px;
+margin: 3rem auto;
+padding: 0 2rem;
+}
+
+/* CONTACT HEADER */
+.contact-header {
+text-align: center;
+margin-bottom: 4rem;
+}
+.contact-title {
+font-size: 3rem;
+color: #f8fafc;
+margin-bottom: 1rem;
+}
+.contact-subtitle {
+font-size: 1.2rem;
+color: #94a3b8;
+max-width: 700px;
+margin: 0 auto;
+}
+
+/* CONTACT GRID */
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+margin-bottom: 4rem;
+}
+
+/* CONTACT CARD */
+.contact-card {
+background: #1e293b;
+padding: 2.5rem;
+border-radius: 12px;
+text-align: center;
+border: 1px solid #334155;
+transition: transform 0.3s;
+}
+.contact-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.contact-icon {
+font-size: 3rem;
+color: #60a5fa;
+margin-bottom: 1.5rem;
+display: inline-block;
+width: 80px;
+height: 80px;
+line-height: 80px;
+background: rgba(96, 165, 250, 0.1);
+border-radius: 50%;
+}
+.contact-card h3 {
+font-size: 1.5rem;
+color: #f8fafc;
+margin-bottom: 1rem;
+}
+.contact-card p {
+color: #cbd5e1;
+margin-bottom: 1.5rem;
+}
+.contact-info {
+color: #60a5fa;
+font-size: 1.1rem;
+font-weight: 600;
+}
+
+/* CONTACT FORM */
+.contact-form-container {
+background: #1e293b;
+padding: 3rem;
+border-radius: 12px;
+border: 1px solid #334155;
+margin-bottom: 4rem;
+}
+.form-title {
+font-size: 2rem;
+color: #f8fafc;
+margin-bottom: 2rem;
+text-align: center;
+}
+.form-group {
+margin-bottom: 1.5rem;
+}
+.form-group label {
+display: block;
+color: #cbd5e1;
+margin-bottom: 0.5rem;
+font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
+padding: 1rem;
+background: #0f172a;
+border: 1px solid #334155;
+border-radius: 8px;
+color: #f1f5f9;
+font-size: 1rem;
+font-family: 'Inter', sans-serif;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+outline: none;
+border-color: #3b82f6;
+box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.form-group textarea {
+min-height: 150px;
+resize: vertical;
+}
+.submit-button {
+background: linear-gradient(45deg, #3b82f6, #6366f1);
+color: white;
+border: none;
+padding: 1rem 2rem;
+border-radius: 8px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+width: 100%;
+transition: all 0.3s ease;
+}
+.submit-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+background: linear-gradient(45deg, #2563eb, #4f46e5);
+}
+
+/* FAQ SECTION */
+.faq-section {
+margin-bottom: 4rem;
+}
+.faq-title {
+font-size: 2rem;
+color: #f8fafc;
+text-align: center;
+margin-bottom: 2.5rem;
+}
+.faq-item {
+background: #1e293b;
+border-radius: 8px;
+margin-bottom: 1rem;
+border: 1px solid #334155;
+overflow: hidden;
+}
+.faq-question {
+padding: 1.5rem;
+font-size: 1.1rem;
+color: #f8fafc;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.faq-question:hover {
+background: rgba(30, 41, 59, 0.8);
+}
+.faq-answer {
+padding: 0 1.5rem;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
+color: #cbd5e1;
+line-height: 1.7;
+}
+.faq-answer.active {
+padding: 1.5rem;
+max-height: 500px;
+}
+
+/* RESPONSE TIME */
+.response-time {
+background: rgba(16, 185, 129, 0.1);
+border-left: 4px solid #10b981;
+padding: 1.5rem;
+border-radius: 8px;
+margin: 2rem 0;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+.response-time i {
+color: #10b981;
+font-size: 1.5rem;
+}
+
+/* FOOTER */
+footer {
+background: #1e293b;
+padding: 2rem;
+text-align: center;
+margin-top: 4rem;
+border-top: 2px solid #3b82f6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+.nav-links { display: none; }
+.contact-title { font-size: 2.2rem; }
+.contact-container { padding: 0 1rem; }
+.contact-form-container { padding: 2rem; }
+.contact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<header class="navbar">
+<a href="https://softwaretoolguide.com" class="logo">Software<span>Pedia</span></a>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="blog.html">Blog</a>
+<a href="categories.html">Categories</a>
+<a href="review.html">Reviews</a>
+<a href="contact.html" style="color: #60a5fa;">Contact</a>
+</nav>
+</header>
+
+<!-- CONTACT CONTAINER -->
+<div class="contact-container">
+<!-- CONTACT HEADER -->
+<div class="contact-header">
+<h1 class="contact-title">Contact SoftwarePedia</h1>
+<p class="contact-subtitle">Have questions, partnership inquiries, or feedback? We're here to help. Choose the most appropriate way to reach us.</p>
+</div>
+
+<!-- CONTACT GRID -->
+<div class="contact-grid">
+<!-- General Inquiries -->
+<div class="contact-card">
+<div class="contact-icon">📧</div>
+<h3>General Inquiries</h3>
+<p>For general questions, feedback, or support regarding our reviews and content.</p>
+<div class="contact-info">hello@softwaretoolguide.com</div>
+</div>
+
+<!-- Business & Partnerships -->
+<div class="contact-card">
+<div class="contact-icon">🤝</div>
+<h3>Business & Partnerships</h3>
+<p>For software companies interested in partnership, featured reviews, or collaborations.</p>
+<div class="contact-info">partners@softwaretoolguide.com</div>
+</div>
+
+<!-- Affiliate Support -->
+<div class="contact-card">
+<div class="contact-icon">💰</div>
+<h3>Affiliate Support</h3>
+<p>Questions about our affiliate program, commission tracking, or promotional materials.</p>
+<div class="contact-info">affiliates@softwaretoolguide.com</div>
+</div>
+</div>
+
+<!-- RESPONSE TIME -->
+<div class="response-time">
+<i class="fas fa-clock"></i>
+<div>
+<strong>Response Time:</strong> We typically respond within 24 hours on business days (Monday-Friday).
+For urgent matters, please mention "URGENT" in your subject line.
+</div>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="contact-form-container">
+<h2 class="form-title">Send Us a Message</h2>
+<form id="contactForm">
+<div class="form-group">
+<label for="name">Full Name *</label>
+<input type="text" id="name" name="name" required placeholder="Enter your full name">
+</div>
+
+<div class="form-group">
+<label for="email">Email Address *</label>
+<input type="email" id="email" name="email" required placeholder="Enter your email address">
+</div>
+
+<div class="form-group">
+<label for="subject">Subject *</label>
+<select id="subject" name="subject" required>
+<option value="">Select a subject</option>
+<option value="general">General Inquiry</option>
+<option value="partnership">Business Partnership</option>
+<option value="affiliate">Affiliate Program</option>
+<option value="review">Review Suggestion</option>
+<option value="technical">Technical Support</option>
+<option value="other">Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="message">Your Message *</label>
+<textarea id="message" name="message" required placeholder="Please provide details about your inquiry..."></textarea>
+</div>
+
+<button type="submit" class="submit-button">
+<i class="fas fa-paper-plane"></i> Send Message
+</button>
+</form>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="faq-section">
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(1)">
+How long does it take to get a response?
+<span class="faq-toggle">+</span>
+</div>
+<div class="faq-answer" id="faq1">
+We respond to all inquiries within 24 hours on business days (Monday-Friday). Weekend inquiries may take until the next business day. For urgent matters, please include "URGENT" in your email subject line.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(2)">
+Can you review my software/product?
+<span class="faq-toggle">+</span>
+</div>
+<div class="faq-answer" id="faq2">
+Yes! We're always looking for quality software to review. Please send partnership inquiries to partners@softwaretoolguide.com with details about your product, target audience, and any special offers for our readers. We prioritize software that offers genuine value to entrepreneurs and creators.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(3)">
+How do I join your affiliate program?
+<span class="faq-toggle">+</span>
+</div>
+<div class="faq-answer" id="faq3">
+Our affiliate program is open to content creators, bloggers, and marketers. Please email affiliates@softwaretoolguide.com with details about your platform, audience size, and how you plan to promote our reviews. We offer competitive commissions and promotional support to successful affiliates.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(4)">
+Do you accept guest posts or collaborations?
+<span class="faq-toggle">+</span>
+</div>
+<div class="faq-answer" id="faq4">
+We occasionally accept guest posts from industry experts. The content must be original, high-quality, and provide genuine value to our audience (software reviews, tutorials, industry insights). Please send your pitch and writing samples to hello@softwaretoolguide.com.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(5)">
+How can I suggest software for review?
+<span class="faq-toggle">+</span>
+</div>
+<div class="faq-answer" id="faq5">
+We welcome suggestions from our readers! Please email hello@softwaretoolguide.com with the software name, website, and why you think it would be valuable for our audience. We review all suggestions and prioritize based on reader interest and market relevance.
+</div>
+</div>
+</div>
+
+<!-- SOCIAL MEDIA -->
+<div style="text-align: center; margin-bottom: 4rem;">
+<h2 style="color: #f8fafc; margin-bottom: 1.5rem; font-size: 1.8rem;">Connect With Us</h2>
+<p style="color: #94a3b8; margin-bottom: 1.5rem;">Follow us for latest software reviews, updates, and industry insights.</p>
+<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+<a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #60a5fa; text-decoration: none; padding: 0.8rem 1.5rem; background: #1e293b; border-radius: 8px;">
+<i class="fab fa-twitter"></i> Twitter
+</a>
+<a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #60a5fa; text-decoration: none; padding: 0.8rem 1.5rem; background: #1e293b; border-radius: 8px;">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+<a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #60a5fa; text-decoration: none; padding: 0.8rem 1.5rem; background: #1e293b; border-radius: 8px;">
+<i class="fab fa-youtube"></i> YouTube
+</a>
+<a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #60a5fa; text-decoration: none; padding: 0.8rem 1.5rem; background: #1e293b; border-radius: 8px;">
+<i class="fab fa-facebook"></i> Facebook
+</a>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2024-2026 SoftwarePedia. All rights reserved.</p>
+<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
+<i class="fas fa-exclamation-circle"></i> <strong>Affiliate Disclosure:</strong> We earn commissions on qualifying purchases through our links.
+</p>
+<p style="margin-top: 1rem;">
+<a href="index.html" style="color: #60a5fa; margin: 0 0.8rem;">Home</a> |
+<a href="blog.html" style="color: #60a5fa; margin: 0 0.8rem;">Blog</a> |
+<a href="categories.html" style="color: #60a5fa; margin: 0 0.8rem;">Categories</a> |
+<a href="review.html" style="color: #60a5fa; margin: 0 0.8rem;">Reviews</a> |
+<a href="contact.html" style="color: #60a5fa; margin: 0 0.8rem;">Contact</a>
+</p>
+</footer>
+
+<script>
+// FAQ Toggle Function
+function toggleFAQ(faqNumber) {
+const answer = document.getElementById(`faq${faqNumber}`);
+const toggle = answer.previousElementSibling.querySelector('.faq-toggle');
+
+if (answer.classList.contains('active')) {
+answer.classList.remove('active');
+toggle.textContent = '+';
+} else {
+// Close all other FAQs
+document.querySelectorAll('.faq-answer').forEach(faq => {
+faq.classList.remove('active');
+faq.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+});
+
+answer.classList.add('active');
+toggle.textContent = '−';
+}
+}
+
+// Contact Form Submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+e.preventDefault();
+
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+
+// In a real implementation, you would send this data to a server
+// For now, we'll show a success message
+alert(`Thank you, ${name}! Your message has been sent.\n\nWe'll respond to ${email} within 24 hours.`);
+
+// Reset form
+this.reset();
+
+// Log to console (for debugging)
+console.log('Contact Form Submitted:', { name, email, subject, message });
+});
+
+// Smooth scroll for navigation
+document.querySelectorAll('.nav-links a').forEach(link => {
+link.addEventListener('click', function(e) {
+const targetId = this.getAttribute('href');
+if(targetId.startsWith('#')) {
+e.preventDefault();
+document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+}
+});
+});
+
+console.log('🚀 Contact Page Loaded Successfully');
+console.log('📧 Contact Emails:');
+console.log(' General: hello@softwaretoolguide.com');
+console.log(' Partnerships: partners@softwaretoolguide.com');
+console.log(' Affiliates: affiliates@softwaretoolguide.com');
+</script>
+</body>
+</html>
