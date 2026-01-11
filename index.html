@@ -162,6 +162,29 @@
             margin: 0.5rem 0;
         }
 
+        /* BLOG SECTION */
+        .blog-section {
+            padding: 4rem 2rem;
+            background: #0f172a;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+        }
+        .blog-card {
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
         /* FOOTER */
         footer {
             background: #1e293b;
@@ -181,11 +204,27 @@
             margin-bottom: 1.5rem;
         }
 
+        /* CTA BUTTON */
+        .cta-button {
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
-            .software-grid { grid-template-columns: 1fr; }
+            .software-grid, .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -195,10 +234,9 @@
         <a href="https://softwaretoolguide.com" class="logo">Software<span>Pedia</span></a>
         <nav class="nav-links">
             <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
             <a href="categories.html">Categories</a>
             <a href="review.html">Reviews</a>
-            <a href="#comparisons">Comparisons</a>
-            <a href="#blog">Blog</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -297,7 +335,61 @@
             </div>
         </div>
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="review.html" style="background: #3b82f6; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View All 89+ Software Reviews</a>
+            <a href="review.html" class="cta-button">View All 89+ Software Reviews</a>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="blog-section">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
+                Practical guides, tutorials, and insights for software reviewers and affiliate marketers.
+            </p>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <h3 style="color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem;">How to Start Software Affiliate Marketing in 2026</h3>
+                    <p style="color: #94a3b8; margin-bottom: 1rem;">Complete beginner's guide with step-by-step instructions to earn your first commissions reviewing software.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                        <span style="color: #64748b; font-size: 0.9rem;">
+                            <i class="far fa-calendar"></i> Jan 17, 2026 • <i class="far fa-clock"></i> 8 min
+                        </span>
+                        <a href="blog-1.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Read Guide →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <h3 style="color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem;">Top AI Tools for Beginners in 2026</h3>
+                    <p style="color: #94a3b8; margin-bottom: 1rem;">Which AI tools are actually worth your time and money? Our tested recommendations and comparisons.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                        <span style="color: #64748b; font-size: 0.9rem;">
+                            <i class="far fa-calendar"></i> Coming Soon
+                        </span>
+                        <a href="blog-2.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Preview →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <h3 style="color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem;">Build a Review Website in 1 Day</h3>
+                    <p style="color: #94a3b8; margin-bottom: 1rem;">Step-by-step tutorial to create a professional software review website without any coding knowledge.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                        <span style="color: #64748b; font-size: 0.9rem;">
+                            <i class="far fa-calendar"></i> Coming Soon
+                        </span>
+                        <a href="blog-3.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Preview →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="blog.html" class="cta-button">
+                    <i class="fas fa-book-open"></i> Visit Our Blog
+                </a>
+            </div>
         </div>
     </section>
 
@@ -308,29 +400,30 @@
                 <h3>SoftwarePedia</h3>
                 <p>The world's most comprehensive software review platform. Unbiased. Detailed. Trusted.</p>
                 <div style="margin-top: 1rem;">
-                    <i class="fab fa-twitter" style="margin-right: 1rem; color: #94a3b8;"></i>
-                    <i class="fab fa-linkedin" style="margin-right: 1rem; color: #94a3b8;"></i>
-                    <i class="fab fa-youtube" style="color: #94a3b8;"></i>
+                    <a href="#" style="color: #94a3b8; margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #94a3b8; margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: #94a3b8;"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Categories</h3>
+                <h3>Quick Links</h3>
                 <ul style="list-style: none; color: #cbd5e1;">
-                    <li>🤖 AI Tools</li>
-                    <li>🎬 Video Software</li>
-                    <li>📧 Marketing Tools</li>
-                    <li>💼 Productivity</li>
-                    <li>🔧 Developer Tools</li>
+                    <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home</a></li>
+                    <li><a href="blog.html" style="color: #cbd5e1; text-decoration: none;">Blog</a></li>
+                    <li><a href="categories.html" style="color: #cbd5e1; text-decoration: none;">Categories</a></li>
+                    <li><a href="review.html" style="color: #cbd5e1; text-decoration: none;">All Reviews</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Digistore24 Partnership</h3>
                 <p>All software purchases through our links support independent reviews.</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">Affiliate Disclosure: We earn commissions on qualifying purchases.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">
+                    <i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases.
+                </p>
             </div>
         </div>
         <div style="text-align: center; margin-top: 3rem; color: #64748b; border-top: 1px solid #334155; padding-top: 1rem;">
-            © 2024 SoftwarePedia. All rights reserved. | Made with ❤️ for the global creator community.
+            © 2024-2026 SoftwarePedia. All rights reserved. | Made with ❤️ for the global creator community.
         </div>
     </footer>
 
@@ -339,7 +432,7 @@
         document.querySelector('.search-box button').addEventListener('click', function() {
             let query = document.querySelector('.search-box input').value;
             if(query.trim()) {
-                alert('Searching for: ' + query + '\n(Live site pe real search hoga)');
+                alert('Searching for: ' + query + '\n(On live site, this will show real search results)');
             }
         });
         
@@ -355,15 +448,20 @@
             });
         });
         
-        console.log('🚀 SoftwarePedia Loaded Successfully!');
-        console.log('📧 Contact: hello@softwarepedia.com');
-        console.log('💼 Start adding your Digistore24 products!');
+        // Blog card hover effects
+        document.querySelectorAll('.blog-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
+            });
+        });
         
-        // Add Google Analytics (Optional - Add your ID here)
-        // window.dataLayer = window.dataLayer || [];
-        // function gtag(){dataLayer.push(arguments);}
-        // gtag('js', new Date());
-        // gtag('config', 'G-XXXXXXXXXX');
+        console.log('🚀 SoftwarePedia Loaded Successfully!');
+        console.log('📝 Now with Blog Section & Complete Navigation');
+        console.log('🔗 Blog Post: https://softwaretoolguide.com/blog-1.html');
+        console.log('🔗 Blog Home: https://softwaretoolguide.com/blog.html');
     </script>
 </body>
 </html>
