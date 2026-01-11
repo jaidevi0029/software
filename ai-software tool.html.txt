@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Software Savings Calculator | Find Free Alternatives & Save Money | SoftwarePedia</title>
+<meta name="description" content="Stop overpaying! Our AI tool finds free/cheap alternatives to expensive software. Calculate exact savings and get personalized recommendations.">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+--money-green: #10b981;
+--savings-blue: #3b82f6;
+--premium-gold: #f59e0b;
+--danger-red: #ef4444;
+--bg-light: #f8fafc;
+--bg-dark: #0f172a;
+--card-light: #ffffff;
+--card-dark: #1e293b;
+}
+
+body {
+background: var(--bg-light);
+color: #334155;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 1rem;
+}
+
+/* Header */
+.main-header {
+background: linear-gradient(135deg, #1e40af, #3b82f6);
+color: white;
+padding: 1.5rem;
+border-radius: 15px;
+margin-bottom: 2rem;
+box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.money-badge {
+background: rgba(255, 255, 255, 0.2);
+padding: 0.5rem 1rem;
+border-radius: 50px;
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-weight: bold;
+margin-top: 0.5rem;
+}
+
+/* Main Calculator */
+.calculator-grid {
+display: grid;
+grid-template-columns: 1fr 400px;
+gap: 2rem;
+margin-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+.calculator-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Software Selection */
+.selection-card {
+background: white;
+border-radius: 15px;
+padding: 2rem;
+box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+border: 1px solid #e2e8f0;
+}
+
+.software-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+gap: 1rem;
+margin-top: 1.5rem;
+}
+
+.software-option {
+border: 2px solid #e2e8f0;
+border-radius: 10px;
+padding: 1rem;
+text-align: center;
+cursor: pointer;
+transition: all 0.3s ease;
+background: white;
+}
+
+.software-option:hover {
+border-color: #3b82f6;
+transform: translateY(-3px);
+}
+
+.software-option.selected {
+border-color: #10b981;
+background: #f0fdf4;
+box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+}
+
+.software-icon {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.price-tag {
+background: #f1f5f9;
+padding: 0.3rem 0.6rem;
+border-radius: 20px;
+font-size: 0.9rem;
+margin-top: 0.5rem;
+font-weight: bold;
+}
+
+/* Savings Display */
+.savings-display {
+background: linear-gradient(135deg, #10b981, #059669);
+color: white;
+padding: 2rem;
+border-radius: 15px;
+text-align: center;
+margin: 2rem 0;
+display: none;
+}
+
+.savings-amount {
+font-size: 3.5rem;
+font-weight: bold;
+margin: 1rem 0;
+text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Comparison Table */
+.comparison-container {
+background: white;
+border-radius: 15px;
+padding: 2rem;
+margin: 2rem 0;
+box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.comparison-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 1.5rem;
+}
+
+.comparison-table th {
+background: #f8fafc;
+padding: 1rem;
+text-align: left;
+border-bottom: 2px solid #e2e8f0;
+}
+
+.comparison-table td {
+padding: 1rem;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.better {
+color: #10b981;
+font-weight: bold;
+}
+
+.worse {
+color: #ef4444;
+font-weight: bold;
+}
+
+/* Digistore24 Recommendations */
+.digistore-section {
+background: linear-gradient(135deg, #f59e0b, #d97706);
+color: white;
+padding: 2rem;
+border-radius: 15px;
+margin: 2rem 0;
+}
+
+.course-card {
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 1.5rem;
+margin: 1rem 0;
+backdrop-filter: blur(10px);
+}
+
+.buy-button {
+background: white;
+color: #d97706;
+border: none;
+padding: 0.8rem 1.5rem;
+border-radius: 8px;
+font-weight: bold;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+margin-top: 1rem;
+}
+
+/* Report Generator */
+.report-generator {
+background: white;
+border-radius: 15px;
+padding: 2rem;
+margin: 2rem 0;
+box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.share-options {
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+margin-top: 1.5rem;
+}
+
+.share-btn {
+flex: 1;
+min-width: 150px;
+padding: 1rem;
+border-radius: 10px;
+border: none;
+cursor: pointer;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+transition: all 0.3s ease;
+}
+
+.email-btn {
+background: #3b82f6;
+color: white;
+}
+
+.whatsapp-btn {
+background: #25d366;
+color: white;
+}
+
+.pdf-btn {
+background: #ef4444;
+color: white;
+}
+
+/* Stats */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.5rem;
+margin: 3rem 0;
+}
+
+.stat-card {
+background: white;
+border-radius: 10px;
+padding: 1.5rem;
+text-align: center;
+box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: bold;
+color: #3b82f6;
+margin: 0.5rem 0;
+}
+
+/* Animations */
+@keyframes moneyRain {
+0% { transform: translateY(-20px); opacity: 0; }
+100% { transform: translateY(0); opacity: 1; }
+}
+
+.money-rain {
+animation: moneyRain 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.software-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.savings-amount {
+font-size: 2.5rem;
+}
+
+.share-options {
+flex-direction: column;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="main-header">
+<h1 style="margin: 0 0 0.5rem 0;">
+<i class="fas fa-money-bill-wave"></i> AI Software Savings Calculator
+</h1>
+<p style="margin: 0 0 1rem 0; opacity: 0.9;">
+Find free alternatives to expensive software. Calculate exact savings in dollars.
+</p>
+<div class="money-badge">
+<i class="fas fa-chart-line"></i>
+Average user saves: $427/year
+</div>
+</header>
+
+<!-- Main Calculator -->
+<div class="calculator-grid">
+<!-- Left Column: Software Selection -->
+<div>
+<div class="selection-card">
+<h2 style="margin-top: 0;">
+<i class="fas fa-search"></i> 1. Which software are you currently using or planning to buy?
+</h2>
+
+<!-- Popular Expensive Software -->
+<div style="margin-bottom: 2rem;">
+<h3 style="color: #ef4444;">
+<i class="fas fa-crown"></i> Premium/Expensive Software
+</h3>
+<div class="software-grid" id="expensiveSoftware">
+<!-- Will be populated by JavaScript -->
+</div>
+</div>
+
+<!-- Custom Price Input -->
+<div style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 10px;">
+<h4 style="margin-top: 0;">
+<i class="fas fa-edit"></i> Or enter custom software details:
+</h4>
+<div style="display: grid; gap: 1rem; margin-top: 1rem;">
+<input type="text" id="customName" placeholder="Software Name (e.g., Adobe Photoshop)"
+style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+<select id="customPrice" style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px;">
+<option value="">Select monthly price</option>
+<option value="9.99">$9.99/month</option>
+<option value="19.99">$19.99/month</option>
+<option value="29.99">$29.99/month</option>
+<option value="49.99">$49.99/month</option>
+<option value="59.99">$59.99/month</option>
+<option value="99.99">$99.99/month</option>
+</select>
+
+<select id="customUsers" style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px;">
+<option value="1">1 User</option>
+<option value="2">2 Users</option>
+<option value="5">5 Users (Team)</option>
+<option value="10">10+ Users (Enterprise)</option>
+</select>
+</div>
+
+<button id="addCustom"
+style="background: #3b82f6; color: white; border: none; padding: 0.8rem; border-radius: 8px; cursor: pointer; font-weight: bold;">
+<i class="fas fa-plus"></i> Add Custom Software
+</button>
+</div>
+</div>
+</div>
+
+<!-- Savings Display -->
+<div class="savings-display" id="savingsDisplay">
+<h2 style="margin-top: 0;">
+<i class="fas fa-piggy-bank"></i> Your Potential Savings
+</h2>
+<div class="savings-amount" id="savingsAmount">$0</div>
+<p id="savingsDescription">per year</p>
+<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+<div style="text-align: center;">
+<div style="font-size: 0.9rem; opacity: 0.9;">Monthly Savings</div>
+<div style="font-size: 1.5rem; font-weight: bold;" id="monthlySavings">$0</div>
+</div>
+<div style="text-align: center;">
+<div style="font-size: 0.9rem; opacity: 0.9;">5-Year Savings</div>
+<div style="font-size: 1.5rem; font-weight: bold;" id="fiveYearSavings">$0</div>
+</div>
+</div>
+</div>
+
+<!-- Alternative Suggestions -->
+<div class="selection-card" id="alternativesSection" style="display: none;">
+<h2 style="margin-top: 0; color: #10b981;">
+<i class="fas fa-lightbulb"></i> 2. Recommended Alternatives (Cheaper/Free)
+</h2>
+<div class="software-grid" id="alternativeSoftware">
+<!-- Will be populated by JavaScript -->
+</div>
+</div>
+</div>
+
+<!-- Right Column: Comparison & Recommendations -->
+<div>
+<!-- Comparison Table -->
+<div class="comparison-container" id="comparisonSection" style="display: none;">
+<h3 style="margin-top: 0;">
+<i class="fas fa-balance-scale"></i> Detailed Comparison
+</h3>
+<table class="comparison-table" id="comparisonTable">
+<!-- Will be populated by JavaScript -->
+</table>
+</div>
+
+<!-- Digistore24 Recommendations -->
+<div class="digistore-section">
+<h3 style="margin-top: 0;">
+<i class="fas fa-graduation-cap"></i> Recommended Learning Resources
+</h3>
+<p>Master your new software with these courses:</p>
+
+<div class="course-card">
+<h4 style="margin: 0 0 0.5rem 0;">
+<i class="fas fa-play-circle"></i> Complete Video Editing Mastery
+</h4>
+<p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.9;">
+Learn DaVinci Resolve, Premiere Pro, Final Cut Pro from scratch
+</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span style="font-weight: bold;">$97 (One-time)</span>
+<button class="buy-button" onclick="window.open('https://www.digistore24.com/VIDEO_COURSE_LINK', '_blank')">
+<i class="fas fa-shopping-cart"></i> View Course
+</button>
+</div>
+</div>
+
+<div class="course-card">
+<h4 style="margin: 0 0 0.5rem 0;">
+<i class="fas fa-paint-brush"></i> Graphic Design Pro Bundle
+</h4>
+<p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.9;">
+Photoshop, Illustrator, Canva, Affinity Designer
+</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span style="font-weight: bold;">$147 (One-time)</span>
+<button class="buy-button" onclick="window.open('https://www.digistore24.com/DESIGN_COURSE_LINK', '_blank')">
+<i class="fas fa-shopping-cart"></i> View Course
+</button>
+</div>
+</div>
+
+<div class="course-card">
+<h4 style="margin: 0 0 0.5rem 0;">
+<i class="fas fa-code"></i> Web Development Tools Masterclass
+</h4>
+<p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; opacity: 0.9;">
+VS Code, WebStorm alternatives, productivity tools
+</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span style="font-weight: bold;">$67 (One-time)</span>
+<button class="buy-button" onclick="window.open('https://www.digistore24.com/DEV_COURSE_LINK', '_blank')">
+<i class="fas fa-shopping-cart"></i> View Course
+</button>
+</div>
+</div>
+
+<p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">
+<i class="fas fa-star"></i> All courses include lifetime access, certificates, and community support
+</p>
+</div>
+
+<!-- Report Generator -->
+<div class="report-generator" id="reportSection" style="display: none;">
+<h3 style="margin-top: 0;">
+<i class="fas fa-file-alt"></i> Generate Savings Report
+</h3>
+<p>Get your personalized savings report via email or download as PDF.</p>
+
+<div style="margin: 1.5rem 0;">
+<input type="email" id="reportEmail" placeholder="Your email address"
+style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; margin-bottom: 1rem;">
+
+<div class="share-options">
+<button class="share-btn email-btn" id="emailReport">
+<i class="fas fa-envelope"></i> Email Report
+</button>
+<button class="share-btn whatsapp-btn" id="whatsappReport">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</button>
+<button class="share-btn pdf-btn" id="pdfReport">
+<i class="fas fa-file-pdf"></i> Download PDF
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Stats -->
+<div class="stats-grid">
+<div class="stat-card">
+<i class="fas fa-users" style="font-size: 2rem; color: #3b82f6;"></i>
+<div class="stat-number" id="usersHelped">2,457</div>
+<div>Users Helped</div>
+</div>
+<div class="stat-card">
+<i class="fas fa-money-bill" style="font-size: 2rem; color: #10b981;"></i>
+<div class="stat-number" id="totalSavings">$1.2M</div>
+<div>Total Saved</div>
+</div>
+<div class="stat-card">
+<i class="fas fa-sync-alt" style="font-size: 2rem; color: #f59e0b;"></i>
+<div class="stat-number" id="alternativesFound">184</div>
+<div>Alternatives Found</div>
+</div>
+<div class="stat-card">
+<i class="fas fa-chart-bar" style="font-size: 2rem; color: #8b5cf6;"></i>
+<div class="stat-number" id="avgSavings">$427</div>
+<div>Average Savings/User</div>
+</div>
+</div>
+
+<!-- Testimonials -->
+<div style="background: white; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<h3 style="margin-top: 0; text-align: center;">
+<i class="fas fa-comment-dots"></i> What Users Are Saying
+</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+<div style="padding: 1.5rem; background: #f8fafc; border-radius: 10px;">
+<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+<div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+JD
+</div>
+<div>
+<div style="font-weight: bold;">John D. (USA)</div>
+<div style="font-size: 0.9rem; color: #64748b;">Video Editor</div>
+</div>
+</div>
+<p style="margin: 0; font-style: italic;">
+"Saved $599/year by switching from Adobe Premiere to DaVinci Resolve. This tool paid for itself 100 times over!"
+</p>
+</div>
+
+<div style="padding: 1.5rem; background: #f8fafc; border-radius: 10px;">
+<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+<div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+SM
+</div>
+<div>
+<div style="font-weight: bold;">Sarah M. (Canada)</div>
+<div style="font-size: 0.9rem; color: #64748b;">Graphic Designer</div>
+</div>
+</div>
+<p style="margin: 0; font-style: italic;">
+"Found Affinity Designer as Photoshop alternative. Saved $360/year and actually prefer it now!"
+</p>
+</div>
+
+<div style="padding: 1.5rem; background: #f8fafc; border-radius: 10px;">
+<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+<div style="width: 50px; height: 50px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+RK
+</div>
+<div>
+<div style="font-weight: bold;">Robert K. (UK)</div>
+<div style="font-size: 0.9rem; color: #64748b;">Web Developer</div>
+</div>
+</div>
+<p style="margin: 0; font-style: italic;">
+"Switched from Sketch to Figma using your recommendation. Not only free but better for team collaboration!"
+</p>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid #e2e8f0; color: #64748b;">
+<p>© 2024 SoftwarePedia - AI Savings Calculator</p>
+<p style="font-size: 0.9rem; margin: 0.5rem 0;">
+<a href="index.html" style="color: #3b82f6; text-decoration: none;">Home</a> •
+<a href="contact.html" style="color: #3b82f6; text-decoration: none;">Contact</a> •
+<a href="#" style="color: #3b82f6; text-decoration: none;">Privacy Policy</a>
+</p>
+<p style="font-size: 0.8rem; margin-top: 1rem;">
+<i class="fas fa-exclamation-circle"></i> Prices are estimates based on public pricing.
+Actual savings may vary. We may earn commissions from affiliate links.
+</p>
+</footer>
+</div>
+
+<!-- JavaScript -->
+<script>
+// ==================== DATABASE ====================
+const EXPENSIVE_SOFTWARE = [
+{
+id: 'adobe_cc',
+name: 'Adobe Creative Cloud',
+icon: 'fab fa-adobe',
+color: '#FF0000',
+price: 59.99,
+period: 'month',
+users: 1,
+category: 'Creative Suite',
+description: 'Full suite: Photoshop, Premiere, After Effects, etc.'
+},
+{
+id: 'microsoft_365',
+name: 'Microsoft 365',
+icon: 'fab fa-microsoft',
+color: '#0078d4',
+price: 9.99,
+period: 'month',
+users: 1,
+category: 'Productivity',
+description: 'Office apps + cloud storage'
+},
+{
+id: 'figma_pro',
+name: 'Figma Professional',
+icon: 'fab fa-figma',
+color: '#f24e1e',
+price: 12.00,
+period: 'month',
+users: 1,
+category: 'Design',
+description: 'UI/UX design and prototyping'
+},
+{
+id: 'finalcut',
+name: 'Final Cut Pro',
+icon: 'fas fa-film',
+color: '#000000',
+price: 299.99,
+period: 'one-time',
+users: 1,
+category: 'Video Editing',
+description: 'Professional video editing for Mac'
+},
+{
+id: 'webstorm',
+name: 'WebStorm',
+icon: 'fas fa-code',
+color: '#007ACC',
+price: 199.00,
+period: 'year',
+users: 1,
+category: 'Development',
+description: 'JavaScript IDE by JetBrains'
+},
+{
+id: 'camtesia',
+name: 'Camtasia',
+icon: 'fas fa-video',
+color: '#00A4EF',
+price: 249.99,
+period: 'one-time',
+users: 1,
+category: 'Screen Recording',
+description: 'Screen recording and video editing'
+},
+{
+id: 'sketch',
+name: 'Sketch',
+icon: 'fas fa-pen-nib',
+color: '#FDAD00',
+price: 9.00,
+period: 'month',
+users: 1,
+category: 'Design',
+description: 'Digital design toolkit'
+},
+{
+id: 'matlab',
+name: 'MATLAB',
+icon: 'fas fa-calculator',
+color: '#0076A8',
+price: 860.00,
+period: 'year',
+users: 1,
+category: 'Engineering',
+description: 'Numerical computing environment'
+}
+];
+
+const ALTERNATIVES_DATABASE = {
+'adobe_cc': [
+{
+name: 'Affinity Suite',
+icon: 'fas fa-paint-brush',
+color: '#0078FF',
+price: 99.99,
+period: 'one-time',
+type: 'One-time purchase',
+features: ['Photo Editing', 'Vector Design', 'Page Layout'],
+savings: 620,
+match: 92,
+link: 'https://affinity.serif.com'
+},
+{
+name: 'DaVinci Resolve',
+icon: 'fas fa-film',
+color: '#000000',
+price: 0,
+period: 'free',
+type: 'Free',
+features: ['Professional Editing', 'Color Grading', 'Audio Post'],
+savings: 720,
+match: 88,
+link: 'https://www.blackmagicdesign.com/products/davinciresolve'
+},
+{
+name: 'Canva Pro',
+icon: 'fas fa-palette',
+color: '#00C4CC',
+price: 12.99,
+period: 'month',
+type: 'Subscription',
+features: ['Templates', 'Collaboration', 'Brand Kit'],
+savings: 564,
+match: 76,
+link: 'https://www.canva.com'
+}
+],
+'microsoft_365': [
+{
+name: 'LibreOffice',
+icon: 'fas fa-file-alt',
+color: '#18A303',
+price: 0,
+period: 'free',
+type: 'Free',
+features: ['Word Processing', 'Spreadsheets', 'Presentations'],
+savings: 120,
+match: 85,
+link: 'https://www.libreoffice.org'
+},
+{
+name: 'Google Workspace',
+icon: 'fab fa-google',
+color: '#4285F4',
+price: 6.00,
+period: 'month',
+type: 'Subscription',
+features: ['Cloud Collaboration', 'Gmail', 'Drive Storage'],
+savings: 48,
+match: 95,
+link: 'https://workspace.google.com'
+},
+{
+name: 'OnlyOffice',
+icon: 'fas fa-building',
+color: '#444444',
+price: 0,
+period: 'free',
+type: 'Free (Self-hosted)',
+features: ['Open Source', 'Self-hosted', 'Collaboration'],
+savings: 120,
+match: 82,
+link: 'https://www.onlyoffice.com'
+}
+],
+'figma_pro': [
+{
+name: 'Penpot',
+icon: 'fas fa-pen',
+color: '#FF6B6B',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['Open Source', 'Self-hosted', 'Real-time Collab'],
+savings: 144,
+match: 89,
+link: 'https://penpot.app'
+},
+{
+name: 'Lunacy',
+icon: 'fas fa-moon',
+color: '#6C63FF',
+price: 0,
+period: 'free',
+type: 'Free',
+features: ['Native App', '.fig Import', 'Icons & Photos'],
+savings: 144,
+match: 86,
+link: 'https://icons8.com/lunacy'
+}
+],
+'finalcut': [
+{
+name: 'DaVinci Resolve',
+icon: 'fas fa-film',
+color: '#000000',
+price: 0,
+period: 'free',
+type: 'Free',
+features: ['Professional Features', 'Color Grading', 'Audio Post'],
+savings: 300,
+match: 94,
+link: 'https://www.blackmagicdesign.com/products/davinciresolve'
+},
+{
+name: 'Kdenlive',
+icon: 'fas fa-video',
+color: '#5275A6',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['Multi-track', 'Proxy Editing', 'Effects'],
+savings: 300,
+match: 78,
+link: 'https://kdenlive.org'
+}
+],
+'webstorm': [
+{
+name: 'VS Code',
+icon: 'fas fa-code',
+color: '#007ACC',
+price: 0,
+period: 'free',
+type: 'Free',
+features: ['Extensions', 'Git Integration', 'Debugging'],
+savings: 199,
+match: 92,
+link: 'https://code.visualstudio.com'
+},
+{
+name: 'Sublime Text',
+icon: 'fas fa-file-code',
+color: '#FF9800',
+price: 99.00,
+period: 'one-time',
+type: 'One-time purchase',
+features: ['Speed', 'Multiple Selections', 'Packages'],
+savings: 100,
+match: 85,
+link: 'https://www.sublimetext.com'
+}
+],
+'camtesia': [
+{
+name: 'OBS Studio',
+icon: 'fas fa-broadcast-tower',
+color: '#302E31',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['Screen Recording', 'Live Streaming', 'Scene Composition'],
+savings: 250,
+match: 88,
+link: 'https://obsproject.com'
+},
+{
+name: 'Shotcut',
+icon: 'fas fa-scissors',
+color: '#1155CC',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['Video Editing', 'Wide Format Support', 'Filters'],
+savings: 250,
+match: 82,
+link: 'https://shotcut.org'
+}
+],
+'sketch': [
+{
+name: 'Penpot',
+icon: 'fas fa-pen',
+color: '#FF6B6B',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['Open Source', 'Self-hosted', 'Real-time Collab'],
+savings: 108,
+match: 91,
+link: 'https://penpot.app'
+},
+{
+name: 'Figma',
+icon: 'fab fa-figma',
+color: '#F24E1E',
+price: 0,
+period: 'free',
+type: 'Free Plan',
+features: ['Real-time Collaboration', 'Prototyping', 'Components'],
+savings: 108,
+match: 95,
+link: 'https://www.figma.com'
+}
+],
+'matlab': [
+{
+name: 'Python + Libraries',
+icon: 'fab fa-python',
+color: '#3776AB',
+price: 0,
+period: 'free',
+type: 'Free',
+features: ['NumPy', 'SciPy', 'Matplotlib', 'Pandas'],
+savings: 860,
+match: 90,
+link: 'https://www.python.org'
+},
+{
+name: 'Octave',
+icon: 'fas fa-chart-line',
+color: '#079C43',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['MATLAB Compatibility', 'Numerical Computations'],
+savings: 860,
+match: 85,
+link: 'https://www.gnu.org/software/octave'
+}
+]
+};
+
+// ==================== STATE ====================
+let selectedSoftware = null;
+let selectedAlternative = null;
+
+// ==================== INITIALIZATION ====================
+document.addEventListener('DOMContentLoaded', function() {
+initSoftwareGrid();
+updateStats();
+
+// Event Listeners
+document.getElementById('addCustom').addEventListener('click', addCustomSoftware);
+document.getElementById('emailReport').addEventListener('click', generateEmailReport);
+document.getElementById('whatsappReport').addEventListener('click', generateWhatsAppReport);
+document.getElementById('pdfReport').addEventListener('click', generatePDFReport);
+});
+
+function initSoftwareGrid() {
+const container = document.getElementById('expensiveSoftware');
+container.innerHTML = '';
+
+EXPENSIVE_SOFTWARE.forEach(software => {
+const priceText = software.period === 'one-time'
+? `$${software.price} one-time`
+: software.period === 'year'
+? `$${software.price}/year`
+: `$${software.price}/month`;
+
+const softwareHTML = `
+<div class="software-option" data-id="${software.id}">
+<div class="software-icon">
+<i class="${software.icon}" style="color: ${software.color};"></i>
+</div>
+<div style="font-weight: bold; font-size: 0.9rem;">${software.name}</div>
+<div style="font-size: 0.8rem; color: #64748b; margin: 0.3rem 0;">${software.category}</div>
+<div class="price-tag" style="color: #ef4444;">
+${priceText}
+</div>
+</div>
+`;
+
+container.innerHTML += softwareHTML;
+});
+
+// Add click event to all software options
+document.querySelectorAll('.software-option').forEach(option => {
+option.addEventListener('click', function() {
+// Remove selection from all
+document.querySelectorAll('.software-option').forEach(opt => {
+opt.classList.remove('selected');
+});
+
+// Select this one
+this.classList.add('selected');
+
+// Get software data
+const softwareId = this.getAttribute('data-id');
+selectedSoftware = EXPENSIVE_SOFTWARE.find(s => s.id === softwareId);
+
+// Show alternatives
+showAlternatives(softwareId);
+
+// Show savings
+calculateSavings();
+});
+});
+}
+
+function showAlternatives(softwareId) {
+const alternatives = ALTERNATIVES_DATABASE[softwareId];
+if (!alternatives) return;
+
+const container = document.getElementById('alternativeSoftware');
+container.innerHTML = '';
+
+alternatives.forEach(alt => {
+const priceText = alt.period === 'free'
+? 'FREE'
+: alt.period === 'one-time'
+? `$${alt.price} one-time`
+: `$${alt.price}/month`;
+
+const altHTML = `
+<div class="software-option alternative-option" data-id="${softwareId}" data-alt="${alt.name}">
+<div class="software-icon">
+<i class="${alt.icon}" style="color: ${alt.color};"></i>
+</div>
+<div style="font-weight: bold; font-size: 0.9rem;">${alt.name}</div>
+<div style="font-size: 0.8rem; color: #10b981; margin: 0.3rem 0;">${alt.type}</div>
+<div class="price-tag" style="color: #10b981;">
+${priceText}
+</div>
+<div style="font-size: 0.8rem; margin-top: 0.5rem; color: #3b82f6;">
+<i class="fas fa-chart-line"></i> ${alt.match}% Match
+</div>
+</div>
+`;
+
+container.innerHTML += altHTML;
+});
+
+// Show alternatives section
+document.getElementById('alternativesSection').style.display = 'block';
+
+// Add click event to alternative options
+document.querySelectorAll('.alternative-option').forEach(option => {
+option.addEventListener('click', function() {
+// Remove selection from all alternatives
+document.querySelectorAll('.alternative-option').forEach(opt => {
+opt.classList.remove('selected');
+});
+
+// Select this one
+this.classList.add('selected');
+
+// Get alternative data
+const softwareId = this.getAttribute('data-id');
+const altName = this.getAttribute('data-alt');
+const alternatives = ALTERNATIVES_DATABASE[softwareId];
+selectedAlternative = alternatives.find(a => a.name === altName);
+
+// Show detailed comparison
+showComparison(selectedSoftware, selectedAlternative);
+
+// Show report section
+document.getElementById('reportSection').style.display = 'block';
+});
+});
+}
+
+function calculateSavings() {
+if (!selectedSoftware) return;
+
+const originalPrice = selectedSoftware.price;
+const period = selectedSoftware.period;
+
+let yearlyCost = 0;
+
+switch(period) {
+case 'month':
+yearlyCost = originalPrice * 12;
+break;
+case 'year':
+yearlyCost = originalPrice;
+break;
+case 'one-time':
+yearlyCost = originalPrice / 3; // Assume 3-year usage
+break;
+}
+
+// Show savings display
+document.getElementById('savingsDisplay').style.display = 'block';
+
+// Animate the savings amount
+const savingsAmount = document.getElementById('savingsAmount');
+const monthlySavings = document.getElementById('monthlySavings');
+const fiveYearSavings = document.getElementById('fiveYearSavings');
+
+// Add money rain animation
+savingsAmount.classList.remove('money-rain');
+void savingsAmount.offsetWidth; // Trigger reflow
+savingsAmount.classList.add('money-rain');
+
+// Update savings numbers
+savingsAmount.textContent = `$${yearlyCost.toFixed(0)}`;
+monthlySavings.textContent = `$${(yearlyCost / 12).toFixed(2)}`;
+fiveYearSavings.textContent = `$${(yearlyCost * 5).toFixed(0)}`;
+
+// Update description
+document.getElementById('savingsDescription').textContent =
+`Potential yearly savings if you switch to a free alternative`;
+}
+
+function showComparison(original, alternative) {
+const container = document.getElementById('comparisonSection');
+const table = document.getElementById('comparisonTable');
+
+container.style.display = 'block';
+
+// Calculate savings
+const originalYearly = original.period === 'month' ? original.price * 12 :
+original.period === 'year' ? original.price :
+original.price / 3;
+
+const altYearly = alternative.period === 'month' ? alternative.price * 12 :
+alternative.period === 'free' ? 0 :
+alternative.period === 'one-time' ? alternative.price / 3 :
+alternative.price;
+
+const yearlySavings = originalYearly - altYearly;
+
+// Create comparison table
+table.innerHTML = `
+<thead>
+<tr>
+<th>Feature</th>
+<th style="color: #ef4444;">${original.name}</th>
+<th style="color: #10b981;">${alternative.name}</th>
+<th>Winner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Price</td>
+<td>$${original.price}/${original.period}</td>
+<td>${alternative.period === 'free' ? 'FREE' : `$${alternative.price}/${alternative.period}`}</td>
+<td class="better">${alternative.name}</td>
+</tr>
+<tr>
+<td>Yearly Cost</td>
+<td>$${originalYearly.toFixed(2)}</td>
+<td>$${altYearly.toFixed(2)}</td>
+<td class="better">${alternative.name}</td>
+</tr>
+<tr>
+<td>Yearly Savings</td>
+<td colspan="2" style="text-align: center; font-weight: bold; color: #10b981;">
+You save: $${yearlySavings.toFixed(2)} per year
+</td>
+<td class="better">SAVINGS!</td>
+</tr>
+<tr>
+<td>5-Year Savings</td>
+<td colspan="2" style="text-align: center; font-weight: bold; color: #059669;">
+Total 5-year savings: $${(yearlySavings * 5).toFixed(2)}
+</td>
+<td class="better">$${(yearlySavings * 5).toFixed(0)}</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>${original.period === 'one-time' ? 'One-time' : 'Subscription'}</td>
+<td>${alternative.type}</td>
+<td>${alternative.period === 'free' ? 'Better' : 'Similar'}</td>
+</tr>
+<tr>
+<td>Our Match Score</td>
+<td>-</td>
+<td>${alternative.match}%</td>
+<td class="better">${alternative.match}% Match</td>
+</tr>
+</tbody>
+`;
+}
+
+function addCustomSoftware() {
+const name = document.getElementById('customName').value;
+const price = parseFloat(document.getElementById('customPrice').value);
+const users = parseInt(document.getElementById('customUsers').value);
+
+if (!name || !price) {
+alert('Please enter software name and select price');
+return;
+}
+
+// Create custom software object
+selectedSoftware = {
+id: 'custom_' + Date.now(),
+name: name,
+icon: 'fas fa-cube',
+color: '#6b7280',
+price: price * users,
+period: 'month',
+users: users,
+category: 'Custom',
+description: 'Custom software entry'
+};
+
+// Create fake alternatives for custom software
+ALTERNATIVES_DATABASE[selectedSoftware.id] = [
+{
+name: 'Open Source Alternative',
+icon: 'fab fa-osi',
+color: '#3DA639',
+price: 0,
+period: 'free',
+type: 'Free & Open Source',
+features: ['Community Support', 'Regular Updates', 'Customizable'],
+savings: price * users * 12,
+match: 75,
+link: '#'
+},
+{
+name: 'Freemium Alternative',
+icon: 'fas fa-star',
+color: '#F59E0B',
+price: price * 0.5,
+period: 'month',
+type: 'Freemium',
+features: ['Basic Features Free', 'Premium Upgrade', 'Cloud Storage'],
+savings: price * users * 6,
+match: 82,
+link: '#'
+}
+];
+
+// Show alternatives
+showAlternatives(selectedSoftware.id);
+
+// Calculate savings
+calculateSavings();
+
+// Reset form
+document.getElementById('customName').value = '';
+document.getElementById('customPrice').value = '';
+document.getElementById('customUsers').value = '1';
+
+// Scroll to alternatives
+document.getElementById('alternativesSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function updateStats() {
+// Simulate live updating stats
+setInterval(() => {
+const users = document.getElementById('usersHelped');
+const savings = document.getElementById('totalSavings');
+const alternatives = document.getElementById('alternativesFound');
+const avg = document.getElementById('avgSavings');
+
+// Increment numbers slightly for realism
+let currentUsers = parseInt(users.textContent.replace(',', ''));
+let currentSavings = parseFloat(savings.textContent.replace('$', '').replace('M', '')) * 1000000;
+
+// Add small random increments
+currentUsers += Math.floor(Math.random() * 3);
+currentSavings += Math.floor(Math.random() * 500);
+
+users.textContent = currentUsers.toLocaleString();
+savings.textContent = `$${(currentSavings / 1000000).toFixed(1)}M`;
+}, 5000);
+}
+
+function generateEmailReport() {
+const email = document.getElementById('reportEmail').value;
+
+if (!email) {
+alert('Please enter your email address');
+return;
+}
+
+if (!selectedSoftware || !selectedAlternative) {
+alert('Please select both original software and alternative first');
+return;
+}
+
+// Calculate savings
+const originalYearly = selectedSoftware.period === 'month' ? selectedSoftware.price * 12 :
+selectedSoftware.period === 'year' ? selectedSoftware.price :
+selectedSoftware.price / 3;
+
+const altYearly = selectedAlternative.period === 'month' ? selectedAlternative.price * 12 :
+selectedAlternative.period === 'free' ? 0 :
+selectedAlternative.period === 'one-time' ? selectedAlternative.price / 3 :
+selectedAlternative.price;
+
+const yearlySavings = originalYearly - altYearly;
+
+// Create email content
+const subject = `Your Software Savings Report: Save $${yearlySavings.toFixed(2)}/year`;
+const body = `
+Software Savings Report - Generated by SoftwarePedia
+===================================================
+
+Original Software: ${selectedSoftware.name}
+- Price: $${selectedSoftware.price}/${selectedSoftware.period}
+- Estimated Yearly Cost: $${originalYearly.toFixed(2)}
+
+Recommended Alternative: ${selectedAlternative.name}
+- Price: ${selectedAlternative.period === 'free' ? 'FREE' : `$${selectedAlternative.price}/${selectedAlternative.period}`}
+- Estimated Yearly Cost: $${altYearly.toFixed(2)}
+- Match Score: ${selectedAlternative.match}%
+
+SAVINGS CALCULATION:
+===================
+Monthly Savings: $${(yearlySavings / 12).toFixed(2)}
+Yearly Savings: $${yearlySavings.toFixed(2)}
+5-Year Savings: $${(yearlySavings * 5).toFixed(2)}
+
+FEATURES:
+=========
+${selectedAlternative.features.map(f => `✓ ${f}`).join('\n')}
+
+NEXT STEPS:
+===========
+1. Visit: ${selectedAlternative.link}
+2. Try the free version/trial
+3. Transition your workflow over 2-4 weeks
+
+LEARNING RESOURCES:
+===================
+Consider these courses to master ${selectedAlternative.name}:
+- Complete Mastery Course: https://www.digistore24.com/MASTERY_COURSE
+- Quick Start Guide: https://www.digistore24.com/QUICK_START
+
+Note: This is an estimate. Actual savings may vary based on your usage.
+We may earn commissions from affiliate links.
+
+Generated on: ${new Date().toLocaleDateString()}
+`;
+
+// Open default email client
+window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+// Show confirmation
+alert('Email client opened with your report. Please send it to yourself.');
+}
+
+function generateWhatsAppReport() {
+if (!selectedSoftware || !selectedAlternative) {
+alert('Please select both original software and alternative first');
+return;
+}
+
+// Calculate savings
+const originalYearly = selectedSoftware.period === 'month' ? selectedSoftware.price * 12 :
+selectedSoftware.period === 'year' ? selectedSoftware.price :
+selectedSoftware.price / 3;
+
+const altYearly = selectedAlternative.period === 'month' ? selectedAlternative.price * 12 :
+selectedAlternative.period === 'free' ? 0 :
+selectedAlternative.period === 'one-time' ? selectedAlternative.price / 3 :
+selectedAlternative.price;
+
+const yearlySavings = originalYearly - altYearly;
+
+// Create WhatsApp message
+const message = `*Software Savings Report from SoftwarePedia*%0A%0A` +
+`💸 *Stop Overpaying!*%0A` +
+`Switch from *${selectedSoftware.name}* to *${selectedAlternative.name}*%0A%0A` +
+`💰 *Savings Breakdown:*%0A` +
+`• Monthly: $${(yearlySavings / 12).toFixed(2)}%0A` +
+`• Yearly: $${yearlySavings.toFixed(2)}%0A` +
+`• 5-Year: $${(yearlySavings * 5).toFixed(2)}%0A%0A` +
+`🎯 *Alternative Details:*%0A` +
+`• Price: ${selectedAlternative.period === 'free' ? 'FREE' : `$${selectedAlternative.price}/${selectedAlternative.period}`}%0A` +
+`• Match Score: ${selectedAlternative.match}%%0A` +
+`• Features: ${selectedAlternative.features.slice(0, 3).join(', ')}%0A%0A` +
+`🔗 *Get Started:* ${selectedAlternative.link}%0A%0A` +
+`📚 *Learn Faster:* https://www.digistore24.com/COURSE_RECOMMENDATION`;
+
+// Open WhatsApp
+window.open(`https://wa.me/?text=${message}`, '_blank');
+}
+
+function generatePDFReport() {
+if (!selectedSoftware || !selectedAlternative) {
+alert('Please select both original software and alternative first');
+return;
+}
+
+// Calculate savings
+const originalYearly = selectedSoftware.period === 'month' ? selectedSoftware.price * 12 :
+selectedSoftware.period === 'year' ? selectedSoftware.price :
+selectedSoftware.price / 3;
+
+const altYearly = selectedAlternative.period === 'month' ? selectedAlternative.price * 12 :
+selectedAlternative.period === 'free' ? 0 :
+selectedAlternative.period === 'one-time' ? selectedAlternative.price / 3 :
+selectedAlternative.price;
+
+const yearlySavings = originalYearly - altYearly;
+
+// Create report content
+const content = `
+SOFTWARE SAVINGS REPORT
+Generated by SoftwarePedia
+===========================
+Date: ${new Date().toLocaleDateString()}
+
+ORIGINAL SOFTWARE
+-----------------
+Name: ${selectedSoftware.name}
+Price: $${selectedSoftware.price}/${selectedSoftware.period}
+Estimated Yearly Cost: $${originalYearly.toFixed(2)}
+
+RECOMMENDED ALTERNATIVE
+-----------------------
+Name: ${selectedAlternative.name}
+Price: ${selectedAlternative.period === 'free' ? 'FREE' : `$${selectedAlternative.price}/${selectedAlternative.period}`}
+Type: ${selectedAlternative.type}
+Match Score: ${selectedAlternative.match}%
+Estimated Yearly Cost: $${altYearly.toFixed(2)}
+
+FEATURES
+--------
+${selectedAlternative.features.map(f => `• ${f}`).join('\n')}
+
+SAVINGS CALCULATION
+-------------------
+Monthly Savings: $${(yearlySavings / 12).toFixed(2)}
+Yearly Savings: $${yearlySavings.toFixed(2)}
+5-Year Savings: $${(yearlySavings * 5).toFixed(2)}
+
+ACTION PLAN
+-----------
+1. Visit: ${selectedAlternative.link}
+2. Download/Try the software
+3. Allocate 2-4 weeks for transition
+4. Cancel original subscription once comfortable
+
+LEARNING RESOURCES
+------------------
+To master ${selectedAlternative.name}, consider:
+- Complete Course: https://www.digistore24.com/MASTERY_COURSE
+- Quick Start: https://www.digistore24.com/QUICK_START
+
+DISCLAIMER
+----------
+This report provides estimates based on public pricing.
+Actual savings may vary based on your specific usage.
+We may earn commissions from affiliate links.
+
+SoftwarePedia - Helping you save money on software!
+`;
+
+// Create downloadable file
+const blob = new Blob([content], { type: 'text/plain' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `Software-Savings-Report-${selectedSoftware.name.replace(/\s+/g, '-')}.txt`;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+// Show confirmation
+alert('Report downloaded as text file!');
+}
+</script>
+</body>
+</html>
