@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Machine Learning Tools - SoftwarePedia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+color: #f1f5f9;
+line-height: 1.6;
+min-height: 100vh;
+}
+
+/* Header Styles */
+.navbar {
+background: rgba(30, 41, 59, 0.95);
+backdrop-filter: blur(10px);
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #10b981;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: 800;
+color: #10b981;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo span {
+color: #f8fafc;
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+}
+
+.nav-links a {
+color: #cbd5e1;
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s;
+padding: 8px 12px;
+border-radius: 6px;
+}
+
+.nav-links a:hover {
+color: #10b981;
+background: rgba(16, 185, 129, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+padding: 4rem 2rem;
+text-align: center;
+border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.category-title {
+font-size: 3.5rem;
+font-weight: 800;
+margin-bottom: 1rem;
+background: linear-gradient(90deg, #10b981, #3b82f6);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+}
+
+.category-description {
+font-size: 1.2rem;
+color: #94a3b8;
+max-width: 800px;
+margin: 0 auto 2rem;
+}
+
+.stats {
+display: flex;
+justify-content: center;
+gap: 3rem;
+margin-top: 2rem;
+}
+
+.stat-item {
+text-align: center;
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: 700;
+color: #10b981;
+}
+
+.stat-label {
+color: #cbd5e1;
+font-size: 0.9rem;
+}
+
+/* Main Content */
+.container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 2rem;
+}
+
+/* Filter Section */
+.filter-section {
+background: #1e293b;
+border-radius: 12px;
+padding: 1.5rem;
+margin-bottom: 2rem;
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+align-items: center;
+}
+
+.filter-tag {
+background: rgba(16, 185, 129, 0.1);
+color: #10b981;
+padding: 8px 16px;
+border-radius: 20px;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.3s;
+border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.filter-tag:hover, .filter-tag.active {
+background: #10b981;
+color: white;
+}
+
+.search-box {
+flex: 1;
+min-width: 300px;
+background: #0f172a;
+border: 1px solid #334155;
+border-radius: 8px;
+padding: 12px 20px;
+color: white;
+font-size: 1rem;
+}
+
+.search-box:focus {
+outline: none;
+border-color: #10b981;
+}
+
+/* AI Tools Grid */
+.tools-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: 2rem;
+margin-bottom: 4rem;
+}
+
+.tool-card {
+background: linear-gradient(145deg, #1e293b, #0f172a);
+border-radius: 16px;
+padding: 2rem;
+transition: all 0.3s ease;
+border: 1px solid #334155;
+position: relative;
+overflow: hidden;
+}
+
+.tool-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+border-color: #10b981;
+}
+
+.tool-badge {
+position: absolute;
+top: 20px;
+right: 20px;
+background: #10b981;
+color: white;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+.tool-header {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+
+.tool-icon {
+font-size: 2.5rem;
+width: 60px;
+height: 60px;
+background: rgba(16, 185, 129, 0.1);
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #10b981;
+}
+
+.tool-title {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 0.5rem;
+}
+
+.tool-category {
+color: #94a3b8;
+font-size: 0.9rem;
+}
+
+.tool-description {
+color: #cbd5e1;
+margin-bottom: 1.5rem;
+line-height: 1.7;
+}
+
+.tool-features {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+background: rgba(59, 130, 246, 0.1);
+color: #60a5fa;
+padding: 6px 12px;
+border-radius: 6px;
+font-size: 0.85rem;
+}
+
+.tool-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 1.5rem;
+border-top: 1px solid #334155;
+}
+
+.tool-price {
+font-size: 1.5rem;
+font-weight: 700;
+color: #10b981;
+}
+
+.tool-price span {
+font-size: 0.9rem;
+color: #94a3b8;
+}
+
+.tool-rating {
+color: #fbbf24;
+}
+
+.tool-button {
+background: linear-gradient(90deg, #10b981, #059669);
+color: white;
+padding: 10px 24px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.tool-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Featured AI Tool */
+.featured-tool {
+grid-column: 1 / -1;
+background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+border: 2px solid #10b981;
+}
+
+/* AI Categories Section */
+.ai-categories {
+margin: 4rem 0;
+}
+
+.section-title {
+font-size: 2rem;
+margin-bottom: 2rem;
+color: #f8fafc;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.categories-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 1.5rem;
+}
+
+.ai-category-card {
+background: #1e293b;
+padding: 1.5rem;
+border-radius: 12px;
+text-decoration: none;
+color: inherit;
+transition: all 0.3s;
+border: 1px solid transparent;
+}
+
+.ai-category-card:hover {
+border-color: #10b981;
+transform: translateY(-5px);
+}
+
+.ai-category-icon {
+font-size: 2rem;
+margin-bottom: 1rem;
+color: #10b981;
+}
+
+/* Footer */
+footer {
+background: #0f172a;
+padding: 3rem 2rem 1.5rem;
+border-top: 1px solid #334155;
+}
+
+.footer-content {
+max-width: 1400px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 3rem;
+margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+color: #10b981;
+margin-bottom: 1.5rem;
+font-size: 1.2rem;
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+color: #cbd5e1;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #10b981;
+}
+
+.copyright {
+text-align: center;
+padding-top: 2rem;
+border-top: 1px solid #334155;
+color: #94a3b8;
+font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.navbar {
+flex-direction: column;
+gap: 1rem;
+padding: 1rem;
+}
+
+.nav-links {
+width: 100%;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.category-title {
+font-size: 2.5rem;
+}
+
+.tools-grid {
+grid-template-columns: 1fr;
+}
+
+.stats {
+flex-direction: column;
+gap: 1rem;
+}
+
+.filter-section {
+flex-direction: column;
+align-items: stretch;
+}
+
+.search-box {
+min-width: auto;
+}
+}
+
+/* Animations */
+@keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+}
+
+.floating {
+animation: float 3s ease-in-out infinite;
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<header class="navbar">
+<a href="index.html" class="logo">
+<i class="fas fa-robot"></i>
+Software<span>Pedia</span>
+</a>
+<nav class="nav-links">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<a href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a href="review.html"><i class="fas fa-star"></i> Reviews</a>
+<a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+<h1 class="category-title">
+<span class="floating">🤖</span>
+AI & Machine Learning
+</h1>
+<p class="category-description">
+Artificial Intelligence tools for writing, coding, design, and automation.
+Transform your workflow with cutting-edge AI technology.
+</p>
+
+<div class="stats">
+<div class="stat-item">
+<div class="stat-number">28</div>
+<div class="stat-label">AI Tools</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4.8</div>
+<div class="stat-label">Avg Rating</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">15</div>
+<div class="stat-label">Free Tools</div>
+</div>
+</div>
+</section>
+
+<!-- Main Content -->
+<div class="container">
+<!-- Filter Section -->
+<div class="filter-section">
+<span class="filter-tag active">All AI Tools</span>
+<span class="filter-tag">AI Writing</span>
+<span class="filter-tag">AI Coding</span>
+<span class="filter-tag">AI Design</span>
+<span class="filter-tag">AI Automation</span>
+<span class="filter-tag">AI Video</span>
+<span class="filter-tag">AI Voice</span>
+<input type="text" class="search-box" placeholder="Search AI tools...">
+</div>
+
+<!-- AI Tools Grid -->
+<div class="tools-grid">
+<!-- Featured Tool -->
+<div class="tool-card featured-tool">
+<div class="tool-badge">EDITOR'S CHOICE</div>
+<div class="tool-header">
+<div class="tool-icon">✨</div>
+<div>
+<h2 class="tool-title">ChatGPT Pro</h2>
+<div class="tool-category">AI Writing & Coding Assistant</div>
+</div>
+</div>
+<p class="tool-description">
+Advanced AI language model that can write, code, analyze, and create content
+with human-like understanding. The most powerful AI assistant available.
+</p>
+<div class="tool-features">
+<span class="feature-tag">Natural Language Processing</span>
+<span class="feature-tag">Code Generation</span>
+<span class="feature-tag">Content Creation</span>
+<span class="feature-tag">Data Analysis</span>
+<span class="feature-tag">Multi-language</span>
+</div>
+<div class="tool-footer">
+<div>
+<div class="tool-price">$20<span>/month</span></div>
+<div class="tool-rating">★★★★★ 4.9/5</div>
+</div>
+<a href="#" class="tool-button">
+<i class="fas fa-rocket"></i> Try Now
+</a>
+</div>
+</div>
+
+<!-- AI Tool 1 -->
+<div class="tool-card">
+<div class="tool-badge">BEST SELLER</div>
+<div class="tool-header">
+<div class="tool-icon">🎨</div>
+<div>
+<h2 class="tool-title">Midjourney AI</h2>
+<div class="tool-category">AI Image Generation</div>
+</div>
+</div>
+<p class="tool-description">
+Create stunning images, artwork, and designs from text descriptions.
+Professional-grade AI image generator for creatives.
+</p>
+<div class="tool-features">
+<span class="feature-tag">Text-to-Image</span>
+<span class="feature-tag">Art Styles</span>
+<span class="feature-tag">High Resolution</span>
+<span class="feature-tag">Commercial Use</span>
+</div>
+<div class="tool-footer">
+<div>
+<div class="tool-price">$30<span>/month</span></div>
+<div class="tool-rating">★★★★☆ 4.7/5</div>
+</div>
+<a href="#" class="tool-button">
+<i class="fas fa-paint-brush"></i> View Details
+</a>
+</div>
+</div>
+
+<!-- AI Tool 2 -->
+<div class="tool-card">
+<div class="tool-header">
+<div class="tool-icon">📝</div>
+<div>
+<h2 class="tool-title">Jasper AI</h2>
+<div class="tool-category">AI Content Writer</div>
+</div>
+</div>
+<p class="tool-description">
+AI writing assistant for blogs, ads, emails, and social media content.
+50+ templates and 30+ languages supported.
+</p>
+<div class="tool-features">
+<span class="feature-tag">Content Templates</span>
+<span class="feature-tag">SEO Optimization</span>
+<span class="feature-tag">Plagiarism Check</span>
+<span class="feature-tag">Team Collaboration</span>
+</div>
+<div class="tool-footer">
+<div>
+<div class="tool-price">$49<span>/month</span></div>
+<div class="tool-rating">★★★★☆ 4.6/5</div>
+</div>
+<a href="#" class="tool-button">
+<i class="fas fa-edit"></i> Get Started
+</a>
+</div>
+</div>
+
+<!-- AI Tool 3 -->
+<div class="tool-card">
+<div class="tool-badge">FREE</div>
+<div class="tool-header">
+<div class="tool-icon">💻</div>
+<div>
+<h2 class="tool-title">GitHub Copilot</h2>
+<div class="tool-category">AI Code Assistant</div>
+</div>
+</div>
+<p class="tool-description">
+AI pair programmer that suggests code and entire functions in real-time.
+Supports all major programming languages.
+</p>
+<div class="tool-features">
+<span class="feature-tag">Code Completion</span>
+<span class="feature-tag">Multi-language</span>
+<span class="feature-tag">VS Code Integration</span>
+<span class="feature-tag">Learning Mode</span>
+</div>
+<div class="tool-footer">
+<div>
+<div class="tool-price">$10<span>/month</span></div>
+<div class="tool-rating">★★★★★ 4.8/5</div>
+</div>
+<a href="#" class="tool-button">
+<i class="fas fa-code"></i> Try Free
+</a>
+</div>
+</div>
+
+<!-- AI Tool 4 -->
+<div class="tool-card">
+<div class="tool-header">
+<div class="tool-icon">🎬</div>
+<div>
+<h2 class="tool-title">Runway ML</h2>
+<div class="tool-category">AI Video Editor</div>
+</div>
+</div>
+<p class="tool-description">
+Edit videos with AI magic. Remove backgrounds, generate scenes,
+and create professional videos without editing skills.
+</p>
+<div class="tool-features">
+<span class="feature-tag">Video Editing</span>
+<span class="feature-tag">Green Screen</span>
+<span class="feature-tag">Motion Tracking</span>
+<span class="feature-tag">3D Animation</span>
+</div>
+<div class="tool-footer">
+<div>
+<div class="tool-price">$15<span>/month</span></div>
+<div class="tool-rating">★★★★☆ 4.5/5</div>
+</div>
+<a href="#" class="tool-button">
+<i class="fas fa-video"></i> Learn More
+</a>
+</div>
+</div>
+
+<!-- AI Tool 5 -->
+<div class="tool-card">
+<div class="tool-badge">NEW</div>
+<div class="tool-header">
+<div class="tool-icon">🗣️</div>
+<div>
+<h2 class="tool-title">Murf AI</h2>
+<div class="tool-category">AI Voice Generator</div>
+</div>
+</div>
+<p class="tool-description">
+Convert text to realistic human-like voiceovers in 20+ languages.
+Perfect for videos, podcasts, and presentations.
+</p>
+<div class="tool-features">
+<span class="feature-tag">Voice Cloning</span>
+<span class="feature-tag">Multi-language</span>
+<span class="feature-tag">Emotion Control</span>
+<span class="feature-tag">Commercial Rights</span>
+</div>
+<div class="tool-footer">
+<div>
+<div class="tool-price">$29<span>/month</span></div>
+<div class="tool-rating">★★★★☆ 4.7/5</div>
+</div>
+<a href="#" class="tool-button">
+<i class="fas fa-microphone"></i> Try Demo
+</a>
+</div>
+</div>
+</div>
+
+<!-- AI Categories -->
+<div class="ai-categories">
+<h2 class="section-title">
+<i class="fas fa-sitemap"></i>
+AI Tool Categories
+</h2>
+<div class="categories-grid">
+<a href="#" class="ai-category-card">
+<div class="ai-category-icon">✍️</div>
+<h3>AI Writing Tools</h3>
+<p>Content creation, copywriting, blogging</p>
+</a>
+<a href="#" class="ai-category-card">
+<div class="ai-category-icon">💻</div>
+<h3>AI Coding Tools</h3>
+<p>Code generation, debugging, automation</p>
+</a>
+<a href="#" class="ai-category-card">
+<div class="ai-category-icon">🎨</div>
+<h3>AI Design Tools</h3>
+<p>Graphics, logos, UI/UX design</p>
+</a>
+<a href="#" class="ai-category-card">
+<div class="ai-category-icon">🎬</div>
+<h3>AI Video Tools</h3>
+<p>Editing, generation, animation</p>
+</a>
+<a href="#" class="ai-category-card">
+<div class="ai-category-icon">📊</div>
+<h3>AI Analytics</h3>
+<p>Data analysis, predictions, insights</p>
+</a>
+<a href="#" class="ai-category-card">
+<div class="ai-category-icon">🤖</div>
+<h3>AI Automation</h3>
+<p>Workflow automation, bots, RPA</p>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h3>AI & Machine Learning</h3>
+<p>Your comprehensive guide to artificial intelligence tools and software.</p>
+<p style="margin-top: 1rem; color: #94a3b8;">
+<i class="fas fa-sync-alt"></i> Updated daily with new AI tools
+</p>
+</div>
+
+<div class="footer-section">
+<h3>Quick Links</h3>
+<ul class="footer-links">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="categories.html"><i class="fas fa-th-large"></i> All Categories</a></li>
+<li><a href="#"><i class="fas fa-fire"></i> Trending AI Tools</a></li>
+<li><a href="#"><i class="fas fa-free-code-camp"></i> Free AI Tools</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>AI Categories</h3>
+<ul class="footer-links">
+<li><a href="#"><i class="fas fa-edit"></i> AI Writing</a></li>
+<li><a href="#"><i class="fas fa-code"></i> AI Coding</a></li>
+<li><a href="#"><i class="fas fa-paint-brush"></i> AI Design</a></li>
+<li><a href="#"><i class="fas fa-video"></i> AI Video</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Legal</h3>
+<ul class="footer-links">
+<li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+<li><a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+<li><a href="#"><i class="fas fa-handshake"></i> Affiliate Disclosure</a></li>
+<li><a href="#"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+
+<div class="copyright">
+<p>© 2024 SoftwarePedia. All rights reserved. AI & Machine Learning Tools Directory.</p>
+<p style="margin-top: 0.5rem;">
+<i class="fas fa-exclamation-circle"></i>
+Affiliate Disclosure: We earn commissions on qualifying purchases through our links.
+</p>
+</div>
+</footer>
+
+<script>
+// Search functionality
+document.querySelector('.search-box').addEventListener('input', function(e) {
+const searchTerm = e.target.value.toLowerCase();
+const toolCards = document.querySelectorAll('.tool-card');
+
+toolCards.forEach(card => {
+const title = card.querySelector('.tool-title').textContent.toLowerCase();
+const description = card.querySelector('.tool-description').textContent.toLowerCase();
+const category = card.querySelector('.tool-category').textContent.toLowerCase();
+
+if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+
+// Filter functionality
+document.querySelectorAll('.filter-tag').forEach(tag => {
+tag.addEventListener('click', function() {
+// Remove active class from all tags
+document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+// Add active class to clicked tag
+this.classList.add('active');
+
+const filter = this.textContent.toLowerCase();
+const toolCards = document.querySelectorAll('.tool-card:not(.featured-tool)');
+
+if (filter === 'all ai tools') {
+toolCards.forEach(card => card.style.display = 'block');
+} else {
+toolCards.forEach(card => {
+const category = card.querySelector('.tool-category').textContent.toLowerCase();
+if (category.includes(filter)) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+}
+});
+});
+
+// Add hover effect to tool cards
+document.querySelectorAll('.tool-card').forEach(card => {
+card.addEventListener('mouseenter', function() {
+this.style.transform = 'translateY(-10px)';
+});
+
+card.addEventListener('mouseleave', function() {
+this.style.transform = 'translateY(0)';
+});
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+</script>
+</body>
+</html>
