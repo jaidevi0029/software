@@ -5,201 +5,668 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Software Categories - SoftwarePedia</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f1f5f9; line-height: 1.6; }
-
-.navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; }
-.logo { font-size: 1.8rem; font-weight: 800; color: #60a5fa; text-decoration: none; }
-.logo span { color: #f59e0b; }
-.nav-links a { color: #cbd5e1; margin-left: 1.5rem; text-decoration: none; font-weight: 500; }
-
-.categories-container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
-.page-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: #f8fafc; }
-
-.categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-.category-card {
-background: #1e293b;
-padding: 2rem;
-border-radius: 12px;
-transition: transform 0.3s;
-border-top: 4px solid;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
-.category-card:hover { transform: translateY(-5px); }
 
-.category-icon { font-size: 3rem; margin-bottom: 1rem; }
-.software-count { background: #3b82f6; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9; 
+    line-height: 1.6;
+    min-height: 100vh;
+}
 
-.ai-card { border-color: #10b981; }
-.marketing-card { border-color: #3b82f6; }
-.video-card { border-color: #ef4444; }
-.productivity-card { border-color: #f59e0b; }
-.seo-card { border-color: #8b5cf6; }
-.appdev-card { border-color: #06b6d4; }
-.business-card { border-color: #ec4899; }
+/* Header */
+.navbar { 
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 2px solid #3b82f6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4rem; }
-
-/* App Development Link Styles */
-.appdev-link {
-    display: block;
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.05));
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    color: #60a5fa; 
     text-decoration: none;
-    color: #f1f5f9;
-    border-left: 4px solid #06b6d4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo span { 
+    color: #f59e0b; 
+}
+
+.nav-links { 
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a { 
+    color: #cbd5e1; 
+    text-decoration: none; 
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
     transition: all 0.3s;
 }
-.appdev-link:hover {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.1));
-    transform: translateX(5px);
+.nav-links a:hover { 
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.1);
 }
-.appdev-icon {
-    font-size: 1.5rem;
-    color: #06b6d4;
-    float: left;
-    margin-right: 1rem;
+
+/* Main Content */
+.categories-container { 
+    max-width: 1400px; 
+    margin: 3rem auto; 
+    padding: 0 2rem; 
 }
-.appdev-content h4 {
-    margin: 0;
+
+.page-title { 
+    font-size: 3rem; 
+    text-align: center; 
+    margin-bottom: 1rem; 
+    color: #f8fafc;
+    background: linear-gradient(90deg, #60a5fa, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.page-subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Categories Grid */
+.categories-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 2rem; 
+    margin-bottom: 4rem;
+}
+
+.category-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #334155;
+    position: relative;
+    overflow: hidden;
+}
+.category-card:hover { 
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+.category-icon { 
+    font-size: 3.5rem; 
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.software-count { 
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa; 
+    padding: 0.5rem 1.2rem; 
+    border-radius: 20px; 
+    font-size: 0.9rem; 
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    display: inline-block;
+}
+
+.category-card h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
     color: #f8fafc;
 }
-.appdev-content p {
-    margin: 0.3rem 0 0;
+
+.category-card p {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.category-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--border-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: rgba(var(--border-rgb), 0.1);
+    transition: all 0.3s;
+}
+.category-link:hover {
+    background: rgba(var(--border-rgb), 0.2);
+    transform: translateX(5px);
+}
+
+/* Category Specific Colors */
+.ai-card { 
+    --border-color: #10b981;
+    --border-rgb: 16, 185, 129;
+}
+.marketing-card { 
+    --border-color: #3b82f6;
+    --border-rgb: 59, 130, 246;
+}
+.video-card { 
+    --border-color: #ef4444;
+    --border-rgb: 239, 68, 68;
+}
+.productivity-card { 
+    --border-color: #f59e0b;
+    --border-rgb: 245, 158, 11;
+}
+.seo-card { 
+    --border-color: #8b5cf6;
+    --border-rgb: 139, 92, 246;
+}
+.appdev-card { 
+    --border-color: #06b6d4;
+    --border-rgb: 6, 182, 212;
+}
+.business-card { 
+    --border-color: #ec4899;
+    --border-rgb: 236, 72, 153;
+}
+.design-card { 
+    --border-color: #f97316;
+    --border-rgb: 249, 115, 22;
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 4rem 0;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer { 
+    background: #0f172a; 
+    padding: 3rem 2rem 1.5rem; 
+    border-top: 1px solid #334155;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #60a5fa;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a:hover {
+    color: #60a5fa;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #334155;
     color: #94a3b8;
     font-size: 0.9rem;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-.categories-grid { grid-template-columns: 1fr; }
-.nav-links { display: none; }
+    .navbar { 
+        flex-direction: column; 
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .categories-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
 <body>
 <header class="navbar">
-<a href="index.html" class="logo">Software<span>Pedia</span></a>
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="categories.html">Categories</a>
-<a href="review.html">Reviews</a>
-<a href="#contact">Contact</a>
+<a href="index.html" class="logo">
+    <i class="fas fa-cube"></i>
+    Software<span>Pedia</span>
+</a>
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+</button>
+
+<nav class="nav-links" id="navLinks">
+<a href="index.html">
+    <i class="fas fa-home"></i> Home
+</a>
+<a href="categories.html" style="color: #60a5fa; background: rgba(59, 130, 246, 0.1);">
+    <i class="fas fa-th-large"></i> Categories
+</a>
+<a href="review.html">
+    <i class="fas fa-star"></i> Reviews
+</a>
+<a href="contact.html">
+    <i class="fas fa-envelope"></i> Contact
+</a>
 </nav>
 </header>
 
 <div class="categories-container">
 <h1 class="page-title">Browse Software by Category</h1>
+<p class="page-subtitle">Explore 150+ software tools organized by category. Find the perfect tool for your needs with our detailed reviews and comparisons.</p>
 
 <div class="categories-grid">
-<!-- AI Tools -->
+
+<!-- AI & Machine Learning -->
 <div class="category-card ai-card">
 <div class="category-icon">🤖</div>
 <h2>AI & Machine Learning</h2>
 <p>Artificial Intelligence tools for writing, coding, design, and automation.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">28 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+<a href="ai-machine-learning.html" class="category-link">
+    Browse AI Tools <i class="fas fa-arrow-right"></i>
+</a>
 </div>
 </div>
 
-<!-- Marketing -->
+<!-- Marketing Tools -->
 <div class="category-card marketing-card">
 <div class="category-icon">📈</div>
 <h2>Marketing Tools</h2>
 <p>Email marketing, social media, SEO, and advertising platforms.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">19 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+<a href="marketing-tools.html" class="category-link">
+    Browse Marketing Tools <i class="fas fa-arrow-right"></i>
+</a>
 </div>
 </div>
 
-<!-- Video -->
+<!-- Video Creation -->
 <div class="category-card video-card">
 <div class="category-icon">🎬</div>
 <h2>Video Creation</h2>
 <p>Video editing, animation, screen recording, and live streaming tools.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">15 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+<a href="video-creation.html" class="category-link">
+    Browse Video Tools <i class="fas fa-arrow-right"></i>
+</a>
 </div>
 </div>
 
-<!-- Productivity -->
+<!-- Productivity Apps -->
 <div class="category-card productivity-card">
 <div class="category-icon">⚡</div>
 <h2>Productivity Apps</h2>
 <p>Project management, note-taking, time tracking, and collaboration tools.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">22 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+<a href="productivity-apps.html" class="category-link">
+    Browse Productivity Tools <i class="fas fa-arrow-right"></i>
+</a>
 </div>
 </div>
 
-<!-- SEO Tools -->
+<!-- SEO & Analytics -->
 <div class="category-card seo-card">
 <div class="category-icon">🔍</div>
 <h2>SEO & Analytics</h2>
 <p>Keyword research, backlink analysis, website audits, and tracking tools.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">12 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+<a href="seo-analytics.html" class="category-link">
+    Browse SEO Tools <i class="fas fa-arrow-right"></i>
+</a>
 </div>
 </div>
 
-<!-- App Development - FIXED VERSION -->
+<!-- App Development -->
 <div class="category-card appdev-card">
 <div class="category-icon">📱</div>
 <h2>App Development</h2>
 <p>Mobile and web app development tools, courses, and frameworks.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">8 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
-</div>
-
-<!-- WORKING LINK - Direct to Digistore24 -->
-<a href="https://www.checkout-ds24.com/redir/618139/BestMarketProduct/" 
-   target="_blank" 
-   class="appdev-link">
-    <div class="appdev-icon">📱</div>
-    <div class="appdev-content">
-        <h4>Mobile App Guide for Beginners</h4>
-        <p>Complete course with real project - $49 (Direct Purchase)</p>
-    </div>
+<a href="app-development.html" class="category-link">
+    Browse App Dev Tools <i class="fas fa-arrow-right"></i>
 </a>
-
 </div>
 
-<!-- Business -->
+<!-- Mobile App Guide Special Link -->
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid #06b6d4;">
+    <h4 style="color: #06b6d4; margin-bottom: 0.5rem;">
+        <i class="fas fa-mobile-alt"></i> Featured Guide
+    </h4>
+    <p style="color: #cbd5e1; margin-bottom: 0.8rem; font-size: 0.95rem;">
+        <strong>Mobile App Guide for Beginners</strong> - Complete course with real project
+    </p>
+    <a href="https://www.checkout-ds24.com/redir/618139/BestMarketProduct/" 
+       target="_blank" 
+       style="display: inline-flex; align-items: center; gap: 8px; color: white; background: #06b6d4; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+        <i class="fas fa-shopping-cart"></i> Get Now - $49
+    </a>
+</div>
+</div>
+
+<!-- Business Software -->
 <div class="category-card business-card">
 <div class="category-icon">💼</div>
 <h2>Business Software</h2>
 <p>CRM, accounting, e-commerce, invoicing, and customer support tools.</p>
-<div style="margin-top: 1rem;">
+<div style="margin-top: 1.5rem;">
 <span class="software-count">17 Software</span>
-<a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
+<a href="business-software.html" class="category-link">
+    Browse Business Tools <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+
+<!-- Design Tools -->
+<div class="category-card design-card">
+<div class="category-icon">🎨</div>
+<h2>Design Tools</h2>
+<p>Graphic design, UI/UX, prototyping, and illustration software.</p>
+<div style="margin-top: 1.5rem;">
+<span class="software-count">14 Software</span>
+<a href="design-tools.html" class="category-link">
+    Browse Design Tools <i class="fas fa-arrow-right"></i>
+</a>
 </div>
 </div>
 
 </div>
 
-<div style="text-align: center; margin-top: 4rem;">
-<h2>Total: 121+ Software Reviewed</h2>
-<p style="color: #94a3b8;">Updated daily with new software from Digistore24</p>
+<!-- Stats Section -->
+<div class="stats-section">
+<h2 style="color: #f8fafc; margin-bottom: 1rem; font-size: 2rem;">
+    Our Software Database
+</h2>
+<p style="color: #94a3b8; max-width: 600px; margin: 0 auto 2rem;">
+    We constantly review and update our database with the latest software tools from Digistore24 and other platforms.
+</p>
+
+<div class="stats-grid">
+    <div class="stat-item">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Software Tools</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">28</div>
+        <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">4.8</div>
+        <div class="stat-label">Avg Rating</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Free Tools</div>
+    </div>
+</div>
 </div>
 </div>
 
 <footer>
-<p>© 2024 SoftwarePedia. All rights reserved.</p>
-<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
-<i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases.
-</p>
-<p style="margin-top: 1rem;">
-<a href="index.html" style="color: #60a5fa; margin: 0 1rem;">Home</a> |
-<a href="categories.html" style="color: #60a5fa; margin: 0 1rem;">Categories</a> |
-<a href="review.html" style="color: #60a5fa; margin: 0 1rem;">Reviews</a>
-</p>
+<div class="footer-content">
+    <div class="footer-section">
+        <h3>SoftwarePedia</h3>
+        <p>Your trusted source for software reviews, guides, and recommendations.</p>
+        <p style="margin-top: 1rem; color: #94a3b8;">
+            <i class="fas fa-sync-alt"></i> Updated daily with new tools
+        </p>
+    </div>
+    
+    <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="categories.html"><i class="fas fa-th-large"></i> Categories</a></li>
+            <li><a href="review.html"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-section">
+        <h3>Top Categories</h3>
+        <ul class="footer-links">
+            <li><a href="ai-machine-learning.html"><i class="fas fa-robot"></i> AI Tools</a></li>
+            <li><a href="marketing-tools.html"><i class="fas fa-chart-line"></i> Marketing</a></li>
+            <li><a href="video-creation.html"><i class="fas fa-video"></i> Video Creation</a></li>
+            <li><a href="app-development.html"><i class="fas fa-mobile-alt"></i> App Development</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-section">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+            <li><a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+            <li><a href="#"><i class="fas fa-handshake"></i> Affiliate Disclosure</a></li>
+            <li><a href="#"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="copyright">
+    <p>© 2024 SoftwarePedia. All rights reserved.</p>
+    <p style="margin-top: 0.5rem;">
+        <i class="fas fa-exclamation-circle"></i> 
+        Affiliate Disclosure: We earn commissions on qualifying purchases through our links.
+    </p>
+    <p style="margin-top: 1rem;">
+        <a href="index.html" style="color: #60a5fa; margin: 0 1rem;">Home</a> |
+        <a href="categories.html" style="color: #60a5fa; margin: 0 1rem;">Categories</a> |
+        <a href="review.html" style="color: #60a5fa; margin: 0 1rem;">Reviews</a> |
+        <a href="contact.html" style="color: #60a5fa; margin: 0 1rem;">Contact</a>
+    </p>
+</div>
 </footer>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = mobileMenuBtn.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Add animation to category cards on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all category cards
+document.querySelectorAll('.category-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
