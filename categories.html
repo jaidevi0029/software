@@ -40,11 +40,10 @@ border-top: 4px solid;
 
 footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4rem; }
 
-/* App Development Category Item Styles */
-.category-item {
-    display: flex;
-    align-items: center;
-    background: rgba(6, 182, 212, 0.1);
+/* App Development Link Styles */
+.appdev-link {
+    display: block;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.05));
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
@@ -53,21 +52,22 @@ footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4re
     border-left: 4px solid #06b6d4;
     transition: all 0.3s;
 }
-.category-item:hover {
-    background: rgba(6, 182, 212, 0.2);
+.appdev-link:hover {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.1));
     transform: translateX(5px);
 }
-.category-item i {
+.appdev-icon {
     font-size: 1.5rem;
-    margin-right: 1rem;
     color: #06b6d4;
+    float: left;
+    margin-right: 1rem;
 }
-.category-item span {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
+.appdev-content h4 {
+    margin: 0;
+    color: #f8fafc;
 }
-.category-item small {
+.appdev-content p {
+    margin: 0.3rem 0 0;
     color: #94a3b8;
     font-size: 0.9rem;
 }
@@ -75,13 +75,6 @@ footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4re
 @media (max-width: 768px) {
 .categories-grid { grid-template-columns: 1fr; }
 .nav-links { display: none; }
-.category-item {
-    flex-direction: column;
-    align-items: flex-start;
-}
-.category-item i {
-    margin-bottom: 0.5rem;
-}
 }
 </style>
 </head>
@@ -155,7 +148,7 @@ footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4re
 </div>
 </div>
 
-<!-- App Development - NEW CATEGORY -->
+<!-- App Development - FIXED VERSION -->
 <div class="category-card appdev-card">
 <div class="category-icon">📱</div>
 <h2>App Development</h2>
@@ -164,15 +157,18 @@ footer { background: #1e293b; padding: 2rem; text-align: center; margin-top: 4re
 <span class="software-count">8 Software</span>
 <a href="#" style="color: #60a5fa; float: right; text-decoration: none;">Browse →</a>
 </div>
-    
-<!-- Mobile App Guide Link Inside App Development Category -->
-<a href="mobile-app-guide-for-beginners.html" class="category-item">
-    <i class="fas fa-mobile-alt"></i>
-    <div>
-        <span>Mobile App Guide for Beginners</span>
-        <small>Complete course with real project - $49</small>
+
+<!-- WORKING LINK - Direct to Digistore24 -->
+<a href="https://www.checkout-ds24.com/redir/618139/BestMarketProduct/" 
+   target="_blank" 
+   class="appdev-link">
+    <div class="appdev-icon">📱</div>
+    <div class="appdev-content">
+        <h4>Mobile App Guide for Beginners</h4>
+        <p>Complete course with real project - $49 (Direct Purchase)</p>
     </div>
 </a>
+
 </div>
 
 <!-- Business -->
