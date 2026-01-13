@@ -3,111 +3,1133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Software Blog & Guides - Latest Articles | SoftwareToolGuide</title>
-<meta name="description" content="Latest articles, tutorials, and guides on software reviews, affiliate marketing, and making money online. Updated weekly.">
-<!-- Same CSS as blog-1.html (copy from above) -->
+<title>Software Blog & Guides - SoftwarePedia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* COPY ALL CSS FROM blog-1.html ABOVE */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9; 
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+.navbar { 
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 2px solid #10b981;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    color: #60a5fa; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo span { 
+    color: #f59e0b; 
+}
+
+.nav-links { 
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a { 
+    color: #cbd5e1; 
+    text-decoration: none; 
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+.nav-links a:hover { 
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.1);
+}
+.nav-links a.active {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+/* Main Content */
+.container { 
+    max-width: 1200px; 
+    margin: 3rem auto; 
+    padding: 0 2rem; 
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.page-title { 
+    font-size: 3.5rem; 
+    margin-bottom: 1rem; 
+    color: #f8fafc;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.page-subtitle {
+    color: #94a3b8;
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-badge {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 12px 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #10b981;
+}
+
+.stat-label {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Search Bar */
+.search-section {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 18px 60px 18px 30px;
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid #334155;
+    border-radius: 12px;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+/* Blog Grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.blog-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-color: #10b981;
+}
+
+.blog-image {
+    height: 220px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-category {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(16, 185, 129, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.blog-content {
+    padding: 2rem;
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    color: #f8fafc;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    transition: color 0.3s;
+}
+
+.blog-card:hover .blog-title {
+    color: #10b981;
+}
+
+.blog-excerpt {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.blog-tag {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.blog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 0;
+    transition: all 0.3s;
+}
+
+.blog-link:hover {
+    gap: 12px;
+    color: #34d399;
+}
+
+/* Featured Post */
+.featured-post {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.featured-post::before {
+    content: 'Featured';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    color: #0f172a;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.featured-image {
+    height: 100%;
+    min-height: 400px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-title {
+    font-size: 2.2rem;
+    color: #f8fafc;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.featured-excerpt {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.featured-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Sidebar */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.sidebar {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+.sidebar-widget {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-radius: 15px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    border: 1px solid #334155;
+}
+
+.sidebar-title {
+    color: #f8fafc;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.widget-categories {
+    list-style: none;
+}
+
+.widget-categories li {
+    margin-bottom: 0.8rem;
+}
+
+.widget-categories a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.widget-categories a:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+}
+
+.category-count {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.popular-posts {
+    list-style: none;
+}
+
+.popular-post {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #334155;
+}
+
+.popular-post:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.popular-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.popular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popular-content h4 {
+    color: #f8fafc;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.popular-date {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-input {
+    padding: 14px 20px;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    color: #f1f5f9;
+    font-size: 1rem;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #10b981;
+}
+
+.newsletter-btn {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.pagination-btn {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.pagination-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+}
+
+.pagination-btn.active {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+    color: #10b981;
+}
+
+/* Footer */
+footer { 
+    background: #0f172a; 
+    padding: 3rem 2rem 1.5rem; 
+    border-top: 1px solid #334155;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #60a5fa;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a:hover {
+    color: #60a5fa;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: static;
+    }
+    
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-image {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar { 
+        flex-direction: column; 
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-stats {
+        gap: 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .featured-content {
+        padding: 2rem;
+    }
+    
+    .featured-title {
+        font-size: 1.8rem;
+    }
+}
 </style>
 </head>
 <body>
 <header class="navbar">
-<a href="https://softwaretoolguide.com" class="logo">Software<span>Pedia</span></a>
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="blog.html" style="color: #60a5fa;">Blog</a>
-<a href="categories.html">Categories</a>
-<a href="review.html">Reviews</a>
+<a href="index.html" class="logo">
+    <i class="fas fa-cube"></i>
+    Software<span>Pedia</span>
+</a>
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+</button>
+
+<nav class="nav-links" id="navLinks">
+<a href="index.html">
+    <i class="fas fa-home"></i> Home
+</a>
+<a href="categories.html">
+    <i class="fas fa-th-large"></i> Categories
+</a>
+<a href="review.html">
+    <i class="fas fa-star"></i> Reviews
+</a>
+<a href="blog.html" class="active">
+    <i class="fas fa-blog"></i> Blog
+</a>
+<a href="contact.html">
+    <i class="fas fa-envelope"></i> Contact
+</a>
 </nav>
 </header>
 
-<div class="blog-container">
-<h1 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #f8fafc;">Software Blog & Guides</h1>
-<p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 3rem auto;">Practical tutorials, strategies, and insights for software reviewers and affiliate marketers.</p>
-
-<!-- FEATURED POST -->
-<div style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); padding: 2.5rem; border-radius: 12px; margin-bottom: 3rem;">
-<span style="background: #3b82f6; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">FEATURED</span>
-<h2 style="color: #f8fafc; margin: 1rem 0; font-size: 1.8rem;">How to Start Software Affiliate Marketing in 2026</h2>
-<p style="color: #cbd5e1; margin-bottom: 1.5rem;">Complete beginner's guide with step-by-step instructions. Learn how to choose software, create reviews, and earn your first commissions.</p>
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-<span style="color: #94a3b8;"><i class="far fa-calendar"></i> Jan 17, 2026 • <i class="far fa-clock"></i> 8 min read</span>
-<a href="blog-1.html" class="cta-button">Read Full Guide →</a>
-</div>
-</div>
-
-<!-- BLOG GRID -->
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-
-<!-- Blog Post 1 -->
-<div class="related-card">
-<div style="height: 200px; background: linear-gradient(45deg, #10b981, #059669); border-radius: 8px 8px 0 0; margin: -1.5rem -1.5rem 1.5rem -1.5rem;"></div>
-<h3 style="color: #f8fafc; margin-bottom: 0.8rem; font-size: 1.3rem;">Top 5 AI Tools for Beginners in 2026</h3>
-<p style="color: #94a3b8; margin-bottom: 1rem;">Which AI tools are actually worth your time and money? Our tested recommendations.</p>
-<div style="display: flex; justify-content: space-between; align-items: center;">
-<span style="color: #94a3b8; font-size: 0.9rem;">Coming Soon</span>
-<a href="blog-2.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Preview →</a>
-</div>
+<div class="container">
+<div class="page-header">
+    <h1 class="page-title">Software Blog & Guides</h1>
+    <p class="page-subtitle">Latest tutorials, tips, and insights on software tools, digital marketing, and productivity strategies.</p>
+    
+    <div class="header-stats">
+        <div class="stat-badge">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Articles</div>
+        </div>
+        <div class="stat-badge">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Readers</div>
+        </div>
+        <div class="stat-badge">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Updated</div>
+        </div>
+    </div>
 </div>
 
-<!-- Blog Post 2 -->
-<div class="related-card">
-<div style="height: 200px; background: linear-gradient(45deg, #8b5cf6, #7c3aed); border-radius: 8px 8px 0 0; margin: -1.5rem -1.5rem 1.5rem -1.5rem;"></div>
-<h3 style="color: #f8fafc; margin-bottom: 0.8rem; font-size: 1.3rem;">Build a Review Website in 1 Day (2026 Guide)</h3>
-<p style="color: #94a3b8; margin-bottom: 1rem;">Step-by-step tutorial to create a professional software review website without coding.</p>
-<div style="display: flex; justify-content: space-between; align-items: center;">
-<span style="color: #94a3b8; font-size: 0.9rem;">Coming Soon</span>
-<a href="blog-3.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Preview →</a>
+<!-- Search Bar -->
+<div class="search-section">
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search articles, tutorials, guides...">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+</div>
+
+<div class="blog-layout">
+    <div class="blog-main">
+        <!-- Featured Post -->
+        <div class="featured-post">
+            <div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI Tools">
+            </div>
+            <div class="featured-content">
+                <div class="blog-meta">
+                    <span><i class="far fa-calendar"></i> Jan 15, 2024</span>
+                    <span><i class="far fa-clock"></i> 8 min read</span>
+                    <span><i class="far fa-eye"></i> 2.5K views</span>
+                </div>
+                <h2 class="featured-title">How AI Tools Can 10x Your Marketing Productivity in 2024</h2>
+                <p class="featured-excerpt">Discover the latest AI marketing tools that can automate your workflow, create better content, and boost your ROI. Learn practical strategies you can implement today.</p>
+                <a href="blog-1.html" class="featured-link">
+                    Read Full Article <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SEO Tools">
+                    <span class="blog-category">SEO</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Jan 12, 2024</span>
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h3 class="blog-title">Top 10 SEO Tools Every Marketer Needs in 2024</h3>
+                    <p class="blog-excerpt">Comprehensive review of essential SEO tools for keyword research, backlink analysis, and website optimization. Free and paid options included.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">SEO</span>
+                        <span class="blog-tag">Marketing</span>
+                        <span class="blog-tag">Tools</span>
+                    </div>
+                    <a href="#" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Editing">
+                    <span class="blog-category">Video</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
+                        <span><i class="far fa-clock"></i> 10 min read</span>
+                    </div>
+                    <h3 class="blog-title">Beginner's Guide to Professional Video Editing Software</h3>
+                    <p class="blog-excerpt">Learn how to choose the right video editing software for your needs. Compare features, pricing, and learning curves of popular options.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Video</span>
+                        <span class="blog-tag">Editing</span>
+                        <span class="blog-tag">Tutorial</span>
+                    </div>
+                    <a href="#" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Affiliate Marketing">
+                    <span class="blog-category">Marketing</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Jan 8, 2024</span>
+                        <span><i class="far fa-clock"></i> 12 min read</span>
+                    </div>
+                    <h3 class="blog-title">How to Start Affiliate Marketing with Zero Budget</h3>
+                    <p class="blog-excerpt">Step-by-step guide to launching your affiliate marketing journey without investment. Learn free tools and strategies to generate your first commission.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Affiliate</span>
+                        <span class="blog-tag">Beginner</span>
+                        <span class="blog-tag">Guide</span>
+                    </div>
+                    <a href="#" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Productivity">
+                    <span class="blog-category">Productivity</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                    <h3 class="blog-title">Top 5 Productivity Apps That Actually Save Time</h3>
+                    <p class="blog-excerpt">Review of productivity apps that deliver real results. From project management to note-taking, find tools that match your workflow.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Apps</span>
+                        <span class="blog-tag">Productivity</span>
+                        <span class="blog-tag">Tools</span>
+                    </div>
+                    <a href="#" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Email Marketing">
+                    <span class="blog-category">Email</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Jan 3, 2024</span>
+                        <span><i class="far fa-clock"></i> 9 min read</span>
+                    </div>
+                    <h3 class="blog-title">Email Marketing Automation: Tools and Strategies</h3>
+                    <p class="blog-excerpt">Complete guide to setting up email marketing automation. Learn which tools work best for different business sizes and goals.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Email</span>
+                        <span class="blog-tag">Automation</span>
+                        <span class="blog-tag">Marketing</span>
+                    </div>
+                    <a href="#" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 6 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Media">
+                    <span class="blog-category">Social Media</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Jan 1, 2024</span>
+                        <span><i class="far fa-clock"></i> 11 min read</span>
+                    </div>
+                    <h3 class="blog-title">Social Media Management Tools Comparison 2024</h3>
+                    <p class="blog-excerpt">Detailed comparison of top social media management tools. Features, pricing, and which platform is best for different needs.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Social Media</span>
+                        <span class="blog-tag">Management</span>
+                        <span class="blog-tag">Comparison</span>
+                    </div>
+                    <a href="#" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="pagination-btn active">1</a>
+            <a href="#" class="pagination-btn">2</a>
+            <a href="#" class="pagination-btn">3</a>
+            <a href="#" class="pagination-btn">Next <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Categories Widget -->
+        <div class="sidebar-widget">
+            <h3 class="sidebar-title"><i class="fas fa-folder"></i> Categories</h3>
+            <ul class="widget-categories">
+                <li><a href="#">Marketing Tools <span class="category-count">15</span></a></li>
+                <li><a href="#">Video Creation <span class="category-count">8</span></a></li>
+                <li><a href="#">AI & ML <span class="category-count">12</span></a></li>
+                <li><a href="#">SEO Tools <span class="category-count">7</span></a></li>
+                <li><a href="#">Productivity <span class="category-count">10</span></a></li>
+                <li><a href="#">Tutorials <span class="category-count">25</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Popular Posts -->
+        <div class="sidebar-widget">
+            <h3 class="sidebar-title"><i class="fas fa-fire"></i> Popular Posts</h3>
+            <ul class="popular-posts">
+                <li class="popular-post">
+                    <div class="popular-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="AI">
+                    </div>
+                    <div class="popular-content">
+                        <h4>AI Tools for Marketing 2024</h4>
+                        <span class="popular-date"><i class="far fa-calendar"></i> 2 days ago</span>
+                    </div>
+                </li>
+                <li class="popular-post">
+                    <div class="popular-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="SEO">
+                    </div>
+                    <div class="popular-content">
+                        <h4>SEO Tools Every Marketer Needs</h4>
+                        <span class="popular-date"><i class="far fa-calendar"></i> 5 days ago</span>
+                    </div>
+                </li>
+                <li class="popular-post">
+                    <div class="popular-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Video">
+                    </div>
+                    <div class="popular-content">
+                        <h4>Video Editing Software Guide</h4>
+                        <span class="popular-date"><i class="far fa-calendar"></i> 1 week ago</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="sidebar-widget">
+            <h3 class="sidebar-title"><i class="fas fa-envelope"></i> Newsletter</h3>
+            <p style="color: #94a3b8; margin-bottom: 1.5rem;">Get weekly software tips and exclusive content.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </aside>
 </div>
 </div>
 
-<!-- Blog Post 3 -->
-<div class="related-card">
-<div style="height: 200px; background: linear-gradient(45deg, #f59e0b, #d97706); border-radius: 8px 8px 0 0; margin: -1.5rem -1.5rem 1.5rem -1.5rem;"></div>
-<h3 style="color: #f8fafc; margin-bottom: 0.8rem; font-size: 1.3rem;">SEO for Software Reviews: Rank #1 on Google</h3>
-<p style="color: #94a3b8; margin-bottom: 1rem;">Advanced SEO strategies specifically for software review websites.</p>
-<div style="display: flex; justify-content: space-between; align-items: center;">
-<span style="color: #94a3b8; font-size: 0.9rem;">Coming Soon</span>
-<a href="#coming-soon" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Preview →</a>
-</div>
-</div>
-
-</div>
-
-<!-- CATEGORIES -->
-<h2 style="color: #f8fafc; margin-bottom: 1.5rem; text-align: center;">Browse by Category</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
-<a href="#" style="background: #1e293b; color: #cbd5e1; padding: 0.8rem 1.5rem; border-radius: 20px; text-decoration: none;">Affiliate Marketing</a>
-<a href="#" style="background: #1e293b; color: #cbd5e1; padding: 0.8rem 1.5rem; border-radius: 20px; text-decoration: none;">AI Tools</a>
-<a href="#" style="background: #1e293b; color: #cbd5e1; padding: 0.8rem 1.5rem; border-radius: 20px; text-decoration: none;">Website Building</a>
-<a href="#" style="background: #1e293b; color: #cbd5e1; padding: 0.8rem 1.5rem; border-radius: 20px; text-decoration: none;">SEO Strategies</a>
-<a href="#" style="background: #1e293b; color: #cbd5e1; padding: 0.8rem 1.5rem; border-radius: 20px; text-decoration: none;">Case Studies</a>
-</div>
-
-<!-- NEWSLETTER SIGNUP -->
-<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 2.5rem; border-radius: 12px; text-align: center; border: 1px solid #334155;">
-<h3 style="color: #f8fafc; margin-bottom: 1rem;">Get Weekly Software Insights</h3>
-<p style="color: #94a3b8; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">Join our newsletter for the latest software reviews, affiliate marketing tips, and exclusive guides.</p>
-<form style="display: flex; max-width: 400px; margin: 0 auto; gap: 0.5rem;">
-<input type="email" placeholder="Your email address" style="flex: 1; padding: 0.8rem 1rem; border: 1px solid #334155; background: #0f172a; color: #f1f5f9; border-radius: 6px;">
-<button type="submit" style="background: #3b82f6; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
-</form>
-<p style="color: #64748b; font-size: 0.8rem; margin-top: 1rem;">No spam. Unsubscribe anytime.</p>
-</div>
-</div>
-
-<!-- Same Footer as blog-1.html -->
 <footer>
-<p>© 2024-2026 SoftwarePedia. All rights reserved.</p>
-<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
-<i class="fas fa-exclamation-circle"></i> <strong>Affiliate Disclosure:</strong> We earn commissions on qualifying purchases.
-</p>
-<p style="margin-top: 1rem;">
-<a href="index.html" style="color: #60a5fa; margin: 0 0.8rem;">Home</a> |
-<a href="blog.html" style="color: #60a5fa; margin: 0 0.8rem;">Blog</a> |
-<a href="categories.html" style="color: #60a5fa; margin: 0 0.8rem;">Categories</a> |
-<a href="review.html" style="color: #60a5fa; margin: 0 0.8rem;">Reviews</a>
-</p>
+<div class="footer-content">
+    <div class="footer-section">
+        <h3>SoftwarePedia Blog</h3>
+        <p>Your source for software tutorials, reviews, and industry insights. Stay updated with the latest tools and trends.</p>
+        <p style="margin-top: 1rem; color: #94a3b8;">
+            <i class="fas fa-pencil-alt"></i> New articles every week
+        </p>
+    </div>
+    
+    <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="categories.html"><i class="fas fa-th-large"></i> Categories</a></li>
+            <li><a href="review.html"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-section">
+        <h3>Blog Categories</h3>
+        <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chart-line"></i> Marketing</a></li>
+            <li><a href="#"><i class="fas fa-video"></i> Video Creation</a></li>
+            <li><a href="#"><i class="fas fa-robot"></i> AI Tools</a></li>
+            <li><a href="#"><i class="fas fa-bolt"></i> Productivity</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-section">
+        <h3>Connect</h3>
+        <ul class="footer-links">
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="copyright">
+    <p>© 2024 SoftwarePedia. All rights reserved.</p>
+    <p style="margin-top: 0.5rem;">
+        <i class="fas fa-exclamation-circle"></i> 
+        The blog content is for informational purposes only. Always verify information before implementing.
+    </p>
+    <p style="margin-top: 1rem;">
+        <a href="index.html" style="color: #60a5fa; margin: 0 1rem;">Home</a> |
+        <a href="blog.html" style="color: #60a5fa; margin: 0 1rem;">Blog</a> |
+        <a href="review.html" style="color: #60a5fa; margin: 0 1rem;">Reviews</a> |
+        <a href="contact.html" style="color: #60a5fa; margin: 0 1rem;">Contact</a>
+    </p>
+</div>
 </footer>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = mobileMenuBtn.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Newsletter Form
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('.newsletter-input').value;
+        
+        // Simple validation
+        if (email && email.includes('@')) {
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+}
+
+// Search Functionality
+const searchInput = document.querySelector('.search-input');
+if (searchInput) {
+    searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+                alert(`Searching for: ${query}\n\nNote: This is a demo. In a real site, this would search the blog.`);
+                // In real implementation, you would redirect to search results page
+                // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+}
+
+// Blog card animations
+const blogCards = document.querySelectorAll('.blog-card');
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+blogCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+});
+
+// Image lazy loading (basic implementation)
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
