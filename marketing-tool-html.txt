@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Tools - SoftwarePedia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+color: #f1f5f9;
+line-height: 1.6;
+min-height: 100vh;
+}
+
+/* Header - Same as categories.html */
+.navbar {
+background: rgba(30, 41, 59, 0.95);
+backdrop-filter: blur(10px);
+padding: 1.2rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #3b82f6;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: 800;
+color: #60a5fa;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.logo span {
+color: #f59e0b;
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+}
+.nav-links a {
+color: #cbd5e1;
+text-decoration: none;
+font-weight: 500;
+padding: 8px 16px;
+border-radius: 6px;
+transition: all 0.3s;
+}
+.nav-links a:hover {
+color: #60a5fa;
+background: rgba(59, 130, 246, 0.1);
+}
+
+/* Main Content */
+.container {
+max-width: 1200px;
+margin: 3rem auto;
+padding: 0 2rem;
+}
+
+.page-header {
+text-align: center;
+margin-bottom: 3rem;
+}
+
+.page-title {
+font-size: 3rem;
+margin-bottom: 1rem;
+color: #f8fafc;
+background: linear-gradient(90deg, #3b82f6, #60a5fa);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+color: #94a3b8;
+font-size: 1.2rem;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.breadcrumb {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 2rem;
+color: #94a3b8;
+}
+
+.breadcrumb a {
+color: #60a5fa;
+text-decoration: none;
+}
+
+.breadcrumb i {
+font-size: 12px;
+}
+
+/* Software Grid */
+.software-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: 2rem;
+margin-bottom: 4rem;
+}
+
+.software-card {
+background: linear-gradient(145deg, #1e293b, #0f172a);
+border-radius: 16px;
+padding: 2rem;
+border: 1px solid #334155;
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+position: relative;
+overflow: hidden;
+}
+
+.software-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+border-color: #3b82f6;
+}
+
+.software-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, #3b82f6, transparent);
+}
+
+.software-icon {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+color: #3b82f6;
+}
+
+.software-type {
+display: inline-block;
+background: rgba(59, 130, 246, 0.2);
+color: #60a5fa;
+padding: 6px 15px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+margin-bottom: 1rem;
+border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.software-card h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+color: #f8fafc;
+}
+
+.software-card p {
+color: #94a3b8;
+margin-bottom: 1.5rem;
+line-height: 1.7;
+}
+
+.software-btn {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: linear-gradient(90deg, #3b82f6, #2563eb);
+color: white;
+text-decoration: none;
+padding: 12px 24px;
+border-radius: 8px;
+font-weight: 600;
+transition: all 0.3s;
+border: none;
+cursor: pointer;
+width: 100%;
+text-align: center;
+justify-content: center;
+}
+
+.software-btn:hover {
+background: linear-gradient(90deg, #2563eb, #1d4ed8);
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.software-btn i {
+transition: transform 0.3s;
+}
+
+.software-btn:hover i {
+transform: translateX(5px);
+}
+
+/* Back Button */
+.back-button {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+color: #60a5fa;
+text-decoration: none;
+font-weight: 600;
+padding: 12px 24px;
+border-radius: 8px;
+background: rgba(59, 130, 246, 0.1);
+border: 1px solid rgba(59, 130, 246, 0.3);
+transition: all 0.3s;
+margin-top: 2rem;
+}
+
+.back-button:hover {
+background: rgba(59, 130, 246, 0.2);
+transform: translateX(-5px);
+}
+
+/* Footer - Same as categories.html */
+footer {
+background: #0f172a;
+padding: 3rem 2rem 1.5rem;
+border-top: 1px solid #334155;
+margin-top: 4rem;
+}
+
+.footer-content {
+max-width: 1400px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 3rem;
+margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+color: #60a5fa;
+margin-bottom: 1.5rem;
+font-size: 1.2rem;
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+color: #cbd5e1;
+text-decoration: none;
+transition: color 0.3s;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.footer-links a:hover {
+color: #60a5fa;
+}
+
+.copyright {
+text-align: center;
+padding-top: 2rem;
+border-top: 1px solid #334155;
+color: #94a3b8;
+font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.navbar {
+flex-direction: column;
+gap: 1rem;
+padding: 1rem;
+}
+
+.nav-links {
+width: 100%;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.software-grid {
+grid-template-columns: 1fr;
+}
+
+.page-title {
+font-size: 2.2rem;
+}
+
+.footer-content {
+grid-template-columns: 1fr;
+text-align: center;
+}
+}
+
+.mobile-menu-btn {
+display: none;
+background: none;
+border: none;
+color: #cbd5e1;
+font-size: 1.5rem;
+cursor: pointer;
+}
+
+@media (max-width: 480px) {
+.mobile-menu-btn {
+display: block;
+}
+
+.nav-links {
+display: none;
+flex-direction: column;
+width: 100%;
+text-align: center;
+margin-top: 1rem;
+}
+
+.nav-links.active {
+display: flex;
+}
+}
+</style>
+</head>
+<body>
+<header class="navbar">
+<a href="index.html" class="logo">
+<i class="fas fa-cube"></i>
+Software<span>Pedia</span>
+</a>
+
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+<i class="fas fa-bars"></i>
+</button>
+
+<nav class="nav-links" id="navLinks">
+<a href="index.html">
+<i class="fas fa-home"></i> Home
+</a>
+<a href="categories.html">
+<i class="fas fa-th-large"></i> Categories
+</a>
+<a href="review.html">
+<i class="fas fa-star"></i> Reviews
+</a>
+<a href="contact.html">
+<i class="fas fa-envelope"></i> Contact
+</a>
+</nav>
+</header>
+
+<div class="container">
+<div class="breadcrumb">
+<a href="index.html">Home</a>
+<i class="fas fa-chevron-right"></i>
+<a href="categories.html">Categories</a>
+<i class="fas fa-chevron-right"></i>
+<span>Marketing Tools</span>
+</div>
+
+<div class="page-header">
+<h1 class="page-title">Marketing Tools</h1>
+<p class="page-subtitle">Discover 7 powerful marketing software tools for email marketing, social media, SEO, and advertising platforms.</p>
+</div>
+
+<div class="software-grid">
+
+<!-- Software 1: Checkliste Marketing Toolbox! -->
+<div class="software-card">
+<div class="software-icon">📋</div>
+<span class="software-type">E-books</span>
+<h3>Checkliste Marketing Toolbox!</h3>
+<p>Complete marketing checklist and toolbox with essential tools and strategies for effective digital marketing campaigns.</p>
+<a href="https://www.digistore24.com/redir/436044/BestMarketProduct/"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+<!-- Software 2: Fungus Break PRO -->
+<div class="software-card">
+<div class="software-icon">🛡️</div>
+<span class="software-type">Deliverable</span>
+<h3>Fungus Break PRO</h3>
+<p>Professional marketing deliverable system with advanced features for campaign management and optimization.</p>
+<a href="https://tryfungusbreakpro.com/#aff=BestMarketProduct"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+<!-- Software 3: First Ever! Manifestation Boot Camp! -->
+<div class="software-card">
+<div class="software-icon">🚀</div>
+<span class="software-type">Software</span>
+<h3>First Ever! Manifestation Boot Camp!</h3>
+<p>Complete manifestation and marketing boot camp software for achieving business goals and success.</p>
+<a href="https://mytbootcamp.com/home1/#aff=BestMarketProduct"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+<!-- Software 4: Your Guide to Affiliate Marketing -->
+<div class="software-card">
+<div class="software-icon">💰</div>
+<span class="software-type">Downloads</span>
+<h3>Your Guide to Affiliate Marketing</h3>
+<p>Comprehensive guide to affiliate marketing with strategies, tools, and techniques for maximizing earnings.</p>
+<a href="http://heikoboos.com/guide-to-affiliate-marketing#aff=BestMarketProduct"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+<!-- Software 5: Über 85 Immobilien Marketing Tools -->
+<div class="software-card">
+<div class="software-icon">🏠</div>
+<span class="software-type">Downloads</span>
+<h3>Über 85 Immobilien Marketing Tools</h3>
+<p>Collection of 85+ real estate marketing tools and resources for property marketing and sales.</p>
+<a href="https://www.digistore24.com/redir/368283/BestMarketProduct/"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+<!-- Software 6: GET Digital 5.0 Pakete -->
+<div class="software-card">
+<div class="software-icon">🌐</div>
+<span class="software-type">Remote service</span>
+<h3>GET Digital 5.0 Pakete / Webnomadin.com</h3>
+<p>Complete digital marketing package with remote services for online business growth and optimization.</p>
+<a href="https://www.digistore24.com/redir/337934/BestMarketProduct/"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+<!-- Software 7: 9 Online Marketing Tools -->
+<div class="software-card">
+<div class="software-icon">🛠️</div>
+<span class="software-type">Downloads</span>
+<h3>9 Online Marketing Tools</h3>
+<p>Package of 9 essential online marketing tools for digital marketing campaigns and business growth.</p>
+<a href="https://www.digistore24.com/redir/502681/BestMarketProduct/"
+target="_blank"
+rel="noopener noreferrer"
+class="software-btn">
+Get This Tool <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+
+</div>
+
+<a href="categories.html" class="back-button">
+<i class="fas fa-arrow-left"></i> Back to All Categories
+</a>
+</div>
+
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h3>SoftwarePedia</h3>
+<p>Your trusted source for software reviews, guides, and recommendations.</p>
+<p style="margin-top: 1rem; color: #94a3b8;">
+<i class="fas fa-sync-alt"></i> Updated daily with new tools
+</p>
+</div>
+
+<div class="footer-section">
+<h3>Quick Links</h3>
+<ul class="footer-links">
+<li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="categories.html"><i class="fas fa-th-large"></i> Categories</a></li>
+<li><a href="review.html"><i class="fas fa-star"></i> Reviews</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Top Categories</h3>
+<ul class="footer-links">
+<li><a href="ai-machine-learning.html"><i class="fas fa-robot"></i> AI Tools</a></li>
+<li><a href="marketing-tools.html"><i class="fas fa-chart-line"></i> Marketing</a></li>
+<li><a href="video-creation.html"><i class="fas fa-video"></i> Video Creation</a></li>
+<li><a href="app-development.html"><i class="fas fa-mobile-alt"></i> App Development</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Legal</h3>
+<ul class="footer-links">
+<li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+<li><a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+<li><a href="#"><i class="fas fa-handshake"></i> Affiliate Disclosure</a></li>
+<li><a href="#"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+
+<div class="copyright">
+<p>© 2024 SoftwarePedia. All rights reserved.</p>
+<p style="margin-top: 0.5rem;">
+<i class="fas fa-exclamation-circle"></i>
+Affiliate Disclosure: We earn commissions on qualifying purchases through our links.
+</p>
+<p style="margin-top: 1rem;">
+<a href="index.html" style="color: #60a5fa; margin: 0 1rem;">Home</a> |
+<a href="categories.html" style="color: #60a5fa; margin: 0 1rem;">Categories</a> |
+<a href="review.html" style="color: #60a5fa; margin: 0 1rem;">Reviews</a> |
+<a href="contact.html" style="color: #60a5fa; margin: 0 1rem;">Contact</a>
+</p>
+</div>
+</footer>
+
+<script>
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+mobileMenuBtn.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+const icon = mobileMenuBtn.querySelector('i');
+if (navLinks.classList.contains('active')) {
+icon.classList.remove('fa-bars');
+icon.classList.add('fa-times');
+} else {
+icon.classList.remove('fa-times');
+icon.classList.add('fa-bars');
+}
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+navLinks.classList.remove('active');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.remove('fa-times');
+icon.classList.add('fa-bars');
+}
+});
+
+// Add animation to software cards on scroll
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, observerOptions);
+
+// Observe all software cards
+document.querySelectorAll('.software-card').forEach(card => {
+card.style.opacity = '0';
+card.style.transform = 'translateY(30px)';
+card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+observer.observe(card);
+});
+</script>
+</body>
+</html>
