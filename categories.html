@@ -177,6 +177,71 @@ body {
     transform: translateX(5px);
 }
 
+/* NEW: Product Cards Inside Categories */
+.category-products {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(var(--border-rgb), 0.2);
+    padding-top: 1.5rem;
+}
+
+.product-card {
+    background: rgba(15, 23, 42, 0.7);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--border-color);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateX(5px);
+    background: rgba(var(--border-rgb), 0.1);
+}
+
+.product-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.product-icon {
+    font-size: 1.5rem;
+    color: var(--border-color);
+}
+
+.product-name {
+    font-weight: 600;
+    color: #f1f5f9;
+    font-size: 1rem;
+}
+
+.product-description {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--border-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(var(--border-rgb), 0.1);
+    transition: all 0.3s;
+}
+
+.product-link:hover {
+    background: rgba(var(--border-rgb), 0.2);
+    color: white;
+}
+
 /* Category Specific Colors */
 .ai-card { 
     --border-color: #10b981;
@@ -209,6 +274,18 @@ body {
 .design-card { 
     --border-color: #f97316;
     --border-rgb: 249, 115, 22;
+}
+.entertainment-card { 
+    --border-color: #a855f7;
+    --border-rgb: 168, 85, 247;
+}
+.education-card { 
+    --border-color: #84cc16;
+    --border-rgb: 132, 204, 22;
+}
+.health-card { 
+    --border-color: #06b6d4;
+    --border-rgb: 6, 182, 212;
 }
 
 /* Stats Section */
@@ -396,141 +473,277 @@ footer {
 
 <!-- AI & Machine Learning -->
 <div class="category-card ai-card">
-<div class="category-icon">🤖</div>
-<h2>AI & Machine Learning</h2>
-<p>Artificial Intelligence tools for writing, coding, design, and automation.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count"> Software</span>
-<a href="ai-machine-learning.html" class="category-link">
-    Browse AI Tools <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-    
-<...AI Book Writer...>
-<div class="software-item">
-    <div class="software-icon">🤖</div>
-    <div class="software-category">AI Writing</div>
-    <h3 class="software-name">AI Book Writer</h3>
-    <p class="software-description">
-        Desktop application to create complete books with GPT-5. Generates structure, full manuscript, and AI-powered cover designs.
-    </p>
-    <div class="software-features">
-        <span class="feature-tag">GPT-5 & Local AI</span>
-        <span class="feature-tag">Full Book in Minutes</span>
-        <span class="feature-tag">Professional Covers</span>
+    <div class="category-icon">🤖</div>
+    <h2>AI & Machine Learning</h2>
+    <p>Artificial Intelligence tools for writing, coding, design, and automation.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">4 Software</span>
+        <a href="ai-machine-learning.html" class="category-link">
+            Browse AI Tools <i class="fas fa-arrow-right"></i>
+        </a>
     </div>
-    <a href="https://www.digistore24.com/redir/588740/BestMarketProduct/" 
-       target="_blank" 
-       class="software-link" 
-       rel="noopener">
-        View Software & Generate Your Book
-    </a>
-</div>   
     
+    <!-- Products in this category -->
+    <div class="category-products">
+        <!-- AI Book Writer -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">📖</div>
+                <h3 class="product-name">AI Book Writer</h3>
+            </div>
+            <p class="product-description">Create complete books with GPT-5. Generates structure, manuscript, and AI-powered covers.</p>
+            <a href="https://www.digistore24.com/redir/588740/BestMarketProduct/" 
+               target="_blank" 
+               class="product-link" 
+               rel="noopener">
+                View Software <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+        
+        <!-- The Genius Wave -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">🧠</div>
+                <h3 class="product-name">The Genius Wave</h3>
+            </div>
+            <p class="product-description">7-minute audio program to activate theta brain waves for focus & creativity.</p>
+            <a href="https://ingeniuswave.com/DSvsl/#aff=BestMarketProduct" 
+               target="_blank" 
+               class="product-link" 
+               rel="noopener nofollow">
+                Learn More <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
 <!-- Marketing Tools -->
 <div class="category-card marketing-card">
-<div class="category-icon">📈</div>
-<h2>Marketing Tools</h2>
-<p>Email marketing, social media, SEO, and advertising platforms.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count">7 Software</span>
-<a href="marketing-tools.html" class="category-link">
-    Browse Marketing Tools <i class="fas fa-arrow-right"></i>
-</a>
-</div>
+    <div class="category-icon">📈</div>
+    <h2>Marketing Tools</h2>
+    <p>Email marketing, social media, SEO, and advertising platforms.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">7 Software</span>
+        <a href="marketing-tools.html" class="category-link">
+            Browse Marketing Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Products in this category -->
+    <div class="category-products">
+        <!-- ConvertKit (Existing) -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">📧</div>
+                <h3 class="product-name">ConvertKit</h3>
+            </div>
+            <p class="product-description">Email marketing platform built specifically for creators.</p>
+            <a href="review.html" class="product-link">
+                Read Review <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- Video Creation -->
 <div class="category-card video-card">
-<div class="category-icon">🎬</div>
-<h2>Video Creation</h2>
-<p>Video editing, animation, screen recording, and live streaming tools.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count">2 Software</span>  
-<a href="video-creation.html" class="category-link">
-    Browse Video Tools <i class="fas fa-arrow-right"></i>
-</a>
-</div>
+    <div class="category-icon">🎬</div>
+    <h2>Video Creation</h2>
+    <p>Video editing, animation, screen recording, and live streaming tools.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">2 Software</span>  
+        <a href="video-creation.html" class="category-link">
+            Browse Video Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Products in this category -->
+    <div class="category-products">
+        <!-- Descript (Existing) -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">🎬</div>
+                <h3 class="product-name">Descript</h3>
+            </div>
+            <p class="product-description">Edit videos by editing text. Perfect for creators.</p>
+            <a href="review.html" class="product-link">
+                Read Review <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- Productivity Apps -->
 <div class="category-card productivity-card">
-<div class="category-icon">⚡</div>
-<h2>Productivity Apps</h2>
-<p>Project management, note-taking, time tracking, and collaboration tools.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count"> Software</span>
-<a href="productivity-apps.html" class="category-link">
-    Browse Productivity Tools <i class="fas fa-arrow-right"></i>
-</a>
+    <div class="category-icon">⚡</div>
+    <h2>Productivity Apps</h2>
+    <p>Project management, note-taking, time tracking, and collaboration tools.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">3 Software</span>
+        <a href="productivity-apps.html" class="category-link">
+            Browse Productivity Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
 </div>
+
+<!-- Entertainment -->
+<div class="category-card entertainment-card">
+    <div class="category-icon">🎮</div>
+    <h2>Entertainment</h2>
+    <p>Streaming services, media players, gaming software, and entertainment apps.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">2 Software</span>
+        <a href="entertainment.html" class="category-link">
+            Browse Entertainment <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Products in this category -->
+    <div class="category-products">
+        <!-- OnlineTV 20 -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">📺</div>
+                <h3 class="product-name">OnlineTV 20</h3>
+            </div>
+            <p class="product-description">Watch 20,000+ live TV channels on PC & Android. International content.</p>
+            <a href="https://www.digistore24.com/redir/600405/BestMarketProduct/" 
+               target="_blank" 
+               class="product-link" 
+               rel="noopener">
+                Watch Now <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Educational Resources -->
+<div class="category-card education-card">
+    <div class="category-icon">📚</div>
+    <h2>Educational Resources</h2>
+    <p>E-books, online courses, learning platforms, and educational software.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">2 Software</span>
+        <a href="educational-resources.html" class="category-link">
+            Browse Educational <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Products in this category -->
+    <div class="category-products">
+        <!-- Coding Platforms Guide -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">💻</div>
+                <h3 class="product-name">Coding Platforms Guide</h3>
+            </div>
+            <p class="product-description">Complete guide to best free & paid coding platforms for beginners.</p>
+            <a href="https://www.checkout-ds24.com/redir/633831/BestMarketProduct/" 
+               target="_blank" 
+               class="product-link" 
+               rel="noopener">
+                Download E-book <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- SEO & Analytics -->
 <div class="category-card seo-card">
-<div class="category-icon">🔍</div>
-<h2>SEO & Analytics</h2>
-<p>Keyword research, backlink analysis, website audits, and tracking tools.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count"> Software</span>
-<a href="seo-analytics.html" class="category-link">
-    Browse SEO Tools <i class="fas fa-arrow-right"></i>
-</a>
-</div>
+    <div class="category-icon">🔍</div>
+    <h2>SEO & Analytics</h2>
+    <p>Keyword research, backlink analysis, website audits, and tracking tools.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">5 Software</span>
+        <a href="seo-analytics.html" class="category-link">
+            Browse SEO Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <!-- App Development -->
 <div class="category-card appdev-card">
-<div class="category-icon">📱</div>
-<h2>App Development</h2>
-<p>Mobile and web app development tools, courses, and frameworks.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count"> Software</span>
-<a href="app-development.html" class="category-link">
-    Browse App Dev Tools <i class="fas fa-arrow-right"></i>
-</a>
+    <div class="category-icon">📱</div>
+    <h2>App Development</h2>
+    <p>Mobile and web app development tools, courses, and frameworks.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">4 Software</span>
+        <a href="app-development.html" class="category-link">
+            Browse App Dev Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Mobile App Guide Special Link -->
+    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid #06b6d4;">
+        <h4 style="color: #06b6d4; margin-bottom: 0.5rem;">
+            <i class="fas fa-mobile-alt"></i> Featured Guide
+        </h4>
+        <p style="color: #cbd5e1; margin-bottom: 0.8rem; font-size: 0.95rem;">
+            <strong>Mobile App Guide for Beginners</strong> - Complete course with real project
+        </p>
+        <a href="https://www.checkout-ds24.com/redir/618139/BestMarketProduct/" 
+           target="_blank" 
+           style="display: inline-flex; align-items: center; gap: 8px; color: white; background: #06b6d4; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+            <i class="fas fa-shopping-cart"></i> Get Now - $49
+        </a>
+    </div>
 </div>
 
-<!-- Mobile App Guide Special Link -->
-<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 10px; border-left: 4px solid #06b6d4;">
-    <h4 style="color: #06b6d4; margin-bottom: 0.5rem;">
-        <i class="fas fa-mobile-alt"></i> Featured Guide
-    </h4>
-    <p style="color: #cbd5e1; margin-bottom: 0.8rem; font-size: 0.95rem;">
-        <strong>Mobile App Guide for Beginners</strong> - Complete course with real project
-    </p>
-    <a href="https://www.checkout-ds24.com/redir/618139/BestMarketProduct/" 
-       target="_blank" 
-       style="display: inline-flex; align-items: center; gap: 8px; color: white; background: #06b6d4; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">
-        <i class="fas fa-shopping-cart"></i> Get Now - $49
-    </a>
-</div>
+<!-- Brain & Cognitive Enhancement -->
+<div class="category-card health-card">
+    <div class="category-icon">🧘</div>
+    <h2>Brain & Cognitive Enhancement</h2>
+    <p>Audio programs, brain training apps, focus tools, and mental performance software.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">2 Software</span>
+        <a href="brain-enhancement.html" class="category-link">
+            Browse Brain Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Products in this category -->
+    <div class="category-products">
+        <!-- The Genius Wave -->
+        <div class="product-card">
+            <div class="product-header">
+                <div class="product-icon">🌊</div>
+                <h3 class="product-name">The Genius Wave</h3>
+            </div>
+            <p class="product-description">7-minute theta wave audio program for enhanced focus and creativity.</p>
+            <a href="https://ingeniuswave.com/DSvsl/#aff=BestMarketProduct" 
+               target="_blank" 
+               class="product-link" 
+               rel="noopener nofollow">
+                Activate Now <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- Business Software -->
 <div class="category-card business-card">
-<div class="category-icon">💼</div>
-<h2>Business Software</h2>
-<p>CRM, accounting, e-commerce, invoicing, and customer support tools.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count"> Software</span>
-<a href="business-software.html" class="category-link">
-    Browse Business Tools <i class="fas fa-arrow-right"></i>
-</a>
-</div>
+    <div class="category-icon">💼</div>
+    <h2>Business Software</h2>
+    <p>CRM, accounting, e-commerce, invoicing, and customer support tools.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">6 Software</span>
+        <a href="business-software.html" class="category-link">
+            Browse Business Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <!-- Design Tools -->
 <div class="category-card design-card">
-<div class="category-icon">🎨</div>
-<h2>Design Tools</h2>
-<p>Graphic design, UI/UX, prototyping, and illustration software.</p>
-<div style="margin-top: 1.5rem;">
-<span class="software-count"> Software</span>
-<a href="design-tools.html" class="category-link">
-    Browse Design Tools <i class="fas fa-arrow-right"></i>
-</a>
-</div>
+    <div class="category-icon">🎨</div>
+    <h2>Design Tools</h2>
+    <p>Graphic design, UI/UX, prototyping, and illustration software.</p>
+    <div style="margin-top: 1.5rem;">
+        <span class="software-count">4 Software</span>
+        <a href="design-tools.html" class="category-link">
+            Browse Design Tools <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 </div>
@@ -546,11 +759,11 @@ footer {
 
 <div class="stats-grid">
     <div class="stat-item">
-        <div class="stat-number">150+</div>
+        <div class="stat-number">200+</div>
         <div class="stat-label">Software Tools</div>
     </div>
     <div class="stat-item">
-        <div class="stat-number">28</div>
+        <div class="stat-number">12</div>
         <div class="stat-label">Categories</div>
     </div>
     <div class="stat-item">
@@ -558,7 +771,7 @@ footer {
         <div class="stat-label">Avg Rating</div>
     </div>
     <div class="stat-item">
-        <div class="stat-number">50+</div>
+        <div class="stat-number">60+</div>
         <div class="stat-label">Free Tools</div>
     </div>
 </div>
@@ -591,7 +804,7 @@ footer {
             <li><a href="ai-machine-learning.html"><i class="fas fa-robot"></i> AI Tools</a></li>
             <li><a href="marketing-tools.html"><i class="fas fa-chart-line"></i> Marketing</a></li>
             <li><a href="video-creation.html"><i class="fas fa-video"></i> Video Creation</a></li>
-            <li><a href="app-development.html"><i class="fas fa-mobile-alt"></i> App Development</a></li>
+            <li><a href="educational-resources.html"><i class="fas fa-graduation-cap"></i> Educational</a></li>
         </ul>
     </div>
     
@@ -687,10 +900,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Product card hover effects
+document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
+    });
+    card.addEventListener('mouseleave', function() {
+        this.style.boxShadow = 'none';
+    });
+});
 </script>
 </body>
 </html>
-
-
-
-
