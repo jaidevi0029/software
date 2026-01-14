@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Genius Wave - Brain Enhancement Audio Program | SoftwarePedia</title>
+<meta name="description" content="The Genius Wave: 7-minute audio program activating theta brain waves for enhanced focus, creativity, and cognitive function. Based on NASA research.">
+<style>
+/* Reset and Base Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+line-height: 1.6;
+color: #333;
+background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+text-align: center;
+margin-bottom: 40px;
+padding: 20px 0;
+border-bottom: 1px solid #e1e5eb;
+}
+
+.site-title {
+color: #2d3748;
+font-size: 28px;
+margin-bottom: 5px;
+}
+
+.site-subtitle {
+color: #4a5568;
+font-size: 16px;
+}
+
+/* Main Product Container */
+.product-container {
+background: white;
+border-radius: 16px;
+padding: 40px;
+margin-bottom: 40px;
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+border: 1px solid #e2e8f0;
+}
+
+/* Product Header */
+.product-header {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.product-badge {
+display: inline-block;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+padding: 8px 20px;
+border-radius: 25px;
+font-size: 14px;
+font-weight: 600;
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.product-icon {
+font-size: 64px;
+margin-bottom: 20px;
+}
+
+.product-title {
+font-size: 42px;
+margin-bottom: 15px;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 1.2;
+}
+
+.product-subtitle {
+color: #4a5568;
+font-size: 20px;
+max-width: 800px;
+margin: 0 auto;
+}
+
+/* Video Section */
+.video-section {
+background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+border-radius: 12px;
+padding: 30px;
+margin: 40px 0;
+text-align: center;
+border: 2px dashed #c3dafe;
+}
+
+.video-placeholder {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border-radius: 10px;
+height: 300px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+position: relative;
+overflow: hidden;
+}
+
+.play-button {
+background: white;
+color: #667eea;
+width: 80px;
+height: 80px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 32px;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.play-button:hover {
+transform: scale(1.1);
+}
+
+/* Features Grid */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 25px;
+margin: 40px 0;
+}
+
+.feature-card {
+background: #f8faff;
+padding: 25px;
+border-radius: 12px;
+text-align: center;
+border: 1px solid #e3e8ff;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+}
+
+.feature-icon {
+font-size: 40px;
+margin-bottom: 15px;
+}
+
+.feature-title {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 10px;
+color: #2d3748;
+}
+
+/* Benefits Section */
+.benefits-section {
+background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+border-radius: 12px;
+padding: 35px;
+margin: 40px 0;
+}
+
+.section-title {
+font-size: 28px;
+margin-bottom: 25px;
+color: #2d3748;
+text-align: center;
+}
+
+.benefits-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 15px;
+}
+
+.benefit-item {
+background: white;
+padding: 15px 20px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+gap: 12px;
+border-left: 4px solid #48bb78;
+}
+
+/* How It Works */
+.steps-container {
+background: #f7fafc;
+border-radius: 12px;
+padding: 35px;
+margin: 40px 0;
+}
+
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 25px;
+margin-top: 25px;
+}
+
+.step {
+text-align: center;
+padding: 25px;
+background: white;
+border-radius: 10px;
+position: relative;
+}
+
+.step-number {
+width: 40px;
+height: 40px;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+margin: 0 auto 15px;
+}
+
+/* Pricing Section */
+.pricing-section {
+background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);
+border-radius: 12px;
+padding: 40px;
+margin: 40px 0;
+text-align: center;
+}
+
+.price-comparison {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+margin-bottom: 30px;
+flex-wrap: wrap;
+}
+
+.old-price {
+text-align: center;
+}
+
+.old-price .label {
+display: block;
+color: #718096;
+font-size: 14px;
+margin-bottom: 5px;
+}
+
+.old-price .amount {
+font-size: 28px;
+text-decoration: line-through;
+color: #a0aec0;
+}
+
+.new-price {
+text-align: center;
+}
+
+.new-price .label {
+display: block;
+color: #2d3748;
+font-size: 14px;
+margin-bottom: 5px;
+}
+
+.new-price .amount {
+font-size: 56px;
+font-weight: bold;
+color: #38a169;
+line-height: 1;
+}
+
+.saving-badge {
+background: #38a169;
+color: white;
+padding: 6px 16px;
+border-radius: 20px;
+font-size: 16px;
+font-weight: 600;
+display: inline-block;
+margin-top: 10px;
+}
+
+.guarantee {
+background: white;
+padding: 20px;
+border-radius: 10px;
+display: inline-flex;
+align-items: center;
+gap: 15px;
+margin-top: 20px;
+border: 2px solid #c6f6d5;
+}
+
+.guarantee-icon {
+font-size: 24px;
+color: #38a169;
+}
+
+/* CTA Button */
+.cta-container {
+text-align: center;
+margin: 40px 0;
+}
+
+.cta-button {
+display: inline-block;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+text-decoration: none;
+padding: 22px 50px;
+font-size: 24px;
+font-weight: bold;
+border-radius: 12px;
+transition: all 0.3s;
+box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+border: none;
+cursor: pointer;
+}
+
+.cta-button:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.cta-note {
+color: #718096;
+font-size: 14px;
+margin-top: 15px;
+}
+
+/* Testimonials */
+.testimonials {
+background: white;
+border-radius: 12px;
+padding: 40px;
+margin: 40px 0;
+}
+
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 25px;
+margin-top: 30px;
+}
+
+.testimonial {
+background: #f8faff;
+padding: 25px;
+border-radius: 10px;
+border-left: 4px solid #667eea;
+}
+
+.testimonial-text {
+font-style: italic;
+margin-bottom: 15px;
+}
+
+.testimonial-author {
+font-weight: 600;
+color: #4a5568;
+}
+
+/* FAQ */
+.faq-section {
+background: #f7fafc;
+border-radius: 12px;
+padding: 40px;
+margin: 40px 0;
+}
+
+.faq-item {
+background: white;
+padding: 20px;
+border-radius: 8px;
+margin-bottom: 15px;
+border-left: 4px solid #c3dafe;
+}
+
+.faq-question {
+font-weight: 600;
+margin-bottom: 10px;
+color: #2d3748;
+}
+
+/* Disclaimer */
+.disclaimer {
+background: #fff5f5;
+border: 2px solid #fed7d7;
+border-radius: 10px;
+padding: 25px;
+margin-top: 40px;
+color: #742a2a;
+}
+
+.disclaimer strong {
+display: block;
+margin-bottom: 10px;
+}
+
+/* Footer */
+.site-footer {
+text-align: center;
+padding: 30px 0;
+color: #718096;
+font-size: 14px;
+border-top: 1px solid #e2e8f0;
+margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.container {
+padding: 10px;
+}
+
+.product-container {
+padding: 20px;
+}
+
+.product-title {
+font-size: 32px;
+}
+
+.features-grid {
+grid-template-columns: 1fr;
+}
+
+.price-comparison {
+flex-direction: column;
+gap: 20px;
+}
+
+.cta-button {
+padding: 18px 30px;
+font-size: 20px;
+width: 100%;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="site-header">
+<h1 class="site-title">SoftwarePedia</h1>
+<p class="site-subtitle">Unbiased Software Reviews & Recommendations</p>
+</header>
+
+<!-- Main Product -->
+<main class="product-container">
+<!-- Product Header -->
+<div class="product-header">
+<span class="product-badge">NASA-Inspired Technology</span>
+<div class="product-icon">🧠🌊</div>
+<h1 class="product-title">The Genius Wave</h1>
+<p class="product-subtitle">7-Minute Theta Brain Wave Activation Audio Program for Enhanced Focus, Creativity & Cognitive Performance</p>
+</div>
+
+<!-- Video Section -->
+<div class="video-section">
+<h2>See The Genius Wave in Action</h2>
+<p style="color: #4a5568; margin-bottom: 20px;">Watch how this revolutionary audio program activates your brain's potential</p>
+<div class="video-placeholder">
+<div class="play-button">▶</div>
+</div>
+<p style="color: #718096; font-size: 14px;">Click play to watch the demonstration video</p>
+</div>
+
+<!-- Key Features -->
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">⏱️</div>
+<h3 class="feature-title">Only 7 Minutes</h3>
+<p>Daily listening session - no lengthy exercises or meditation required</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🚀</div>
+<h3 class="feature-title">NASA Research</h3>
+<p>Based on brain wave technology originally developed for astronauts</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎧</div>
+<h3 class="feature-title">Audio-Based</h3>
+<p>Simple audio track - just listen with headphones once daily</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3 class="feature-title">Instant Access</h3>
+<p>Digital download - start immediately after purchase</p>
+</div>
+</div>
+
+<!-- Benefits -->
+<div class="benefits-section">
+<h2 class="section-title">Experience These Transformative Benefits</h2>
+<div class="benefits-list">
+<div class="benefit-item">
+<span>✅</span>
+<span>Enhanced focus and concentration levels</span>
+</div>
+<div class="benefit-item">
+<span>✅</span>
+<span>Boosted creativity and innovative thinking</span>
+</div>
+<div class="benefit-item">
+<span>✅</span>
+<span>Reduced brain fog and mental fatigue</span>
+</div>
+<div class="benefit-item">
+<span>✅</span>
+<span>Improved learning and information retention</span>
+</div>
+<div class="benefit-item">
+<span>✅</span>
+<span>Better problem-solving abilities</span>
+</div>
+<div class="benefit-item">
+<span>✅</span>
+<span>Reduced stress and anxiety levels</span>
+</div>
+</div>
+</div>
+
+<!-- How It Works -->
+<div class="steps-container">
+<h2 class="section-title">Simple 4-Step Process</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-number">1</div>
+<h3>Download</h3>
+<p>Get instant access to the 7-minute audio track</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h3>Listen</h3>
+<p>Use headphones for optimal results (once daily)</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h3>Activate</h3>
+<p>Let the audio stimulate your theta brain waves</p>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<h3>Transform</h3>
+<p>Experience enhanced mental performance</p>
+</div>
+</div>
+</div>
+
+<!-- Testimonials -->
+<div class="testimonials">
+<h2 class="section-title">What Users Are Saying</h2>
+<div class="testimonial-grid">
+<div class="testimonial">
+<p class="testimonial-text">"The Genius Wave helped me focus like never before. As a programmer, my productivity has increased by at least 40%. The 7-minute daily routine is easy to maintain."</p>
+<p class="testimonial-author">– Alex R., Software Developer</p>
+</div>
+<div class="testimonial">
+<p class="testimonial-text">"I was skeptical but tried it anyway. After 2 weeks, I noticed significant improvement in my creative thinking. Ideas come more easily now when I'm designing."</p>
+<p class="testimonial-author">– Sarah M., UX Designer</p>
+</div>
+<div class="testimonial">
+<p class="testimonial-text">"The brain fog I used to experience in the afternoons is completely gone. I can maintain concentration throughout my workday now."</p>
+<p class="testimonial-author">– James K., Project Manager</p>
+</div>
+</div>
+</div>
+
+<!-- Pricing -->
+<div class="pricing-section">
+<h2 class="section-title">Get The Genius Wave Today</h2>
+<div class="price-comparison">
+<div class="old-price">
+<span class="label">Regular Price</span>
+<span class="amount">$199</span>
+</div>
+<div class="new-price">
+<span class="label">Special Offer</span>
+<span class="amount">$39</span>
+<div class="saving-badge">SAVE 80%</div>
+</div>
+</div>
+<div class="guarantee">
+<span class="guarantee-icon">✅</span>
+<span>
+<strong>365-Day Money-Back Guarantee</strong><br>
+If you're not completely satisfied, get a full refund within 365 days.
+</span>
+</div>
+</div>
+
+<!-- Main CTA -->
+<div class="cta-container">
+<a href="https://ingeniuswave.com/DSvsl/#aff=BestMarketProduct"
+target="_blank"
+class="cta-button"
+rel="noopener nofollow">
+🧠 ACTIVATE YOUR GENIUS WAVE NOW - $39 ONLY
+</a>
+<p class="cta-note">Instant digital access • No subscription • 365-day money-back guarantee</p>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-question">How does The Genius Wave work?</div>
+<p>The Genius Wave uses specific audio frequencies to stimulate your brain's theta waves, which are associated with deep relaxation, creativity, and enhanced learning. This 7-minute audio session helps your brain enter this optimal state naturally.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">How often should I listen to it?</div>
+<p>For best results, listen once daily with headphones. Many users prefer to listen in the morning to start their day with enhanced focus, but you can choose any time that fits your schedule.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">When will I see results?</div>
+<p>Most users report noticing improvements within the first week. Optimal results typically develop after 2-4 weeks of consistent daily use as your brain adapts to the new patterns.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">Is there scientific backing?</div>
+<p>The technology is based on research into theta brain waves and their correlation with peak mental performance. The specific application draws from NASA research on cognitive enhancement techniques.</p>
+</div>
+</div>
+
+<!-- Disclaimer -->
+<div class="disclaimer">
+<strong>⚠️ IMPORTANT DISCLAIMER</strong>
+<p>The Genius Wave is an audio-based brain enhancement program, not a medical treatment or therapy. Individual results may vary. This product is not intended to diagnose, treat, cure, or prevent any disease. The information provided is for educational purposes only. Always consult with a qualified healthcare professional for medical advice or if you have any health concerns. Not suitable for individuals with epilepsy or severe mental health conditions.</p>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+<p>© 2024 SoftwarePedia - Unbiased Software Reviews. All rights reserved.</p>
+<p style="margin-top: 10px; font-size: 12px;">
+This is an affiliate product page. We may earn a commission if you make a purchase through our links.
+</p>
+</footer>
+</div>
+
+<script>
+// Simple interactivity for the video placeholder
+document.querySelector('.play-button').addEventListener('click', function() {
+alert('In a real implementation, this would play a video demonstration of The Genius Wave.\n\nFor now, please visit the official site using the button below to learn more.');
+});
+
+// Smooth scroll for anchor links (if any)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if(targetId !== '#') {
+document.querySelector(targetId).scrollIntoView({
+behavior: 'smooth'
+});
+}
+});
+});
+</script>
+</body>
+</html>
