@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torsten Jaeger Partner Program | SoftwarePedia</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<div class="container">
+<div class="header-content">
+<a href="/" class="logo">🏠 SoftwarePedia</a>
+<a href="/" style="color: #666; text-decoration: none;">← Back to Home</a>
+</div>
+</div>
+</header>
+
+<section class="product-hero" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 4rem 0; text-align: center;">
+<div class="container">
+<h1>Torsten Jaeger Partner Program</h1>
+<p>Exclusive Partnership with Training & Commission Opportunities</p>
+</div>
+</section>
+
+<main class="container">
+<div class="product-content">
+<div class="product-info">
+<h2>🤝 Partner Baniye Aur Paisa Kamaiye</h2>
+<p>Torsten Jaeger ke saath partner baniye aur high commissions earn kariye.</p>
+
+<a href="https://7onliners.com#aff=BestMarketProduct"
+class="download-btn"
+target="_blank"
+rel="noopener noreferrer"
+style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+🤝 JOIN PARTNER PROGRAM NOW
+</a>
+</div>
+</div>
+</main>
+</body>
+</html>
