@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Fast Screen Recorder | SoftwarePedia</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="container"><a href="/" class="logo">🏠 SoftwarePedia</a><a href="/">← Back</a></div></header>
+<section class="product-hero" style="background:linear-gradient(135deg,#8E2DE2 0%,#4A00E0 100%);color:white;padding:4rem 0;text-align:center;">
+<div class="container"><h1>Fast Screen Recorder for PC</h1><p>By FastPCTools - High Quality Recording</p></div></section>
+<main class="container"><div class="product-content"><div class="product-info">
+<h2>🎥 Professional Screen Recording</h2><p>PC ke liye best screen recording software.</p>
+<a href="https://www.checkout-ds24.com/redir/620598/BestMarketProduct/" class="download-btn" target="_blank">🎥 DOWNLOAD NOW</a>
+</div></div></main></body></html>

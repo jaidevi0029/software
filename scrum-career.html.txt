@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Scrum Career Compass | SoftwarePedia</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="container"><a href="/" class="logo">🏠 SoftwarePedia</a><a href="/">← Back</a></div></header>
+<section class="product-hero" style="background:linear-gradient(135deg,#654ea3 0%,#da98b4 100%);color:white;padding:4rem 0;text-align:center;">
+<div class="container"><h1>Scrum Career Compass</h1><p>Advance Your Scrum Career</p></div></section>
+<main class="container"><div class="product-content"><div class="product-info">
+<h2>🧭 Scrum Career Badhaye</h2><p>Scrum certification aur career growth ke liye guide.</p>
+<a href="https://www.digistore24.com/redir/601268/BestMarketProduct/" class="download-btn" target="_blank">🧭 ADVANCE CAREER</a>
+</div></div></main></body></html>

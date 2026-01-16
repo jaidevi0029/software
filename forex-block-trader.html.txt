@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Block Trader Strategy | SoftwarePedia</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<div class="container">
+<div class="header-content">
+<a href="/" class="logo">🏠 SoftwarePedia</a>
+<a href="/" style="color: #666; text-decoration: none;">← Back to Home</a>
+</div>
+</div>
+</header>
+
+<section class="product-hero" style="background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%); color: white; padding: 4rem 0; text-align: center;">
+<div class="container">
+<h1>Forex Block Trader Strategy</h1>
+<p>For MetaTrader 4 Platform - Professional Trading Strategy</p>
+</div>
+</section>
+
+<main class="container">
+<div class="product-content">
+<div class="product-info">
+<h2>📈 Professional Forex Trading Strategy</h2>
+<p>MetaTrader 4 ke liye advanced trading strategy jisse aap profitable trades kar sakte hain.</p>
+
+<a href="https://www.digistore24.com/redir/646119/BestMarketProduct/"
+class="download-btn"
+target="_blank"
+rel="noopener noreferrer">
+📈 GET FOREX STRATEGY NOW
+</a>
+</div>
+</div>
+</main>
+</body>
+</html>
