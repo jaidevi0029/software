@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tube Magic - AI Tools for YouTube Growth | SoftwarePedia</title>
+<meta name="description" content="Tube Magic: AI-powered tools to grow your YouTube channel faster with analytics, optimization, and automation.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f1f5f9; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.navbar {
+background: #1e293b;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #ef4444;
+}
+.logo { font-size: 1.8rem; font-weight: 800; color: #60a5fa; text-decoration: none; }
+
+.product-hero {
+text-align: center;
+padding: 4rem 2rem;
+background: linear-gradient(135deg, #b91c1c 0%, #0f172a 100%);
+}
+.product-badge {
+background: #f59e0b;
+color: white;
+padding: 0.5rem 1.5rem;
+border-radius: 20px;
+display: inline-block;
+margin-bottom: 1rem;
+font-weight: bold;
+}
+
+.product-content {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 3rem;
+padding: 3rem 0;
+}
+
+.cta-box {
+background: #1e293b;
+padding: 2rem;
+border-radius: 12px;
+border: 2px solid #ef4444;
+text-align: center;
+position: sticky;
+top: 20px;
+}
+.cta-button {
+display: block;
+background: linear-gradient(135deg, #ef4444, #dc2626);
+color: white;
+padding: 1rem;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.2rem;
+margin: 1.5rem 0;
+transition: transform 0.3s;
+}
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+}
+
+footer {
+background: #1e293b;
+padding: 2rem;
+text-align: center;
+margin-top: 3rem;
+border-top: 2px solid #ef4444;
+}
+</style>
+</head>
+<body>
+<header class="navbar">
+<a href="index.html" class="logo">Software<span style="color: #ef4444;">Pedia</span></a>
+<a href="index.html#digistore-products" style="color: #ef4444; text-decoration: none;">
+<i class="fas fa-arrow-left"></i> Back to Products
+</a>
+</header>
+
+<section class="product-hero">
+<div class="container">
+<span class="product-badge">🎬 YouTube Growth AI</span>
+<h1 style="font-size: 3rem; margin: 1rem 0;">Tube Magic</h1>
+<p style="font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto;">
+AI-powered tools to grow your YouTube channel faster with analytics, optimization, thumbnail creation, and automation.
+</p>
+<div style="margin-top: 2rem;">
+<span class="rating" style="color: #fbbf24; font-size: 1.2rem;">★★★★☆ 4.6/5</span>
+<span style="margin: 0 1rem;">•</span>
+<span style="color: #60a5fa;">5000+ Creators</span>
+<span style="margin: 0 1rem;">•</span>
+<span style="color: #ef4444;">AI Optimization</span>
+</div>
+</div>
+</section>
+
+<div class="container">
+<div class="product-content">
+<div>
+<h2 style="color: #f8fafc; margin-bottom: 1.5rem;">YouTube Growth Tools</h2>
+
+<h3>🎯 AI Features</h3>
+<ul style="list-style: none; margin: 1.5rem 0;">
+<li style="padding: 0.5rem 0; padding-left: 30px; position: relative;">
+<span style="color: #ef4444; position: absolute; left: 0;">✓</span>
+AI Thumbnail Creator
+</li>
+<li style="padding: 0.5rem 0; padding-left: 30px; position: relative;">
+<span style="color: #ef4444; position: absolute; left: 0;">✓</span>
+Title & Description Optimizer
+</li>
+<li style="padding: 0.5rem 0; padding-left: 30px; position: relative;">
+<span style="color: #ef4444; position: absolute; left: 0;">✓</span>
+Tag Generator & Analyzer
+</li>
+<li style="padding: 0.5rem 0; padding-left: 30px; position: relative;">
+<span style="color: #ef4444; position: absolute; left: 0;">✓</span>
+Competitor Analysis
+</li>
+<li style="padding: 0.5rem 0; padding-left: 30px; position: relative;">
+<span style="color: #ef4444; position: absolute; left: 0;">✓</span>
+Trending Topic Finder
+</li>
+<li style="padding: 0.5rem 0; padding-left: 30px; position: relative;">
+<span style="color: #ef4444; position: absolute; left: 0;">✓</span>
+Analytics & Insights
+</li>
+</ul>
+
+<div style="background: rgba(239, 68, 68, 0.1); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+<h3 style="color: #ef4444;">Results You Can Expect:</h3>
+<p style="color: #94a3b8; margin-top: 0.5rem;">
+• 3X Faster Channel Growth • Higher CTR on Thumbnails •
+Better SEO Rankings • Increased Watch Time • More Subscribers
+</p>
+</div>
+</div>
+
+<div class="cta-box">
+<h2 style="color: #f8fafc;">Grow Your YouTube</h2>
+<p style="color: #94a3b8; margin: 1rem 0;">
+AI-powered YouTube optimization tools
+</p>
+
+<a href="https://tubemagic.com/ds#aff=BestMarketProduct"
+target="_blank"
+class="cta-button"
+rel="noopener nofollow">
+<i class="fas fa-external-link-alt"></i> Get Tube Magic
+</a>
+
+<div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+<h4 style="color: #f59e0b;">📈 Growth Guarantee:</h4>
+<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 0.5rem;">
+30-day growth guarantee or your money back
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<p style="color: #94a3b8;">© 2024 SoftwarePedia. All rights reserved.</p>
+<p style="color: #64748b; margin-top: 1rem; font-size: 0.9rem;">
+Affiliate Disclosure: We earn commissions on qualifying purchases.
+</p>
+<a href="index.html" style="color: #ef4444; text-decoration: none; margin-top: 1rem; display: inline-block;">
+<i class="fas fa-home"></i> Back to Home
+</a>
+</div>
+</footer>
+</body>
+</html>

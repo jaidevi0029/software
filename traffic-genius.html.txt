@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Genius - 50% Commissions | SoftwarePedia</title>
+<meta name="description" content="Traffic Genius software with 50% commissions. $997 value traffic generation tool for digital marketers.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #0f172a;
+color: #f1f5f9;
+line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.navbar {
+background: #1e293b;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #8b5cf6;
+}
+.logo { font-size: 1.8rem; font-weight: 800; color: #60a5fa; text-decoration: none; }
+.logo span { color: #8b5cf6; }
+
+/* Product Hero */
+.product-hero {
+text-align: center;
+padding: 4rem 2rem;
+background: linear-gradient(135deg, #5b21b6 0%, #0f172a 100%);
+}
+.product-badge {
+background: #f59e0b;
+color: white;
+padding: 0.5rem 1.5rem;
+border-radius: 20px;
+display: inline-block;
+margin-bottom: 1rem;
+font-weight: bold;
+}
+
+/* Product Details */
+.product-content {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 3rem;
+padding: 3rem 0;
+}
+.product-features ul {
+list-style: none;
+margin: 1.5rem 0;
+}
+.product-features li {
+padding: 0.5rem 0;
+padding-left: 30px;
+position: relative;
+}
+.product-features li:before {
+content: "✓";
+color: #8b5cf6;
+position: absolute;
+left: 0;
+font-weight: bold;
+}
+
+/* CTA Box */
+.cta-box {
+background: #1e293b;
+padding: 2rem;
+border-radius: 12px;
+border: 2px solid #8b5cf6;
+text-align: center;
+position: sticky;
+top: 20px;
+}
+.cta-button {
+display: block;
+background: linear-gradient(135deg, #8b5cf6, #ec4899);
+color: white;
+padding: 1rem;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.2rem;
+margin: 1.5rem 0;
+transition: transform 0.3s;
+}
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Footer */
+footer {
+background: #1e293b;
+padding: 2rem;
+text-align: center;
+margin-top: 3rem;
+border-top: 2px solid #8b5cf6;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="navbar">
+<a href="index.html" class="logo">Software<span>Pedia</span></a>
+<a href="index.html#digistore-products" style="color: #8b5cf6; text-decoration: none;">
+<i class="fas fa-arrow-left"></i> Back to Products
+</a>
+</header>
+
+<!-- Product Hero -->
+<section class="product-hero">
+<div class="container">
+<span class="product-badge">🚀 50% Commission</span>
+<h1 style="font-size: 3rem; margin: 1rem 0;">Traffic Genius</h1>
+<p style="font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto;">
+Advanced traffic generation software with 50% affiliate commissions. $997 value offer for serious marketers.
+</p>
+<div style="margin-top: 2rem;">
+<span class="rating" style="color: #fbbf24; font-size: 1.2rem;">★★★★☆ 4.6/5</span>
+<span style="margin: 0 1rem;">•</span>
+<span style="color: #60a5fa;">3000+ Active Users</span>
+<span style="margin: 0 1rem;">•</span>
+<span style="color: #8b5cf6;">$997 Value</span>
+</div>
+</div>
+</section>
+
+<!-- Product Content -->
+<div class="container">
+<div class="product-content">
+<!-- Left Column -->
+<div class="product-features">
+<h2 style="color: #f8fafc; margin-bottom: 1.5rem;">Traffic Generation Features</h2>
+
+<h3>🎯 Core Features</h3>
+<ul>
+<li>Automated traffic from multiple sources</li>
+<li>AI-powered audience targeting</li>
+<li>Real-time analytics dashboard</li>
+<li>Traffic quality scoring system</li>
+<li>Campaign automation tools</li>
+<li>ROI tracking and optimization</li>
+<li>Multi-channel integration</li>
+<li>Competitor analysis tools</li>
+</ul>
+
+<h3 style="margin-top: 2rem;">💰 Commission Details</h3>
+<ul>
+<li><strong>50% Commission</strong> on every sale</li>
+<li>High-ticket product ($997 value)</li>
+<li>Recurring commissions available</li>
+<li>Marketing materials provided</li>
+<li>Dedicated affiliate support</li>
+</ul>
+
+<h3 style="margin-top: 2rem;">📊 Traffic Sources</h3>
+<ul>
+<li>Search Engine Traffic (SEO)</li>
+<li>Social Media Automation</li>
+<li>Video Platform Traffic</li>
+<li>Email Marketing Integration</li>
+<li>Paid Advertising Management</li>
+<li>Influencer Network Access</li>
+</ul>
+
+<div style="background: rgba(139, 92, 246, 0.1); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+<h3 style="color: #8b5cf6;">Ideal For:</h3>
+<p style="color: #94a3b8; margin-top: 0.5rem;">
+• Digital Marketers • Affiliate Marketers • E-commerce Owners •
+Agency Owners • Social Media Managers • Content Creators
+</p>
+</div>
+</div>
+
+<!-- Right Column - CTA Box -->
+<div class="cta-box">
+<h2 style="color: #f8fafc;">Get Traffic Genius</h2>
+<p style="color: #94a3b8; margin: 1rem 0;">
+Complete traffic generation system with 50% commissions
+</p>
+
+<div style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+<h3 style="color: #8b5cf6;">💰 Commission</h3>
+<p style="font-size: 2rem; color: #fbbf24; font-weight: bold;">50% Per Sale</p>
+<p style="color: #94a3b8;">Earn $498.50 on each $997 sale</p>
+</div>
+
+<a href="https://viddees.ai/start/#aff=BestMarketProduct"
+target="_blank"
+class="cta-button"
+rel="noopener nofollow">
+<i class="fas fa-rocket"></i> Get 50% Commissions Now
+</a>
+
+<div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+<h4 style="color: #f59e0b;">📦 What's Included:</h4>
+<p style="color: #94a3b8; font-size: 0.9rem; text-align: left; margin-top: 0.5rem;">
+✓ Full Traffic Genius Software<br>
+✓ Training Videos<br>
+✓ Traffic Templates<br>
+✓ Automation Scripts<br>
+✓ Support & Updates
+</p>
+</div>
+
+<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
+<i class="fas fa-shield-alt" style="color: #10b981;"></i>
+30-Day Money Back Guarantee
+</p>
+<p style="color: #94a3b8; font-size: 0.9rem;">
+<i class="fas fa-gift" style="color: #ec4899;"></i>
+Bonus: Free Traffic Course Included
+</p>
+</div>
+</div>
+</div>
+
+<!-- Testimonials -->
+<section style="padding: 3rem 0; background: #1e293b;">
+<div class="container">
+<h2 style="text-align: center; color: #f8fafc; margin-bottom: 2rem;">Success Stories</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+<div style="background: #0f172a; padding: 1.5rem; border-radius: 10px;">
+<p style="color: #94a3b8; font-style: italic;">"Traffic Genius tripled my website traffic in 30 days."</p>
+<p style="color: #fbbf24; margin-top: 1rem;">★★★★★<br><span style="color: #60a5fa;">- Alex, E-commerce Owner</span></p>
+</div>
+<div style="background: #0f172a; padding: 1.5rem; border-radius: 10px;">
+<p style="color: #94a3b8; font-style: italic;">"50% commissions are game-changing. My best affiliate product!"</p>
+<p style="color: #fbbf24; margin-top: 1rem;">★★★★★<br><span style="color: #60a5fa;">- Jessica, Affiliate Marketer</span></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<p style="color: #94a3b8;">© 2024 SoftwarePedia. All rights reserved.</p>
+<p style="color: #64748b; margin-top: 1rem; font-size: 0.9rem;">
+<i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases at no extra cost to you.
+</p>
+<a href="index.html" style="color: #8b5cf6; text-decoration: none; margin-top: 1rem; display: inline-block;">
+<i class="fas fa-home"></i> Back to Home
+</a>
+</div>
+</footer>
+
+<script>
+console.log('Traffic Genius Product Page Loaded');
+</script>
+</body>
+</html>

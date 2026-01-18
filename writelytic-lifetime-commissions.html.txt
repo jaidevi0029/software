@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writelytic - Lifetime Commissions | SoftwarePedia</title>
+<meta name="description" content="Writelytic AI writing assistant with lifetime affiliate commissions. Includes video courses and member area.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #0f172a;
+color: #f1f5f9;
+line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.navbar {
+background: #1e293b;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid #10b981;
+}
+.logo { font-size: 1.8rem; font-weight: 800; color: #60a5fa; text-decoration: none; }
+.logo span { color: #10b981; }
+
+/* Product Hero */
+.product-hero {
+text-align: center;
+padding: 4rem 2rem;
+background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+}
+.product-badge {
+background: #f59e0b;
+color: white;
+padding: 0.5rem 1.5rem;
+border-radius: 20px;
+display: inline-block;
+margin-bottom: 1rem;
+font-weight: bold;
+}
+
+/* Product Details */
+.product-content {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 3rem;
+padding: 3rem 0;
+}
+.product-features ul {
+list-style: none;
+margin: 1.5rem 0;
+}
+.product-features li {
+padding: 0.5rem 0;
+padding-left: 30px;
+position: relative;
+}
+.product-features li:before {
+content: "✓";
+color: #10b981;
+position: absolute;
+left: 0;
+font-weight: bold;
+}
+
+/* CTA Box */
+.cta-box {
+background: #1e293b;
+padding: 2rem;
+border-radius: 12px;
+border: 2px solid #10b981;
+text-align: center;
+position: sticky;
+top: 20px;
+}
+.cta-button {
+display: block;
+background: linear-gradient(135deg, #10b981, #3b82f6);
+color: white;
+padding: 1rem;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.2rem;
+margin: 1.5rem 0;
+transition: transform 0.3s;
+}
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Footer */
+footer {
+background: #1e293b;
+padding: 2rem;
+text-align: center;
+margin-top: 3rem;
+border-top: 2px solid #10b981;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="navbar">
+<a href="index.html" class="logo">Software<span>Pedia</span></a>
+<a href="index.html#digistore-products" style="color: #f59e0b; text-decoration: none;">
+<i class="fas fa-arrow-left"></i> Back to Products
+</a>
+</header>
+
+<!-- Product Hero -->
+<section class="product-hero">
+<div class="container">
+<span class="product-badge">🔥 Lifetime Commissions</span>
+<h1 style="font-size: 3rem; margin: 1rem 0;">Writelytic AI</h1>
+<p style="font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto;">
+Advanced AI writing assistant with lifetime affiliate commissions. Perfect for content creators, marketers, and writers.
+</p>
+<div style="margin-top: 2rem;">
+<span class="rating" style="color: #fbbf24; font-size: 1.2rem;">★★★★★ 4.8/5</span>
+<span style="margin: 0 1rem;">•</span>
+<span style="color: #60a5fa;">5000+ Users</span>
+<span style="margin: 0 1rem;">•</span>
+<span style="color: #10b981;">Lifetime Access</span>
+</div>
+</div>
+</section>
+
+<!-- Product Content -->
+<div class="container">
+<div class="product-content">
+<!-- Left Column -->
+<div class="product-features">
+<h2 style="color: #f8fafc; margin-bottom: 1.5rem;">What You Get</h2>
+
+<h3>🎯 Main Features</h3>
+<ul>
+<li>AI-powered content generation for blogs, ads, and emails</li>
+<li>Lifetime affiliate commissions (never expires)</li>
+<li>Complete video courses library</li>
+<li>Member area with exclusive content</li>
+<li>Regular updates and new features</li>
+<li>Multiple language support</li>
+<li>SEO optimization tools</li>
+<li>Content plagiarism checker</li>
+</ul>
+
+<h3 style="margin-top: 2rem;">💰 Commission Structure</h3>
+<ul>
+<li>Lifetime recurring commissions</li>
+<li>High conversion rates</li>
+<li>Marketing materials provided</li>
+<li>24/7 affiliate support</li>
+</ul>
+
+<h3 style="margin-top: 2rem;">🎓 Course Content</h3>
+<ul>
+<li>Module 1: AI Writing Fundamentals</li>
+<li>Module 2: Content Strategy with AI</li>
+<li>Module 3: SEO-Optimized Content Creation</li>
+<li>Module 4: Advanced AI Techniques</li>
+<li>Module 5: Scaling Your Content Business</li>
+</ul>
+
+<div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+<h3 style="color: #10b981;">Perfect For:</h3>
+<p style="color: #94a3b8; margin-top: 0.5rem;">
+• Content Creators • Digital Marketers • Bloggers • Copywriters •
+Affiliate Marketers • Small Business Owners
+</p>
+</div>
+</div>
+
+<!-- Right Column - CTA Box -->
+<div class="cta-box">
+<h2 style="color: #f8fafc;">Get Writelytic Now</h2>
+<p style="color: #94a3b8; margin: 1rem 0;">
+Lifetime access to AI writing assistant + video courses
+</p>
+
+<div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+<h3 style="color: #10b981;">💰 Special Offer</h3>
+<p style="font-size: 2rem; color: #fbbf24; font-weight: bold;">Lifetime Commissions</p>
+<p style="color: #94a3b8;">Earn forever from every sale</p>
+</div>
+
+<a href="https://writelytic.com/#aff=BestMarketProduct"
+target="_blank"
+class="cta-button"
+rel="noopener nofollow">
+<i class="fas fa-rocket"></i> Get Writelytic Now
+</a>
+
+<p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
+<i class="fas fa-shield-alt" style="color: #10b981;"></i>
+30-Day Money Back Guarantee
+</p>
+<p style="color: #94a3b8; font-size: 0.9rem;">
+<i class="fas fa-clock" style="color: #f59e0b;"></i>
+Instant Access After Purchase
+</p>
+
+<div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #334155;">
+<h4 style="color: #f8fafc; margin-bottom: 0.5rem;">What's Included:</h4>
+<p style="color: #94a3b8; font-size: 0.9rem;">
+✓ Full AI Writing Software<br>
+✓ Video Course Library<br>
+✓ Member Area Access<br>
+✓ Lifetime Updates<br>
+✓ Affiliate Resources
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Testimonials -->
+<section style="padding: 3rem 0; background: #1e293b;">
+<div class="container">
+<h2 style="text-align: center; color: #f8fafc; margin-bottom: 2rem;">What Users Say</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+<div style="background: #0f172a; padding: 1.5rem; border-radius: 10px;">
+<p style="color: #94a3b8; font-style: italic;">"Writelytic cut my content creation time by 70%!"</p>
+<p style="color: #fbbf24; margin-top: 1rem;">★★★★★<br><span style="color: #60a5fa;">- Sarah, Content Creator</span></p>
+</div>
+<div style="background: #0f172a; padding: 1.5rem; border-radius: 10px;">
+<p style="color: #94a3b8; font-style: italic;">"The lifetime commissions are amazing. I'm earning passive income every month."</p>
+<p style="color: #fbbf24; margin-top: 1rem;">★★★★★<br><span style="color: #60a5fa;">- Mike, Affiliate Marketer</span></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 3rem 0;">
+<div class="container">
+<h2 style="color: #f8fafc; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+<div style="background: #1e293b; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
+<h3 style="color: #60a5fa;">What are lifetime commissions?</h3>
+<p style="color: #94a3b8; margin-top: 0.5rem;">You earn commissions on every sale you refer, forever. No expiration date.</p>
+</div>
+<div style="background: #1e293b; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
+<h3 style="color: #60a5fa;">Is there a money-back guarantee?</h3>
+<p style="color: #94a3b8; margin-top: 0.5rem;">Yes, 30-day money-back guarantee with no questions asked.</p>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<p style="color: #94a3b8;">© 2024 SoftwarePedia. All rights reserved.</p>
+<p style="color: #64748b; margin-top: 1rem; font-size: 0.9rem;">
+<i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases at no extra cost to you.
+</p>
+<a href="index.html" style="color: #10b981; text-decoration: none; margin-top: 1rem; display: inline-block;">
+<i class="fas fa-home"></i> Back to Home
+</a>
+</div>
+</footer>
+
+<script>
+console.log('Writelytic Product Page Loaded');
+document.querySelector('.cta-button').addEventListener('click', function() {
+console.log('Writelytic purchase link clicked');
+});
+</script>
+</body>
+</html>
