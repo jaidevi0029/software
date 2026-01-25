@@ -595,7 +595,7 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">SEO Software / AI</span>
 </div>
-<a href="n8n-ai-keyword-generator.html" class="btn" target="_blank">View Keyword Generator</a>
+<a href="n8n-ai-keyword-generator.html" class="btn">View Keyword Generator</a>
 </div>
 </div>
 
@@ -611,7 +611,7 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">Educational Resource</span>
 </div>
-<a href="learn-coding-platforms.html" class="btn" target="_blank">View Learning Guide</a>
+<a href="learn-coding-platforms.html" class="btn">View Learning Guide</a>
 </div>
 </div>
 
@@ -627,7 +627,7 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">AI / Language Software</span>
 </div>
-<a href="lingchat-ai-language.html" class="btn" target="_blank">View Language Tool</a>
+<a href="lingchat-ai-language.html" class="btn">View Language Tool</a>
 </div>
 </div>
 
@@ -643,12 +643,12 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">Trading Strategy</span>
 </div>
-<a href="forex-block-trader-strategy.html" class="btn" target="_blank">View Trading Strategy</a>
+<a href="forex-block-trader-strategy.html" class="btn">View Trading Strategy</a>
 </div>
 </div>
 
 <!-- Product 14: WordPress Automatic Plugin -->
-<div class="product-card" data-category="wordpress software">
+<div class="product-card" data-category="wordpress">
 <div class="product-badge">WORDPRESS</div>
 <div class="product-img">
 <i class="fab fa-wordpress"></i>
@@ -659,12 +659,12 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">WordPress Plugin</span>
 </div>
-<a href="wordpress-automatic-plugin.html" class="btn" target="_blank">View WordPress Plugin</a>
+<a href="wordpress-automatic-plugin.html" class="btn">View WordPress Plugin</a>
 </div>
 </div>
 
 <!-- Product 15: Notion Pro AI Resell -->
-<div class="product-card" data-category="software ai">
+<div class="product-card" data-category="software">
 <div class="product-badge">PRODUCTIVITY</div>
 <div class="product-img">
 <i class="fas fa-sticky-note"></i>
@@ -675,12 +675,12 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">Productivity Software</span>
 </div>
-<a href="notion-pro-ai-resell.html" class="btn" target="_blank">View Notion Templates</a>
+<a href="notion-pro-ai-resell.html" class="btn">View Notion Templates</a>
 </div>
 </div>
 
 <!-- Product 16: Digimember WP Plugin -->
-<div class="product-card" data-category="wordpress software">
+<div class="product-card" data-category="wordpress">
 <div class="product-badge">MEMBERSHIP</div>
 <div class="product-img">
 <i class="fas fa-user-lock"></i>
@@ -691,7 +691,7 @@ font-size: 1.8rem;
 <div class="product-meta">
 <span class="product-type">WordPress Plugin</span>
 </div>
-<a href="digimember-wp-plugin.html" class="btn" target="_blank">View Membership Plugin</a>
+<a href="digimember-wp-plugin.html" class="btn">View Membership Plugin</a>
 </div>
 </div>
 
@@ -742,27 +742,28 @@ font-size: 1.8rem;
 </footer>
 
 <script>
-// Category Filter Functionality
+// Category Filter Functionality - FIXED VERSION
 document.addEventListener('DOMContentLoaded', function() {
 const filterButtons = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('.product-card');
-
+    
 filterButtons.forEach(button => {
 button.addEventListener('click', function() {
 // Remove active class from all buttons
 filterButtons.forEach(btn => btn.classList.remove('active'));
-
+            
 // Add active class to clicked button
 this.classList.add('active');
-
+            
 const filterValue = this.getAttribute('data-filter');
-
+            
 // Show/hide products based on filter
 productCards.forEach(card => {
 if (filterValue === 'all') {
 card.style.display = 'flex';
 } else {
 const cardCategory = card.getAttribute('data-category');
+// Check if the filter value exists in the category string
 if (cardCategory.includes(filterValue)) {
 card.style.display = 'flex';
 } else {
@@ -772,7 +773,7 @@ card.style.display = 'none';
 });
 });
 });
-
+    
 // Add icons to product images
 const iconMap = {
 'fa-file-powerpoint': '📊',
@@ -793,12 +794,17 @@ const iconMap = {
 'fa-user-lock': '🔐'
 };
 
-document.querySelectorAll('.product-img i').forEach(icon => {
+// Initialize all products to show by default
+productCards.forEach(card => {
+card.style.display = 'flex';
+const icon = card.querySelector('.product-img i');
+if (icon) {
 const iconClass = icon.className.split(' ')[1];
 if (iconMap[iconClass]) {
 icon.textContent = iconMap[iconClass];
 icon.style.fontSize = '3.5rem';
 icon.style.fontStyle = 'normal';
+}
 }
 });
 
@@ -807,9 +813,6 @@ document.querySelectorAll('.btn').forEach(link => {
 link.addEventListener('click', function(e) {
 const productName = this.closest('.product-card').querySelector('.product-title').textContent;
 console.log(`Product clicked: ${productName}`);
-
-// You can add Google Analytics or other tracking here
-// Example: gtag('event', 'click', { 'event_category': 'Product', 'event_label': productName });
 });
 });
 });
