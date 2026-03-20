@@ -1,1080 +1,907 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="msvalidate.01" content="BF0254DA97AD146F752A3081F5882C3C" />
-    <meta name="google-site-verification" content="Sh7NtRtJIm8m1SDQYFR0v-oxR0IkAvp_9H21TpyYPbo" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftwarePedia - Unbiased Software Reviews</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="SoftwarePedia: Unbiased software reviews, comparisons & AI-powered recommendations for entrepreneurs, developers, and creators worldwide.">
-    <meta name="keywords" content="software reviews, AI tools, software comparison, Digistore24, technology reviews">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/software-architecture.png">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>SoftwarePedia - Unbiased Software Reviews & Comparisons</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Main Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: #f1f5f9;
+            background: #f8fafc;
+            color: #0f172a;
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* Navigation Bar */
         .navbar {
-            background: #1e293b;
-            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #3b82f6;
         }
+
         .logo {
             font-size: 1.8rem;
-            font-weight: 800;
-            color: #60a5fa;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
         }
-        .logo span { color: #f59e0b; }
-        .nav-links a {
-            color: #cbd5e1;
-            margin-left: 1.5rem;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .nav-links a:hover { color: #60a5fa; }
 
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        .search-box {
-            max-width: 600px;
-            margin: 2rem auto;
+        .nav-links {
             display: flex;
+            gap: 2rem;
+            align-items: center;
         }
-        .search-box input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px 0 0 8px;
-            font-size: 1rem;
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        .search-box button {
-            background: #3b82f6;
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border: none;
-            padding: 0 2rem;
-            border-radius: 0 8px 8px 0;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        /* FEATURES */
-        .features {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
+            padding: 5rem 0;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #f8fafc;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .feature-card {
-            background: #1e293b;
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid #f59e0b;
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            color: #60a5fa;
-            margin-bottom: 1rem;
         }
 
-        /* SOFTWARE GRID */
-        .software-section {
-            padding: 4rem 2rem;
-            background: #0f172a;
-        }
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+        .hero-container {
+            max-width: 800px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
-        .software-card {
-            background: #1e293b;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
-        .software-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2.5rem;
         }
-        .software-img {
-            height: 180px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+
+        .trust-badge {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .trust-badge span {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-        .software-content {
-            padding: 1.5rem;
-        }
-        .software-category {
-            display: inline-block;
-            background: #3b82f6;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        .rating {
-            color: #fbbf24;
-            margin: 0.5rem 0;
-        }
-        .software-cta {
-            display: block;
-            background: #3b82f6;
-            color: white;
-            text-align: center;
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: background 0.3s;
-        }
-        .software-cta:hover {
-            background: #2563eb;
+            gap: 0.5rem;
         }
 
-        /* BLOG SECTION */
-        .blog-section {
-            padding: 4rem 2rem;
-            background: #0f172a;
+        .search-box {
+            background: white;
+            border-radius: 50px;
+            padding: 0.5rem;
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
         }
-        .blog-grid {
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #2563eb;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .category-count {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .view-all:hover {
+            color: #1d4ed8;
+        }
+
+        /* Product Cards Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            border-color: #2563eb;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .product-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .product-category {
+            background: #e2e8f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            color: #475569;
+        }
+
+        .product-commission {
+            color: #059669;
+            font-weight: 600;
+        }
+
+        .product-rating {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: gap 0.3s;
+        }
+
+        .product-link:hover {
+            gap: 1rem;
+            color: #1d4ed8;
+        }
+
+        /* DigiStore24 Special Section */
+        .digistore-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 0;
+            margin: 4rem 0;
+        }
+
+        .digistore-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem auto;
-        }
-        .blog-card {
-            background: #1e293b;
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: transform 0.3s;
-        }
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        /* FOOTER */
-        footer {
-            background: #1e293b;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
-            border-top: 2px solid #3b82f6;
+        .digistore-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
         }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+
+        .digistore-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .digistore-badge {
+            display: inline-block;
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .digistore-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .digistore-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 1rem 0;
+        }
+
+        .digistore-link {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Features Section */
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-        }
-        .footer-section h3 {
-            color: #60a5fa;
-            margin-bottom: 1.5rem;
+            margin: 4rem 0;
         }
 
-        /* CTA BUTTON */
-        .cta-button {
-            background: #3b82f6;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* DIGISTORE PRODUCTS SPECIAL */
-        .digistore-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.7rem;
-            font-weight: bold;
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
-        .commission-tag {
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .feature-desc {
+            color: #64748b;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #94a3b8, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
             display: inline-block;
-            background: #10b981;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.7rem;
-            margin-left: 5px;
         }
 
-        /* RESPONSIVE */
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .newsletter h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .newsletter p {
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-form input:focus {
+            border-color: #2563eb;
+        }
+
+        .newsletter-form button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            .software-grid, .blog-grid { grid-template-columns: 1fr; }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .trust-badge {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="navbar">
-        <a href="https://softwaretoolguide.com" class="logo">Software<span>Pedia</span></a>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="categories.html">Categories</a>
-            <a href="review.html">Reviews</a>
-            <a href="contact.html">Contact</a>
-            <a href="advanced-editor-finder.html">
-                <i class="fas fa-robot"></i> AI Editor Finder
-            </a>
-            <a href="software-savings-calculator.html" style="color: #10b981; font-weight: bold;">
-                <i class="fas fa-calculator"></i> Savings Calculator
-            </a>
-            <a href="#digistore-products" style="color: #f59e0b; font-weight: bold;">
-                <i class="fas fa-bolt"></i> Hot Products
-            </a>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <h1>Find Your Perfect Software</h1>
-        <p>Unbiased reviews, side-by-side comparisons, and AI-powered recommendations for entrepreneurs, developers, and creators worldwide.</p>
-        <div class="search-box">
-            <input type="text" placeholder="Search for software (e.g., 'AI video editor under $50')">
-            <button>Find Software</button>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SoftwarePedia</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="categories.html">Categories</a>
+                <a href="review.html">Reviews</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
-        <div style="margin-top: 2rem;">
-            <span style="color: #94a3b8;">Trusted by 10,000+ users from</span>
-            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">USA</span>
-                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">UK</span>
-                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">Canada</span>
-                <span style="background: #1e293b; padding: 0.5rem 1rem; border-radius: 6px;">Australia</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Find Your Perfect Software</h1>
+            <p>Unbiased reviews, side-by-side comparisons, and AI-powered recommendations for entrepreneurs, developers, and creators worldwide.</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search software... (e.g., Jasper AI, Descript, ConvertKit)">
+                <button>Search</button>
+            </div>
+            <div class="trust-badge">
+                <span>✅ Trusted by 10,000+ users</span>
+                <span>🌎 USA, UK, Canada, Australia</span>
+                <span>⭐ 4.8/5 Reviews</span>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="features">
-        <h2 class="section-title">Why Choose SoftwarePedia?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI Matchmaker</h3>
-                <p>Our AI finds the perfect software for your specific needs, budget, and skill level.</p>
+    <!-- Categories Section -->
+    <div class="container">
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">✍️</div>
+                <div class="category-name">AI Writing</div>
+                <div class="category-count">12 Tools</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Live ROI Calculator</h3>
-                <p>See exactly how much time and money you'll save before buying any software.</p>
+            <div class="category-card">
+                <div class="category-icon">🎬</div>
+                <div class="category-name">Video Editing</div>
+                <div class="category-count">8 Tools</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚖️</div>
-                <h3>Side-by-Side Comparisons</h3>
-                <p>Drag and drop tools to compare features, pricing, and performance.</p>
+            <div class="category-card">
+                <div class="category-icon">📧</div>
+                <div class="category-name">Email Marketing</div>
+                <div class="category-count">9 Tools</div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">✅</div>
-                <h3>Verified Reviews</h3>
-                <p>Real user reviews + expert testing. No sponsored bias, just honest opinions.</p>
+            <div class="category-card">
+                <div class="category-icon">📈</div>
+                <div class="category-name">Trading</div>
+                <div class="category-count">6 Tools</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🛡️</div>
+                <div class="category-name">Security</div>
+                <div class="category-count">5 Tools</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🤖</div>
+                <div class="category-name">AI Coding</div>
+                <div class="category-count">7 Tools</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">📱</div>
+                <div class="category-name">Social Media</div>
+                <div class="category-count">8 Tools</div>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">💰</div>
+                <div class="category-name">Affiliate</div>
+                <div class="category-count">10 Tools</div>
             </div>
         </div>
-    </section>
 
-    <!-- SOFTWARE LISTINGS SECTION - FIXED -->
-    <section class="software-section" id="reviews">
-        <h2 class="section-title">Top Software Reviews</h2>
-        <div class="software-grid">
-            
+        <!-- Featured Reviews Section -->
+        <div class="section-header">
+            <h2 class="section-title">Top Rated Software</h2>
+            <a href="review.html" class="view-all">View All →</a>
+        </div>
+
+        <div class="products-grid">
             <!-- Jasper AI Card -->
-            <div class="software-card">
-                <div class="software-img">🤖</div>
-                <div class="software-content">
-                    <span class="software-category">AI Writing</span>
-                    <h3>Jasper AI</h3>
-                    <p>Advanced AI content creator for blogs, ads, and emails.</p>
-                    <div class="rating">★★★★★ 4.8</div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-                        <span>$49/month</span>
-                        <a href="review.html" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
+            <div class="product-card">
+                <span class="product-badge">🔥 TRENDING</span>
+                <div class="product-content">
+                    <div class="product-icon">✍️</div>
+                    <h3 class="product-title">Jasper AI</h3>
+                    <p class="product-desc">Advanced AI content creator for blogs, ads, and emails. GPT-4 powered with 50+ templates.</p>
+                    <div class="product-meta">
+                        <span class="product-category">AI Writing</span>
+                        <span class="product-commission">50% Commission</span>
                     </div>
+                    <a href="ai-writing-assistant-coaching.html" class="product-link">Read Review →</a>
                 </div>
             </div>
 
             <!-- Descript Card -->
-            <div class="software-card">
-                <div class="software-img">🎬</div>
-                <div class="software-content">
-                    <span class="software-category">Video Editing</span>
-                    <h3>Descript</h3>
-                    <p>Edit videos by editing text. Perfect for creators.</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-                        <span>$30/month</span>
-                        <a href="review.html" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
+            <div class="product-card">
+                <div class="product-content">
+                    <div class="product-icon">🎬</div>
+                    <h3 class="product-title">Descript</h3>
+                    <p class="product-desc">Edit videos by editing text. Perfect for creators, podcasters, and content teams.</p>
+                    <div class="product-meta">
+                        <span class="product-category">Video Editing</span>
+                        <span class="product-commission">40% Commission</span>
                     </div>
+                    <a href="video-editing-guide.html" class="product-link">Read Review →</a>
                 </div>
             </div>
 
             <!-- ConvertKit Card -->
-            <div class="software-card">
-                <div class="software-img">📧</div>
-                <div class="software-content">
-                    <span class="software-category">Email Marketing</span>
-                    <h3>ConvertKit</h3>
-                    <p>Email marketing platform built specifically for creators.</p>
-                    <div class="rating">★★★★★ 4.7</div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-                        <span>$29/month</span>
-                        <a href="review.html" style="color: #60a5fa; text-decoration: none;">Read Review →</a>
+            <div class="product-card">
+                <div class="product-content">
+                    <div class="product-icon">📧</div>
+                    <h3 class="product-title">ConvertKit</h3>
+                    <p class="product-desc">Email marketing platform built specifically for creators with powerful automation.</p>
+                    <div class="product-meta">
+                        <span class="product-category">Email Marketing</span>
+                        <span class="product-commission">30% Recurring</span>
                     </div>
+                    <a href="marketing-tools.html" class="product-link">Read Review →</a>
                 </div>
             </div>
 
-            <!-- AI Book Writer Card -->
-            <div class="software-card">
-                <div class="software-img">📖</div>
-                <div class="software-content">
-                    <span class="software-category">AI Writing</span>
-                    <h3>AI Book Writer</h3>
-                    <p>Create complete books with GPT-5. Generates structure, manuscript, and AI-powered covers.</p>
-                    <div class="rating">★★★★★ 4.9</div>
-                    <a href="https://www.digistore24.com/redir/588740/BestMarketProduct/" 
-                       target="_blank" 
-                       class="software-cta" 
-                       rel="noopener">
-                        Generate Your Book Now
-                    </a>
+            <!-- Tube Magic AI Card -->
+            <div class="product-card">
+                <span class="product-badge">🎥 NEW</span>
+                <div class="product-content">
+                    <div class="product-icon">📺</div>
+                    <h3 class="product-title">Tube Magic AI</h3>
+                    <p class="product-desc">AI-powered tools to grow your YouTube channel faster with keyword research.</p>
+                    <div class="product-meta">
+                        <span class="product-category">YouTube Tools</span>
+                        <span class="product-commission">50% Commission</span>
+                    </div>
+                    <a href="tube-magic-ai.html" class="product-link">Read Review →</a>
                 </div>
             </div>
 
-            <!-- OnlineTV 20 Card -->
-            <div class="software-card">
-                <div class="software-img">📺</div>
-                <div class="software-content">
-                    <span class="software-category">Entertainment</span>
-                    <h3>OnlineTV 20</h3>
-                    <p>Watch 20,000+ live TV channels on PC & Android. International sports, movies, news.</p>
-                    <div class="rating">★★★★☆ 4.3</div>
-                    <a href="https://www.digistore24.com/redir/600405/BestMarketProduct/" 
-                       target="_blank" 
-                       class="software-cta" 
-                       rel="noopener">
-                        Watch TV Online Now
-                    </a>
+            <!-- Traffic Genius Card -->
+            <div class="product-card">
+                <span class="product-badge">💰 $997 VALUE</span>
+                <div class="product-content">
+                    <div class="product-icon">🚀</div>
+                    <h3 class="product-title">Traffic Genius</h3>
+                    <p class="product-desc">Advanced traffic generation software with proven strategies and 50% commissions.</p>
+                    <div class="product-meta">
+                        <span class="product-category">Marketing</span>
+                        <span class="product-commission">50% Commission</span>
+                    </div>
+                    <a href="traffic-genius.html" class="product-link">Read Review →</a>
                 </div>
             </div>
 
-            <!-- Coding Platforms Guide Card -->
-            <div class="software-card">
-                <div class="software-img">📚</div>
-                <div class="software-content">
-                    <span class="software-category">Educational</span>
-                    <h3>Coding Platforms Guide</h3>
-                    <p>Complete guide to best free & paid coding platforms. Choose right path for your goals.</p>
-                    <div class="rating">★★★★★ 4.8</div>
-                    <a href="https://www.checkout-ds24.com/redir/633831/BestMarketProduct/" 
-                       target="_blank" 
-                       class="software-cta" 
-                       rel="noopener">
-                        Download E-book Now
-                    </a>
+            <!-- Writelytic Card -->
+            <div class="product-card">
+                <div class="product-content">
+                    <div class="product-icon">⚡</div>
+                    <h3 class="product-title">Writelytic</h3>
+                    <p class="product-desc">AI writing assistant with lifetime affiliate commissions and video training.</p>
+                    <div class="product-meta">
+                        <span class="product-category">AI Writing</span>
+                        <span class="product-commission">Lifetime</span>
+                    </div>
+                    <a href="writelytic-lifetime-commissions.html" class="product-link">Read Review →</a>
                 </div>
             </div>
-
-            <!-- The Genius Wave Card -->
-            <div class="software-card">
-                <div class="software-img">🧠</div>
-                <div class="software-content">
-                    <span class="software-category">Brain Enhancement</span>
-                    <h3>The Genius Wave</h3>
-                    <p>7-minute audio program to activate theta brain waves for focus, creativity & cognitive boost.</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="https://ingeniuswave.com/DSvsl/#aff=BestMarketProduct" 
-                       target="_blank" 
-                       class="software-cta" 
-                       rel="noopener nofollow">
-                        Activate Your Genius
-                    </a>
-                </div>
-            </div>
-
-            <!-- GitHub Copilot Card -->
-            <div class="software-card">
-                <div class="software-img">💻</div>
-                <div class="software-content">
-                    <span class="software-category">AI Coding</span>
-                    <h3>GitHub Copilot</h3>
-                    <p>AI pair programmer suggesting code in real-time for 30+ programming languages.</p>
-                    <div class="rating">★★★★★ 4.8</div>
-                    <a href="https://github.com/features/copilot" 
-                       target="_blank" 
-                       class="software-cta" 
-                       rel="noopener">
-                        Visit Official Site
-                    </a>
-                </div>
-            </div>
-
-            <!-- X Profits 2024 -->
-            <div class="software-card">
-                <div class="software-img">💰</div>
-                <div class="software-content">
-                    <span class="software-category">Business Opportunity</span>
-                    <h3>X Profits 2024</h3>
-                    <p>Brand new bizopp with member area and video courses for 2024.</p>
-                    <div class="rating">★★★★☆ 4.3</div>
-                    <a href="x-profits.html" 
-                       class="software-cta">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-
-            <!-- Torsten Jaeger Partner Program -->
-            <div class="software-card">
-                <div class="software-img">🤝</div>
-                <div class="software-content">
-                    <span class="software-category">Partner Program</span>
-                    <h3>Torsten Jaeger Partner</h3>
-                    <p>Exclusive partner program with member area and video training.</p>
-                    <div class="rating">★★★★☆ 4.2</div>
-                    <a href="torsten-jaeger.html" 
-                       class="software-cta">
-                        Join Program
-                    </a>
-                </div>
-            </div>
-
-            <!-- Forex Block Trader Strategy -->
-            <div class="software-card">
-                <div class="software-img">📈</div>
-                <div class="software-content">
-                    <span class="software-category">Trading Software</span>
-                    <h3>Forex Block Trader</h3>
-                    <p>Advanced trading strategy for MetaTrader 4 platform.</p>
-                    <div class="rating">★★★★★ 4.7</div>
-                    <a href="forex-block-trader.html" 
-                       class="software-cta">
-                        Get Strategy
-                    </a>
-                </div>
-            </div>
-
-            <!-- Fast Screen Recorder -->
-            <div class="software-card">
-                <div class="software-img">🎥</div>
-                <div class="software-content">
-                    <span class="software-category">Productivity</span>
-                    <h3>Fast Screen Recorder</h3>
-                    <p>High-performance screen recording software by FastPCTools.</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="fast-screen-recorder.html" 
-                       class="software-cta">
-                        Download Now
-                    </a>
-                </div>
-            </div>
-
-            <!-- SecuPerts Rescue Stick -->
-            <div class="software-card">
-                <div class="software-img">🛡️</div>
-                <div class="software-content">
-                    <span class="software-category">PC Security</span>
-                    <h3>SecuPerts Rescue Stick</h3>
-                    <p>Digital emergency assistant for PC repair and data recovery.</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <a href="secuperts-rescue.html" 
-                       class="software-cta">
-                        Get Protection
-                    </a>
-                </div>
-            </div>
-
-            <!-- Amazon Affiliate Pro -->
-            <div class="software-card">
-                <div class="software-img">🛒</div>
-                <div class="software-content">
-                    <span class="software-category">Affiliate Marketing</span>
-                    <h3>Amazon Affiliate Pro</h3>
-                    <p>Professional software to maximize Amazon affiliate earnings.</p>
-                    <div class="rating">★★★★★ 4.8</div>
-                    <a href="amazon-affiliate-pro.html" 
-                       class="software-cta">
-                        Boost Earnings
-                    </a>
-                </div>
-            </div>
-
-            <!-- MT4 to InteractiveBrokers Copier -->
-            <div class="software-card">
-                <div class="software-img">⚡</div>
-                <div class="software-content">
-                    <span class="software-category">Trading Tools</span>
-                    <h3>MT4 to IB Copier</h3>
-                    <p>Copies orders from MetaTrader 4 to InteractiveBrokers automatically.</p>
-                    <div class="rating">★★★★☆ 4.6</div>
-                    <a href="mt4-ib-copier.html" 
-                       class="software-cta">
-                        Automate Trading
-                    </a>
-                </div>
-            </div>
-
-            <!-- Scrum Career Compass -->
-            <div class="software-card">
-                <div class="software-img">🧭</div>
-                <div class="software-content">
-                    <span class="software-category">Career Development</span>
-                    <h3>Scrum Career Compass</h3>
-                    <p>Complete guide and video courses for advancing your Scrum career.</p>
-                    <div class="rating">★★★★★ 4.9</div>
-                    <a href="scrum-career.html" 
-                       class="software-cta">
-                        Advance Career
-                    </a>
-                </div>
-            </div>
-
-            <!-- AI Writing Assistant -->
-            <div class="software-card">
-                <div class="software-img">✍️</div>
-                <div class="software-content">
-                    <span class="software-category">AI Writing</span>
-                    <h3>AI Writing Assistant</h3>
-                    <p>Make your writing standout with AI-powered coaching.</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="ai-writing-assistant.html" 
-                       class="software-cta">
-                        Improve Writing
-                    </a>
-                </div>
-            </div>
-
-            <!-- PageWheel Promoter -->
-            <div class="software-card">
-                <div class="software-img">🔄</div>
-                <div class="software-content">
-                    <span class="software-category">Marketing</span>
-                    <h3>PageWheel Promoter</h3>
-                    <p>Member area and courses to promote PageWheel for commissions.</p>
-                    <div class="rating">★★★★☆ 4.3</div>
-                    <a href="pagewheel-promoter.html" 
-                       class="software-cta">
-                        Start Promoting
-                    </a>
-                </div>
-            </div>
-
-            <!-- Text Summarizer in Java Card -->
-            <div class="software-card">
-                <div class="software-img">💾</div>
-                <div class="software-content">
-                    <span class="software-category">Productivity Tools</span>
-                    <h3>Text Summarizer in Java</h3>
-                    <p>Intelligent desktop app to summarize articles & documents offline. Perfect for students & professionals.</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <a href="text-summarizer-java.html" 
-                       class="software-cta">
-                        Learn More & Download
-                    </a>
-                </div>
-            </div>
-
-        </div> <!-- Closing software-grid div -->
-        
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="review.html" class="cta-button">View All Software Reviews</a>
         </div>
-    </section> <!-- Closing software-section -->
+    </div>
 
-    <!-- ========== DIGISTORE24 PRODUCTS SECTION (UPDATED LINKS) ========== -->
-    <section class="software-section" id="digistore-products" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-top: 3px solid #f59e0b; border-bottom: 3px solid #f59e0b;">
-        <h2 class="section-title" style="color: #fbbf24;">🔥 DigiStore24 Exclusive Products</h2>
-        <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: 0 auto 2rem auto; font-size: 1.1rem;">
-            High-commission affiliate products with detailed information pages. Click "View Details" then purchase on DigiStore24.
-        </p>
-        
-        <div class="software-grid">
-            
-            <!-- Product 1: Writelytic -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #10b981;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #10b981, #3b82f6);">✍️</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #10b981;">AI Writing</span>
-                    <h3>Writelytic - Lifetime Commissions</h3>
-                    <p>AI writing assistant with lifetime affiliate commissions. Includes video courses and member area.</p>
-                    <div class="rating">★★★★★ 4.8</div>
-                    <div style="margin: 1rem 0;">
-                        <span style="color: #fbbf24; font-weight: bold;">💰 Lifetime Commissions</span>
-                    </div>
-                    <a href="writelytic-lifetime-commissions.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #10b981, #3b82f6);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
+    <!-- DigiStore24 Exclusive Section -->
+    <section class="digistore-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span style="background: #fbbf24; color: #0f172a; padding: 0.5rem 1.5rem; border-radius: 30px; font-weight: 700;">⚡ DigiStore24 EXCLUSIVE</span>
+                <h2 style="font-size: 2.5rem; margin-top: 1.5rem; color: white;">High-Commission Software</h2>
+                <p style="color: #cbd5e1; max-width: 600px; margin: 1rem auto;">Top-rated DigiStore24 products with detailed reviews and up to 60% commissions</p>
             </div>
 
-            <!-- Product 2: Traffic Genius -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #8b5cf6;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #8b5cf6, #ec4899);">🚀</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #8b5cf6;">Marketing</span>
-                    <h3>Traffic Genius | 50% Commissions</h3>
-                    <p>Advanced traffic generation software with 50% commissions. $997 value offer.</p>
-                    <div class="rating">★★★★☆ 4.6</div>
-                    <div style="margin: 1rem 0;">
-                        <span style="color: #fbbf24; font-weight: bold;">💰 50% Commission</span>
-                    </div>
-                    <a href="traffic-genius.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
+            <div class="digistore-grid">
+                <!-- FunnelCockpit -->
+                <div class="digistore-card">
+                    <span class="digistore-badge">🔥 BESTSELLER</span>
+                    <h3 class="digistore-title">FunnelCockpit</h3>
+                    <p>All-in-one marketing software for creating and managing high-converting sales funnels.</p>
+                    <div class="digistore-price">50% Commission</div>
+                    <a href="funnelcockpit.html" class="digistore-link">View Details →</a>
                 </div>
-            </div>
 
-            <!-- Product 3: FunnelCockpit -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #3b82f6;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #3b82f6, #1d4ed8);">🔄</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #3b82f6;">Marketing Software</span>
-                    <h3>FunnelCockpit</h3>
-                    <p>All-in-one marketing software for creating and managing sales funnels.</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <div style="margin: 1rem 0;">
-                        <span style="color: #60a5fa;">German Market Focused</span>
-                    </div>
-                    <a href="funnelcockpit.html" 
-                       class="software-cta">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
+                <!-- Member Area Software -->
+                <div class="digistore-card">
+                    <span class="digistore-badge">⭐ TOP RATED</span>
+                    <h3 class="digistore-title">Member Area Software</h3>
+                    <p>Create professional member areas and online communities in minutes.</p>
+                    <div class="digistore-price">45% Commission</div>
+                    <a href="member-area-software.html" class="digistore-link">View Details →</a>
                 </div>
-            </div>
 
-            <!-- Product 4: Member Area Software -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #f97316;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #f97316, #ea580c);">👥</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #f97316;">Community</span>
-                    <h3>#1 Member Area & Community Software</h3>
-                    <p>Top-rated software for creating member areas and online communities.</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="member-area-software.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #f97316, #ea580c);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
+                <!-- Social Poster -->
+                <div class="digistore-card">
+                    <span class="digistore-badge">📱 NEW</span>
+                    <h3 class="digistore-title">Social Poster</h3>
+                    <p>Automate your social media marketing across all major platforms.</p>
+                    <div class="digistore-price">40% Commission</div>
+                    <a href="social-poster.html" class="digistore-link">View Details →</a>
                 </div>
-            </div>
 
-            <!-- Product 5: AAS Software -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #6366f1;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #6366f1, #4f46e5);">📦</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #6366f1;">Software Suite</span>
-                    <h3>AAS Software Package</h3>
-                    <p>Complete software package for automation and business management.</p>
-                    <div class="rating">★★★★☆ 4.3</div>
-                    <a href="aas-software-package.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
+                <!-- AAS Software Package -->
+                <div class="digistore-card">
+                    <span class="digistore-badge">💼 BUSINESS</span>
+                    <h3 class="digistore-title">AAS Software Package</h3>
+                    <p>Complete automation suite for business management and growth.</p>
+                    <div class="digistore-price">60% Commission</div>
+                    <a href="aas-software-package.html" class="digistore-link">View Details →</a>
                 </div>
-            </div>
-
-            <!-- Product 6: Agent X -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #ef4444;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #ef4444, #dc2626);">🕵️</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #ef4444;">AI Agent</span>
-                    <h3>Agent X</h3>
-                    <p>Advanced AI agent software for automation and business processes.</p>
-                    <div class="rating">★★★★★ 4.7</div>
-                    <a href="agent-x-software.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 7: German Diction Master -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #06b6d4;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #06b6d4, #0891b2);">🇩🇪</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #06b6d4;">Language Course</span>
-                    <h3>German Diction Master Program</h3>
-                    <p>Complete program for mastering German diction with video courses.</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="german-diction-master.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 8: Vertrag und AGB -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #84cc16;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #84cc16, #65a30d);">📄</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #84cc16;">Legal Templates</span>
-                    <h3>Vertrag und AGB für Online Unternehmer</h3>
-                    <p>Legal contracts and terms for online entrepreneurs (German).</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <a href="vertrag-agb-templates.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #84cc16, #65a30d);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 9: Social Poster -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #8b5cf6;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #8b5cf6, #7c3aed);">📱</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #8b5cf6;">Social Media</span>
-                    <h3>Social Poster - Social Media Automation</h3>
-                    <p>Automate your social media marketing across all platforms.</p>
-                    <div class="rating">★★★★★ 4.8</div>
-                    <a href="social-poster.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 10: Tube Magic -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #ef4444;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #ef4444, #dc2626);">🎬</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #ef4444;">YouTube Tools</span>
-                    <h3>Tube Magic - AI for YouTube Growth</h3>
-                    <p>AI-powered tools to grow your YouTube channel faster.</p>
-                    <div class="rating">★★★★☆ 4.6</div>
-                    <a href="tube-magic-ai.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 11: 42 E-Mail Vorlagen -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #0ea5e9;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #0ea5e9, #0284c7);">📧</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #0ea5e9;">Email Templates</span>
-                    <h3>42 E-Mail Vorlagen die verkaufen</h3>
-                    <p>42 email templates that sell (German marketing templates).</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="42-email-vorlagen.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 12: MT4 to IB Copier -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #10b981;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #10b981, #059669);">📊</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #10b981;">Trading Software</span>
-                    <h3>MT4 to InteractiveBrokers Copier</h3>
-                    <p>Copies orders from MetaTrader to InteractiveBrokers automatically.</p>
-                    <div class="rating">★★★★★ 4.9</div>
-                    <a href="mt4-ib-copier.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #10b981, #059669);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 13: Dropshipping Masterkurs -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #f59e0b;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #f59e0b, #d97706);">🛍️</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #f59e0b;">E-commerce Course</span>
-                    <h3>Dropshipping Shop Masterkurs</h3>
-                    <p>Complete master course for dropshipping with video training.</p>
-                    <div class="rating">★★★★☆ 4.5</div>
-                    <a href="dropshipping-masterkurs.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 14: Photo BlowUp -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #ec4899;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #ec4899, #db2777);">🖼️</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #ec4899;">Photo Editing</span>
-                    <h3>Photo BlowUp: Effortless Photo Enlargement</h3>
-                    <p>Enlarge photos with stunning clarity and no quality loss.</p>
-                    <div class="rating">★★★★☆ 4.3</div>
-                    <a href="photo-blowup.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #ec4899, #db2777);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 15: AI Writing Assistant -->
-            <div class="software-card" style="position: relative; border-top: 4px solid #6366f1;">
-                <span class="digistore-badge">DigiStore24</span>
-                <div class="software-img" style="background: linear-gradient(45deg, #6366f1, #4f46e5);">🤖</div>
-                <div class="software-content">
-                    <span class="software-category" style="background: #6366f1;">AI Writing</span>
-                    <h3>Make your writing standout with AI Assistant</h3>
-                    <p>Online coaching program to improve writing with AI assistance.</p>
-                    <div class="rating">★★★★☆ 4.4</div>
-                    <a href="ai-writing-assistant-coaching.html" 
-                       class="software-cta" 
-                       style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
-                        <i class="fas fa-external-link-alt"></i> View Details
-                    </a>
-                </div>
-            </div>
-
-        </div> <!-- Closing software-grid div -->
-        
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(59, 130, 246, 0.1); border-radius: 12px; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <h3 style="color: #60a5fa; margin-bottom: 1rem;">💰 How Affiliate Links Work</h3>
-            <p style="color: #94a3b8; margin-bottom: 1rem;">
-                <strong>Step 1:</strong> Click "View Details" to see complete product information<br>
-                <strong>Step 2:</strong> On product page, click "Get Product" to visit DigiStore24<br>
-                <strong>Step 3:</strong> Purchase on DigiStore24 - we earn commission at <strong style="color: #fbbf24;">no extra cost to you</strong>
-            </p>
-            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 1rem;">
-                <span style="background: #1e293b; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">
-                    <i class="fas fa-shield-alt" style="color: #10b981;"></i> Secure Payment
-                </span>
-                <span style="background: #1e293b; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">
-                    <i class="fas fa-clock" style="color: #f59e0b;"></i> Instant Access
-                </span>
-                <span style="background: #1e293b; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">
-                    <i class="fas fa-headset" style="color: #8b5cf6;"></i> Customer Support
-                </span>
             </div>
         </div>
     </section>
 
-    <!-- BLOG SECTION -->
-    <section class="blog-section">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Latest from Our Blog</h2>
-            <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
-                Practical guides, tutorials, and insights for software reviewers and affiliate marketers.
-            </p>
-            
-            <div class="blog-grid">
-                <!-- Blog Post 1 -->
-                <div class="blog-card">
-                    <h3 style="color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem;">How to Start Software Affiliate Marketing in 2026</h3>
-                    <p style="color: #94a3b8; margin-bottom: 1rem;">Complete beginner's guide with step-by-step instructions to earn your first commissions reviewing software.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
-                        <span style="color: #64748b; font-size: 0.9rem;">
-                            <i class="far fa-calendar"></i> Jan 17, 2026 • <i class="far fa-clock"></i> 8 min
-                        </span>
-                        <a href="blog-1.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Read Guide →</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 2 -->
-                <div class="blog-card">
-                    <h3 style="color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem;">Top AI Tools for Beginners in 2026</h3>
-                    <p style="color: #94a3b8; margin-bottom: 1rem;">Which AI tools are actually worth your time and money? Our tested recommendations and comparisons.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
-                        <span style="color: #64748b; font-size: 0.9rem;">
-                            <i class="far fa-calendar"></i> Read Guide
-                        </span>
-                        <a href="blog-2.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;"> Read  →</a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 3 -->
-                <div class="blog-card">
-                    <h3 style="color: #f8fafc; margin-bottom: 1rem; font-size: 1.3rem;">Build a Review Website in 1 Day</h3>
-                    <p style="color: #94a3b8; margin-bottom: 1rem;">Step-by-step tutorial to create a professional software review website without any coding knowledge.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
-                        <span style="color: #64748b; font-size: 0.9rem;">
-                            <i class="far fa-calendar"></i> Coming Soon
-                        </span>
-                        <a href="blog-3.html" style="color: #60a5fa; text-decoration: none; font-weight: 500;">Preview →</a>
-                    </div>
-                </div>
+    <!-- Features Section -->
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">AI Matchmaker</h3>
+                <p class="feature-desc">Our AI finds the perfect software for your specific needs, budget, and skill level.</p>
             </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="blog.html" class="cta-button">
-                    <i class="fas fa-book-open"></i> Visit Our Blog
-                </a>
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3 class="feature-title">Side-by-Side Comparisons</h3>
+                <p class="feature-desc">Compare features, pricing, and performance of similar tools easily.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3 class="feature-title">Verified Reviews</h3>
+                <p class="feature-desc">Real user reviews + expert testing. No sponsored bias, just honest opinions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Live ROI Calculator</h3>
+                <p class="feature-desc">See exactly how much time and money you'll save before buying.</p>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>SoftwarePedia</h3>
-                <p>The world's most comprehensive software review platform. Unbiased. Detailed. Trusted.</p>
-                <div style="margin-top: 1rem;">
-                    <a href="#" style="color: #94a3b8; margin-right: 1rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color: #94a3b8; margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="color: #94a3b8;"><i class="fab fa-youtube"></i></a>
+        <!-- Latest Blog Posts -->
+        <div class="section-header">
+            <h2 class="section-title">Latest from Blog</h2>
+            <a href="blog.html" class="view-all">All Posts →</a>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-content">
+                    <div class="product-icon">📝</div>
+                    <h3 class="product-title">How to Start Software Affiliate Marketing in 2026</h3>
+                    <p class="product-desc">Complete beginner's guide with step-by-step instructions to earn your first commissions.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <span style="color: #64748b; font-size: 0.875rem;">Jan 17, 2026 • 8 min read</span>
+                        <a href="blog-1.html" class="product-link">Read →</a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul style="list-style: none; color: #cbd5e1;">
-                    <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home</a></li>
-                    <li><a href="blog.html" style="color: #cbd5e1; text-decoration: none;">Blog</a></li>
-                    <li><a href="categories.html" style="color: #cbd5e1; text-decoration: none;">Categories</a></li>
-                    <li><a href="software-market.html">Digistore24</a></li>
-                    <li><a href="review.html" style="color: #cbd5e1; text-decoration: none;">All Reviews</a></li>
-                    <li><a href="#digistore-products" style="color: #f59e0b; text-decoration: none; font-weight: bold;">DigiStore Products</a></li>
-                </ul>    
+
+            <div class="product-card">
+                <div class="product-content">
+                    <div class="product-icon">🤖</div>
+                    <h3 class="product-title">Top AI Tools for Beginners in 2026</h3>
+                    <p class="product-desc">Which AI tools are actually worth your time and money? Our tested recommendations.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <span style="color: #64748b; font-size: 0.875rem;">Jan 15, 2026 • 6 min read</span>
+                        <a href="top-ai-tools-beginners-2026.html" class="product-link">Read →</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Digistore24 Partnership</h3>
-                <p>All software purchases through our links support independent reviews.</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">
-                    <i class="fas fa-exclamation-circle"></i> Affiliate Disclosure: We earn commissions on qualifying purchases.
-                </p>
+
+            <div class="product-card">
+                <div class="product-content">
+                    <div class="product-icon">⚡</div>
+                    <h3 class="product-title">Build a Review Website in 1 Day</h3>
+                    <p class="product-desc">Step-by-step tutorial to create a professional software review site without coding.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <span style="color: #64748b; font-size: 0.875rem;">Jan 10, 2026 • 5 min read</span>
+                        <a href="#" class="product-link">Preview →</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 3rem; color: #64748b; border-top: 1px solid #334155; padding-top: 1rem;">
-            © 2024-2026 SoftwarePedia. All rights reserved. | Made with ❤️ for the global creator community.
+
+        <!-- Newsletter Section -->
+        <div class="newsletter">
+            <h3>Get Latest Software Deals 🔥</h3>
+            <p>Subscribe to get exclusive software discounts and new review alerts directly in your inbox.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe</button>
+            </div>
+            <p style="font-size: 0.875rem; margin-top: 1rem;">📧 No spam. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-logo">SoftwarePedia</span>
+                    <p style="color: #cbd5e1; margin: 1rem 0; max-width: 300px;">Unbiased software reviews since 2024. Trusted by 10,000+ users worldwide.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="review.html">Reviews</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Top Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="software-market.html">AI Writing</a></li>
+                        <li><a href="video-creation.html">Video Editing</a></li>
+                        <li><a href="marketing-tools.html">Marketing Tools</a></li>
+                        <li><a href="seo-tools-article.html">SEO Tools</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 SoftwarePedia. All rights reserved. Authorized DigiStore24 Partner.</p>
+            </div>
         </div>
     </footer>
-
-    <script>
-        // Simple search functionality
-        document.querySelector('.search-box button').addEventListener('click', function() {
-            let query = document.querySelector('.search-box input').value;
-            if(query.trim()) {
-                alert('Searching for: ' + query + '\n(On live site, this will show real search results)');
-            }
-        });
-        
-        // Smooth scroll for navigation
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if(targetId.startsWith('#')) {
-                    e.preventDefault();
-                    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // Blog card hover effects
-        document.querySelectorAll('.blog-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
-            });
-        });
-
-        // Software card CTA button effects
-        document.querySelectorAll('.software-cta').forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-                this.style.boxShadow = '0 5px 15px rgba(59, 130, 246, 0.4)';
-            });
-            button.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
-        
-        console.log('🚀 SoftwarePedia Loaded Successfully!');
-        console.log('🔥 15 DigiStore24 Products + 16 Regular Products = 31 Total Products');
-        console.log('🔗 Two-step funnel: Home → Product Page → DigiStore24');
-        console.log('📱 All links properly connected to existing HTML files');
-    </script>
 </body>
 </html>
-
-
