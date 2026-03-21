@@ -3,611 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Categories - SoftwarePedia | Find Software by Category</title>
-    <meta name="description" content="Browse software by category: AI Writing, Video Editing, Marketing Tools, Trading Software, and more. Find the perfect tool for your needs.">
+    <title>All Software - SoftwarePedia</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: Arial, sans-serif;
         }
-
         body {
-            background: #f8fafc;
-            color: #0f172a;
-            line-height: 1.6;
+            background: #f5f5f5;
         }
-
-        .navbar {
+        .header {
             background: white;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            padding: 1rem 0;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 1000;
         }
-
-        .nav-container {
-            max-width: 1280px;
+        .header-inner {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
             text-decoration: none;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
+        .nav a {
+            margin-left: 20px;
             text-decoration: none;
-            color: #475569;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #333;
         }
-
-        .nav-links a:hover, .nav-links a.active {
+        .nav a:hover, .nav a.active {
             color: #2563eb;
         }
-
         .container {
-            max-width: 1280px;
-            margin: 3rem auto;
-            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-
-        /* Page Header */
         .page-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 40px;
         }
-
         .page-header h1 {
-            font-size: 2.5rem;
-            color: #0f172a;
-            margin-bottom: 1rem;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
-
         .page-header p {
-            color: #64748b;
-            font-size: 1.125rem;
-            max-width: 600px;
-            margin: 0 auto;
+            color: #666;
         }
-
-        /* Category Grid - Main */
-        .main-categories {
+        .category-section {
+            margin-bottom: 50px;
+        }
+        .category-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2563eb;
+            padding-left: 15px;
+        }
+        .software-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
-
-        .category-block {
+        .software-card {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
-
-        .category-block:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        .software-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        .category-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1.5rem;
-            color: white;
-        }
-
-        .category-header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .category-header p {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-
-        .category-products {
-            padding: 1.5rem;
-        }
-
-        .category-product-item {
+        .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 12px;
         }
-
-        .category-product-item:last-child {
-            border-bottom: none;
+        .card-icon {
+            font-size: 35px;
         }
-
-        .product-info {
-            flex: 1;
-        }
-
-        .product-name {
-            font-weight: 600;
-            color: #0f172a;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .product-name:hover {
-            color: #2563eb;
-        }
-
-        .product-rating {
-            font-size: 0.75rem;
-            color: #f59e0b;
-            margin-top: 0.25rem;
-        }
-
-        .product-commission {
-            background: #fef3c7;
-            color: #92400e;
-            padding: 0.25rem 0.75rem;
+        .commission {
+            background: #d1fae5;
+            color: #059669;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: bold;
         }
-
-        .view-all-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
-
-        /* Quick Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-radius: 24px;
-            padding: 3rem;
-            margin: 4rem 0;
-            text-align: center;
+        .card-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .card-meta {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .card-category {
+            background: #e5e7eb;
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+        .btn {
+            display: block;
+            background: #2563eb;
             color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
             text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
         }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #fbbf24;
+        .btn:hover {
+            background: #1d4ed8;
         }
-
-        .stat-label {
-            color: #cbd5e1;
-            margin-top: 0.5rem;
-        }
-
-        /* Footer */
         .footer {
             background: #1e293b;
             color: white;
-            padding: 4rem 0 2rem;
-            margin-top: 4rem;
+            padding: 40px 20px 20px;
+            margin-top: 40px;
         }
-
-        .footer-grid {
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
         }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #94a3b8, #cbd5e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 20px;
+            margin-top: 20px;
             border-top: 1px solid #334155;
             color: #94a3b8;
         }
-
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .main-categories {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav { display: none; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
+    <div class="header">
+        <div class="header-inner">
             <a href="index.html" class="logo">SoftwarePedia</a>
-            <div class="nav-links">
+            <div class="nav">
                 <a href="index.html">Home</a>
-                <a href="categories.html" class="active">Categories</a>
+                <a href="categories.html" class="active">Software</a>
                 <a href="review.html">Reviews</a>
                 <a href="blog.html">Blog</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
-    </nav>
+    </div>
 
     <div class="container">
         <div class="page-header">
-            <h1>Browse by Category</h1>
-            <p>Find the perfect software for your needs. Explore our curated categories with expert reviews and comparisons.</p>
+            <h1>All Software</h1>
+            <p>Browse our curated collection of best software tools for every need</p>
         </div>
 
-        <!-- Main Categories Grid -->
-        <div class="main-categories">
-            <!-- AI Writing Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>✍️ AI Writing Tools</h2>
-                    <p>Content creation, copywriting, and AI assistants</p>
+        <!-- AI Writing Software -->
+        <div class="category-section" id="ai">
+            <h2 class="category-title">✍️ AI Writing Software</h2>
+            <div class="software-grid">
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">✍️</span>
+                        <span class="commission">💰 Lifetime Commission</span>
+                    </div>
+                    <h3 class="card-title">Writelytic</h3>
+                    <p class="card-desc">AI writing assistant with lifetime affiliate commissions.</p>
+                    <div class="card-meta">
+                        <span class="card-category">AI Writing</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <a href="writelytic-lifetime-commissions.html" class="btn">Get Software →</a>
                 </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="ai-writing-assistant-coaching.html" class="product-name">AI Writing Assistant</a>
-                            <div class="product-rating">★★★★★ 4.8</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="writelytic-lifetime-commissions.html" class="product-name">Writelytic</a>
-                            <div class="product-rating">★★★★☆ 4.6</div>
-                        </div>
-                        <span class="product-commission">Lifetime</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="ai-book-writer.html" class="product-name">AI Book Writer</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">60%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="lingchat-ai-language.html" class="product-name">LingChat AI</a>
-                            <div class="product-rating">★★★★☆ 4.4</div>
-                        </div>
-                        <span class="product-commission">45%</span>
-                    </div>
-                    <a href="software-market.html" class="view-all-link">View all 12 AI tools →</a>
-                </div>
-            </div>
 
-            <!-- Video Editing Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>🎬 Video Editing</h2>
-                    <p>Screen recording, editing, and production tools</p>
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">🤖</span>
+                        <span class="commission">💰 50% Commission</span>
+                    </div>
+                    <h3 class="card-title">AI Writing Assistant</h3>
+                    <p class="card-desc">Make your writing standout with AI-powered coaching.</p>
+                    <div class="card-meta">
+                        <span class="card-category">AI Writing</span>
+                        <span>⭐ 4.7/5</span>
+                    </div>
+                    <a href="ai-writing-assistant-coaching.html" class="btn">Get Software →</a>
                 </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="fast-screen-recorder.html" class="product-name">Fast Screen Recorder</a>
-                            <div class="product-rating">★★★★★ 4.7</div>
-                        </div>
-                        <span class="product-commission">40%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="video-editing-guide.html" class="product-name">Video Editing Suite</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">35%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="tube-magic-ai.html" class="product-name">Tube Magic AI</a>
-                            <div class="product-rating">★★★★★ 4.9</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="video-creation.html" class="product-name">Video Creator Pro</a>
-                            <div class="product-rating">★★★★☆ 4.3</div>
-                        </div>
-                        <span class="product-commission">40%</span>
-                    </div>
-                    <a href="video-creation.html" class="view-all-link">View all 8 video tools →</a>
-                </div>
-            </div>
 
-            <!-- Marketing Tools Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>📧 Marketing & Automation</h2>
-                    <p>Email marketing, funnels, and traffic generation</p>
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">💬</span>
+                        <span class="commission">💰 45% Commission</span>
+                    </div>
+                    <h3 class="card-title">LingChat AI</h3>
+                    <p class="card-desc">AI-powered language learning and conversation assistant.</p>
+                    <div class="card-meta">
+                        <span class="card-category">AI Writing</span>
+                        <span>⭐ 4.6/5</span>
+                    </div>
+                    <a href="lingchat-ai-language.html" class="btn">Get Software →</a>
                 </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="funnelcockpit.html" class="product-name">FunnelCockpit</a>
-                            <div class="product-rating">★★★★★ 4.9</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="traffic-genius.html" class="product-name">Traffic Genius</a>
-                            <div class="product-rating">★★★★★ 4.8</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="pagewheel-promoter.html" class="product-name">PageWheel Promoter</a>
-                            <div class="product-rating">★★★★☆ 4.4</div>
-                        </div>
-                        <span class="product-commission">45%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="marketing-tools.html" class="product-name">Marketing Suite</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">40%</span>
-                    </div>
-                    <a href="marketing-tools.html" class="view-all-link">View all 15 marketing tools →</a>
-                </div>
-            </div>
 
-            <!-- Trading Software Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>📈 Trading Software</h2>
-                    <p>Forex, stocks, and automated trading tools</p>
-                </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="forex-block-trader.html" class="product-name">Forex Block Trader</a>
-                            <div class="product-rating">★★★★☆ 4.6</div>
-                        </div>
-                        <span class="product-commission">40%</span>
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">📖</span>
+                        <span class="commission">💰 60% Commission</span>
                     </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="mt4-ib-copier.html" class="product-name">MT4 to IB Copier</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">35%</span>
+                    <h3 class="card-title">AI Book Writer</h3>
+                    <p class="card-desc">Create complete books with AI. Generate structure and manuscript.</p>
+                    <div class="card-meta">
+                        <span class="card-category">AI Writing</span>
+                        <span>⭐ 4.5/5</span>
                     </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="x-profits.html" class="product-name">X Profits 2024</a>
-                            <div class="product-rating">★★★★☆ 4.3</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <a href="forex-block-trader.html" class="view-all-link">View all 6 trading tools →</a>
-                </div>
-            </div>
-
-            <!-- AI & Coding Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>🤖 AI & Coding</h2>
-                    <p>AI assistants, code generators, and dev tools</p>
-                </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="ai-machine-learning.html" class="product-name">AI Machine Learning Suite</a>
-                            <div class="product-rating">★★★★☆ 4.7</div>
-                        </div>
-                        <span class="product-commission">45%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="n8n-ai-keyword-generator.html" class="product-name">AI Keyword Generator</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">40%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="wordpress-automatic-plugin.html" class="product-name">WordPress Automatic</a>
-                            <div class="product-rating">★★★★★ 4.8</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <a href="ai-machine-learning.html" class="view-all-link">View all 9 AI coding tools →</a>
-                </div>
-            </div>
-
-            <!-- Security & Productivity Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>🛡️ Security & Productivity</h2>
-                    <p>PC security, backup, and productivity tools</p>
-                </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="secuperts-rescue.html" class="product-name">SecuPerts Rescue Stick</a>
-                            <div class="product-rating">★★★★★ 4.8</div>
-                        </div>
-                        <span class="product-commission">35%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="text-summarizer-java.html" class="product-name">Text Summarizer</a>
-                            <div class="product-rating">★★★★☆ 4.6</div>
-                        </div>
-                        <span class="product-commission">40%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="notion-pro-ai-resell.html" class="product-name">Notion Pro AI</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <a href="secuperts-rescue.html" class="view-all-link">View all 7 security tools →</a>
-                </div>
-            </div>
-
-            <!-- Social Media Category -->
-            <div class="category-block">
-                <div class="category-header">
-                    <h2>📱 Social Media Tools</h2>
-                    <p>Automation, scheduling, and growth tools</p>
-                </div>
-                <div class="category-products">
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="social-poster.html" class="product-name">Social Poster</a>
-                            <div class="product-rating">★★★★★ 4.7</div>
-                        </div>
-                        <span class="product-commission">40%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="tube-magic-ai.html" class="product-name">Tube Magic AI</a>
-                            <div class="product-rating">★★★★★ 4.9</div>
-                        </div>
-                        <span class="product-commission">50%</span>
-                    </div>
-                    <div class="category-product-item">
-                        <div class="product-info">
-                            <a href="amazon-affiliate-pro.html" class="product-name">Amazon Affiliate Pro</a>
-                            <div class="product-rating">★★★★☆ 4.5</div>
-                        </div>
-                        <span class="product-commission">45%</span>
-                    </div>
-                    <a href="social-poster.html" class="view-all-link">View all 8 social media tools →</a>
+                    <a href="ai-book-writer.html" class="btn">Get Software →</a>
                 </div>
             </div>
         </div>
 
-        <!-- Stats Section -->
-        <div class="stats-section">
-            <h2>SoftwarePedia by the Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Software Reviewed</div>
+        <!-- Video & Screen Recording -->
+        <div class="category-section" id="video">
+            <h2 class="category-title">🎬 Video & Screen Recording</h2>
+            <div class="software-grid">
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎥</span>
+                        <span class="commission">💰 50% Commission</span>
+                    </div>
+                    <h3 class="card-title">Tube Magic AI</h3>
+                    <p class="card-desc">AI-powered YouTube growth tool to optimize videos.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Video Tools</span>
+                        <span>⭐ 4.9/5</span>
+                    </div>
+                    <a href="tube-magic-ai.html" class="btn">Get Software →</a>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Categories</div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">⏺️</span>
+                        <span class="commission">💰 40% Commission</span>
+                    </div>
+                    <h3 class="card-title">Fast Screen Recorder</h3>
+                    <p class="card-desc">High-performance screen recording software for tutorials.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Video Tools</span>
+                        <span>⭐ 4.7/5</span>
+                    </div>
+                    <a href="fast-screen-recorder.html" class="btn">Get Software →</a>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">10,000+</div>
-                    <div class="stat-label">Happy Users</div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">🖼️</span>
+                        <span class="commission">💰 35% Commission</span>
+                    </div>
+                    <h3 class="card-title">Photo BlowUp</h3>
+                    <p class="card-desc">Effortless photo enlargement with stunning clarity.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Photo Tools</span>
+                        <span>⭐ 4.6/5</span>
+                    </div>
+                    <a href="photo-blowup.html" class="btn">Get Software →</a>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">50%+</div>
-                    <div class="stat-label">Avg Commission</div>
+            </div>
+        </div>
+
+        <!-- Marketing Software -->
+        <div class="category-section" id="marketing">
+            <h2 class="category-title">📈 Marketing Software</h2>
+            <div class="software-grid">
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">🚀</span>
+                        <span class="commission">💰 50% Commission</span>
+                    </div>
+                    <h3 class="card-title">Traffic Genius</h3>
+                    <p class="card-desc">Advanced traffic generation software. $997 value offer.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Marketing</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <a href="traffic-genius.html" class="btn">Get Software →</a>
+                </div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">⚡</span>
+                        <span class="commission">💰 50% Commission</span>
+                    </div>
+                    <h3 class="card-title">FunnelCockpit</h3>
+                    <p class="card-desc">All-in-one marketing software for sales funnels.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Marketing</span>
+                        <span>⭐ 4.9/5</span>
+                    </div>
+                    <a href="funnelcockpit.html" class="btn">Get Software →</a>
+                </div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">📱</span>
+                        <span class="commission">💰 40% Commission</span>
+                    </div>
+                    <h3 class="card-title">Social Poster</h3>
+                    <p class="card-desc">Automate your social media marketing across all platforms.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Marketing</span>
+                        <span>⭐ 4.7/5</span>
+                    </div>
+                    <a href="social-poster.html" class="btn">Get Software →</a>
+                </div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">👥</span>
+                        <span class="commission">💰 45% Commission</span>
+                    </div>
+                    <h3 class="card-title">Member Area Software</h3>
+                    <p class="card-desc">Create professional member areas and online communities.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Marketing</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <a href="member-area-software.html" class="btn">Get Software →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading Software -->
+        <div class="category-section" id="trading">
+            <h2 class="category-title">📊 Trading Software</h2>
+            <div class="software-grid">
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">📈</span>
+                        <span class="commission">💰 40% Commission</span>
+                    </div>
+                    <h3 class="card-title">Forex Block Trader</h3>
+                    <p class="card-desc">Advanced trading strategy for MetaTrader 4 platform.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Trading</span>
+                        <span>⭐ 4.6/5</span>
+                    </div>
+                    <a href="forex-block-trader.html" class="btn">Get Software →</a>
+                </div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">🔄</span>
+                        <span class="commission">💰 35% Commission</span>
+                    </div>
+                    <h3 class="card-title">MT4 to IB Copier</h3>
+                    <p class="card-desc">Copies orders from MetaTrader 4 to InteractiveBrokers.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Trading</span>
+                        <span>⭐ 4.5/5</span>
+                    </div>
+                    <a href="mt4-ib-copier.html" class="btn">Get Software →</a>
+                </div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">💰</span>
+                        <span class="commission">💰 50% Commission</span>
+                    </div>
+                    <h3 class="card-title">X Profits 2024</h3>
+                    <p class="card-desc">Brand new bizopp with member area and video courses.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Trading</span>
+                        <span>⭐ 4.4/5</span>
+                    </div>
+                    <a href="x-profits.html" class="btn">Get Software →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security & PC Tools -->
+        <div class="category-section" id="security">
+            <h2 class="category-title">🛡️ Security & PC Tools</h2>
+            <div class="software-grid">
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">💾</span>
+                        <span class="commission">💰 35% Commission</span>
+                    </div>
+                    <h3 class="card-title">SecuPerts Rescue Stick</h3>
+                    <p class="card-desc">Digital emergency assistant for PC repair and data recovery.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Security</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <a href="secuperts-rescue.html" class="btn">Get Software →</a>
+                </div>
+
+                <div class="software-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <span class="commission">💰 40% Commission</span>
+                    </div>
+                    <h3 class="card-title">Text Summarizer</h3>
+                    <p class="card-desc">Intelligent desktop app to summarize articles & documents offline.</p>
+                    <div class="card-meta">
+                        <span class="card-category">Productivity</span>
+                        <span>⭐ 4.6/5</span>
+                    </div>
+                    <a href="text-summarizer-java.html" class="btn">Get Software →</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <span class="footer-logo">SoftwarePedia</span>
-                    <p style="color: #cbd5e1; margin: 1rem 0;">Unbiased software reviews since 2024. Trusted by 10,000+ users worldwide.</p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 1.5rem;">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="categories.html">Categories</a></li>
-                        <li><a href="review.html">Reviews</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 1.5rem;">Top Categories</h4>
-                    <ul class="footer-links">
-                        <li><a href="software-market.html">AI Writing</a></li>
-                        <li><a href="video-creation.html">Video Editing</a></li>
-                        <li><a href="marketing-tools.html">Marketing Tools</a></li>
-                        <li><a href="seo-tools-article.html">SEO Tools</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 1.5rem;">Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Affiliate Disclosure</a></li>
-                    </ul>
-                </div>
+    <div class="footer">
+        <div class="footer-inner">
+            <div>
+                <h3>SoftwarePedia</h3>
+                <p style="color:#94a3b8; margin-top:10px;">Your trusted source for software reviews.</p>
             </div>
-            <div class="copyright">
-                <p>© 2026 SoftwarePedia. All rights reserved. Authorized DigiStore24 Partner.</p>
+            <div>
+                <h4>Quick Links</h4>
+                <ul style="list-style:none; margin-top:10px;">
+                    <li><a href="index.html" style="color:#94a3b8; text-decoration:none;">Home</a></li>
+                    <li><a href="categories.html" style="color:#94a3b8; text-decoration:none;">Software</a></li>
+                    <li><a href="review.html" style="color:#94a3b8; text-decoration:none;">Reviews</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul style="list-style:none; margin-top:10px;">
+                    <li><a href="contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
+        <div class="copyright">
+            <p>© 2026 SoftwarePedia. All rights reserved. Authorized DigiStore24 Partner.</p>
+        </div>
+    </div>
 </body>
 </html>
