@@ -1,0 +1,22 @@
+# robots.txt for SoftwarePedia
+# https://softwaretoolguide.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow all crawlers to access everything
+Disallow:
+
+# Sitemap location
+Sitemap: https://softwaretoolguide.com/sitemap.xml
+
+# Crawl delay to be respectful to server
+Crawl-delay: 1
+
+# Specify Googlebot
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Specify Bingbot
+User-agent: Bingbot
+Crawl-delay: 1
