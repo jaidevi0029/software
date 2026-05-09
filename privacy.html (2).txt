@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Privacy Policy - Software Tool Guide | Your Privacy Matters</title>
+<meta name="description" content="Software Tool Guide privacy policy. Learn how we collect, use, and protect your personal information. GDPR compliant.">
+<link rel="canonical" href="https://softwaretoolguide.com/privacy.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+.navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 1000; }
+.logo { font-size: 1.6rem; font-weight: 800; color: #60a5fa; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo span { color: #f59e0b; }
+.nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; }
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.1); }
+.breadcrumb { background: white; padding: 12px 2rem; font-size: 0.85rem; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.breadcrumb a { color: #3b82f6; text-decoration: none; }
+.container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+.policy-content { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.policy-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.policy-content h2 { margin: 1.5rem 0 0.5rem; color: #1e293b; }
+.policy-content p { margin-bottom: 1rem; color: #475569; }
+.policy-content ul { margin-left: 1.5rem; margin-bottom: 1rem; color: #475569; }
+.last-updated { color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
+footer { background: #1e293b; color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+.footer-links { margin: 1rem 0; }
+.footer-links a { color: #94a3b8; text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
+@media (max-width: 768px) { .navbar { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+<a href="index.html" class="logo"><i class="fas fa-tools"></i> Software<span>Tool Guide</span></a>
+<nav class="nav-links"><a href="index.html">Home</a><a href="categories.html">Categories</a><a href="review.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<div class="breadcrumb"><div class="container" style="max-width:1200px;"><a href="index.html">Home</a> › Privacy Policy</div></div>
+
+<div class="container">
+<div class="policy-content">
+<h1>Privacy Policy</h1>
+<div class="last-updated">Last Updated: May 9, 2026</div>
+
+<p>At Software Tool Guide ("we", "us", "our"), your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you visit our website.</p>
+
+<h2>1. Information We Collect</h2>
+<p><strong>Personal Information:</strong> When you contact us via our contact form, we collect your name and email address. We do not store this information permanently.</p>
+<p><strong>Usage Data:</strong> We automatically collect information about how you interact with our site using cookies and analytics tools.</p>
+
+<h2>2. Cookies & Tracking Technologies</h2>
+<p>We use cookies to improve your browsing experience, analyze site traffic, and personalize content. You can disable cookies in your browser settings.</p>
+
+<h2>3. How We Use Your Information</h2>
+<ul><li>To respond to your inquiries</li><li>To improve our website and content</li><li>To analyze site usage and trends</li><li>To comply with legal obligations</li></ul>
+
+<h2>4. Third-Party Services</h2>
+<p><strong>Google Analytics:</strong> We use Google Analytics to track site traffic. Google may collect data as described in their <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>.</p>
+<p><strong>Affiliate Links:</strong> We participate in affiliate programs. When you click affiliate links and make a purchase, the affiliate network may collect information as per their privacy policies.</p>
+
+<h2>5. Data Security</h2>
+<p>We implement appropriate security measures to protect your information. However, no method of transmission over the internet is 100% secure.</p>
+
+<h2>6. Your Rights (GDPR Compliance)</h2>
+<p>If you are in the European Economic Area (EEA), you have the right to:</p>
+<ul><li>Access your personal data</li><li>Rectify inaccurate data</li><li>Request deletion of your data</li><li>Object to data processing</li><li>Data portability</li></ul>
+
+<h2>7. Children's Privacy</h2>
+<p>Our website is not intended for children under 13. We do not knowingly collect information from children.</p>
+
+<h2>8. Changes to This Policy</h2>
+<p>We may update this Privacy Policy periodically. The "Last Updated" date at the top indicates when changes were made.</p>
+
+<h2>9. Contact Us</h2>
+<p>If you have questions about this Privacy Policy, please <a href="contact.html" style="color:#3b82f6;">contact us</a>.</p>
+
+</div></div>
+
+<footer><div class="footer-links"><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="contact.html">Contact</a></div><p>© 2026 Software Tool Guide — Honest Reviews & Best Software Deals</p></footer>
+</body>
+</html>

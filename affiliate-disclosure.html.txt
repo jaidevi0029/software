@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Affiliate Disclosure - Software Tool Guide</title>
+<meta name="description" content="Software Tool Guide affiliate disclosure. Learn how we earn commissions and maintain our editorial independence.">
+<link rel="canonical" href="https://softwaretoolguide.com/affiliate-disclosure.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+.navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 1000; }
+.logo { font-size: 1.6rem; font-weight: 800; color: #60a5fa; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo span { color: #f59e0b; }
+.nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; }
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.1); }
+.breadcrumb { background: white; padding: 12px 2rem; font-size: 0.85rem; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.breadcrumb a { color: #3b82f6; text-decoration: none; }
+.container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+.affiliate-content { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.affiliate-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.affiliate-content h2 { margin: 1.5rem 0 0.5rem; color: #1e293b; }
+.affiliate-content p { margin-bottom: 1rem; color: #475569; }
+.affiliate-content ul { margin-left: 1.5rem; margin-bottom: 1rem; color: #475569; }
+.last-updated { color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
+.highlight { background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+footer { background: #1e293b; color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+.footer-links { margin: 1rem 0; }
+.footer-links a { color: #94a3b8; text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
+@media (max-width: 768px) { .navbar { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+<a href="index.html" class="logo"><i class="fas fa-tools"></i> Software<span>Tool Guide</span></a>
+<nav class="nav-links"><a href="index.html">Home</a><a href="categories.html">Categories</a><a href="review.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<div class="breadcrumb"><div class="container" style="max-width:1200px;"><a href="index.html">Home</a> › Affiliate Disclosure</div></div>
+
+<div class="container">
+<div class="affiliate-content">
+<h1>Affiliate Disclosure</h1>
+<div class="last-updated">Last Updated: May 9, 2026</div>
+
+<div class="highlight">
+<strong><i class="fas fa-info-circle"></i> In Plain English:</strong> We use affiliate links. If you buy through our links, we earn a commission at <strong>no extra cost to you</strong>. This helps us keep our content free and unbiased.
+</div>
+
+<h2>What Are Affiliate Links?</h2>
+<p>Affiliate links are special URLs that track referrals. When you click one of our affiliate links and make a purchase, the software company pays us a small commission. This does NOT increase the price you pay — in fact, we often negotiate exclusive discounts for our readers.</p>
+
+<h2>Why We Use Affiliate Links</h2>
+<ul>
+<li>✅ To keep our website free for all users</li>
+<li>✅ To fund our research and testing efforts</li>
+<li>✅ To hire experts to write detailed reviews</li>
+<li>✅ To maintain and update our content regularly</li>
+</ul>
+
+<h2>Our Commitment to Honesty</h2>
+<p><strong>Our editorial integrity comes first.</strong> We never accept payment for positive reviews. Our recommendations are based on:</p>
+<ul>
+<li>Independent research and testing</li>
+<li>Real user feedback and experiences</li>
+<li>Feature comparisons and pricing analysis</li>
+<li>Expert opinions in the field</li>
+</ul>
+
+<h2>Which Affiliate Programs We Join?</h2>
+<p>Software Tool Guide participates in several affiliate programs, including:</p>
+<ul>
+<li>Digistore24 (primary affiliate network)</li>
+<li>Individual software vendor programs</li>
+<li>Other relevant digital product marketplaces</li>
+</ul>
+
+<h2>Does This Affect My Purchase Price?</h2>
+<p><strong>Absolutely not!</strong> The price you pay remains exactly the same. In many cases, we negotiate <strong>exclusive discounts</strong> and bonuses for our readers that you won't find elsewhere.</p>
+
+<h2>How You Can Support Us</h2>
+<p>The best way to support Software Tool Guide is to use our affiliate links when you decide to purchase a product we've recommended. This costs you nothing extra but helps us continue providing free, honest reviews.</p>
+
+<h2>Questions?</h2>
+<p>If you have any questions about our affiliate relationships, please <a href="contact.html" style="color:#3b82f6;">contact us</a>.</p>
+
+</div></div>
+
+<footer><div class="footer-links"><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="affiliate-disclosure.html">Affiliate</a> | <a href="contact.html">Contact</a></div><p>© 2026 Software Tool Guide — Honest Reviews & Best Software Deals</p></footer>
+</body>
+</html>

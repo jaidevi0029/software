@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Disclaimer - Software Tool Guide</title>
+<meta name="description" content="Software Tool Guide disclaimer. Important information about our reviews, affiliate links, and content accuracy.">
+<link rel="canonical" href="https://softwaretoolguide.com/disclaimer.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+.navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 1000; }
+.logo { font-size: 1.6rem; font-weight: 800; color: #60a5fa; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo span { color: #f59e0b; }
+.nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; }
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.1); }
+.breadcrumb { background: white; padding: 12px 2rem; font-size: 0.85rem; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.breadcrumb a { color: #3b82f6; text-decoration: none; }
+.container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+.disclaimer-content { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.disclaimer-content h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.disclaimer-content h2 { margin: 1.5rem 0 0.5rem; color: #1e293b; }
+.disclaimer-content p { margin-bottom: 1rem; color: #475569; }
+.last-updated { color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
+.warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+footer { background: #1e293b; color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+.footer-links { margin: 1rem 0; }
+.footer-links a { color: #94a3b8; text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
+@media (max-width: 768px) { .navbar { flex-direction: column; text-align: center; } .nav-links { justify-content: center; } }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+<a href="index.html" class="logo"><i class="fas fa-tools"></i> Software<span>Tool Guide</span></a>
+<nav class="nav-links"><a href="index.html">Home</a><a href="categories.html">Categories</a><a href="review.html">Reviews</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+</header>
+
+<div class="breadcrumb"><div class="container" style="max-width:1200px;"><a href="index.html">Home</a> › Disclaimer</div></div>
+
+<div class="container">
+<div class="disclaimer-content">
+<h1>Disclaimer</h1>
+<div class="last-updated">Last Updated: May 9, 2026</div>
+
+<div class="warning-box">
+<strong><i class="fas fa-exclamation-triangle"></i> Important Note:</strong> The information provided on Software Tool Guide is for general informational purposes only.
+</div>
+
+<h2>1. Affiliate Disclosure</h2>
+<p>Software Tool Guide participates in various affiliate marketing programs, including but not limited to Digistore24. This means we may earn commissions when you click on our affiliate links and make purchases. <strong>This does not affect the price you pay</strong> — in fact, we often negotiate exclusive discounts for our readers.</p>
+
+<h2>2. Editorial Independence</h2>
+<p>Our reviews are based on independent research, real user testing, and expert analysis. We do not accept payment for positive reviews. Affiliate relationships do NOT influence our editorial opinions.</p>
+
+<h2>3. Accuracy of Information</h2>
+<p>While we strive to keep information accurate and up-to-date, software features, pricing, and availability change frequently. We recommend verifying details on the official software website before making purchase decisions.</p>
+
+<h2>4. No Professional Advice</h2>
+<p>The information on this website is not intended as professional financial, legal, or technical advice. Always consult with qualified professionals for advice tailored to your situation.</p>
+
+<h2>5. Third-Party Links</h2>
+<p>Our website contains links to third-party websites. We are not responsible for the content, accuracy, or privacy practices of these external sites.</p>
+
+<h2>6. Results May Vary</h2>
+<p>Individual results using any software recommended on our site may vary based on skill level, effort, and other factors. We do not guarantee specific outcomes.</p>
+
+<h2>7. Limitation of Liability</h2>
+<p>To the fullest extent permitted by law, Software Tool Guide shall not be liable for any damages arising from your use of our website or any products purchased through our affiliate links.</p>
+
+<h2>8. Contact Us</h2>
+<p>If you have questions about this disclaimer, please <a href="contact.html" style="color:#3b82f6;">contact us</a>.</p>
+
+</div></div>
+
+<footer><div class="footer-links"><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="contact.html">Contact</a></div><p>© 2026 Software Tool Guide — Honest Reviews & Best Software Deals</p></footer>
+</body>
+</html>

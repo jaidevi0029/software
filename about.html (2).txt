@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>About Us - Software Tool Guide | Honest Software Reviews Since 2024</title>
+<meta name="description" content="Learn about Software Tool Guide - your trusted source for honest software reviews, comparisons, and exclusive deals since 2024. Meet our team and mission.">
+<meta name="keywords" content="about software tool guide, software review team, honest reviews, mission statement">
+<meta name="author" content="Software Tool Guide">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://softwaretoolguide.com/about.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); color: #1e293b; line-height: 1.6; }
+
+.navbar { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 1000; }
+.logo { font-size: 1.6rem; font-weight: 800; color: #60a5fa; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo span { color: #f59e0b; }
+.nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: white; background: rgba(255,255,255,0.1); }
+
+.breadcrumb { background: white; padding: 12px 2rem; font-size: 0.85rem; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.breadcrumb a { color: #3b82f6; text-decoration: none; }
+
+.container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+.about-hero { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 3rem 0; text-align: center; border-radius: 0 0 20px 20px; }
+.about-hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.about-content { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.about-content h2 { margin: 1.5rem 0 0.5rem; color: #1e293b; }
+.about-content p { margin-bottom: 1rem; color: #475569; }
+.values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.value-card { text-align: center; padding: 1rem; background: #f8fafc; border-radius: 12px; }
+.value-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; text-align: center; }
+.stat-number { font-size: 1.8rem; font-weight: 800; color: #3b82f6; }
+
+footer { background: #1e293b; color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+.footer-links { margin: 1rem 0; }
+.footer-links a { color: #94a3b8; text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
+
+@media (max-width: 768px) {
+.navbar { flex-direction: column; text-align: center; }
+.nav-links { justify-content: center; }
+.about-hero h1 { font-size: 1.8rem; }
+.stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+<a href="index.html" class="logo"><i class="fas fa-tools"></i> Software<span>Tool Guide</span></a>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="categories.html">Categories</a>
+<a href="review.html">Reviews</a>
+<a href="blog.html">Blog</a>
+<a href="about.html" class="active">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<div class="breadcrumb"><div class="container" style="max-width:1200px;"><a href="index.html">Home</a> › About Us</div></div>
+
+<section class="about-hero"><div class="container"><h1>About Software Tool Guide</h1><p>Your trusted source for honest software reviews since 2024</p></div></section>
+
+<div class="container">
+<div class="about-content">
+<h2>Our Mission</h2>
+<p>At Software Tool Guide, our mission is simple: <strong>help you find the perfect software for your needs</strong> through honest, unbiased reviews and side-by-side comparisons. We test products thoroughly so you don't have to.</p>
+
+<div class="stat-grid">
+<div class="stat-number">4.8</div><div>Avg Rating</div>
+<div class="stat-number">50+</div><div>Software Reviewed</div>
+<div class="stat-number">10K+</div><div>Monthly Readers</div>
+<div class="stat-number">100%</div><div>Unbiased Reviews</div>
+</div>
+
+<h2>Who We Are</h2>
+<p>We are a team of digital marketing experts, software enthusiasts, and tech reviewers dedicated to providing transparent, actionable information about software tools across all categories.</p>
+
+<h2>Our Values</h2>
+<div class="values-grid">
+<div class="value-card"><div class="value-icon">✅</div><h3>Honest Reviews</h3><p>No sponsored bias</p></div>
+<div class="value-card"><div class="value-icon">⚖️</div><h3>Fair Comparisons</h3><p>Side-by-side analysis</p></div>
+<div class="value-card"><div class="value-icon">🔍</div><h3>Expert Testing</h3><p>Real user experience</p></div>
+<div class="value-card"><div class="value-icon">💰</div><h3>Best Deals</h3><p>Exclusive discounts</p></div>
+</div>
+
+<h2>How We Review Software</h2>
+<ul style="margin-left: 1.5rem; color: #475569;">
+<li><strong>Step 1:</strong> Research & shortlist top tools in each category</li>
+<li><strong>Step 2:</strong> Test each software for 2-4 weeks minimum</li>
+<li><strong>Step 3:</strong> Compare features, pricing, and ease of use</li>
+<li><strong>Step 4:</strong> Write honest pros & cons based on real testing</li>
+<li><strong>Step 5:</strong> Update reviews as software evolves</li>
+</ul>
+
+<h2>Affiliate Disclosure</h2>
+<p>To keep our content free, we use affiliate links. If you purchase through our links, we earn a small commission — at <strong>no extra cost to you</strong>. This helps us maintain our site and continue providing honest reviews.</p>
+
+<h2>Contact Us</h2>
+<p>Have questions or software suggestions? <a href="contact.html" style="color:#3b82f6;">Reach out to us</a>. We respond within 24 hours.</p>
+</div></div>
+
+<footer><div class="footer-links"><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="contact.html">Contact</a></div><p>© 2026 Software Tool Guide — Honest Reviews & Best Software Deals</p></footer>
+</body>
+</html>
