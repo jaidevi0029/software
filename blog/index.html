@@ -19,7 +19,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Software Blog & Guides">
 <meta name="twitter:description" content="Latest tutorials and insights on software tools.">
-<meta name="twitter:image" content="https://softwaretoolguide.com/assets/img/blog-twitter.jpg">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -59,14 +58,15 @@ body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0f
 .blog-category { position: absolute; top: 15px; left: 15px; background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
 .blog-content { padding: 1.5rem; }
 .blog-meta { display: flex; gap: 1rem; margin-bottom: 0.8rem; color: #94a3b8; font-size: 0.75rem; }
-.blog-title { font-size: 1.2rem; color: #f8fafc; margin-bottom: 0.8rem; line-height: 1.4; }
+.blog-title { font-size: 1.2rem; color: #f8fafc; margin-bottom: 0.8rem; line-height: 1.4; transition: color 0.3s; }
+.blog-card:hover .blog-title { color: #10b981; }
 .blog-excerpt { color: #94a3b8; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.6; }
 .blog-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
 .blog-tag { background: rgba(59, 130, 246, 0.1); color: #60a5fa; padding: 3px 10px; border-radius: 15px; font-size: 0.7rem; }
 .blog-link { display: inline-flex; align-items: center; gap: 6px; color: #10b981; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: gap 0.3s; }
 .blog-link:hover { gap: 10px; }
 
-.pagination { display: flex; justify-content: center; gap: 0.8rem; margin-top: 2rem; }
+.pagination { display: flex; justify-content: center; gap: 0.8rem; margin-top: 2rem; flex-wrap: wrap; }
 .pagination-btn { background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; color: #cbd5e1; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: all 0.3s; }
 .pagination-btn:hover, .pagination-btn.active { background: #10b981; border-color: #10b981; color: white; }
 
@@ -105,8 +105,8 @@ footer { background: #0f172a; padding: 2rem; text-align: center; margin-top: 3re
 <h1 class="page-title">Software Blog & Guides</h1>
 <p class="page-subtitle">Latest tutorials, tips, and insights on software tools, digital marketing, AI, and productivity strategies.</p>
 <div class="header-stats">
-<div class="stat-badge"><div class="stat-number">10+</div><div class="stat-label">Articles</div></div>
-<div class="stat-badge"><div class="stat-number">5K+</div><div class="stat-label">Readers</div></div>
+<div class="stat-badge"><div class="stat-number">15+</div><div class="stat-label">Articles</div></div>
+<div class="stat-badge"><div class="stat-number">10K+</div><div class="stat-label">Readers</div></div>
 <div class="stat-badge"><div class="stat-number">Weekly</div><div class="stat-label">Updated</div></div>
 </div>
 </div>
@@ -115,13 +115,17 @@ footer { background: #0f172a; padding: 2rem; text-align: center; margin-top: 3re
 
 <div class="blog-grid">
 
+<!-- ============================================ -->
+<!-- EXISTING 15 BLOG POSTS -->
+<!-- ============================================ -->
+
 <!-- Blog 1: ChatGPT vs Bard vs Claude -->
 <article class="blog-card">
 <div class="blog-image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ChatGPT vs Bard vs Claude"><span class="blog-category">AI Comparison</span></div>
 <div class="blog-content">
 <div class="blog-meta"><span><i class="far fa-calendar"></i> May 9, 2026</span><span><i class="far fa-clock"></i> 15 min read</span></div>
 <h3 class="blog-title">ChatGPT vs Google Bard vs Claude 2026: Which AI is Best?</h3>
-<p class="blog-excerpt">Complete comparison of ChatGPT, Google Bard, and Claude AI. Features, pricing, pros & cons, and which one to choose.</p>
+<p class="blog-excerpt">Complete comparison of ChatGPT, Google Bard, and Claude AI. Features, pricing, pros & cons, and which one to choose for your needs.</p>
 <div class="blog-tags"><span class="blog-tag">AI</span><span class="blog-tag">Comparison</span><span class="blog-tag">ChatGPT</span></div>
 <a href="chatgpt-vs-bard-vs-claude-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
 </div>
@@ -235,9 +239,105 @@ footer { background: #0f172a; padding: 2rem; text-align: center; margin-top: 3re
 </div>
 </article>
 
+<!-- Blog 11: Content Marketing Strategy -->
+<article class="blog-card">
+<div class="blog-image"><img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2a293?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Content Marketing"><span class="blog-category">Marketing</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> May 9, 2026</span><span><i class="far fa-clock"></i> 12 min read</span></div>
+<h3 class="blog-title">Content Marketing Strategy 2026: Complete Guide for Beginners</h3>
+<p class="blog-excerpt">Learn how to create, distribute, and optimize content that drives traffic and converts.</p>
+<div class="blog-tags"><span class="blog-tag">Marketing</span><span class="blog-tag">Content</span><span class="blog-tag">Strategy</span></div>
+<a href="content-marketing-strategy-guide-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+
+<!-- Blog 12: Podcasting for Beginners -->
+<article class="blog-card">
+<div class="blog-image"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Podcasting"><span class="blog-category">Podcasting</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> May 9, 2026</span><span><i class="far fa-clock"></i> 11 min read</span></div>
+<h3 class="blog-title">Podcasting for Beginners 2026: Complete Start Guide</h3>
+<p class="blog-excerpt">Learn how to start a podcast with zero budget. Best equipment, hosting platforms, and monetization strategies.</p>
+<div class="blog-tags"><span class="blog-tag">Podcast</span><span class="blog-tag">Audio</span><span class="blog-tag">Beginner</span></div>
+<a href="podcasting-beginners-guide-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+
+<!-- Blog 13: E-commerce SEO Guide -->
+<article class="blog-card">
+<div class="blog-image"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f8781b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="E-commerce SEO"><span class="blog-category">E-commerce</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> May 9, 2026</span><span><i class="far fa-clock"></i> 12 min read</span></div>
+<h3 class="blog-title">E-commerce SEO Guide 2026: Rank Your Online Store Higher</h3>
+<p class="blog-excerpt">Optimize product pages, category pages, and site structure for Shopify, WooCommerce, and Magento.</p>
+<div class="blog-tags"><span class="blog-tag">E-commerce</span><span class="blog-tag">SEO</span><span class="blog-tag">Shopify</span></div>
+<a href="ecommerce-seo-guide-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+
+<!-- Blog 14: LinkedIn Marketing Guide -->
+<article class="blog-card">
+<div class="blog-image"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="LinkedIn Marketing"><span class="blog-category">Social Media</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> May 9, 2026</span><span><i class="far fa-clock"></i> 10 min read</span></div>
+<h3 class="blog-title">LinkedIn Marketing Guide 2026: Grow Your Professional Network</h3>
+<p class="blog-excerpt">Optimize your profile, create engaging content, grow your network, and generate leads on LinkedIn.</p>
+<div class="blog-tags"><span class="blog-tag">LinkedIn</span><span class="blog-tag">B2B</span><span class="blog-tag">Lead Generation</span></div>
+<a href="linkedin-marketing-guide-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+
+<!-- Blog 15: YouTube SEO Guide -->
+<article class="blog-card">
+<div class="blog-image"><img src="https://images.unsplash.com/photo-1611162618071-b39e2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="YouTube SEO"><span class="blog-category">YouTube</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> May 9, 2026</span><span><i class="far fa-clock"></i> 11 min read</span></div>
+<h3 class="blog-title">YouTube SEO Guide 2026: Rank #1 in Search Results</h3>
+<p class="blog-excerpt">Optimize video titles, descriptions, tags, thumbnails, and transcripts to rank on YouTube and Google.</p>
+<div class="blog-tags"><span class="blog-tag">YouTube</span><span class="blog-tag">SEO</span><span class="blog-tag">Video</span></div>
+<a href="youtube-seo-guide-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+
+<!-- ============================================ -->
+<!-- FUTURE BLOG POSTS TEMPLATE - COPY AND PASTE TO ADD NEW POSTS -->
+<!-- ============================================ -->
+
+<!-- 
+<article class="blog-card">
+<div class="blog-image"><img src="IMAGE_URL_HERE" alt="ALT_TEXT_HERE"><span class="blog-category">CATEGORY_HERE</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> DATE_HERE</span><span><i class="far fa-clock"></i> READ_TIME min read</span></div>
+<h3 class="blog-title">TITLE_HERE</h3>
+<p class="blog-excerpt">EXCERPT_HERE (150 characters max)</p>
+<div class="blog-tags"><span class="blog-tag">TAG1</span><span class="blog-tag">TAG2</span><span class="blog-tag">TAG3</span></div>
+<a href="FILENAME_HERE.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+-->
+
+<!-- Example for adding a new blog (just copy above template and fill values):
+<article class="blog-card">
+<div class="blog-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="New Blog Title"><span class="blog-category">AI Tools</span></div>
+<div class="blog-content">
+<div class="blog-meta"><span><i class="far fa-calendar"></i> May 15, 2026</span><span><i class="far fa-clock"></i> 8 min read</span></div>
+<h3 class="blog-title">10 Best Free AI Tools You Must Try in 2026</h3>
+<p class="blog-excerpt">Discover 10 amazing free AI tools that can boost your productivity without costing a penny.</p>
+<div class="blog-tags"><span class="blog-tag">AI</span><span class="blog-tag">Free</span><span class="blog-tag">Tools</span></div>
+<a href="best-free-ai-tools-2026.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+-->
+
 </div>
 
-<div class="pagination"><a href="#" class="pagination-btn active">1</a></div>
+<div class="pagination">
+<a href="#" class="pagination-btn active">1</a>
+<a href="#" class="pagination-btn">2</a>
+<a href="#" class="pagination-btn">3</a>
+<a href="#" class="pagination-btn">Next →</a>
+</div>
+
 </div>
 
 <footer>
@@ -258,9 +358,16 @@ footer { background: #0f172a; padding: 2rem; text-align: center; margin-top: 3re
 </footer>
 
 <script>
+// Search functionality
 document.querySelector('.search-input')?.addEventListener('keypress', function(e) {
-if (e.key === 'Enter') alert('Search functionality coming soon!');
+if (e.key === 'Enter') {
+const query = this.value.trim();
+if (query) alert('Search functionality coming soon! Would search for: ' + query);
+}
 });
+
+// Mobile menu (if mobile menu button exists in future)
+// Not implemented here as it requires separate button element
 </script>
 </body>
 </html>
