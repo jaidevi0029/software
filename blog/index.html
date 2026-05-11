@@ -266,6 +266,33 @@
             gap: 12px;
         }
         
+        /* Free SEO Tools Banner */
+        .free-tools-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .free-tools-banner a {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 10px 25px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 12px;
+            transition: all 0.3s;
+        }
+        
+        .free-tools-banner a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
         /* Back Link */
         .back-link {
             display: inline-flex;
@@ -309,7 +336,6 @@
             .filter-btn { padding: 6px 14px; font-size: 12px; }
         }
         
-        /* No Results */
         .no-results {
             text-align: center;
             padding: 60px;
@@ -351,21 +377,31 @@
         <button class="filter-btn" data-cat="seo" onclick="filterCategory('seo')">🔍 SEO</button>
         <button class="filter-btn" data-cat="youtube" onclick="filterCategory('youtube')">📺 YouTube</button>
         <button class="filter-btn" data-cat="affiliate" onclick="filterCategory('affiliate')">💰 Affiliate</button>
+        <button class="filter-btn" data-cat="blogging" onclick="filterCategory('blogging')">✍️ Blogging</button>
+        <button class="filter-btn" data-cat="social" onclick="filterCategory('social')">📱 Social Media</button>
+        <button class="filter-btn" data-cat="wordpress" onclick="filterCategory('wordpress')">🔧 WordPress</button>
     </div>
     
     <div class="post-grid" id="postGrid"></div>
+    
+    <!-- Free SEO Tools Banner - Link to your second site -->
+    <div class="free-tools-banner">
+        <p>🔧 <strong>Need free SEO tools?</strong> Explore 90+ free tools for keyword research, backlinks, meta tags, and more.</p>
+        <a href="https://freeseotoolhub.com" target="_blank">Explore Free SEO Tools Hub →</a>
+    </div>
     
     <a href="/" class="back-link">← Back to Home</a>
 </div>
 
 <div class="blog-footer">
     <p>© 2026 Software Tool Guide · Honest reviews, expert comparisons, and best deals</p>
-    <p style="margin-top: 8px; font-size: 12px;">📧 Contact: jaidevi0029@gmail.com</p>
+    <p style="margin-top: 8px; font-size: 12px;">📧 Contact: hello@softwaretoolguide.com</p>
 </div>
 
 <script>
-    // Blog posts data with categories
+    // Blog posts data - 25 total posts
     const posts = [
+        // === EXISTING 15 POSTS ===
         { title: "Affiliate Marketing Beginners Guide 2026", file: "affiliate-marketing-beginners-guide-2026.html", category: "affiliate", excerpt: "Complete guide to start affiliate marketing from scratch. Learn strategies, tools, and tips to earn passive income.", date: "May 10, 2026" },
         { title: "AI Tools Beginners Guide 2026", file: "ai-tools-beginners-guide-2026.html", category: "ai", excerpt: "Best AI tools for beginners. Learn how to use ChatGPT, Midjourney, and other AI tools effectively.", date: "May 9, 2026" },
         { title: "Best AI Tools for YouTube Growth 2026", file: "best-ai-tools-for-youtube-growth-2026.html", category: "youtube", excerpt: "Top AI tools that help grow your YouTube channel faster. Optimize videos, titles, and thumbnails.", date: "May 8, 2026" },
@@ -381,7 +417,19 @@
         { title: "SEO Trends 2026 Complete Guide", file: "seo-trends-2026-complete-guide.html", category: "seo", excerpt: "Latest SEO trends and algorithm updates for 2026. Stay ahead of competition.", date: "Apr 28, 2026" },
         { title: "Social Media Marketing Tools 2026", file: "social-media-marketing-tools-2026.html", category: "marketing", excerpt: "Best social media management tools to save time and grow followers.", date: "Apr 27, 2026" },
         { title: "WordPress SEO Complete Guide 2026", file: "wordpress-seo-complete-guide-2026.html", category: "seo", excerpt: "Optimize your WordPress website for higher search rankings.", date: "Apr 26, 2026" },
-        { title: "YouTube SEO Guide 2026", file: "youtube-seo-guide-2026.html", category: "youtube", excerpt: "Rank your YouTube videos higher. Keyword research, tags, and thumbnail optimization.", date: "Apr 25, 2026" }
+        { title: "YouTube SEO Guide 2026", file: "youtube-seo-guide-2026.html", category: "youtube", excerpt: "Rank your YouTube videos higher. Keyword research, tags, and thumbnail optimization.", date: "Apr 25, 2026" },
+        
+        // === NEW 10 POSTS ===
+        { title: "Best Free AI Tools You Must Try in 2026 (No Credit Card)", file: "best-free-ai-tools-2026.html", category: "ai", excerpt: "Discover 15+ best free AI tools that require no credit card. ChatGPT, Canva AI, Grammarly and more.", date: "May 11, 2026" },
+        { title: "Google Search Console Complete Guide 2026: Boost Your SEO", file: "google-search-console-guide-2026.html", category: "seo", excerpt: "Learn how to use Google Search Console to fix errors, submit sitemaps, and improve rankings.", date: "May 11, 2026" },
+        { title: "How to Start a Blog in 2026: Step-by-Step Guide for Beginners", file: "how-to-start-a-blog-2026.html", category: "blogging", excerpt: "Complete guide to start a blog from scratch. Choose niche, hosting, WordPress setup, and monetization.", date: "May 11, 2026" },
+        { title: "ChatGPT Prompts for Marketers: 100+ Templates That Work", file: "chatgpt-prompts-for-marketers.html", category: "marketing", excerpt: "Copy-paste ChatGPT prompts for email campaigns, social media, ads, blogs, and SEO content.", date: "May 11, 2026" },
+        { title: "Instagram Growth Hacks 2026: 15 Ways to Gain Followers Fast", file: "instagram-growth-hacks-2026.html", category: "social", excerpt: "15 proven Instagram growth hacks to gain real followers without bots or fake engagement.", date: "May 11, 2026" },
+        { title: "Facebook Ads Beginner Guide 2026: From Zero to First Sale", file: "facebook-ads-beginners-guide-2026.html", category: "marketing", excerpt: "Step-by-step Facebook Ads guide for beginners. Setup, targeting, budget, and optimization tips.", date: "May 11, 2026" },
+        { title: "Best Affiliate Programs for Beginners 2026 (High Commission)", file: "best-affiliate-programs-2026.html", category: "affiliate", excerpt: "Top 10 affiliate programs with high commissions for beginners. Digistore24, Amazon, ShareASale, and more.", date: "May 11, 2026" },
+        { title: "Yoast SEO vs Rank Math vs AIOSEO: Which WordPress Plugin Wins?", file: "yoast-vs-rankmath-vs-aioseo.html", category: "wordpress", excerpt: "Detailed comparison of top WordPress SEO plugins. Features, pricing, and which one is best.", date: "May 11, 2026" },
+        { title: "Google Analytics 4 Guide 2026: Track Your Website Traffic", file: "google-analytics-4-guide-2026.html", category: "seo", excerpt: "Complete Google Analytics 4 setup and usage guide. Track traffic, conversions, and user behavior.", date: "May 11, 2026" },
+        { title: "How to Get Your First 1,000 YouTube Subscribers (Fast)", file: "first-1000-youtube-subscribers.html", category: "youtube", excerpt: "Proven strategies to get your first 1000 YouTube subscribers quickly. Content, SEO, and promotion tips.", date: "May 11, 2026" }
     ];
     
     // Update post count
@@ -404,7 +452,7 @@
             return;
         }
         
-        let html = '<div class="post-grid">';
+        let html = '';
         filtered.forEach(post => {
             const categoryIcon = getCategoryIcon(post.category);
             html += `
@@ -413,34 +461,34 @@
                     <h2 class="post-title"><a href="${post.file}">${post.title}</a></h2>
                     <div class="post-meta">
                         <span>📅 ${post.date}</span>
-                        <span>⏱️ 5 min read</span>
+                        <span>⏱️ 8 min read</span>
                     </div>
                     <p class="post-excerpt">${post.excerpt}</p>
                     <a href="${post.file}" class="read-more">Read Full Article →</a>
                 </div>
             `;
         });
-        html += '</div>';
         grid.innerHTML = html;
     }
     
     function getCategoryIcon(cat) {
         const icons = {
-            ai: '🤖', marketing: '📈', seo: '🔍', youtube: '📺', affiliate: '💰'
+            ai: '🤖', marketing: '📈', seo: '🔍', youtube: '📺', affiliate: '💰',
+            blogging: '✍️', social: '📱', wordpress: '🔧'
         };
         return icons[cat] || '📄';
     }
     
     function getCategoryName(cat) {
         const names = {
-            ai: 'AI Tools', marketing: 'Marketing', seo: 'SEO', youtube: 'YouTube', affiliate: 'Affiliate'
+            ai: 'AI Tools', marketing: 'Marketing', seo: 'SEO', youtube: 'YouTube', affiliate: 'Affiliate',
+            blogging: 'Blogging', social: 'Social Media', wordpress: 'WordPress'
         };
         return names[cat] || 'Guide';
     }
     
     function filterCategory(category) {
         currentCategory = category;
-        // Update active button style
         document.querySelectorAll('.filter-btn').forEach(btn => {
             if (btn.dataset.cat === category) {
                 btn.classList.add('active');
