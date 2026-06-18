@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>More Software Deals | 30+ Exclusive Digistore24 Tools | Software Tool Guide</title>
+<meta name="description" content="Discover 30+ more exclusive software deals on Digistore24. AI tools, trading software, photography, health, crypto, legal, and more. Best commissions and discounts.">
+<meta name="keywords" content="Digistore24 deals, software deals, AI medical tools, crypto trading, photo software, legal AI, book cover software, reels templates">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://softwaretoolguide.com/more-software-deals.html">
+
+<meta property="og:title" content="More Software Deals | 30+ Exclusive Digistore24 Tools 2026">
+<meta property="og:description" content="30+ exclusive software deals — AI tools, trading, photography, health, crypto, legal & more.">
+<meta property="og:url" content="https://softwaretoolguide.com/more-software-deals.html">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg-primary: #0f172a;
+--bg-secondary: #1e293b;
+--text-primary: #f1f5f9;
+--text-secondary: #94a3b8;
+--text-muted: #64748b;
+--accent-primary: #3b82f6;
+--accent-light: #60a5fa;
+--accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+--gold: #f59e0b;
+--green: #10b981;
+--red: #ef4444;
+--border-color: #334155;
+--card-bg: #1e293b;
+--card-hover-border: #3b82f6;
+--shadow-color: rgba(0,0,0,0.3);
+--footer-bg: #1e293b;
+--radius-sm: 8px;
+--radius-md: 12px;
+--radius-lg: 16px;
+--radius-xl: 30px;
+}
+
+[data-theme="light"] {
+--bg-primary: #f8fafc;
+--bg-secondary: #ffffff;
+--text-primary: #1e293b;
+--text-secondary: #475569;
+--accent-primary: #2563eb;
+--accent-light: #3b82f6;
+--accent-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+--gold: #d97706;
+--green: #059669;
+--red: #dc2626;
+--border-color: #e2e8f0;
+--card-bg: #ffffff;
+--footer-bg: #1e293b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+font-family: 'Inter', 'Segoe UI', sans-serif;
+background: var(--bg-primary);
+color: var(--text-primary);
+line-height: 1.7;
+transition: background 0.3s, color 0.3s;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+background: var(--accent-gradient);
+color: white;
+text-align: center;
+padding: 8px 20px;
+font-size: 0.85rem;
+font-weight: 500;
+}
+
+/* Navbar */
+.navbar {
+background: var(--bg-secondary);
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 2px solid var(--accent-primary);
+position: sticky;
+top: 0;
+z-index: 1000;
+flex-wrap: wrap;
+gap: 15px;
+}
+.logo {
+font-size: 1.7rem;
+font-weight: 800;
+color: var(--accent-light);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.nav-links a {
+color: var(--text-secondary);
+text-decoration: none;
+font-weight: 500;
+font-size: 0.9rem;
+padding: 8px 14px;
+border-radius: var(--radius-sm);
+transition: all 0.3s;
+}
+.nav-links a:hover { background: rgba(59, 130, 246, 0.12); color: var(--text-primary); }
+.nav-links a.active { color: var(--accent-light); background: rgba(59, 130, 246, 0.1); }
+.mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+.theme-toggle {
+background: none;
+border: 1px solid var(--border-color);
+color: var(--text-primary);
+font-size: 1.1rem;
+width: 38px;
+height: 38px;
+border-radius: 50%;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.3s;
+}
+.theme-toggle:hover { background: var(--accent-primary); color: white; }
+
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 24px; }
+
+/* Page Header */
+.page-header {
+text-align: center;
+padding: 2rem 0;
+border-bottom: 1px solid var(--border-color);
+margin-bottom: 2rem;
+}
+.page-header h1 {
+font-size: 2.5rem;
+font-weight: 900;
+background: var(--accent-gradient);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin-bottom: 0.5rem;
+}
+.page-header p {
+color: var(--text-secondary);
+font-size: 1.1rem;
+max-width: 600px;
+margin: 0 auto;
+}
+.back-link {
+display: inline-block;
+margin-top: 1rem;
+color: var(--accent-light);
+text-decoration: none;
+font-weight: 600;
+font-size: 0.9rem;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* Section Title */
+.section-title {
+font-size: 1.6rem;
+margin: 2rem 0 1.5rem;
+border-left: 4px solid var(--accent-primary);
+padding-left: 15px;
+color: var(--text-primary);
+font-weight: 700;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/* Software Grid */
+.software-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+gap: 1.5rem;
+margin-bottom: 3rem;
+}
+.software-card {
+background: var(--card-bg);
+border-radius: var(--radius-lg);
+padding: 1.5rem;
+border: 1px solid var(--border-color);
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+}
+.software-card::before {
+content: '';
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 3px;
+background: var(--accent-gradient);
+border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.software-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px var(--shadow-color);
+border-color: var(--card-hover-border);
+}
+.card-badge {
+display: inline-block;
+background: rgba(245, 158, 11, 0.12);
+color: var(--gold);
+padding: 4px 12px;
+border-radius: var(--radius-xl);
+font-size: 0.7rem;
+font-weight: 700;
+margin-bottom: 0.8rem;
+}
+.card-badge.green { background: rgba(16, 185, 129, 0.12); color: var(--green); }
+.card-badge.blue { background: rgba(59, 130, 246, 0.12); color: var(--accent-light); }
+.card-badge.purple { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
+.card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
+.card-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6; }
+.card-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; font-size: 0.75rem; }
+.card-category {
+background: rgba(59, 130, 246, 0.1);
+padding: 3px 10px;
+border-radius: var(--radius-xl);
+color: var(--accent-light);
+font-weight: 500;
+}
+.card-commission { color: var(--green); font-weight: 600; }
+.card-price { font-weight: 700; color: var(--gold); font-size: 0.85rem; }
+
+.card-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+display: inline-block;
+text-align: center;
+padding: 10px 16px;
+border-radius: var(--radius-sm);
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s;
+font-size: 0.9rem;
+flex: 1;
+min-width: 100px;
+}
+.btn-buy {
+background: linear-gradient(135deg, #10b981, #059669);
+color: white;
+}
+.btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3); }
+.btn-outline {
+background: transparent;
+border: 2px solid var(--accent-primary);
+color: var(--accent-light);
+}
+.btn-outline:hover { background: var(--accent-primary); color: white; }
+
+/* CTA Banner */
+.cta-banner {
+background: var(--accent-gradient);
+padding: 2rem;
+border-radius: var(--radius-lg);
+text-align: center;
+margin: 3rem 0;
+color: white;
+}
+.cta-banner h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.cta-banner p { margin-bottom: 1rem; opacity: 0.9; }
+.cta-banner .btn-white {
+display: inline-block;
+background: white;
+color: #1e293b;
+padding: 14px 36px;
+border-radius: var(--radius-xl);
+text-decoration: none;
+font-weight: 700;
+font-size: 1rem;
+transition: all 0.3s;
+}
+.cta-banner .btn-white:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+/* Footer */
+footer {
+background: var(--footer-bg);
+padding: 2rem;
+text-align: center;
+border-top: 2px solid var(--accent-primary);
+color: #94a3b8;
+margin-top: 3rem;
+}
+footer a { color: #60a5fa; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.footer-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 10px 0; }
+
+/* Responsive */
+@media (max-width: 768px) {
+.page-header h1 { font-size: 1.8rem; }
+.software-grid { grid-template-columns: 1fr; }
+.navbar { flex-direction: row; }
+.nav-links { display: none; width: 100%; flex-direction: column; background: var(--bg-secondary); padding: 1rem; }
+.nav-links.show { display: flex; }
+.mobile-menu-btn { display: block; }
+}
+@media (max-width: 480px) {
+.page-header h1 { font-size: 1.5rem; }
+.container { padding: 1.5rem 12px; }
+.card-buttons { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+🎉 <strong>Exclusive Collection:</strong> 30+ More Software Deals on Digistore24 — AI, Trading, Photo, Health, Crypto & More!
+</div>
+
+<!-- Navbar -->
+<header class="navbar">
+<a href="index.html" class="logo">Software<span>Tool Guide</span></a>
+<button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+<nav class="nav-links">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<a href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a href="more-software-deals.html" class="active"><i class="fas fa-gem"></i> More Deals</a>
+<a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+<a href="review.html"><i class="fas fa-star"></i> Reviews</a>
+<a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<i class="fas fa-sun"></i>
+</button>
+</header>
+
+<div class="container">
+
+<!-- Page Header -->
+<div class="page-header">
+<h1>🎯 More Exclusive Software Deals</h1>
+<p>30+ additional Digistore24 tools that didn't fit on the main page. Discover photography, crypto, legal AI, health, and more hidden gems.</p>
+<a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Main Deals</a>
+</div>
+
+<!-- ========== PHOTOGRAPHY & CREATIVE SECTION ========== -->
+<h2 class="section-title"><i class="fas fa-camera"></i> 📸 Photography & Creative Tools</h2>
+<div class="software-grid">
+
+<!-- Adobe Lightroom Presets | Boudoir Secrets -->
+<div class="software-card">
+<div class="card-badge purple">Photography</div>
+<div class="card-icon">📸</div>
+<div class="card-title">Adobe Lightroom Presets – Boudoir Secrets</div>
+<div class="card-desc">Professional boudoir photography masterclass with premium Lightroom presets. EN language, 25% commission.</div>
+<div class="card-meta">
+<span class="card-category">Downloads</span>
+<span class="card-commission">💰 25% Comm</span>
+<span class="card-price">$57.84</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Photomizer 3 Premium -->
+<div class="software-card">
+<div class="card-badge">📷 Photo</div>
+<div class="card-icon">🖼️</div>
+<div class="card-title">Photomizer 3 Premium</div>
+<div class="card-desc">Intelligent photo enhancement software. Automatic optimization, 50% commission. Professional results instantly.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$38.96</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Photo BlowUp -->
+<div class="software-card">
+<div class="card-badge">🔍 Enlarge</div>
+<div class="card-icon">🔎</div>
+<div class="card-title">Photo BlowUp</div>
+<div class="card-desc">Effortless photo enlargement with stunning clarity. 50% commission. Professional upscaling without quality loss.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$38.96</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="photo-blowup.html" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- BookCoverly -->
+<div class="software-card">
+<div class="card-badge">📚 Publishing</div>
+<div class="card-icon">📕</div>
+<div class="card-title">BookCoverly – Book Cover Software</div>
+<div class="card-desc">Professional book cover design for paperback and eBooks. 50% commission. Create stunning covers easily.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$112.43</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- 100,000+ Reels Templates -->
+<div class="software-card">
+<div class="card-badge">📱 Social</div>
+<div class="card-icon">🎞️</div>
+<div class="card-title">100,000+ Reels Templates</div>
+<div class="card-desc">Massive collection of reel templates for TikTok & Instagram. 50% commission, perfect for content creators.</div>
+<div class="card-meta">
+<span class="card-category">Downloads</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$34.77</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========== TRADING & CRYPTO SECTION ========== -->
+<h2 class="section-title"><i class="fas fa-chart-line"></i> 📊 Trading & Crypto Tools</h2>
+<div class="software-grid">
+
+<!-- Crypto Breakout Predictor -->
+<div class="software-card">
+<div class="card-badge">₿ Crypto</div>
+<div class="card-icon">📊</div>
+<div class="card-title">Crypto Breakout Predictor</div>
+<div class="card-desc">Predict cryptocurrency breakouts before they happen. AI-powered analysis for Bitcoin, Ethereum, and altcoins.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 30% Comm</span>
+<span class="card-price">$17.39</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Forex STGFX Advanced MT4 -->
+<div class="software-card">
+<div class="card-badge">📊 Trading</div>
+<div class="card-icon">📊</div>
+<div class="card-title">Forex STGFX Advanced MT4</div>
+<div class="card-desc">Advanced STGFX trading strategy for MetaTrader 4. 60% commission. Professional-grade forex signals.</div>
+<div class="card-meta">
+<span class="card-category">Trading</span>
+<span class="card-commission">💰 60% Comm</span>
+<span class="card-price">$42.89</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========== AI & AUTOMATION SECTION ========== -->
+<h2 class="section-title"><i class="fas fa-robot"></i> 🤖 AI & Automation Tools</h2>
+<div class="software-grid">
+
+<!-- Rank in ChatGPT -->
+<div class="software-card">
+<div class="card-badge purple">SEO AI</div>
+<div class="card-icon">🤖</div>
+<div class="card-title">Rank in ChatGPT – $200+/Sale</div>
+<div class="card-desc">Get your website ranked in ChatGPT responses. 75% commission, earn $200+ per sale. Cutting-edge AI SEO.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 75% Comm</span>
+<span class="card-price">$344.25</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Contract Aura -->
+<div class="software-card">
+<div class="card-badge purple">Legal AI</div>
+<div class="card-icon">📜</div>
+<div class="card-title">Contract Aura – AI Contract Generator</div>
+<div class="card-desc">AI contract generator tool script. 75% commission. Create legal contracts instantly with artificial intelligence.</div>
+<div class="card-meta">
+<span class="card-category">Downloads</span>
+<span class="card-commission">💰 75% Comm</span>
+<span class="card-price">$74.18</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- PromptWise - AI Prompts -->
+<div class="software-card">
+<div class="card-badge blue">Academic AI</div>
+<div class="card-icon">🎓</div>
+<div class="card-title">PromptWise – Dissertation Prompts</div>
+<div class="card-desc">AI prompts for dissertation topic selection. Smart academic writing assistance for students and researchers.</div>
+<div class="card-meta">
+<span class="card-category">eBooks</span>
+<span class="card-commission">💰 10% Comm</span>
+<span class="card-price">$23.18</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- AI Medical Content Generator -->
+<div class="software-card">
+<div class="card-badge purple">Medical AI</div>
+<div class="card-icon">🏥</div>
+<div class="card-title">AI Medical Content Generator – Yearly</div>
+<div class="card-desc">AI-powered medical content creation tool. Generate accurate healthcare content. 40% commission, yearly plan.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 40% Comm</span>
+<span class="card-price">$578.39/yr</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Agent X -->
+<div class="software-card">
+<div class="card-badge">🤖 AI Agent</div>
+<div class="card-icon">🕴️</div>
+<div class="card-title">Agent X</div>
+<div class="card-desc">Advanced AI agent software. High-ticket at $550.57 with 50% commission. Automate complex business tasks.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$550.57</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="agent-x-software.html" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Viddeos A.I. System -->
+<div class="software-card">
+<div class="card-badge">🎥 Recurring</div>
+<div class="card-icon">🎬</div>
+<div class="card-title">Viddeos A.I. System</div>
+<div class="card-desc">Ultimate AI video system with 50% recurring commissions. High-ticket at $1,039.71 per sale.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Recurring</span>
+<span class="card-price">$1,039.71</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- AI Writing Assistant Coaching -->
+<div class="software-card">
+<div class="card-badge purple">Coaching</div>
+<div class="card-icon">✍️</div>
+<div class="card-title">AI Writing Assistant Coaching</div>
+<div class="card-desc">Make your writing standout with an AI assistant. Online coaching program. 10% commission.</div>
+<div class="card-meta">
+<span class="card-category">Online Coaching</span>
+<span class="card-commission">💰 10% Comm</span>
+<span class="card-price">$57.96</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="ai-writing-assistant-coaching.html" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Easy AI eBook Writer -->
+<div class="software-card">
+<div class="card-badge purple">AI Writing</div>
+<div class="card-icon">📖</div>
+<div class="card-title">Easy AI eBook Writer</div>
+<div class="card-desc">Create professional eBooks with AI in minutes. 50% commission. Perfect for content creators and marketers.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$29.99</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========== HEALTH & WELLNESS SECTION ========== -->
+<h2 class="section-title"><i class="fas fa-heart"></i> 🏥 Health, Safety & Wellness</h2>
+<div class="software-grid">
+
+<!-- Health and Safety Dashboard -->
+<div class="software-card">
+<div class="card-badge green">Safety</div>
+<div class="card-icon">🦺</div>
+<div class="card-title">Health & Safety Dashboard (EN-AR)</div>
+<div class="card-desc">Bilingual (English-Arabic) health and safety dashboard. 50% commission for this essential workplace tool.</div>
+<div class="card-meta">
+<span class="card-category">Downloads</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$13.33</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========== UTILITIES & SECURITY SECTION ========== -->
+<h2 class="section-title"><i class="fas fa-shield-alt"></i> 🛡️ Utilities, Security & PC Tools</h2>
+<div class="software-grid">
+
+<!-- SecuPerts Rescue Stick -->
+<div class="software-card">
+<div class="card-badge">🛟 Emergency</div>
+<div class="card-icon">💾</div>
+<div class="card-title">SecuPerts Rescue Stick</div>
+<div class="card-desc">Digital emergency assistant. Bootable rescue USB for PC recovery. 50% commission. Essential for tech support.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$29.21</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="secuperts-rescue.html" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Forensic System -->
+<div class="software-card">
+<div class="card-badge">🔍 Security</div>
+<div class="card-icon">🖥️</div>
+<div class="card-title">Forensic System – PC Analysis</div>
+<div class="card-desc">Powerful analysis tool for PCs and network forensics. 30% commission. Detect and analyze security threats.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 30% Comm</span>
+<span class="card-price">$32.13</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- ClaimReady Home Loss Organizer -->
+<div class="software-card">
+<div class="card-badge green">Insurance</div>
+<div class="card-icon">🏠</div>
+<div class="card-title">ClaimReady – Home Loss Organizer</div>
+<div class="card-desc">Windows software for organizing home insurance claims. 40% commission. Essential for homeowners.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 40% Comm</span>
+<span class="card-price">$33.61</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- Monthly Bill Cut Assistant -->
+<div class="software-card">
+<div class="card-badge green">Finance</div>
+<div class="card-icon">💡</div>
+<div class="card-title">Monthly Bill Cut Assistant</div>
+<div class="card-desc">Windows software to cut monthly bills. Save money on utilities and subscriptions. 40% commission.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 40% Comm</span>
+<span class="card-price">$33.61</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- MovieJack -->
+<div class="software-card">
+<div class="card-badge">🎬 Video</div>
+<div class="card-icon">🎥</div>
+<div class="card-title">MovieJack – Video Downloader</div>
+<div class="card-desc">Download videos from YouTube and other platforms. 50% commission. Fast, easy, and reliable.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 50% Comm</span>
+<span class="card-price">$19.47</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========== WEB & BUSINESS SECTION ========== -->
+<h2 class="section-title"><i class="fas fa-globe"></i> 🌐 Web Apps & Business Tools</h2>
+<div class="software-grid">
+
+<!-- Page Builder USA -->
+<div class="software-card">
+<div class="card-badge green">Web App</div>
+<div class="card-icon">🏗️</div>
+<div class="card-title">Page Builder USA</div>
+<div class="card-desc">Web app page builder for USA market. 75% commission + $108.75 bonus. Easy drag-and-drop interface.</div>
+<div class="card-meta">
+<span class="card-category">Software</span>
+<span class="card-commission">💰 75% Comm</span>
+<span class="card-price">$32.45</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+<!-- My Marketplace -->
+<div class="software-card">
+<div class="card-badge blue">Marketplace</div>
+<div class="card-icon">🏪</div>
+<div class="card-title">My Marketplace – team24-crosebush</div>
+<div class="card-desc">Digital downloads marketplace. 10% commission. Access and sell premium digital products easily.</div>
+<div class="card-meta">
+<span class="card-category">Downloads</span>
+<span class="card-commission">💰 10% Comm</span>
+<span class="card-price">$42.89</span>
+</div>
+<div class="card-buttons">
+<a href="https://www.digistore24.com/product/PRODUCT_ID?aff=YOUR_AFFILIATE_ID" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
+</div>
+
+<!-- CTA Banner -->
+<div class="cta-banner">
+<h3>🔍 Looking for More Popular Tools?</h3>
+<p>Check our main page for 50+ top-rated software reviews and the best Digistore24 deals.</p>
+<a href="index.html" class="btn-white"><i class="fas fa-fire"></i> View Main Deals Page</a>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 <strong>Software Tool Guide</strong> — Honest Reviews & Best Software Deals. Authorized Digistore24 Partner.</p>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="categories.html">Categories</a>
+<a href="blog.html">Blog</a>
+<a href="review.html">Reviews</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms</a>
+<a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+<a href="contact.html">Contact</a>
+</div>
+<p style="font-size: 0.8rem; margin-top: 8px;">
+⚠️ <strong>Affiliate Disclosure:</strong> We earn commissions on qualifying purchases via Digistore24. Reviews remain independent and unbiased.
+</p>
+</footer>
+
+<script>
+// Mobile menu toggle
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+document.querySelector('.nav-links').classList.toggle('show');
+const icon = this.querySelector('i');
+icon.classList.toggle('fa-bars');
+icon.classList.toggle('fa-times');
+});
+
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const icon = themeToggle.querySelector('i');
+
+function setTheme(theme) {
+html.setAttribute('data-theme', theme);
+localStorage.setItem('theme', theme);
+if (theme === 'light') {
+icon.classList.remove('fa-sun');
+icon.classList.add('fa-moon');
+} else {
+icon.classList.remove('fa-moon');
+icon.classList.add('fa-sun');
+}
+}
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+setTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+const currentTheme = html.getAttribute('data-theme');
+setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
+console.log('More Software Deals Page Loaded - 2026');
+</script>
+</body>
+</html>
