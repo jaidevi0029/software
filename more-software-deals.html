@@ -28,7 +28,6 @@
 --shadow-color: rgba(0,0,0,0.3); --footer-bg: #1e293b;
 --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 30px;
 }
-
 [data-theme="light"] {
 --bg-primary: #f8fafc; --bg-secondary: #ffffff;
 --text-primary: #1e293b; --text-secondary: #475569;
@@ -37,30 +36,23 @@
 --gold: #d97706; --green: #059669; --red: #dc2626;
 --border-color: #e2e8f0; --card-bg: #ffffff; --footer-bg: #1e293b;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
 font-family: 'Inter', sans-serif; background: var(--bg-primary);
 color: var(--text-primary); line-height: 1.7; transition: background 0.3s, color 0.3s;
 }
-
 .announcement-bar {
 background: var(--accent-gradient); color: white; text-align: center;
 padding: 8px 20px; font-size: 0.85rem; font-weight: 500;
 }
-
 .navbar {
 background: var(--bg-secondary); padding: 1rem 2rem;
 display: flex; justify-content: space-between; align-items: center;
 border-bottom: 2px solid var(--accent-primary);
 position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 15px;
 }
-.logo {
-font-size: 1.7rem; font-weight: 800; color: var(--accent-light);
-text-decoration: none; display: flex; align-items: center; gap: 8px;
-}
+.logo { font-size: 1.7rem; font-weight: 800; color: var(--accent-light); text-decoration: none; display: flex; align-items: center; gap: 8px; }
 .logo span { color: var(--gold); }
 .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
 .nav-links a {
@@ -71,19 +63,14 @@ font-size: 0.9rem; padding: 8px 14px; border-radius: var(--radius-sm); transitio
 .nav-links a.active { color: var(--accent-light); background: rgba(59, 130, 246, 0.1); }
 .nav-links a.nav-more-deals { background: linear-gradient(135deg, #10b981, #059669); color: white; font-weight: 600; }
 .mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
-
 .theme-toggle {
 background: none; border: 1px solid var(--border-color); color: var(--text-primary);
 font-size: 1.1rem; width: 38px; height: 38px; border-radius: 50%;
 cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;
 }
 .theme-toggle:hover { background: var(--accent-primary); color: white; }
-
 .container { max-width: 1200px; margin: 0 auto; padding: 3rem 24px; }
-
-.page-header {
-text-align: center; padding: 2rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem;
-}
+.page-header { text-align: center; padding: 2rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem; }
 .page-header h1 {
 font-size: 2.5rem; font-weight: 900;
 background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem;
@@ -91,12 +78,10 @@ background: var(--accent-gradient); -webkit-background-clip: text; background-cl
 .page-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 .back-link { display: inline-block; margin-top: 1rem; color: var(--accent-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
 .back-link:hover { text-decoration: underline; }
-
 .section-title {
 font-size: 1.6rem; margin: 2rem 0 1.5rem; border-left: 4px solid var(--accent-primary);
 padding-left: 15px; color: var(--text-primary); font-weight: 700; display: flex; align-items: center; gap: 10px;
 }
-
 .software-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
 .software-card {
 background: var(--card-bg); border-radius: var(--radius-lg); padding: 1.5rem;
@@ -121,7 +106,6 @@ padding: 4px 12px; border-radius: var(--radius-xl); font-size: 0.7rem; font-weig
 .card-category { background: rgba(59, 130, 246, 0.1); padding: 3px 10px; border-radius: var(--radius-xl); color: var(--accent-light); font-weight: 500; }
 .card-commission { color: var(--green); font-weight: 600; }
 .card-price { font-weight: 700; color: var(--gold); font-size: 0.85rem; }
-
 .card-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
 display: inline-block; text-align: center; padding: 10px 16px; border-radius: var(--radius-sm);
@@ -131,18 +115,15 @@ text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 0.9rem
 .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3); }
 .btn-outline { background: transparent; border: 2px solid var(--accent-primary); color: var(--accent-light); }
 .btn-outline:hover { background: var(--accent-primary); color: white; }
-
 .cta-banner { background: var(--accent-gradient); padding: 2rem; border-radius: var(--radius-lg); text-align: center; margin: 3rem 0; color: white; }
 .cta-banner h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
 .cta-banner p { margin-bottom: 1rem; opacity: 0.9; }
 .btn-white { display: inline-block; background: white; color: #1e293b; padding: 14px 36px; border-radius: var(--radius-xl); text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; }
 .btn-white:hover { transform: scale(1.05); }
-
 footer { background: var(--footer-bg); padding: 2rem; text-align: center; border-top: 2px solid var(--accent-primary); color: #94a3b8; margin-top: 3rem; }
 footer a { color: #60a5fa; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 .footer-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 10px 0; }
-
 @media (max-width: 768px) {
 .page-header h1 { font-size: 1.8rem; }
 .software-grid { grid-template-columns: 1fr; }
@@ -189,7 +170,6 @@ footer a:hover { text-decoration: underline; }
 <h2 class="section-title"><i class="fas fa-camera"></i> 📸 Photography & Creative Tools</h2>
 <div class="software-grid">
 
-<!-- Adobe Lightroom Presets – Boudoir Secrets ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge purple">Photography</div><div class="card-icon">📸</div>
 <div class="card-title">Adobe Lightroom Presets – Boudoir Secrets</div>
@@ -201,7 +181,6 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- Photomizer 3 Premium ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">📷 Photo</div><div class="card-icon">🖼️</div>
 <div class="card-title">Photomizer 3 Premium</div>
@@ -213,7 +192,6 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- Photo BlowUp ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">🔍 Enlarge</div><div class="card-icon">🔎</div>
 <div class="card-title">Photo BlowUp</div>
@@ -225,7 +203,6 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- BookCoverly ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">📚 Publishing</div><div class="card-icon">📕</div>
 <div class="card-title">BookCoverly – Book Cover Software</div>
@@ -237,14 +214,13 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- 100,000+ Reels Templates ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">📱 Social</div><div class="card-icon">🎞️</div>
 <div class="card-title">100,000+ Reels Templates</div>
 <div class="card-desc">Massive collection for TikTok & Instagram. 50% commission, perfect for content creators.</div>
 <div class="card-meta"><span class="card-category">Downloads</span><span class="card-commission">💰 50% Comm</span><span class="card-price">$34.77</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/635298/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/635298/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="100000-reels-templates-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
@@ -255,26 +231,24 @@ footer a:hover { text-decoration: underline; }
 <h2 class="section-title"><i class="fas fa-chart-line"></i> 📊 Trading & Crypto Tools</h2>
 <div class="software-grid">
 
-<!-- Crypto Breakout Predictor ⚠️ LINK CHECK NEEDED - using checkout-ds24 -->
 <div class="software-card">
 <div class="card-badge">₿ Crypto</div><div class="card-icon">📊</div>
 <div class="card-title">Crypto Breakout Predictor</div>
 <div class="card-desc">Predict cryptocurrency breakouts. AI-powered analysis for Bitcoin, Ethereum & altcoins.</div>
 <div class="card-meta"><span class="card-category">Software</span><span class="card-commission">💰 30% Comm</span><span class="card-price">$17.39</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/656347/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/656347/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="crypto-breakout-predictor-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- Forex STGFX Advanced MT4 ⚠️ PLACEHOLDER - Original link not working -->
 <div class="software-card">
 <div class="card-badge">📊 Trading</div><div class="card-icon">📊</div>
 <div class="card-title">Forex STGFX Advanced MT4</div>
 <div class="card-desc">Advanced STGFX trading strategy for MetaTrader 4. 60% commission.</div>
 <div class="card-meta"><span class="card-category">Trading</span><span class="card-commission">💰 60% Comm</span><span class="card-price">$42.89</span></div>
 <div class="card-buttons">
-<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now (Link Soon)</a>
+<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored" style="opacity:0.7;">🛒 Link Soon</a>
 <a href="forex-stgfx-advanced-mt4-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
@@ -285,7 +259,6 @@ footer a:hover { text-decoration: underline; }
 <h2 class="section-title"><i class="fas fa-robot"></i> 🤖 AI & Automation Tools</h2>
 <div class="software-grid">
 
-<!-- Rank in ChatGPT ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge purple">SEO AI</div><div class="card-icon">🤖</div>
 <div class="card-title">Rank in ChatGPT – $200+/Sale</div>
@@ -297,43 +270,39 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- Contract Aura ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge purple">Legal AI</div><div class="card-icon">📜</div>
 <div class="card-title">Contract Aura – AI Contract Generator</div>
 <div class="card-desc">AI contract generator tool script. 75% commission. Create legal contracts instantly.</div>
 <div class="card-meta"><span class="card-category">Downloads</span><span class="card-commission">💰 75% Comm</span><span class="card-price">$74.18</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/626974/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/626974/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="contract-aura-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- PromptWise ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge blue">Academic AI</div><div class="card-icon">🎓</div>
 <div class="card-title">PromptWise – Dissertation Prompts</div>
 <div class="card-desc">AI prompts for dissertation topic selection. Smart academic writing assistance.</div>
 <div class="card-meta"><span class="card-category">eBooks</span><span class="card-commission">💰 10% Comm</span><span class="card-price">$23.18</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/651874/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/651874/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="promptwise-dissertation-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- AI Medical Content Generator ⚠️ PLACEHOLDER - Original link structure uncertain -->
 <div class="software-card">
 <div class="card-badge purple">Medical AI</div><div class="card-icon">🏥</div>
 <div class="card-title">AI Medical Content Generator – Yearly</div>
 <div class="card-desc">AI-powered medical content creation. Generate accurate healthcare content. 40% commission.</div>
 <div class="card-meta"><span class="card-category">Software</span><span class="card-commission">💰 40% Comm</span><span class="card-price">$578.39/yr</span></div>
 <div class="card-buttons">
-<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now (Link Soon)</a>
+<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored" style="opacity:0.7;">🛒 Link Soon</a>
 <a href="ai-medical-content-generator-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- Agent X ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">🤖 AI Agent</div><div class="card-icon">🕴️</div>
 <div class="card-title">Agent X</div>
@@ -345,7 +314,6 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- Viddeos A.I. System ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">🎥 Recurring</div><div class="card-icon">🎬</div>
 <div class="card-title">Viddeos A.I. System</div>
@@ -357,26 +325,24 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- AI Writing Assistant Coaching ⚠️ PLACEHOLDER - Original link not working -->
 <div class="software-card">
 <div class="card-badge purple">Coaching</div><div class="card-icon">✍️</div>
 <div class="card-title">AI Writing Assistant Coaching</div>
 <div class="card-desc">Make your writing standout with an AI assistant. Online coaching program. 10% commission.</div>
 <div class="card-meta"><span class="card-category">Online Coaching</span><span class="card-commission">💰 10% Comm</span><span class="card-price">$57.96</span></div>
 <div class="card-buttons">
-<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now (Link Soon)</a>
+<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored" style="opacity:0.7;">🛒 Link Soon</a>
 <a href="ai-writing-assistant-coaching.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- Easy AI eBook Writer ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge purple">AI Writing</div><div class="card-icon">📖</div>
 <div class="card-title">Easy AI eBook Writer</div>
 <div class="card-desc">Create professional eBooks with AI in minutes. 50% commission.</div>
 <div class="card-meta"><span class="card-category">Software</span><span class="card-commission">💰 50% Comm</span><span class="card-price">$29.99</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/675892/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/675892/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="easy-ai-ebook-writer-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
@@ -387,14 +353,13 @@ footer a:hover { text-decoration: underline; }
 <h2 class="section-title"><i class="fas fa-heart"></i> 🏥 Health, Safety & Wellness</h2>
 <div class="software-grid">
 
-<!-- Health & Safety Dashboard ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge green">Safety</div><div class="card-icon">🦺</div>
 <div class="card-title">Health & Safety Dashboard (EN-AR)</div>
 <div class="card-desc">Bilingual (English-Arabic) health and safety dashboard. 50% commission.</div>
 <div class="card-meta"><span class="card-category">Downloads</span><span class="card-commission">💰 50% Comm</span><span class="card-price">$13.33</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/671620/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/671620/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="health-safety-dashboard-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
@@ -405,7 +370,6 @@ footer a:hover { text-decoration: underline; }
 <h2 class="section-title"><i class="fas fa-shield-alt"></i> 🛡️ Utilities, Security & PC Tools</h2>
 <div class="software-grid">
 
-<!-- SecuPerts Rescue Stick ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">🛟 Emergency</div><div class="card-icon">💾</div>
 <div class="card-title">SecuPerts Rescue Stick</div>
@@ -417,7 +381,6 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- Forensic System ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">🔍 Security</div><div class="card-icon">🖥️</div>
 <div class="card-title">Forensic System – PC Analysis</div>
@@ -429,31 +392,28 @@ footer a:hover { text-decoration: underline; }
 </div>
 </div>
 
-<!-- ClaimReady ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge green">Insurance</div><div class="card-icon">🏠</div>
 <div class="card-title">ClaimReady – Home Loss Organizer</div>
 <div class="card-desc">Windows software for home insurance claims. 40% commission. Essential for homeowners.</div>
 <div class="card-meta"><span class="card-category">Software</span><span class="card-commission">💰 40% Comm</span><span class="card-price">$33.61</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/675990/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/675990/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="claimready-home-loss-organizer-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- Monthly Bill Cut Assistant ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge green">Finance</div><div class="card-icon">💡</div>
 <div class="card-title">Monthly Bill Cut Assistant</div>
 <div class="card-desc">Windows software to cut monthly bills. Save on utilities & subscriptions. 40% commission.</div>
 <div class="card-meta"><span class="card-category">Software</span><span class="card-commission">💰 40% Comm</span><span class="card-price">$33.61</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/675992/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/675992/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="monthly-bill-cut-assistant-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- MovieJack ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge">🎬 Video</div><div class="card-icon">🎥</div>
 <div class="card-title">MovieJack – Video Downloader</div>
@@ -471,26 +431,36 @@ footer a:hover { text-decoration: underline; }
 <h2 class="section-title"><i class="fas fa-globe"></i> 🌐 Web Apps & Business Tools</h2>
 <div class="software-grid">
 
-<!-- Page Builder USA ⚠️ PLACEHOLDER - External link, not Digistore24 redirect -->
+<!-- 🆕 SocialPaid / Get Paying Social Media Jobs — NEW PRODUCT ADDED -->
+<div class="software-card">
+<div class="card-badge green">💰 New</div><div class="card-icon">💼</div>
+<div class="card-title">Get Paying Social Media Jobs</div>
+<div class="card-desc">Discover how to get paid for social media tasks. Complete guide with job quiz funnel. High-converting offer.</div>
+<div class="card-meta"><span class="card-category">Downloads</span><span class="card-commission">💰 Commission Available</span><span class="card-price">Varies</span></div>
+<div class="card-buttons">
+<a href="https://getpayingsocialmediajobs.com/funnel/job-quiz-digi24/job-quiz/#aff=BestMarketProduct" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="#" class="btn btn-outline">📖 Read More</a>
+</div>
+</div>
+
 <div class="software-card">
 <div class="card-badge green">Web App</div><div class="card-icon">🏗️</div>
 <div class="card-title">Page Builder USA</div>
 <div class="card-desc">Web app page builder for USA market. 75% commission + $108.75 bonus.</div>
 <div class="card-meta"><span class="card-category">Software</span><span class="card-commission">💰 75% Comm</span><span class="card-price">$32.45</span></div>
 <div class="card-buttons">
-<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now (Link Soon)</a>
+<a href="#" class="btn btn-buy" target="_blank" rel="nofollow sponsored" style="opacity:0.7;">🛒 Link Soon</a>
 <a href="page-builder-usa-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
 
-<!-- My Marketplace ✅ VERIFIED -->
 <div class="software-card">
 <div class="card-badge blue">Marketplace</div><div class="card-icon">🏪</div>
 <div class="card-title">My Marketplace – team24-crosebush</div>
 <div class="card-desc">Digital downloads marketplace. 10% commission. Access & sell premium digital products.</div>
 <div class="card-meta"><span class="card-category">Downloads</span><span class="card-commission">💰 10% Comm</span><span class="card-price">$42.89</span></div>
 <div class="card-buttons">
-<a href="https://www.checkout-ds24.com/redir/641346/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+<a href="https://www.digistore24.com/redir/641346/BestMarketProduct/" class="btn btn-buy" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
 <a href="my-marketplace-team24-review-2026.html" class="btn btn-outline">📖 Read More</a>
 </div>
 </div>
@@ -530,7 +500,6 @@ const icon = this.querySelector('i');
 icon.classList.toggle('fa-bars');
 icon.classList.toggle('fa-times');
 });
-
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 const icon = themeToggle.querySelector('i');
@@ -544,7 +513,7 @@ setTheme(localStorage.getItem('theme') || 'dark');
 themeToggle.addEventListener('click', () => {
 setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
-console.log('More Software Deals Page Loaded - 2026 | Links Verified');
+console.log('More Software Deals Page Loaded - 2026 | All Links Fixed');
 </script>
 </body>
 </html>
