@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free OCR Software - Extract Text from Images Online</title>
+<meta name="description" content="Free online OCR tool. Extract text from images, screenshots, and scanned documents. No signup, no limits. Supports English, Hindi, and more." />
+<meta name="keywords" content="ocr software, free ocr, image to text, extract text from image, ocr online, text extractor" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="softwaretoolguide.com" />
+<link rel="canonical" href="https://softwaretoolguide.com/ocr-software.html" />
+
+<meta property="og:title" content="Free OCR Software - Extract Text from Images" />
+<meta property="og:description" content="Extract text from images and screenshots online for free." />
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Free OCR Software",
+"operatingSystem": "All",
+"applicationCategory": "MultimediaApplication",
+"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+"description": "Free online OCR tool to extract text from images.",
+"url": "https://softwaretoolguide.com/ocr-software.html"
+}
+</script>
+
+<style>
+:root {
+--bg: #0f0f1a;
+--surface: #1a1a2e;
+--surface2: #12121f;
+--border: #2a2a44;
+--text: #e0e0e0;
+--text2: #8888aa;
+--accent: #ffd200;
+--shadow: 0 20px 60px rgba(0,0,0,0.8);
+--radius: 16px;
+}
+.light-theme {
+--bg: #f0f2f5;
+--surface: #ffffff;
+--surface2: #e8eaed;
+--border: #d0d2d6;
+--text: #1a1a2e;
+--text2: #555577;
+--accent: #2979ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; transition:0.3s; }
+body { background:var(--bg); color:var(--text); min-height:100vh; display:flex; justify-content:center; padding:20px; }
+.container { background:var(--surface); border-radius:var(--radius); padding:25px; max-width:900px; width:100%; box-shadow:var(--shadow); border:1px solid var(--border); }
+.header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px; }
+.header h1 { font-size:24px; font-weight:700; background:linear-gradient(135deg, #f7971e, #ffd200); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.btn { padding:8px 16px; border:none; border-radius:30px; font-weight:600; cursor:pointer; font-size:13px; }
+.btn-primary { background:var(--accent); color:#0f0f1a; }
+.btn-success { background:#00c853; color:#0f0f1a; }
+.btn-danger { background:#ff3333; color:#fff; }
+.theme-toggle { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:6px 14px; border-radius:30px; cursor:pointer; }
+
+.upload-zone { border:2px dashed var(--border); border-radius:var(--radius); padding:30px; text-align:center; color:var(--text2); cursor:pointer; margin-bottom:16px; transition:0.3s; }
+.upload-zone:hover { border-color:var(--accent); background:var(--surface2); }
+.upload-zone input { display:none; }
+
+.result-box { background:var(--surface2); border-radius:var(--radius); padding:14px; border:1px solid var(--border); min-height:100px; margin-bottom:14px; white-space:pre-wrap; font-size:14px; }
+.status-msg { margin-top:14px; padding:8px 14px; background:var(--surface2); border-radius:8px; border-left:4px solid var(--accent); font-size:14px; }
+.footer { margin-top:16px; text-align:center; border-top:1px solid var(--border); padding-top:14px; font-size:12px; color:var(--text2); }
+.footer a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🔍 Free OCR - Image to Text</h1>
+<button class="theme-toggle" id="themeToggle">🌙 Dark/Light</button>
+</div>
+
+<div class="upload-zone" id="uploadZone">
+<div>📁 Upload an image (JPG, PNG) to extract text</div>
+<input type="file" id="fileInput" accept="image/*" />
+</div>
+
+<div class="result-box" id="resultBox">📝 Extracted text will appear here...</div>
+
+<button class="btn btn-success" id="copyBtn" disabled>📋 Copy Text</button>
+<button class="btn btn-danger" id="clearBtn">🗑 Clear</button>
+
+<div class="status-msg" id="statusMsg">✅ Upload an image to extract text.</div>
+<div class="footer">Made with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% free</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const fileInput = document.getElementById('fileInput');
+const uploadZone = document.getElementById('uploadZone');
+const resultBox = document.getElementById('resultBox');
+const copyBtn = document.getElementById('copyBtn');
+const clearBtn = document.getElementById('clearBtn');
+const statusMsg = document.getElementById('statusMsg');
+const themeToggle = document.getElementById('themeToggle');
+
+function setStatus(msg, isError=false) {
+statusMsg.textContent = msg;
+statusMsg.style.borderLeftColor = isError ? '#ff3333' : '#ffd200';
+}
+
+uploadZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', (e) => {
+if (e.target.files[0]) processImage(e.target.files[0]);
+});
+uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.style.borderColor = 'var(--accent)'; });
+uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor = 'var(--border)'; });
+uploadZone.addEventListener('drop', (e) => {
+e.preventDefault();
+uploadZone.style.borderColor = 'var(--border)';
+if (e.dataTransfer.files[0]) processImage(e.dataTransfer.files[0]);
+});
+
+async function processImage(file) {
+setStatus('⏳ Extracting text...');
+try {
+const reader = new FileReader();
+reader.onload = async (e) => {
+const img = new Image();
+img.onload = async () => {
+const canvas = document.createElement('canvas');
+canvas.width = img.width;
+canvas.height = img.height;
+const ctx = canvas.getContext('2d');
+ctx.drawImage(img, 0, 0);
+const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+// Use Tesseract.js for OCR
+const { data: { text } } = await Tesseract.recognize(
+canvas,
+'eng+hin', // English + Hindi
+{ logger: m => console.log(m) }
+);
+resultBox.textContent = text.trim() || 'No text found.';
+copyBtn.disabled = false;
+setStatus('✅ Text extracted successfully!');
+};
+img.src = e.target.result;
+};
+reader.readAsDataURL(file);
+} catch(err) {
+setStatus('❌ Error: ' + err.message, true);
+}
+}
+
+copyBtn.addEventListener('click', () => {
+navigator.clipboard.writeText(resultBox.textContent);
+setStatus('📋 Text copied to clipboard!');
+});
+
+clearBtn.addEventListener('click', () => {
+resultBox.textContent = '📝 Extracted text will appear here...';
+copyBtn.disabled = true;
+setStatus('🗑 Cleared');
+});
+
+themeToggle.addEventListener('click', () => {
+document.body.classList.toggle('light-theme');
+themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️ Light' : '🌙 Dark';
+});
+
+setStatus('✅ Upload an image to extract text.');
+})();
+</script>
+<!-- Tesseract.js for OCR -->
+<script src="https://unpkg.com/tesseract.js@5/dist/tesseract.min.js"></script>
+</body>
+</html>
