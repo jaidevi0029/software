@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- FULL SEO -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Wireframing Software - Drag & Drop UI Design Tool</title>
+<meta name="description" content="Free online wireframing tool. Drag & drop UI elements (boxes, buttons, text, arrows) to create wireframes. Export as PNG. No signup." />
+<meta name="keywords" content="wireframing software, free wireframe tool, UI design tool, drag and drop wireframe, mockup creator, website wireframe" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="softwaretoolguide.com" />
+<link rel="canonical" href="https://softwaretoolguide.com/wireframing-software.html" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Wireframing Software - Drag & Drop UI Designer" />
+<meta property="og:description" content="Create wireframes with drag & drop elements. Export as PNG. Free, no signup." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://softwaretoolguide.com/wireframing-software.html" />
+<meta property="og:image" content="https://softwaretoolguide.com/images/wireframing-og.jpg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Wireframing Tool" />
+<meta name="twitter:description" content="Drag & drop wireframe creator. Export PNG." />
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Free Wireframing Software",
+"operatingSystem": "All",
+"applicationCategory": "DesignApplication",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"description": "Free online wireframing tool with drag & drop elements.",
+"url": "https://softwaretoolguide.com/wireframing-software.html"
+}
+</script>
+
+<style>
+:root {
+--bg: #0f0f1a;
+--surface: #1a1a2e;
+--surface2: #12121f;
+--border: #2a2a44;
+--text: #e0e0e0;
+--text2: #8888aa;
+--accent: #ffd200;
+--shadow: 0 20px 60px rgba(0,0,0,0.8);
+--radius: 12px;
+}
+.light-theme {
+--bg: #f0f2f5;
+--surface: #ffffff;
+--surface2: #e8eaed;
+--border: #d0d2d6;
+--text: #1a1a2e;
+--text2: #555577;
+--accent: #2979ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; transition: 0.3s; }
+body { background:var(--bg); color:var(--text); min-height:100vh; padding:20px; display:flex; justify-content:center; }
+.container { background:var(--surface); border-radius:var(--radius); padding:25px; max-width:1100px; width:100%; box-shadow:var(--shadow); border:1px solid var(--border); }
+.header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px; }
+.header h1 { font-size:24px; font-weight:700; background:linear-gradient(135deg, #f7971e, #ffd200); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.btn { padding:8px 16px; border:none; border-radius:30px; font-weight:600; cursor:pointer; font-size:13px; }
+.btn-primary { background:var(--accent); color:#0f0f1a; }
+.btn-success { background:#00c853; color:#0f0f1a; }
+.btn-danger { background:#ff3333; color:#fff; }
+.theme-toggle { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:6px 14px; border-radius:30px; cursor:pointer; }
+
+.layout { display:flex; flex-wrap:wrap; gap:16px; }
+.toolbar { flex:0 0 180px; background:var(--surface2); border-radius:var(--radius); padding:14px; border:1px solid var(--border); }
+.toolbar h3 { font-size:14px; color:var(--text2); border-bottom:1px solid var(--border); padding-bottom:6px; margin-bottom:10px; }
+.element-btn { display:block; width:100%; padding:6px 12px; margin-bottom:6px; background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:8px; cursor:pointer; text-align:left; font-size:13px; }
+.element-btn:hover { border-color:var(--accent); }
+
+.canvas-wrapper { flex:1; background:#0a0a15; border-radius:var(--radius); padding:10px; border:1px solid var(--border); min-height:500px; position:relative; overflow:hidden; }
+#wireframeCanvas { width:100%; height:600px; background:#fff; border-radius:8px; cursor:default; position:relative; }
+.ui-element { position:absolute; cursor:move; border:1px solid #333; background:#f0f0f0; padding:8px 12px; border-radius:4px; min-width:60px; min-height:30px; font-size:13px; color:#333; user-select:none; }
+.ui-element.selected { border:2px solid #2979ff; box-shadow:0 0 8px rgba(41,121,255,0.3); }
+.ui-element .delete-btn { position:absolute; top:-10px; right:-10px; background:#ff3333; color:#fff; border:none; border-radius:50%; width:20px; height:20px; cursor:pointer; font-size:10px; display:none; }
+.ui-element:hover .delete-btn { display:block; }
+
+.status-msg { margin-top:14px; padding:8px 14px; background:var(--surface2); border-radius:8px; border-left:4px solid var(--accent); font-size:14px; color:var(--text2); }
+.footer { margin-top:16px; text-align:center; border-top:1px solid var(--border); padding-top:14px; font-size:12px; color:var(--text2); }
+.footer a { color:var(--accent); text-decoration:none; }
+@media(max-width:700px){ .toolbar { flex:1 1 100%; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🎨 Free Wireframing Tool</h1>
+<div style="display:flex; gap:8px; flex-wrap:wrap;">
+<button class="btn btn-success" id="exportBtn">⬇ Export PNG</button>
+<button class="btn btn-danger" id="clearBtn">🗑 Clear All</button>
+<button class="theme-toggle" id="themeToggle">🌙 Dark/Light</button>
+</div>
+</div>
+
+<div class="layout">
+<div class="toolbar">
+<h3>🧩 Elements</h3>
+<button class="element-btn" data-type="box">📦 Box</button>
+<button class="element-btn" data-type="button">🔘 Button</button>
+<button class="element-btn" data-type="text">📝 Text</button>
+<button class="element-btn" data-type="image">🖼 Image Placeholder</button>
+<button class="element-btn" data-type="arrow">➡️ Arrow</button>
+<button class="element-btn" data-type="input">✏️ Input Field</button>
+<hr style="border-color:var(--border); margin:10px 0;" />
+<button class="btn btn-primary" id="addCustomBtn" style="width:100%;">➕ Custom Element</button>
+</div>
+
+<div class="canvas-wrapper">
+<div id="wireframeCanvas">
+<!-- Elements will be placed here -->
+</div>
+</div>
+</div>
+
+<div class="status-msg" id="statusMsg">✅ Drag elements from left to canvas. Click & drag to move.</div>
+<div class="footer">Made with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% free</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const canvas = document.getElementById('wireframeCanvas');
+const statusMsg = document.getElementById('statusMsg');
+const themeToggle = document.getElementById('themeToggle');
+const exportBtn = document.getElementById('exportBtn');
+const clearBtn = document.getElementById('clearBtn');
+const addCustomBtn = document.getElementById('addCustomBtn');
+
+let elements = JSON.parse(localStorage.getItem('wireframeElements')) || [];
+let selectedElement = null;
+let elementIdCounter = Date.now();
+
+function saveState() { localStorage.setItem('wireframeElements', JSON.stringify(elements)); }
+
+function renderElements() {
+canvas.innerHTML = '';
+elements.forEach(el => {
+const div = document.createElement('div');
+div.className = 'ui-element' + (selectedElement === el.id ? ' selected' : '');
+div.dataset.id = el.id;
+div.style.left = el.x + 'px';
+div.style.top = el.y + 'px';
+div.style.width = el.width + 'px';
+div.style.height = el.height + 'px';
+div.style.background = el.color || '#f0f0f0';
+div.style.color = el.textColor || '#333';
+div.textContent = el.text || el.type;
+if (el.type === 'arrow') {
+div.textContent = '➡️';
+div.style.fontSize = '30px';
+div.style.background = 'transparent';
+div.style.border = 'none';
+}
+if (el.type === 'image') {
+div.textContent = '🖼 Image';
+div.style.background = '#e0e0e0';
+div.style.color = '#888';
+}
+if (el.type === 'input') {
+div.textContent = '✏️ Input';
+div.style.background = '#fff';
+div.style.border = '1px solid #ccc';
+}
+// Delete button
+const delBtn = document.createElement('button');
+delBtn.className = 'delete-btn';
+delBtn.textContent = '✕';
+delBtn.addEventListener('click', (e) => {
+e.stopPropagation();
+elements = elements.filter(e => e.id !== el.id);
+saveState();
+renderElements();
+setStatus('🗑 Element deleted');
+});
+div.appendChild(delBtn);
+
+// Drag
+makeDraggable(div, el);
+
+// Select
+div.addEventListener('click', () => {
+selectedElement = el.id;
+renderElements();
+});
+
+canvas.appendChild(div);
+});
+}
+
+function makeDraggable(el, data) {
+let isDragging = false;
+let startX, startY, origX, origY;
+
+el.addEventListener('mousedown', (e) => {
+if (e.target.classList.contains('delete-btn')) return;
+isDragging = true;
+startX = e.clientX;
+startY = e.clientY;
+origX = data.x;
+origY = data.y;
+el.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+if (!isDragging) return;
+const dx = e.clientX - startX;
+const dy = e.clientY - startY;
+data.x = Math.max(0, origX + dx);
+data.y = Math.max(0, origY + dy);
+el.style.left = data.x + 'px';
+el.style.top = data.y + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+if (isDragging) {
+isDragging = false;
+el.style.cursor = 'move';
+saveState();
+}
+});
+}
+
+function addElement(type) {
+const el = {
+id: `el_${elementIdCounter++}`,
+type: type,
+x: 50 + Math.random() * 100,
+y: 50 + Math.random() * 100,
+width: type === 'button' ? 120 : type === 'input' ? 200 : 100,
+height: type === 'button' ? 40 : type === 'input' ? 36 : 60,
+text: type.charAt(0).toUpperCase() + type.slice(1),
+color: type === 'button' ? '#2979ff' : '#f0f0f0',
+textColor: type === 'button' ? '#fff' : '#333'
+};
+elements.push(el);
+saveState();
+renderElements();
+setStatus(`✅ ${type} added`);
+}
+
+// Event listeners
+document.querySelectorAll('.element-btn').forEach(btn => {
+btn.addEventListener('click', () => addElement(btn.dataset.type));
+});
+
+addCustomBtn.addEventListener('click', () => {
+const type = prompt('Enter custom element name:');
+if (type && type.trim()) {
+addElement(type.trim());
+}
+});
+
+exportBtn.addEventListener('click', () => {
+// Capture canvas as image
+const rect = canvas.getBoundingClientRect();
+const tempCanvas = document.createElement('canvas');
+tempCanvas.width = rect.width;
+tempCanvas.height = rect.height;
+const ctx = tempCanvas.getContext('2d');
+ctx.fillStyle = '#fff';
+ctx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+// Draw elements
+elements.forEach(el => {
+ctx.fillStyle = el.color || '#f0f0f0';
+ctx.fillRect(el.x, el.y, el.width, el.height);
+ctx.fillStyle = el.textColor || '#333';
+ctx.font = '14px sans-serif';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText(el.text || el.type, el.x + el.width/2, el.y + el.height/2);
+});
+const link = document.createElement('a');
+link.download = `wireframe-${Date.now()}.png`;
+link.href = tempCanvas.toDataURL('image/png');
+link.click();
+setStatus('✅ Wireframe exported as PNG!');
+});
+
+clearBtn.addEventListener('click', () => {
+if (confirm('Clear all elements?')) {
+elements = [];
+saveState();
+renderElements();
+setStatus('🗑 Canvas cleared');
+}
+});
+
+themeToggle.addEventListener('click', () => {
+document.body.classList.toggle('light-theme');
+themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️ Light' : '🌙 Dark';
+});
+
+// Init
+renderElements();
+setStatus('✅ Drag elements from left. Click & drag to move.');
+})();
+</script>
+</body>
+</html>
