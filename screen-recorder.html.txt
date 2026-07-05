@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pro Screen Recorder - softwaretoolguide.com</title>
+<style>
+/* ===== DARK PROFESSIONAL THEME ===== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+background: #0f0f1a;
+color: #e0e0e0;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+.container {
+background: #1a1a2e;
+border-radius: 24px;
+padding: 40px;
+max-width: 800px;
+width: 100%;
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+border: 1px solid #2a2a44;
+transition: all 0.3s;
+}
+h1 {
+font-size: 28px;
+font-weight: 700;
+background: linear-gradient(135deg, #f7971e, #ffd200);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 8px;
+letter-spacing: 0.5px;
+}
+.subtitle {
+color: #8888aa;
+font-size: 14px;
+margin-bottom: 30px;
+border-bottom: 1px solid #2a2a44;
+padding-bottom: 15px;
+}
+.video-wrapper {
+background: #0a0a15;
+border-radius: 16px;
+padding: 12px;
+border: 1px solid #2a2a44;
+margin-bottom: 25px;
+position: relative;
+}
+#preview {
+width: 100%;
+border-radius: 12px;
+background: #000;
+height: 340px;
+object-fit: cover;
+display: block;
+background: #111;
+}
+.recording-badge {
+position: absolute;
+top: 20px;
+right: 20px;
+background: #ff3333;
+color: #fff;
+padding: 6px 16px;
+border-radius: 30px;
+font-size: 13px;
+font-weight: 600;
+display: none;
+animation: pulse-badge 1.2s infinite;
+box-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
+}
+@keyframes pulse-badge {
+0% { opacity: 1; transform: scale(1); }
+50% { opacity: 0.6; transform: scale(1.05); }
+100% { opacity: 1; transform: scale(1); }
+}
+.controls {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+align-items: center;
+margin-bottom: 20px;
+}
+.btn {
+padding: 12px 28px;
+border: none;
+border-radius: 40px;
+font-weight: 600;
+font-size: 15px;
+cursor: pointer;
+transition: all 0.25s ease;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.btn:disabled {
+opacity: 0.4;
+cursor: not-allowed;
+transform: none !important;
+}
+.btn-start {
+background: linear-gradient(135deg, #00c853, #00e676);
+color: #0f0f1a;
+box-shadow: 0 4px 20px rgba(0, 200, 80, 0.25);
+}
+.btn-start:hover:not(:disabled) {
+transform: scale(1.03);
+box-shadow: 0 6px 30px rgba(0, 200, 80, 0.35);
+}
+.btn-pause {
+background: #ffaa00;
+color: #0f0f1a;
+}
+.btn-pause:hover:not(:disabled) {
+transform: scale(1.03);
+}
+.btn-stop {
+background: #ff3333;
+color: #fff;
+}
+.btn-stop:hover:not(:disabled) {
+transform: scale(1.03);
+}
+.btn-download {
+background: #2979ff;
+color: #fff;
+}
+.btn-download:hover:not(:disabled) {
+transform: scale(1.03);
+}
+.settings-row {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+background: #12121f;
+padding: 18px 22px;
+border-radius: 16px;
+border: 1px solid #22223a;
+margin-bottom: 20px;
+}
+.settings-row label {
+font-size: 14px;
+font-weight: 500;
+color: #aaaacc;
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+.settings-row select, .settings-row input[type="range"] {
+background: #1e1e32;
+border: 1px solid #333355;
+color: #e0e0e0;
+padding: 6px 12px;
+border-radius: 10px;
+font-size: 13px;
+outline: none;
+cursor: pointer;
+}
+.settings-row select:focus {
+border-color: #ffd200;
+}
+.timer {
+font-size: 26px;
+font-weight: 700;
+color: #ffd200;
+letter-spacing: 2px;
+font-variant-numeric: tabular-nums;
+min-width: 100px;
+text-align: center;
+background: #12121f;
+padding: 6px 16px;
+border-radius: 40px;
+border: 1px solid #2a2a44;
+}
+.status-msg {
+font-size: 14px;
+color: #88aacc;
+margin-top: 12px;
+padding: 10px 16px;
+background: #12121f;
+border-radius: 12px;
+border-left: 4px solid #ffd200;
+}
+.footer-note {
+margin-top: 16px;
+font-size: 12px;
+color: #556677;
+text-align: center;
+border-top: 1px solid #22223a;
+padding-top: 18px;
+}
+.footer-note a {
+color: #ffd200;
+text-decoration: none;
+}
+@media (max-width: 600px) {
+.container { padding: 20px; }
+.controls { flex-direction: column; align-items: stretch; }
+.btn { justify-content: center; }
+.settings-row { flex-direction: column; gap: 12px; }
+#preview { height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🎥 Pro Screen Recorder</h1>
+<div class="subtitle">Record screen + audio · No signup · Free forever</div>
+
+<!-- Video Preview -->
+<div class="video-wrapper">
+<video id="preview" autoplay muted playsinline></video>
+<span class="recording-badge" id="recBadge">● REC</span>
+</div>
+
+<!-- Timer -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+<div class="timer" id="timerDisplay">00:00:00</div>
+<span style="font-size: 14px; color: #8888aa;">⏱️ Recording time</span>
+</div>
+
+<!-- Settings -->
+<div class="settings-row">
+<label>
+Video Quality
+<select id="qualitySelect">
+<option value="0.4">Low (480p)</option>
+<option value="0.7" selected>Medium (720p)</option>
+<option value="1.0">High (1080p)</option>
+</select>
+</label>
+<label>
+Microphone
+<select id="micSelect">
+<option value="default">Default Mic</option>
+</select>
+</label>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+<button class="btn btn-start" id="startBtn">▶ Start Recording</button>
+<button class="btn btn-pause" id="pauseBtn" disabled>⏸ Pause</button>
+<button class="btn btn-stop" id="stopBtn" disabled>⏹ Stop</button>
+<button class="btn btn-download" id="downloadBtn" disabled>⬇ Download</button>
+</div>
+
+<div class="status-msg" id="statusMsg">✅ Ready – click "Start Recording" to begin</div>
+<div class="footer-note">
+Built with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% client-side
+</div>
+</div>
+
+<script>
+// ========== CORE JAVASCRIPT ==========
+(function() {
+'use strict';
+
+// DOM refs
+const videoPreview = document.getElementById('preview');
+const startBtn = document.getElementById('startBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const stopBtn = document.getElementById('stopBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const statusMsg = document.getElementById('statusMsg');
+const timerDisplay = document.getElementById('timerDisplay');
+const recBadge = document.getElementById('recBadge');
+const qualitySelect = document.getElementById('qualitySelect');
+const micSelect = document.getElementById('micSelect');
+
+// State
+let mediaRecorder = null;
+let recordedChunks = [];
+let stream = null;
+let isRecording = false;
+let isPaused = false;
+let startTime = null;
+let timerInterval = null;
+
+// ===== LOAD MICROPHONES =====
+async function loadMicrophones() {
+try {
+const devices = await navigator.mediaDevices.enumerateDevices();
+const audioInputs = devices.filter(d => d.kind === 'audioinput');
+// Keep default option
+micSelect.innerHTML = '<option value="default">Default Mic</option>';
+audioInputs.forEach((device, idx) => {
+const opt = document.createElement('option');
+opt.value = device.deviceId;
+opt.textContent = device.label || `Mic ${idx+1}`;
+micSelect.appendChild(opt);
+});
+} catch(e) {
+// silently fail – default will work
+}
+}
+loadMicrophones();
+
+// ===== SET STATUS HELPER =====
+function setStatus(msg, isError = false) {
+statusMsg.textContent = msg;
+statusMsg.style.borderLeftColor = isError ? '#ff3333' : '#ffd200';
+}
+
+// ===== UPDATE TIMER =====
+function updateTimer() {
+if (!startTime) {
+timerDisplay.textContent = '00:00:00';
+return;
+}
+const elapsed = Date.now() - startTime;
+const hrs = String(Math.floor(elapsed / 3600000)).padStart(2, '0');
+const mins = String(Math.floor((elapsed % 3600000) / 60000)).padStart(2, '0');
+const secs = String(Math.floor((elapsed % 60000) / 1000)).padStart(2, '0');
+timerDisplay.textContent = `${hrs}:${mins}:${secs}`;
+}
+
+// ===== START RECORDING =====
+async function startRecording() {
+try {
+// Reset state
+if (stream) {
+stream.getTracks().forEach(t => t.stop());
+}
+recordedChunks = [];
+videoPreview.srcObject = null;
+setStatus('⏳ Requesting permissions...');
+
+// Get display media (screen)
+const displayStream = await navigator.mediaDevices.getDisplayMedia({
+video: {
+cursor: 'always',
+displaySurface: 'browser'
+},
+audio: true
+});
+
+// Get microphone
+let audioStream = null;
+const micId = micSelect.value;
+try {
+audioStream = await navigator.mediaDevices.getUserMedia({
+audio: micId === 'default' ? true : { deviceId: micId }
+});
+} catch(e) {
+setStatus('⚠️ Mic not available – recording screen only', true);
+audioStream = null;
+}
+
+// Combine both streams
+const combinedStream = new MediaStream();
+displayStream.getVideoTracks().forEach(t => combinedStream.addTrack(t));
+if (audioStream) {
+audioStream.getAudioTracks().forEach(t => combinedStream.addTrack(t));
+}
+// Also add display audio (system audio) if present
+displayStream.getAudioTracks().forEach(t => combinedStream.addTrack(t));
+
+stream = combinedStream;
+videoPreview.srcObject = stream;
+
+// Set quality (bitrate)
+const quality = parseFloat(qualitySelect.value);
+const mimeTypes = [
+'video/webm;codecs=vp9,opus',
+'video/webm;codecs=vp8,opus',
+'video/webm;codecs=h264,opus',
+'video/webm'
+];
+let options = {
+mimeType: mimeTypes.find(t => MediaRecorder.isTypeSupported(t)) || 'video/webm',
+videoBitsPerSecond: Math.floor(2500000 * quality) // 2.5Mbps base
+};
+
+mediaRecorder = new MediaRecorder(stream, options);
+recordedChunks = [];
+
+mediaRecorder.ondataavailable = (e) => {
+if (e.data.size > 0) recordedChunks.push(e.data);
+};
+
+mediaRecorder.onstop = () => {
+const blob = new Blob(recordedChunks, { type: mediaRecorder.mimeType });
+const url = URL.createObjectURL(blob);
+downloadBtn.disabled = false;
+downloadBtn.onclick = () => {
+const a = document.createElement('a');
+a.href = url;
+a.download = `recording-${Date.now()}.webm`;
+a.click();
+setStatus('✅ Download started!');
+};
+setStatus('✅ Recording stopped – click Download to save');
+recBadge.style.display = 'none';
+};
+
+mediaRecorder.start(1000); // chunks every 1s
+isRecording = true;
+isPaused = false;
+startTime = Date.now();
+timerInterval = setInterval(updateTimer, 200);
+
+// UI update
+startBtn.disabled = true;
+pauseBtn.disabled = false;
+stopBtn.disabled = false;
+downloadBtn.disabled = true;
+recBadge.style.display = 'block';
+setStatus('🔴 Recording in progress...');
+
+// Handle user stopping via browser's native stop button
+displayStream.getVideoTracks()[0].onended = () => {
+if (isRecording) stopRecording();
+};
+
+} catch (err) {
+setStatus('❌ Error: ' + err.message, true);
+console.error(err);
+startBtn.disabled = false;
+}
+}
+
+// ===== PAUSE / RESUME =====
+function togglePause() {
+if (!mediaRecorder || !isRecording) return;
+if (!isPaused) {
+mediaRecorder.pause();
+isPaused = true;
+pauseBtn.textContent = '▶ Resume';
+setStatus('⏸ Paused');
+recBadge.style.display = 'none';
+} else {
+mediaRecorder.resume();
+isPaused = false;
+pauseBtn.textContent = '⏸ Pause';
+setStatus('🔴 Recording resumed');
+recBadge.style.display = 'block';
+}
+}
+
+// ===== STOP RECORDING =====
+function stopRecording() {
+if (!mediaRecorder) return;
+try {
+if (mediaRecorder.state !== 'inactive') {
+mediaRecorder.stop();
+}
+} catch(e) {}
+if (stream) {
+stream.getTracks().forEach(t => t.stop());
+stream = null;
+}
+isRecording = false;
+isPaused = false;
+clearInterval(timerInterval);
+startTime = null;
+timerDisplay.textContent = '00:00:00';
+
+startBtn.disabled = false;
+pauseBtn.disabled = true;
+stopBtn.disabled = true;
+pauseBtn.textContent = '⏸ Pause';
+recBadge.style.display = 'none';
+videoPreview.srcObject = null;
+setStatus('⏹ Recording stopped – download your video');
+}
+
+// ===== EVENT LISTENERS =====
+startBtn.addEventListener('click', startRecording);
+pauseBtn.addEventListener('click', togglePause);
+stopBtn.addEventListener('click', stopRecording);
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+if (stream) stream.getTracks().forEach(t => t.stop());
+if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+clearInterval(timerInterval);
+});
+
+// Initial status
+setStatus('✅ Ready – click "Start Recording" to begin');
+
+})();
+</script>
+
+</body>
+</html>
