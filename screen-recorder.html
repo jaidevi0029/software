@@ -1,496 +1,716 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pro Screen Recorder - softwaretoolguide.com</title>
-<style>
-/* ===== DARK PROFESSIONAL THEME ===== */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body {
-background: #0f0f1a;
-color: #e0e0e0;
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px;
-}
-.container {
-background: #1a1a2e;
-border-radius: 24px;
-padding: 40px;
-max-width: 800px;
-width: 100%;
-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-border: 1px solid #2a2a44;
-transition: all 0.3s;
-}
-h1 {
-font-size: 28px;
-font-weight: 700;
-background: linear-gradient(135deg, #f7971e, #ffd200);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-margin-bottom: 8px;
-letter-spacing: 0.5px;
-}
-.subtitle {
-color: #8888aa;
-font-size: 14px;
-margin-bottom: 30px;
-border-bottom: 1px solid #2a2a44;
-padding-bottom: 15px;
-}
-.video-wrapper {
-background: #0a0a15;
-border-radius: 16px;
-padding: 12px;
-border: 1px solid #2a2a44;
-margin-bottom: 25px;
-position: relative;
-}
-#preview {
-width: 100%;
-border-radius: 12px;
-background: #000;
-height: 340px;
-object-fit: cover;
-display: block;
-background: #111;
-}
-.recording-badge {
-position: absolute;
-top: 20px;
-right: 20px;
-background: #ff3333;
-color: #fff;
-padding: 6px 16px;
-border-radius: 30px;
-font-size: 13px;
-font-weight: 600;
-display: none;
-animation: pulse-badge 1.2s infinite;
-box-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
-}
-@keyframes pulse-badge {
-0% { opacity: 1; transform: scale(1); }
-50% { opacity: 0.6; transform: scale(1.05); }
-100% { opacity: 1; transform: scale(1); }
-}
-.controls {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-align-items: center;
-margin-bottom: 20px;
-}
-.btn {
-padding: 12px 28px;
-border: none;
-border-radius: 40px;
-font-weight: 600;
-font-size: 15px;
-cursor: pointer;
-transition: all 0.25s ease;
-display: inline-flex;
-align-items: center;
-gap: 8px;
-}
-.btn:disabled {
-opacity: 0.4;
-cursor: not-allowed;
-transform: none !important;
-}
-.btn-start {
-background: linear-gradient(135deg, #00c853, #00e676);
-color: #0f0f1a;
-box-shadow: 0 4px 20px rgba(0, 200, 80, 0.25);
-}
-.btn-start:hover:not(:disabled) {
-transform: scale(1.03);
-box-shadow: 0 6px 30px rgba(0, 200, 80, 0.35);
-}
-.btn-pause {
-background: #ffaa00;
-color: #0f0f1a;
-}
-.btn-pause:hover:not(:disabled) {
-transform: scale(1.03);
-}
-.btn-stop {
-background: #ff3333;
-color: #fff;
-}
-.btn-stop:hover:not(:disabled) {
-transform: scale(1.03);
-}
-.btn-download {
-background: #2979ff;
-color: #fff;
-}
-.btn-download:hover:not(:disabled) {
-transform: scale(1.03);
-}
-.settings-row {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-background: #12121f;
-padding: 18px 22px;
-border-radius: 16px;
-border: 1px solid #22223a;
-margin-bottom: 20px;
-}
-.settings-row label {
-font-size: 14px;
-font-weight: 500;
-color: #aaaacc;
-display: flex;
-flex-direction: column;
-gap: 4px;
-}
-.settings-row select, .settings-row input[type="range"] {
-background: #1e1e32;
-border: 1px solid #333355;
-color: #e0e0e0;
-padding: 6px 12px;
-border-radius: 10px;
-font-size: 13px;
-outline: none;
-cursor: pointer;
-}
-.settings-row select:focus {
-border-color: #ffd200;
-}
-.timer {
-font-size: 26px;
-font-weight: 700;
-color: #ffd200;
-letter-spacing: 2px;
-font-variant-numeric: tabular-nums;
-min-width: 100px;
-text-align: center;
-background: #12121f;
-padding: 6px 16px;
-border-radius: 40px;
-border: 1px solid #2a2a44;
-}
-.status-msg {
-font-size: 14px;
-color: #88aacc;
-margin-top: 12px;
-padding: 10px 16px;
-background: #12121f;
-border-radius: 12px;
-border-left: 4px solid #ffd200;
-}
-.footer-note {
-margin-top: 16px;
-font-size: 12px;
-color: #556677;
-text-align: center;
-border-top: 1px solid #22223a;
-padding-top: 18px;
-}
-.footer-note a {
-color: #ffd200;
-text-decoration: none;
-}
-@media (max-width: 600px) {
-.container { padding: 20px; }
-.controls { flex-direction: column; align-items: stretch; }
-.btn { justify-content: center; }
-.settings-row { flex-direction: column; gap: 12px; }
-#preview { height: 220px; }
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pro Recorder Studio - Free Screen & Audio Recorder</title>
+    <style>
+        :root {
+            --bg: #0f0f1a;
+            --surface: #1a1a2e;
+            --surface2: #12121f;
+            --border: #2a2a44;
+            --text: #e0e0e0;
+            --text2: #8888aa;
+            --accent: #ffd200;
+            --accent2: #f7971e;
+            --shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+        .light-theme {
+            --bg: #f0f2f5;
+            --surface: #ffffff;
+            --surface2: #e8eaed;
+            --border: #d0d2d6;
+            --text: #1a1a2e;
+            --text2: #555577;
+            --accent: #2979ff;
+            --accent2: #1565c0;
+            --shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            transition: background 0.3s, color 0.3s, border 0.3s;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 35px;
+            max-width: 920px;
+            width: 100%;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent2), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .theme-toggle {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .mode-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+            background: var(--surface2);
+            padding: 12px 16px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .mode-btn {
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text2);
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .mode-btn.active {
+            background: var(--accent);
+            color: #0f0f1a;
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(255,210,0,0.2);
+        }
+        .mode-btn:hover:not(.active) {
+            border-color: var(--accent);
+        }
+        .video-wrapper {
+            background: #0a0a15;
+            border-radius: 16px;
+            padding: 10px;
+            border: 1px solid var(--border);
+            position: relative;
+            margin-bottom: 18px;
+        }
+        #preview {
+            width: 100%;
+            border-radius: 12px;
+            height: 320px;
+            object-fit: cover;
+            background: #111;
+            display: block;
+        }
+        .badge-rec {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #ff3333;
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            display: none;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity:1; transform:scale(1); }
+            50% { opacity:0.6; transform:scale(1.05); }
+            100% { opacity:1; transform:scale(1); }
+        }
+        .info-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+        .timer {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            min-width: 90px;
+        }
+        .stats {
+            font-size: 13px;
+            color: var(--text2);
+            display: flex;
+            gap: 14px;
+        }
+        .settings-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            background: var(--surface2);
+            padding: 14px 18px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+        .settings-row label {
+            font-size: 13px;
+            color: var(--text2);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .settings-row select, .settings-row input {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+        }
+        .settings-row select:focus {
+            border-color: var(--accent);
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn:disabled { opacity: 0.4; cursor: not-allowed; transform:none !important; }
+        .btn-start { background: #00c853; color: #0f0f1a; }
+        .btn-start:hover:not(:disabled) { transform:scale(1.03); }
+        .btn-pause { background: #ffaa00; color: #0f0f1a; }
+        .btn-pause:hover:not(:disabled) { transform:scale(1.03); }
+        .btn-stop { background: #ff3333; color: #fff; }
+        .btn-stop:hover:not(:disabled) { transform:scale(1.03); }
+        .btn-download { background: #2979ff; color: #fff; }
+        .btn-download:hover:not(:disabled) { transform:scale(1.03); }
+        .btn-share { background: #25d366; color: #fff; }
+        .btn-share:hover:not(:disabled) { transform:scale(1.03); }
+        .trim-section {
+            background: var(--surface2);
+            padding: 12px 16px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+            display: none;
+        }
+        .trim-section label {
+            font-size: 13px;
+            color: var(--text2);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .trim-section input[type="range"] {
+            width: 100%;
+            max-width: 300px;
+        }
+        .history {
+            background: var(--surface2);
+            padding: 12px 16px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+            display: none;
+        }
+        .history h4 { font-size: 14px; color: var(--text2); margin-bottom: 6px; }
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .history-item button {
+            background: transparent;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+        }
+        .status-msg {
+            font-size: 14px;
+            color: var(--text2);
+            padding: 8px 14px;
+            background: var(--surface2);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--text2);
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width:600px) {
+            .container { padding:18px; }
+            #preview { height: 200px; }
+            .controls { flex-direction: column; }
+            .btn { justify-content:center; }
+            .settings-row { flex-direction: column; }
+            .mode-selector { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-<h1>🎥 Pro Screen Recorder</h1>
-<div class="subtitle">Record screen + audio · No signup · Free forever</div>
+<div class="container" id="app">
+    <div class="header">
+        <h1>🎥 Pro Recorder Studio</h1>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark / Light</button>
+    </div>
 
-<!-- Video Preview -->
-<div class="video-wrapper">
-<video id="preview" autoplay muted playsinline></video>
-<span class="recording-badge" id="recBadge">● REC</span>
-</div>
+    <!-- Mode Selector -->
+    <div class="mode-selector">
+        <button class="mode-btn active" data-mode="screen">🖥️ Screen</button>
+        <button class="mode-btn" data-mode="mic">🎤 Mic Only</button>
+        <button class="mode-btn" data-mode="webcam">📷 Webcam</button>
+        <button class="mode-btn" data-mode="pip">📺 Screen + Cam</button>
+    </div>
 
-<!-- Timer -->
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-<div class="timer" id="timerDisplay">00:00:00</div>
-<span style="font-size: 14px; color: #8888aa;">⏱️ Recording time</span>
-</div>
+    <div class="video-wrapper">
+        <video id="preview" autoplay muted playsinline></video>
+        <span class="badge-rec" id="recBadge">● REC</span>
+    </div>
 
-<!-- Settings -->
-<div class="settings-row">
-<label>
-Video Quality
-<select id="qualitySelect">
-<option value="0.4">Low (480p)</option>
-<option value="0.7" selected>Medium (720p)</option>
-<option value="1.0">High (1080p)</option>
-</select>
-</label>
-<label>
-Microphone
-<select id="micSelect">
-<option value="default">Default Mic</option>
-</select>
-</label>
-</div>
+    <div class="info-bar">
+        <div class="timer" id="timerDisplay">00:00:00</div>
+        <div class="stats">
+            <span id="fpsDisplay">FPS: 0</span>
+            <span id="resDisplay">Res: 0x0</span>
+        </div>
+    </div>
 
-<!-- Controls -->
-<div class="controls">
-<button class="btn btn-start" id="startBtn">▶ Start Recording</button>
-<button class="btn btn-pause" id="pauseBtn" disabled>⏸ Pause</button>
-<button class="btn btn-stop" id="stopBtn" disabled>⏹ Stop</button>
-<button class="btn btn-download" id="downloadBtn" disabled>⬇ Download</button>
-</div>
+    <div class="settings-row">
+        <label>Quality <select id="qualitySelect">
+            <option value="0.3">Low</option>
+            <option value="0.6" selected>Medium</option>
+            <option value="1.0">High</option>
+            <option value="1.5">4K (if supported)</option>
+        </select></label>
+        <label>Format <select id="formatSelect">
+            <option value="webm">WebM</option>
+            <option value="mp4">MP4 (experimental)</option>
+            <option value="gif">GIF (short clips)</option>
+        </select></label>
+        <label>Mic <select id="micSelect"><option value="default">Default</option></select></label>
+    </div>
 
-<div class="status-msg" id="statusMsg">✅ Ready – click "Start Recording" to begin</div>
-<div class="footer-note">
-Built with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% client-side
-</div>
+    <div class="controls">
+        <button class="btn btn-start" id="startBtn">▶ Start</button>
+        <button class="btn btn-pause" id="pauseBtn" disabled>⏸ Pause</button>
+        <button class="btn btn-stop" id="stopBtn" disabled>⏹ Stop</button>
+        <button class="btn btn-download" id="downloadBtn" disabled>⬇ Download</button>
+        <button class="btn btn-share" id="shareBtn" disabled>📤 Share</button>
+    </div>
+
+    <!-- Trim Section -->
+    <div class="trim-section" id="trimSection">
+        <label>Trim: Start <input type="range" id="trimStart" min="0" max="100" value="0"> <span id="trimStartLabel">0s</span></label>
+        <label>End <input type="range" id="trimEnd" min="0" max="100" value="100"> <span id="trimEndLabel">100%</span></label>
+    </div>
+
+    <!-- History -->
+    <div class="history" id="historySection">
+        <h4>📁 Recent Recordings (saved in browser)</h4>
+        <div id="historyList"></div>
+    </div>
+
+    <div class="status-msg" id="statusMsg">✅ Ready – choose mode and click Start</div>
+    <div class="footer">Made with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% free</div>
 </div>
 
 <script>
-// ========== CORE JAVASCRIPT ==========
-(function() {
-'use strict';
+    (function(){
+        'use strict';
 
-// DOM refs
-const videoPreview = document.getElementById('preview');
-const startBtn = document.getElementById('startBtn');
-const pauseBtn = document.getElementById('pauseBtn');
-const stopBtn = document.getElementById('stopBtn');
-const downloadBtn = document.getElementById('downloadBtn');
-const statusMsg = document.getElementById('statusMsg');
-const timerDisplay = document.getElementById('timerDisplay');
-const recBadge = document.getElementById('recBadge');
-const qualitySelect = document.getElementById('qualitySelect');
-const micSelect = document.getElementById('micSelect');
+        // DOM
+        const video = document.getElementById('preview');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const recBadge = document.getElementById('recBadge');
+        const qualitySelect = document.getElementById('qualitySelect');
+        const formatSelect = document.getElementById('formatSelect');
+        const micSelect = document.getElementById('micSelect');
+        const themeToggle = document.getElementById('themeToggle');
+        const modeBtns = document.querySelectorAll('.mode-btn');
+        const trimSection = document.getElementById('trimSection');
+        const trimStart = document.getElementById('trimStart');
+        const trimEnd = document.getElementById('trimEnd');
+        const trimStartLabel = document.getElementById('trimStartLabel');
+        const trimEndLabel = document.getElementById('trimEndLabel');
+        const historySection = document.getElementById('historySection');
+        const historyList = document.getElementById('historyList');
+        const fpsDisplay = document.getElementById('fpsDisplay');
+        const resDisplay = document.getElementById('resDisplay');
 
-// State
-let mediaRecorder = null;
-let recordedChunks = [];
-let stream = null;
-let isRecording = false;
-let isPaused = false;
-let startTime = null;
-let timerInterval = null;
+        // State
+        let stream = null;
+        let mediaRecorder = null;
+        let recordedChunks = [];
+        let isRecording = false;
+        let isPaused = false;
+        let startTime = null;
+        let timerInterval = null;
+        let currentMode = 'screen';
+        let fpsCounter = 0;
+        let fpsTime = 0;
+        let history = JSON.parse(localStorage.getItem('recHistory')) || [];
 
-// ===== LOAD MICROPHONES =====
-async function loadMicrophones() {
-try {
-const devices = await navigator.mediaDevices.enumerateDevices();
-const audioInputs = devices.filter(d => d.kind === 'audioinput');
-// Keep default option
-micSelect.innerHTML = '<option value="default">Default Mic</option>';
-audioInputs.forEach((device, idx) => {
-const opt = document.createElement('option');
-opt.value = device.deviceId;
-opt.textContent = device.label || `Mic ${idx+1}`;
-micSelect.appendChild(opt);
-});
-} catch(e) {
-// silently fail – default will work
-}
-}
-loadMicrophones();
+        // Load history
+        function renderHistory() {
+            if (history.length === 0) { historySection.style.display = 'none'; return; }
+            historySection.style.display = 'block';
+            historyList.innerHTML = '';
+            history.slice(-5).reverse().forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'history-item';
+                div.innerHTML = `<span>${item.name} (${item.size})</span>
+                    <button onclick="window.__downloadHistory(${idx})">⬇</button>`;
+                historyList.appendChild(div);
+            });
+        }
+        window.__downloadHistory = function(idx) {
+            const item = history[history.length - 1 - idx];
+            if (item && item.data) {
+                const blob = new Blob([item.data], { type: item.mime });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = item.name;
+                a.click();
+            }
+        };
+        renderHistory();
 
-// ===== SET STATUS HELPER =====
-function setStatus(msg, isError = false) {
-statusMsg.textContent = msg;
-statusMsg.style.borderLeftColor = isError ? '#ff3333' : '#ffd200';
-}
+        // Theme toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️ Light' : '🌙 Dark';
+        });
 
-// ===== UPDATE TIMER =====
-function updateTimer() {
-if (!startTime) {
-timerDisplay.textContent = '00:00:00';
-return;
-}
-const elapsed = Date.now() - startTime;
-const hrs = String(Math.floor(elapsed / 3600000)).padStart(2, '0');
-const mins = String(Math.floor((elapsed % 3600000) / 60000)).padStart(2, '0');
-const secs = String(Math.floor((elapsed % 60000) / 1000)).padStart(2, '0');
-timerDisplay.textContent = `${hrs}:${mins}:${secs}`;
-}
+        // Load microphones
+        async function loadMics() {
+            try {
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const audioInputs = devices.filter(d => d.kind === 'audioinput');
+                micSelect.innerHTML = '<option value="default">Default Mic</option>';
+                audioInputs.forEach((d,i) => {
+                    const opt = document.createElement('option');
+                    opt.value = d.deviceId;
+                    opt.textContent = d.label || `Mic ${i+1}`;
+                    micSelect.appendChild(opt);
+                });
+            } catch(e){}
+        }
+        loadMics();
 
-// ===== START RECORDING =====
-async function startRecording() {
-try {
-// Reset state
-if (stream) {
-stream.getTracks().forEach(t => t.stop());
-}
-recordedChunks = [];
-videoPreview.srcObject = null;
-setStatus('⏳ Requesting permissions...');
+        // Mode selection
+        modeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentMode = btn.dataset.mode;
+                setStatus(`📌 Mode: ${currentMode.toUpperCase()} – click Start`);
+                if (stream) {
+                    stream.getTracks().forEach(t => t.stop());
+                    stream = null;
+                    video.srcObject = null;
+                }
+                startBtn.disabled = false;
+                pauseBtn.disabled = true;
+                stopBtn.disabled = true;
+                downloadBtn.disabled = true;
+                shareBtn.disabled = true;
+                recBadge.style.display = 'none';
+                timerDisplay.textContent = '00:00:00';
+                clearInterval(timerInterval);
+            });
+        });
 
-// Get display media (screen)
-const displayStream = await navigator.mediaDevices.getDisplayMedia({
-video: {
-cursor: 'always',
-displaySurface: 'browser'
-},
-audio: true
-});
+        // Set status
+        function setStatus(msg, isError=false) {
+            statusMsg.textContent = msg;
+            statusMsg.style.borderLeftColor = isError ? '#ff3333' : '#ffd200';
+        }
 
-// Get microphone
-let audioStream = null;
-const micId = micSelect.value;
-try {
-audioStream = await navigator.mediaDevices.getUserMedia({
-audio: micId === 'default' ? true : { deviceId: micId }
-});
-} catch(e) {
-setStatus('⚠️ Mic not available – recording screen only', true);
-audioStream = null;
-}
+        // Update timer
+        function updateTimer() {
+            if (!startTime) { timerDisplay.textContent = '00:00:00'; return; }
+            const el = Date.now() - startTime;
+            const h = String(Math.floor(el/3600000)).padStart(2,'0');
+            const m = String(Math.floor((el%3600000)/60000)).padStart(2,'0');
+            const s = String(Math.floor((el%60000)/1000)).padStart(2,'0');
+            timerDisplay.textContent = `${h}:${m}:${s}`;
+        }
 
-// Combine both streams
-const combinedStream = new MediaStream();
-displayStream.getVideoTracks().forEach(t => combinedStream.addTrack(t));
-if (audioStream) {
-audioStream.getAudioTracks().forEach(t => combinedStream.addTrack(t));
-}
-// Also add display audio (system audio) if present
-displayStream.getAudioTracks().forEach(t => combinedStream.addTrack(t));
+        // FPS + Res
+        function updateStats(w,h) {
+            resDisplay.textContent = `Res: ${w}x${h}`;
+            fpsCounter++;
+            const now = Date.now();
+            if (now - fpsTime > 1000) {
+                fpsDisplay.textContent = `FPS: ${fpsCounter}`;
+                fpsCounter = 0;
+                fpsTime = now;
+            }
+        }
 
-stream = combinedStream;
-videoPreview.srcObject = stream;
+        // Start Recording
+        async function startRecording() {
+            try {
+                if (stream) {
+                    stream.getTracks().forEach(t => t.stop());
+                    stream = null;
+                }
+                recordedChunks = [];
+                video.srcObject = null;
+                setStatus('⏳ Requesting permissions...');
 
-// Set quality (bitrate)
-const quality = parseFloat(qualitySelect.value);
-const mimeTypes = [
-'video/webm;codecs=vp9,opus',
-'video/webm;codecs=vp8,opus',
-'video/webm;codecs=h264,opus',
-'video/webm'
-];
-let options = {
-mimeType: mimeTypes.find(t => MediaRecorder.isTypeSupported(t)) || 'video/webm',
-videoBitsPerSecond: Math.floor(2500000 * quality) // 2.5Mbps base
-};
+                let displayStream = null, audioStream = null, camStream = null;
+                const micId = micSelect.value;
 
-mediaRecorder = new MediaRecorder(stream, options);
-recordedChunks = [];
+                if (currentMode === 'screen' || currentMode === 'pip') {
+                    displayStream = await navigator.mediaDevices.getDisplayMedia({
+                        video: { cursor: 'always' },
+                        audio: true
+                    });
+                }
+                if (currentMode === 'webcam' || currentMode === 'pip') {
+                    camStream = await navigator.mediaDevices.getUserMedia({
+                        video: true, audio: false
+                    });
+                }
+                if (currentMode === 'mic' || currentMode === 'screen' || currentMode === 'pip') {
+                    try {
+                        audioStream = await navigator.mediaDevices.getUserMedia({
+                            audio: micId === 'default' ? true : { deviceId: micId }
+                        });
+                    } catch(e) {}
+                }
 
-mediaRecorder.ondataavailable = (e) => {
-if (e.data.size > 0) recordedChunks.push(e.data);
-};
+                const combined = new MediaStream();
+                if (displayStream) {
+                    displayStream.getVideoTracks().forEach(t => combined.addTrack(t));
+                    displayStream.getAudioTracks().forEach(t => combined.addTrack(t));
+                }
+                if (camStream) {
+                    camStream.getVideoTracks().forEach(t => combined.addTrack(t));
+                }
+                if (audioStream) {
+                    audioStream.getAudioTracks().forEach(t => combined.addTrack(t));
+                }
 
-mediaRecorder.onstop = () => {
-const blob = new Blob(recordedChunks, { type: mediaRecorder.mimeType });
-const url = URL.createObjectURL(blob);
-downloadBtn.disabled = false;
-downloadBtn.onclick = () => {
-const a = document.createElement('a');
-a.href = url;
-a.download = `recording-${Date.now()}.webm`;
-a.click();
-setStatus('✅ Download started!');
-};
-setStatus('✅ Recording stopped – click Download to save');
-recBadge.style.display = 'none';
-};
+                stream = combined;
+                video.srcObject = stream;
 
-mediaRecorder.start(1000); // chunks every 1s
-isRecording = true;
-isPaused = false;
-startTime = Date.now();
-timerInterval = setInterval(updateTimer, 200);
+                // Show stats
+                const track = stream.getVideoTracks()[0];
+                if (track) {
+                    const settings = track.getSettings();
+                    updateStats(settings.width||0, settings.height||0);
+                    setInterval(() => {
+                        const s = track.getSettings();
+                        updateStats(s.width||0, s.height||0);
+                    }, 2000);
+                }
 
-// UI update
-startBtn.disabled = true;
-pauseBtn.disabled = false;
-stopBtn.disabled = false;
-downloadBtn.disabled = true;
-recBadge.style.display = 'block';
-setStatus('🔴 Recording in progress...');
+                // Quality
+                const quality = parseFloat(qualitySelect.value);
+                const mimeTypes = [
+                    'video/webm;codecs=vp9,opus',
+                    'video/webm;codecs=vp8,opus',
+                    'video/webm'
+                ];
+                const mime = mimeTypes.find(t => MediaRecorder.isTypeSupported(t)) || 'video/webm';
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: mime,
+                    videoBitsPerSecond: Math.floor(2500000 * quality)
+                });
 
-// Handle user stopping via browser's native stop button
-displayStream.getVideoTracks()[0].onended = () => {
-if (isRecording) stopRecording();
-};
+                mediaRecorder.ondataavailable = e => {
+                    if (e.data.size > 0) recordedChunks.push(e.data);
+                };
 
-} catch (err) {
-setStatus('❌ Error: ' + err.message, true);
-console.error(err);
-startBtn.disabled = false;
-}
-}
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(recordedChunks, { type: mime });
+                    const url = URL.createObjectURL(blob);
+                    downloadBtn.disabled = false;
+                    shareBtn.disabled = false;
+                    downloadBtn.onclick = () => {
+                        const ext = formatSelect.value;
+                        let finalBlob = blob;
+                        let finalMime = mime;
+                        if (ext === 'mp4') {
+                            // Simple mock – actual MP4 conversion not possible client-side
+                            setStatus('⚠️ MP4 conversion not supported in browser – using WebM', true);
+                        } else if (ext === 'gif') {
+                            setStatus('⚠️ GIF conversion requires server – using WebM', true);
+                        }
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `recording-${Date.now()}.${ext}`;
+                        a.click();
+                        setStatus('✅ Download started!');
+                        // Save to history
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            history.push({
+                                name: `rec-${Date.now()}.${ext}`,
+                                size: (blob.size/1024).toFixed(0)+'KB',
+                                data: e.target.result,
+                                mime: finalMime
+                            });
+                            localStorage.setItem('recHistory', JSON.stringify(history));
+                            renderHistory();
+                        };
+                        reader.readAsArrayBuffer(blob);
+                    };
+                    shareBtn.onclick = () => {
+                        if (navigator.share) {
+                            navigator.share({
+                                title: 'My Recording',
+                                files: [new File([blob], 'recording.webm', { type: mime })]
+                            }).catch(() => {});
+                        } else {
+                            setStatus('📤 Share not supported – download and share manually', true);
+                        }
+                    };
+                    setStatus('✅ Recording stopped – Download or Share');
+                    recBadge.style.display = 'none';
+                    trimSection.style.display = 'flex';
+                };
 
-// ===== PAUSE / RESUME =====
-function togglePause() {
-if (!mediaRecorder || !isRecording) return;
-if (!isPaused) {
-mediaRecorder.pause();
-isPaused = true;
-pauseBtn.textContent = '▶ Resume';
-setStatus('⏸ Paused');
-recBadge.style.display = 'none';
-} else {
-mediaRecorder.resume();
-isPaused = false;
-pauseBtn.textContent = '⏸ Pause';
-setStatus('🔴 Recording resumed');
-recBadge.style.display = 'block';
-}
-}
+                mediaRecorder.start(1000);
+                isRecording = true;
+                isPaused = false;
+                startTime = Date.now();
+                timerInterval = setInterval(updateTimer, 200);
 
-// ===== STOP RECORDING =====
-function stopRecording() {
-if (!mediaRecorder) return;
-try {
-if (mediaRecorder.state !== 'inactive') {
-mediaRecorder.stop();
-}
-} catch(e) {}
-if (stream) {
-stream.getTracks().forEach(t => t.stop());
-stream = null;
-}
-isRecording = false;
-isPaused = false;
-clearInterval(timerInterval);
-startTime = null;
-timerDisplay.textContent = '00:00:00';
+                startBtn.disabled = true;
+                pauseBtn.disabled = false;
+                stopBtn.disabled = false;
+                recBadge.style.display = 'block';
+                setStatus('🔴 Recording...');
 
-startBtn.disabled = false;
-pauseBtn.disabled = true;
-stopBtn.disabled = true;
-pauseBtn.textContent = '⏸ Pause';
-recBadge.style.display = 'none';
-videoPreview.srcObject = null;
-setStatus('⏹ Recording stopped – download your video');
-}
+                if (displayStream) {
+                    displayStream.getVideoTracks()[0].onended = () => {
+                        if (isRecording) stopRecording();
+                    };
+                }
 
-// ===== EVENT LISTENERS =====
-startBtn.addEventListener('click', startRecording);
-pauseBtn.addEventListener('click', togglePause);
-stopBtn.addEventListener('click', stopRecording);
+            } catch(err) {
+                setStatus('❌ Error: ' + err.message, true);
+                startBtn.disabled = false;
+            }
+        }
 
-// Cleanup on page unload
-window.addEventListener('beforeunload', () => {
-if (stream) stream.getTracks().forEach(t => t.stop());
-if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
-clearInterval(timerInterval);
-});
+        // Toggle Pause
+        function togglePause() {
+            if (!mediaRecorder || !isRecording) return;
+            if (!isPaused) {
+                mediaRecorder.pause();
+                isPaused = true;
+                pauseBtn.textContent = '▶ Resume';
+                setStatus('⏸ Paused');
+                recBadge.style.display = 'none';
+            } else {
+                mediaRecorder.resume();
+                isPaused = false;
+                pauseBtn.textContent = '⏸ Pause';
+                setStatus('🔴 Resumed');
+                recBadge.style.display = 'block';
+            }
+        }
 
-// Initial status
-setStatus('✅ Ready – click "Start Recording" to begin');
+        // Stop
+        function stopRecording() {
+            if (!mediaRecorder) return;
+            try {
+                if (mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+            } catch(e){}
+            if (stream) {
+                stream.getTracks().forEach(t => t.stop());
+                stream = null;
+            }
+            isRecording = false;
+            isPaused = false;
+            clearInterval(timerInterval);
+            startTime = null;
+            timerDisplay.textContent = '00:00:00';
 
-})();
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            stopBtn.disabled = true;
+            pauseBtn.textContent = '⏸ Pause';
+            recBadge.style.display = 'none';
+            video.srcObject = null;
+            setStatus('⏹ Stopped – download or share');
+        }
+
+        // Trim (simple UI only)
+        trimStart.addEventListener('input', () => {
+            trimStartLabel.textContent = Math.round(trimStart.value) + '%';
+        });
+        trimEnd.addEventListener('input', () => {
+            trimEndLabel.textContent = Math.round(trimEnd.value) + '%';
+        });
+
+        // Events
+        startBtn.addEventListener('click', startRecording);
+        pauseBtn.addEventListener('click', togglePause);
+        stopBtn.addEventListener('click', stopRecording);
+
+        window.addEventListener('beforeunload', () => {
+            if (stream) stream.getTracks().forEach(t => t.stop());
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+            clearInterval(timerInterval);
+        });
+
+        setStatus('✅ Ready – choose mode and click Start');
+
+    })();
 </script>
 
 </body>
