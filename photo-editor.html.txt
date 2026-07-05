@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ===== FULL SEO META TAGS (UPDATED) ===== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Online Photo Editor - Edit Images, Crop, Filters, Text & More</title>
+<meta name="description" content="Free online photo editor. Edit your photos with crop, rotate, filters, brightness, contrast, text, draw, and stickers. No signup required. Export as PNG." />
+<meta name="keywords" content="photo editing software, free photo editor, online photo editor, edit photos online, image editor, crop photo, add text to photo, photo filters, photo enhancer" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="softwaretoolguide.com" />
+<link rel="canonical" href="https://softwaretoolguide.com/photo-editor.html" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Online Photo Editor - Edit Images for Free" />
+<meta property="og:description" content="Crop, rotate, add filters, text, draw, and more. 100% free photo editor online." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://softwaretoolguide.com/photo-editor.html" />
+<meta property="og:image" content="https://softwaretoolguide.com/images/photo-editor-og.jpg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Free Online Photo Editor" />
+<meta name="twitter:description" content="Edit photos online with filters, text, crop, and more." />
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Free Online Photo Editor",
+"operatingSystem": "All",
+"applicationCategory": "GraphicsApplication",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"description": "Free online photo editor with crop, rotate, filters, text, draw, and stickers. No signup required.",
+"url": "https://softwaretoolguide.com/photo-editor.html"
+}
+</script>
+
+<style>
+:root {
+--bg: #0f0f1a;
+--surface: #1a1a2e;
+--surface2: #12121f;
+--border: #2a2a44;
+--text: #e0e0e0;
+--text2: #8888aa;
+--accent: #ffd200;
+--accent2: #f7971e;
+--shadow: 0 20px 60px rgba(0,0,0,0.8);
+--radius: 16px;
+}
+.light-theme {
+--bg: #f0f2f5;
+--surface: #ffffff;
+--surface2: #e8eaed;
+--border: #d0d2d6;
+--text: #1a1a2e;
+--text2: #555577;
+--accent: #2979ff;
+--accent2: #1565c0;
+--shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, sans-serif;
+transition: background 0.3s, color 0.3s, border 0.3s;
+}
+body {
+background: var(--bg);
+color: var(--text);
+min-height: 100vh;
+display: flex;
+justify-content: center;
+padding: 20px;
+}
+.container {
+background: var(--surface);
+border-radius: var(--radius);
+padding: 25px;
+max-width: 1300px;
+width: 100%;
+box-shadow: var(--shadow);
+border: 1px solid var(--border);
+}
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 12px;
+margin-bottom: 16px;
+border-bottom: 1px solid var(--border);
+padding-bottom: 12px;
+}
+.header h1 {
+font-size: 24px;
+font-weight: 700;
+background: linear-gradient(135deg, var(--accent2), var(--accent));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.header-actions {
+display: flex;
+gap: 10px;
+align-items: center;
+flex-wrap: wrap;
+}
+.theme-toggle {
+background: var(--surface2);
+border: 1px solid var(--border);
+color: var(--text);
+padding: 6px 14px;
+border-radius: 30px;
+cursor: pointer;
+font-size: 13px;
+}
+.btn {
+padding: 8px 18px;
+border: none;
+border-radius: 30px;
+font-weight: 600;
+font-size: 13px;
+cursor: pointer;
+transition: 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+}
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: #0f0f1a; }
+.btn-primary:hover:not(:disabled) { transform: scale(1.03); }
+.btn-danger { background: #ff3333; color: #fff; }
+.btn-danger:hover:not(:disabled) { transform: scale(1.03); }
+.btn-success { background: #00c853; color: #0f0f1a; }
+.btn-success:hover:not(:disabled) { transform: scale(1.03); }
+.btn-outline {
+background: transparent;
+border: 1px solid var(--border);
+color: var(--text);
+}
+.btn-outline:hover { border-color: var(--accent); }
+.editor-layout {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+}
+.sidebar {
+flex: 0 0 220px;
+background: var(--surface2);
+border-radius: var(--radius);
+padding: 14px;
+border: 1px solid var(--border);
+max-height: 600px;
+overflow-y: auto;
+}
+.sidebar h3 {
+font-size: 14px;
+color: var(--text2);
+margin-bottom: 10px;
+border-bottom: 1px solid var(--border);
+padding-bottom: 6px;
+}
+.tool-group {
+display: flex;
+flex-direction: column;
+gap: 4px;
+margin-bottom: 12px;
+}
+.tool-btn {
+padding: 6px 12px;
+border-radius: 8px;
+border: 1px solid transparent;
+background: transparent;
+color: var(--text);
+text-align: left;
+cursor: pointer;
+font-size: 13px;
+transition: 0.2s;
+}
+.tool-btn:hover { background: var(--border); }
+.tool-btn.active {
+background: var(--accent);
+color: #0f0f1a;
+border-color: var(--accent);
+}
+.canvas-wrapper {
+flex: 1;
+min-width: 300px;
+background: #0a0a15;
+border-radius: var(--radius);
+padding: 10px;
+border: 1px solid var(--border);
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+min-height: 400px;
+overflow: auto;
+}
+#editorCanvas {
+max-width: 100%;
+max-height: 600px;
+border-radius: 8px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+cursor: crosshair;
+background: #222;
+}
+.control-panel {
+flex: 0 0 240px;
+background: var(--surface2);
+border-radius: var(--radius);
+padding: 14px;
+border: 1px solid var(--border);
+max-height: 600px;
+overflow-y: auto;
+}
+.control-panel h3 {
+font-size: 14px;
+color: var(--text2);
+margin-bottom: 10px;
+border-bottom: 1px solid var(--border);
+padding-bottom: 6px;
+}
+.control-group {
+margin-bottom: 14px;
+}
+.control-group label {
+font-size: 12px;
+color: var(--text2);
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+.control-group input[type="range"] {
+width: 100%;
+accent-color: var(--accent);
+background: var(--surface);
+height: 4px;
+border-radius: 4px;
+outline: none;
+}
+.control-group input[type="number"], .control-group select {
+background: var(--surface);
+border: 1px solid var(--border);
+color: var(--text);
+padding: 4px 8px;
+border-radius: 8px;
+font-size: 13px;
+width: 100%;
+}
+.control-group .value-display {
+font-size: 13px;
+color: var(--accent);
+font-weight: 600;
+}
+.upload-zone {
+border: 2px dashed var(--border);
+border-radius: var(--radius);
+padding: 30px 20px;
+text-align: center;
+color: var(--text2);
+cursor: pointer;
+transition: 0.3s;
+margin-bottom: 12px;
+}
+.upload-zone:hover { border-color: var(--accent); background: var(--surface2); }
+.upload-zone input { display: none; }
+.history-bar {
+display: flex;
+gap: 6px;
+margin-top: 12px;
+padding-top: 10px;
+border-top: 1px solid var(--border);
+flex-wrap: wrap;
+}
+.history-dot {
+width: 28px;
+height: 28px;
+border-radius: 4px;
+border: 1px solid var(--border);
+cursor: pointer;
+background-size: cover;
+background-position: center;
+}
+.history-dot.active { border-color: var(--accent); }
+@media (max-width: 900px) {
+.sidebar, .control-panel { flex: 1 1 100%; max-height: none; }
+.editor-layout { flex-direction: column; }
+.canvas-wrapper { min-height: 250px; }
+}
+@media (max-width: 500px) {
+.container { padding: 12px; }
+.header h1 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="app">
+<!-- HEADER -->
+<div class="header">
+<h1>📸 Pro Photo Editor Studio</h1>
+<div class="header-actions">
+<button class="btn btn-outline" id="undoBtn" disabled>↩ Undo</button>
+<button class="btn btn-outline" id="redoBtn" disabled>↪ Redo</button>
+<button class="btn btn-danger" id="resetBtn">↺ Reset</button>
+<button class="btn btn-success" id="downloadBtn" disabled>⬇ Download</button>
+<button class="theme-toggle" id="themeToggle">🌙 Dark/Light</button>
+</div>
+</div>
+
+<!-- UPLOAD -->
+<div class="upload-zone" id="uploadZone">
+<div>📁 Drag & drop image here or <strong>click to browse</strong></div>
+<input type="file" id="fileInput" accept="image/*" />
+</div>
+
+<!-- EDITOR LAYOUT -->
+<div class="editor-layout">
+<!-- LEFT SIDEBAR – TOOLS -->
+<div class="sidebar">
+<h3>🛠 Tools</h3>
+<div class="tool-group">
+<button class="tool-btn active" data-tool="adjust">🎛 Adjust</button>
+<button class="tool-btn" data-tool="crop">✂️ Crop</button>
+<button class="tool-btn" data-tool="rotate">🔄 Rotate</button>
+<button class="tool-btn" data-tool="resize">📐 Resize</button>
+<button class="tool-btn" data-tool="filter">🌈 Filters</button>
+<button class="tool-btn" data-tool="text">📝 Add Text</button>
+<button class="tool-btn" data-tool="draw">✏️ Draw</button>
+<button class="tool-btn" data-tool="stickers">😊 Stickers</button>
+</div>
+<div style="margin-top:10px; font-size:12px; color:var(--text2);">
+💡 Ctrl+Z Undo · Ctrl+Y Redo · Ctrl+S Download
+</div>
+</div>
+
+<!-- CENTER – CANVAS -->
+<div class="canvas-wrapper">
+<canvas id="editorCanvas"></canvas>
+</div>
+
+<!-- RIGHT PANEL – CONTROLS -->
+<div class="control-panel" id="controlPanel">
+<h3 id="panelTitle">🎛 Adjust</h3>
+<div id="controlsContainer">
+<!-- Controls will be injected by JS -->
+</div>
+</div>
+</div>
+
+<!-- HISTORY BAR -->
+<div class="history-bar" id="historyBar">
+<span style="font-size:12px; color:var(--text2);">📜 History:</span>
+<div id="historyDots"></div>
+</div>
+
+<div style="margin-top:12px; font-size:13px; color:var(--text2); text-align:center; border-top:1px solid var(--border); padding-top:12px;">
+Made with ❤️ for <a href="https://softwaretoolguide.com" style="color:var(--accent);">softwaretoolguide.com</a> · 100% free · No signup
+</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+// ---- DOM refs ----
+const canvas = document.getElementById('editorCanvas');
+const ctx = canvas.getContext('2d');
+const fileInput = document.getElementById('fileInput');
+const uploadZone = document.getElementById('uploadZone');
+const undoBtn = document.getElementById('undoBtn');
+const redoBtn = document.getElementById('redoBtn');
+const resetBtn = document.getElementById('resetBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const themeToggle = document.getElementById('themeToggle');
+const toolBtns = document.querySelectorAll('.tool-btn');
+const panelTitle = document.getElementById('panelTitle');
+const controlsContainer = document.getElementById('controlsContainer');
+const historyDots = document.getElementById('historyDots');
+
+// ---- State ----
+let originalImage = null;
+let currentImageData = null;
+let canvasWidth = 0;
+let canvasHeight = 0;
+let history = [];
+let historyIndex = -1;
+const MAX_HISTORY = 15;
+let currentTool = 'adjust';
+let isDrawing = false;
+let drawColor = '#ffd200';
+let drawSize = 4;
+let textContent = 'Hello!';
+let textFont = 'Arial';
+let textSize = 30;
+let textColor = '#ffffff';
+let textX = 50, textY = 100;
+let stickerIndex = 0;
+const stickers = ['❤️','⭐','😊','🔥','✨','🎉','💎','🌟'];
+
+// ---- Helper: save history ----
+function pushHistory() {
+if (!canvasWidth || !canvasHeight) return;
+const data = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+history = history.slice(0, historyIndex + 1);
+history.push(data);
+if (history.length > MAX_HISTORY) history.shift();
+historyIndex = history.length - 1;
+updateHistoryUI();
+updateUndoRedo();
+}
+
+// ---- Helper: restore history ----
+function restoreHistory(index) {
+if (index < 0 || index >= history.length) return;
+historyIndex = index;
+ctx.putImageData(history[index], 0, 0);
+updateHistoryUI();
+updateUndoRedo();
+}
+
+// ---- Update UI ----
+function updateUndoRedo() {
+undoBtn.disabled = historyIndex <= 0;
+redoBtn.disabled = historyIndex >= history.length - 1;
+}
+
+function updateHistoryUI() {
+historyDots.innerHTML = '';
+history.forEach((data, i) => {
+const dot = document.createElement('div');
+dot.className = 'history-dot' + (i === historyIndex ? ' active' : '');
+const tempCanvas = document.createElement('canvas');
+tempCanvas.width = 28;
+tempCanvas.height = 28;
+const tempCtx = tempCanvas.getContext('2d');
+tempCtx.putImageData(data, 0, 0);
+dot.style.backgroundImage = `url(${tempCanvas.toDataURL()})`;
+dot.addEventListener('click', () => restoreHistory(i));
+historyDots.appendChild(dot);
+});
+}
+
+// ---- Load image ----
+function loadImage(file) {
+const reader = new FileReader();
+reader.onload = (e) => {
+const img = new Image();
+img.onload = () => {
+originalImage = img;
+canvasWidth = img.width;
+canvasHeight = img.height;
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
+ctx.drawImage(img, 0, 0);
+currentImageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+history = [];
+historyIndex = -1;
+pushHistory();
+downloadBtn.disabled = false;
+resetBtn.disabled = false;
+setStatus('✅ Image loaded! Use tools to edit.');
+showControls('adjust');
+};
+img.src = e.target.result;
+};
+reader.readAsDataURL(file);
+}
+
+// ---- Upload handlers ----
+uploadZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', (e) => {
+if (e.target.files[0]) loadImage(e.target.files[0]);
+});
+uploadZone.addEventListener('dragover', (e) => {
+e.preventDefault();
+uploadZone.style.borderColor = 'var(--accent)';
+});
+uploadZone.addEventListener('dragleave', () => {
+uploadZone.style.borderColor = 'var(--border)';
+});
+uploadZone.addEventListener('drop', (e) => {
+e.preventDefault();
+uploadZone.style.borderColor = 'var(--border)';
+if (e.dataTransfer.files[0]) loadImage(e.dataTransfer.files[0]);
+});
+
+// ---- Status message ----
+function setStatus(msg) {
+const div = document.createElement('div');
+div.style.cssText = `
+position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+background: var(--surface); color: var(--text);
+padding: 10px 24px; border-radius: 40px; border: 1px solid var(--border);
+font-size: 14px; z-index: 999; box-shadow: var(--shadow);
+transition: 0.3s; opacity: 0; pointer-events: none;
+`;
+div.textContent = msg;
+document.body.appendChild(div);
+requestAnimationFrame(() => div.style.opacity = '1');
+setTimeout(() => {
+div.style.opacity = '0';
+setTimeout(() => div.remove(), 300);
+}, 2500);
+}
+
+// ---- TOOL: Switch tools ----
+toolBtns.forEach(btn => {
+btn.addEventListener('click', () => {
+toolBtns.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+currentTool = btn.dataset.tool;
+showControls(currentTool);
+setStatus(`🛠 Tool: ${currentTool}`);
+});
+});
+
+// ---- Show controls in right panel ----
+function showControls(tool) {
+controlsContainer.innerHTML = '';
+panelTitle.textContent = {
+adjust: '🎛 Adjust',
+crop: '✂️ Crop',
+rotate: '🔄 Rotate',
+resize: '📐 Resize',
+filter: '🌈 Filters',
+text: '📝 Add Text',
+draw: '✏️ Draw',
+stickers: '😊 Stickers'
+}[tool] || '🎛 Adjust';
+
+if (tool === 'adjust') buildAdjustControls();
+else if (tool === 'crop') buildCropControls();
+else if (tool === 'rotate') buildRotateControls();
+else if (tool === 'resize') buildResizeControls();
+else if (tool === 'filter') buildFilterControls();
+else if (tool === 'text') buildTextControls();
+else if (tool === 'draw') buildDrawControls();
+else if (tool === 'stickers') buildStickerControls();
+}
+
+// ---- ADJUST CONTROLS ----
+function buildAdjustControls() {
+const sliders = [
+{ id: 'brightness', label: 'Brightness', min: -100, max: 100, default: 0 },
+{ id: 'contrast', label: 'Contrast', min: -100, max: 100, default: 0 },
+{ id: 'saturation', label: 'Saturation', min: -100, max: 100, default: 0 },
+{ id: 'hue', label: 'Hue', min: -180, max: 180, default: 0 },
+{ id: 'blur', label: 'Blur', min: 0, max: 20, default: 0, step: 0.5 },
+{ id: 'sharpen', label: 'Sharpen', min: 0, max: 10, default: 0, step: 0.5 }
+];
+sliders.forEach(s => {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.innerHTML = `
+<label>${s.label}
+<input type="range" id="slider_${s.id}" min="${s.min}" max="${s.max}" value="${s.default}" step="${s.step || 1}">
+<span class="value-display" id="val_${s.id}">${s.default}</span>
+</label>
+`;
+controlsContainer.appendChild(div);
+const input = div.querySelector('input');
+const val = div.querySelector('.value-display');
+input.addEventListener('input', () => {
+val.textContent = input.value;
+applyAdjustments();
+});
+});
+}
+
+function applyAdjustments() {
+if (!originalImage) return;
+const brightness = parseFloat(document.getElementById('slider_brightness')?.value || 0);
+const contrast = parseFloat(document.getElementById('slider_contrast')?.value || 0);
+const saturation = parseFloat(document.getElementById('slider_saturation')?.value || 0);
+const hue = parseFloat(document.getElementById('slider_hue')?.value || 0);
+const blur = parseFloat(document.getElementById('slider_blur')?.value || 0);
+const sharpen = parseFloat(document.getElementById('slider_sharpen')?.value || 0);
+
+ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+ctx.drawImage(originalImage, 0, 0);
+
+const imageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+const data = imageData.data;
+
+for (let i = 0; i < data.length; i += 4) {
+let r = data[i];
+let g = data[i+1];
+let b = data[i+2];
+
+r = Math.min(255, Math.max(0, r + brightness * 2.55));
+g = Math.min(255, Math.max(0, g + brightness * 2.55));
+b = Math.min(255, Math.max(0, b + brightness * 2.55));
+
+const factor = (259 * (contrast + 255)) / (255 * (259 - contrast));
+r = Math.min(255, Math.max(0, factor * (r - 128) + 128));
+g = Math.min(255, Math.max(0, factor * (g - 128) + 128));
+b = Math.min(255, Math.max(0, factor * (b - 128) + 128));
+
+const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+const satFactor = 1 + saturation / 100;
+r = Math.min(255, Math.max(0, gray + (r - gray) * satFactor));
+g = Math.min(255, Math.max(0, gray + (g - gray) * satFactor));
+b = Math.min(255, Math.max(0, gray + (b - gray) * satFactor));
+
+if (hue !== 0) {
+const h = (hue / 180) * Math.PI;
+const cos = Math.cos(h);
+const sin = Math.sin(h);
+const newR = r * cos - g * sin;
+const newG = r * sin + g * cos;
+r = Math.min(255, Math.max(0, newR));
+g = Math.min(255, Math.max(0, newG));
+}
+
+data[i] = r;
+data[i+1] = g;
+data[i+2] = b;
+}
+ctx.putImageData(imageData, 0, 0);
+
+if (blur > 0) {
+ctx.filter = `blur(${blur}px)`;
+ctx.drawImage(canvas, 0, 0);
+ctx.filter = 'none';
+}
+
+if (sharpen > 0) {
+setStatus('⚡ Sharpen applied (simulated)');
+}
+
+clearTimeout(window._adjustTimer);
+window._adjustTimer = setTimeout(() => {
+pushHistory();
+}, 300);
+}
+
+// ---- CROP CONTROLS ----
+function buildCropControls() {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.innerHTML = `
+<label>Width <input type="number" id="cropWidth" value="${canvasWidth}" min="10" max="${canvasWidth}"></label>
+<label>Height <input type="number" id="cropHeight" value="${canvasHeight}" min="10" max="${canvasHeight}"></label>
+<label>X <input type="number" id="cropX" value="0" min="0" max="${canvasWidth-10}"></label>
+<label>Y <input type="number" id="cropY" value="0" min="0" max="${canvasHeight-10}"></label>
+<button class="btn btn-primary" id="applyCrop" style="margin-top:8px;">✂️ Apply Crop</button>
+`;
+controlsContainer.appendChild(div);
+document.getElementById('applyCrop').addEventListener('click', () => {
+const w = parseInt(document.getElementById('cropWidth').value);
+const h = parseInt(document.getElementById('cropHeight').value);
+const x = parseInt(document.getElementById('cropX').value);
+const y = parseInt(document.getElementById('cropY').value);
+if (w < 10 || h < 10) { setStatus('❌ Crop too small!'); return; }
+const imageData = ctx.getImageData(x, y, w, h);
+canvasWidth = w;
+canvasHeight = h;
+canvas.width = w;
+canvas.height = h;
+ctx.putImageData(imageData, 0, 0);
+pushHistory();
+setStatus('✅ Crop applied!');
+document.getElementById('cropWidth').max = canvasWidth;
+document.getElementById('cropHeight').max = canvasHeight;
+document.getElementById('cropX').max = canvasWidth - 10;
+document.getElementById('cropY').max = canvasHeight - 10;
+});
+}
+
+// ---- ROTATE CONTROLS ----
+function buildRotateControls() {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.innerHTML = `
+<button class="btn btn-outline" id="rotateLeft">↺ 90° Left</button>
+<button class="btn btn-outline" id="rotateRight">↻ 90° Right</button>
+<button class="btn btn-outline" id="flipH">⇔ Flip H</button>
+<button class="btn btn-outline" id="flipV">⇕ Flip V</button>
+`;
+controlsContainer.appendChild(div);
+document.getElementById('rotateLeft').addEventListener('click', () => rotateCanvas(-90));
+document.getElementById('rotateRight').addEventListener('click', () => rotateCanvas(90));
+document.getElementById('flipH').addEventListener('click', () => flipCanvas('h'));
+document.getElementById('flipV').addEventListener('click', () => flipCanvas('v'));
+}
+
+function rotateCanvas(deg) {
+const tempCanvas = document.createElement('canvas');
+const tempCtx = tempCanvas.getContext('2d');
+const w = canvasWidth, h = canvasHeight;
+if (deg === 90 || deg === -90) {
+tempCanvas.width = h;
+tempCanvas.height = w;
+tempCtx.translate(h/2, w/2);
+tempCtx.rotate(deg * Math.PI / 180);
+tempCtx.drawImage(canvas, -w/2, -h/2);
+canvasWidth = h;
+canvasHeight = w;
+} else {
+tempCanvas.width = w;
+tempCanvas.height = h;
+tempCtx.drawImage(canvas, 0, 0);
+}
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
+ctx.drawImage(tempCanvas, 0, 0);
+pushHistory();
+setStatus(`✅ Rotated ${deg}°`);
+}
+
+function flipCanvas(dir) {
+const tempCanvas = document.createElement('canvas');
+tempCanvas.width = canvasWidth;
+tempCanvas.height = canvasHeight;
+const tempCtx = tempCanvas.getContext('2d');
+if (dir === 'h') {
+tempCtx.translate(canvasWidth, 0);
+tempCtx.scale(-1, 1);
+} else {
+tempCtx.translate(0, canvasHeight);
+tempCtx.scale(1, -1);
+}
+tempCtx.drawImage(canvas, 0, 0);
+ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+ctx.drawImage(tempCanvas, 0, 0);
+pushHistory();
+setStatus(`✅ Flipped ${dir === 'h' ? 'Horizontal' : 'Vertical'}`);
+}
+
+// ---- RESIZE CONTROLS ----
+function buildResizeControls() {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.innerHTML = `
+<label>Width <input type="number" id="resizeWidth" value="${canvasWidth}" min="10"></label>
+<label>Height <input type="number" id="resizeHeight" value="${canvasHeight}" min="10"></label>
+<label><input type="checkbox" id="aspectLock" checked> Lock aspect ratio</label>
+<button class="btn btn-primary" id="applyResize" style="margin-top:8px;">📐 Apply Resize</button>
+`;
+controlsContainer.appendChild(div);
+const wInput = document.getElementById('resizeWidth');
+const hInput = document.getElementById('resizeHeight');
+const lock = document.getElementById('aspectLock');
+const aspect = canvasWidth / canvasHeight;
+
+wInput.addEventListener('input', () => {
+if (lock.checked) hInput.value = Math.round(wInput.value / aspect);
+});
+hInput.addEventListener('input', () => {
+if (lock.checked) wInput.value = Math.round(hInput.value * aspect);
+});
+
+document.getElementById('applyResize').addEventListener('click', () => {
+const w = parseInt(wInput.value);
+const h = parseInt(hInput.value);
+if (w < 10 || h < 10) { setStatus('❌ Too small!'); return; }
+const tempCanvas = document.createElement('canvas');
+tempCanvas.width = w;
+tempCanvas.height = h;
+const tempCtx = tempCanvas.getContext('2d');
+tempCtx.drawImage(canvas, 0, 0, w, h);
+canvasWidth = w;
+canvasHeight = h;
+canvas.width = w;
+canvas.height = h;
+ctx.drawImage(tempCanvas, 0, 0);
+pushHistory();
+setStatus(`✅ Resized to ${w}x${h}`);
+});
+}
+
+// ---- FILTER CONTROLS ----
+function buildFilterControls() {
+const filters = ['Sepia', 'Grayscale', 'Vintage', 'Invert', 'Neon', 'Noir'];
+const div = document.createElement('div');
+div.className = 'control-group';
+div.style.display = 'flex';
+div.style.flexWrap = 'wrap';
+div.style.gap = '6px';
+filters.forEach(f => {
+const btn = document.createElement('button');
+btn.className = 'btn btn-outline';
+btn.textContent = f;
+btn.style.fontSize = '12px';
+btn.addEventListener('click', () => applyFilter(f));
+div.appendChild(btn);
+});
+controlsContainer.appendChild(div);
+}
+
+function applyFilter(filter) {
+if (!originalImage) return;
+const imageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+const data = imageData.data;
+for (let i = 0; i < data.length; i += 4) {
+let r = data[i], g = data[i+1], b = data[i+2];
+switch(filter) {
+case 'Sepia':
+data[i] = Math.min(255, r * 0.393 + g * 0.769 + b * 0.189);
+data[i+1] = Math.min(255, r * 0.349 + g * 0.686 + b * 0.168);
+data[i+2] = Math.min(255, r * 0.272 + g * 0.534 + b * 0.131);
+break;
+case 'Grayscale':
+const gray = 0.299*r + 0.587*g + 0.114*b;
+data[i] = data[i+1] = data[i+2] = gray;
+break;
+case 'Invert':
+data[i] = 255 - r;
+data[i+1] = 255 - g;
+data[i+2] = 255 - b;
+break;
+case 'Vintage':
+data[i] = Math.min(255, r * 0.9 + 20);
+data[i+1] = Math.min(255, g * 0.7 + 10);
+data[i+2] = Math.min(255, b * 0.5 + 30);
+break;
+case 'Neon':
+data[i] = Math.min(255, r * 1.5);
+data[i+1] = Math.min(255, g * 0.8);
+data[i+2] = Math.min(255, b * 1.8);
+break;
+case 'Noir':
+const gray2 = 0.299*r + 0.587*g + 0.114*b;
+data[i] = data[i+1] = data[i+2] = Math.min(255, gray2 * 1.2);
+break;
+}
+}
+ctx.putImageData(imageData, 0, 0);
+pushHistory();
+setStatus(`✅ Applied ${filter} filter`);
+}
+
+// ---- TEXT CONTROLS ----
+function buildTextControls() {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.innerHTML = `
+<label>Text <input type="text" id="textContent" value="Hello!"></label>
+<label>Font <select id="textFont">
+<option value="Arial">Arial</option>
+<option value="Georgia">Georgia</option>
+<option value="Impact">Impact</option>
+<option value="Courier New">Courier New</option>
+</select></label>
+<label>Size <input type="number" id="textSize" value="30" min="8"></label>
+<label>Color <input type="color" id="textColor" value="#ffffff"></label>
+<label>X <input type="number" id="textX" value="50"></label>
+<label>Y <input type="number" id="textY" value="100"></label>
+<button class="btn btn-primary" id="applyText">📝 Add Text</button>
+`;
+controlsContainer.appendChild(div);
+document.getElementById('applyText').addEventListener('click', () => {
+const text = document.getElementById('textContent').value;
+const font = document.getElementById('textFont').value;
+const size = parseInt(document.getElementById('textSize').value);
+const color = document.getElementById('textColor').value;
+const x = parseInt(document.getElementById('textX').value);
+const y = parseInt(document.getElementById('textY').value);
+ctx.font = `${size}px ${font}`;
+ctx.fillStyle = color;
+ctx.shadowColor = 'rgba(0,0,0,0.5)';
+ctx.shadowBlur = 4;
+ctx.fillText(text, x, y);
+ctx.shadowBlur = 0;
+pushHistory();
+setStatus(`✅ Text added: "${text}"`);
+});
+}
+
+// ---- DRAW CONTROLS ----
+function buildDrawControls() {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.innerHTML = `
+<label>Color <input type="color" id="drawColor" value="#ffd200"></label>
+<label>Size <input type="range" id="drawSize" min="1" max="20" value="4"></label>
+<button class="btn btn-primary" id="clearDraw">🧹 Clear Draw</button>
+`;
+controlsContainer.appendChild(div);
+document.getElementById('drawColor').addEventListener('input', (e) => {
+drawColor = e.target.value;
+});
+document.getElementById('drawSize').addEventListener('input', (e) => {
+drawSize = parseInt(e.target.value);
+});
+document.getElementById('clearDraw').addEventListener('click', () => {
+if (history.length > 1) restoreHistory(historyIndex - 1);
+else setStatus('⚠️ No history to clear');
+});
+}
+
+// ---- Canvas drawing events ----
+let isMouseDown = false;
+let lastX = 0, lastY = 0;
+
+canvas.addEventListener('mousedown', (e) => {
+if (currentTool !== 'draw') return;
+const rect = canvas.getBoundingClientRect();
+const scaleX = canvas.width / rect.width;
+const scaleY = canvas.height / rect.height;
+lastX = (e.clientX - rect.left) * scaleX;
+lastY = (e.clientY - rect.top) * scaleY;
+isMouseDown = true;
+isDrawing = true;
+ctx.beginPath();
+ctx.arc(lastX, lastY, drawSize/2, 0, Math.PI*2);
+ctx.fillStyle = drawColor;
+ctx.fill();
+});
+
+canvas.addEventListener('mousemove', (e) => {
+if (!isMouseDown || currentTool !== 'draw') return;
+const rect = canvas.getBoundingClientRect();
+const scaleX = canvas.width / rect.width;
+const scaleY = canvas.height / rect.height;
+const x = (e.clientX - rect.left) * scaleX;
+const y = (e.clientY - rect.top) * scaleY;
+ctx.beginPath();
+ctx.moveTo(lastX, lastY);
+ctx.lineTo(x, y);
+ctx.strokeStyle = drawColor;
+ctx.lineWidth = drawSize;
+ctx.lineCap = 'round';
+ctx.stroke();
+lastX = x;
+lastY = y;
+});
+
+canvas.addEventListener('mouseup', () => {
+if (isMouseDown && currentTool === 'draw') {
+isMouseDown = false;
+isDrawing = false;
+pushHistory();
+}
+});
+canvas.addEventListener('mouseleave', () => {
+if (isMouseDown) {
+isMouseDown = false;
+isDrawing = false;
+pushHistory();
+}
+});
+
+// ---- STICKER CONTROLS ----
+function buildStickerControls() {
+const div = document.createElement('div');
+div.className = 'control-group';
+div.style.display = 'flex';
+div.style.flexWrap = 'wrap';
+div.style.gap = '8px';
+stickers.forEach((s, i) => {
+const btn = document.createElement('button');
+btn.className = 'btn btn-outline';
+btn.textContent = s;
+btn.style.fontSize = '24px';
+btn.addEventListener('click', () => {
+ctx.font = '60px sans-serif';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText(s, canvasWidth/2, canvasHeight/2);
+pushHistory();
+setStatus(`😊 Sticker added: ${s}`);
+});
+div.appendChild(btn);
+});
+controlsContainer.appendChild(div);
+}
+
+// ---- UNDO / REDO ----
+undoBtn.addEventListener('click', () => {
+if (historyIndex > 0) restoreHistory(historyIndex - 1);
+});
+redoBtn.addEventListener('click', () => {
+if (historyIndex < history.length - 1) restoreHistory(historyIndex + 1);
+});
+
+// ---- RESET ----
+resetBtn.addEventListener('click', () => {
+if (!originalImage) return;
+ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+canvas.width = originalImage.width;
+canvas.height = originalImage.height;
+canvasWidth = originalImage.width;
+canvasHeight = originalImage.height;
+ctx.drawImage(originalImage, 0, 0);
+pushHistory();
+setStatus('↺ Reset to original');
+});
+
+// ---- DOWNLOAD ----
+downloadBtn.addEventListener('click', () => {
+const link = document.createElement('a');
+link.download = `edited-photo-${Date.now()}.png`;
+link.href = canvas.toDataURL('image/png');
+link.click();
+setStatus('✅ Download started!');
+});
+
+// ---- THEME ----
+themeToggle.addEventListener('click', () => {
+document.body.classList.toggle('light-theme');
+themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️ Light' : '🌙 Dark';
+});
+
+// ---- KEYBOARD SHORTCUTS ----
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undoBtn.click(); }
+if (e.ctrlKey && e.key === 'y') { e.preventDefault(); redoBtn.click(); }
+if (e.ctrlKey && e.key === 's') { e.preventDefault(); downloadBtn.click(); }
+});
+
+// ---- INIT ----
+setStatus('📸 Upload an image to start editing!');
+showControls('adjust');
+
+})();
+</script>
+
+</body>
+</html>
