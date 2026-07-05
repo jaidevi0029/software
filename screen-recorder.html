@@ -1,9 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ===== FULL SEO META TAGS (UPDATED) ===== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro Recorder Studio - Free Screen & Audio Recorder</title>
+    <title>Free Online Screen Recorder - Record Screen, Webcam & Audio</title>
+    <meta name="description" content="Free online screen recorder. Record your screen, webcam, and microphone audio. No signup, no watermark, unlimited recordings. Download in WebM/MP4." />
+    <meta name="keywords" content="screen recorder, free screen recorder, online screen recorder, record screen, screen capture, record webcam, screen recording software, record audio, free screen recording tool" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="softwaretoolguide.com" />
+    <link rel="canonical" href="https://softwaretoolguide.com/screen-recorder.html" />
+    
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Free Online Screen Recorder - Record Screen & Audio" />
+    <meta property="og:description" content="Record your screen, webcam, and microphone for free. No signup, no watermark." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://softwaretoolguide.com/screen-recorder.html" />
+    <meta property="og:image" content="https://softwaretoolguide.com/images/screen-recorder-og.jpg" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free Online Screen Recorder" />
+    <meta name="twitter:description" content="Record screen, webcam, and audio for free." />
+    
+    <!-- Schema Markup (Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free Online Screen Recorder",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free online screen recorder with webcam and audio support. No signup, no watermark, unlimited recordings.",
+        "url": "https://softwaretoolguide.com/screen-recorder.html"
+    }
+    </script>
+
+    <!-- ===== STYLES ===== -->
     <style>
         :root {
             --bg: #0f0f1a;
@@ -15,6 +53,7 @@
             --accent: #ffd200;
             --accent2: #f7971e;
             --shadow: 0 20px 60px rgba(0,0,0,0.8);
+            --radius: 16px;
         }
         .light-theme {
             --bg: #f0f2f5;
@@ -45,7 +84,7 @@
         }
         .container {
             background: var(--surface);
-            border-radius: 24px;
+            border-radius: var(--radius);
             padding: 35px;
             max-width: 920px;
             width: 100%;
@@ -292,7 +331,7 @@
 
 <div class="container" id="app">
     <div class="header">
-        <h1>🎥 Pro Recorder Studio</h1>
+        <h1>🎥 Pro Screen Recorder</h1>
         <button class="theme-toggle" id="themeToggle">🌙 Dark / Light</button>
     </div>
 
@@ -583,7 +622,6 @@
                         let finalBlob = blob;
                         let finalMime = mime;
                         if (ext === 'mp4') {
-                            // Simple mock – actual MP4 conversion not possible client-side
                             setStatus('⚠️ MP4 conversion not supported in browser – using WebM', true);
                         } else if (ext === 'gif') {
                             setStatus('⚠️ GIF conversion requires server – using WebM', true);
