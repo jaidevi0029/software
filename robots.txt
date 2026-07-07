@@ -10,33 +10,135 @@ Disallow: /tmp/
 Disallow: /backup/
 Disallow: /temp/
 
-# Allow search engines to crawl all important pages
+# ==================== ALLOW ALL IMPORTANT PAGES (MAIN + NEW TOOLS) ====================
+# Main Pages
 Allow: /index.html
 Allow: /categories.html
 Allow: /review.html
 Allow: /blog.html
 Allow: /contact.html
-Allow: /ai-machine-learning.html
-Allow: /marketing-tools.html
-Allow: /video-creation.html
+Allow: /sitemap.html
 
-# Sitemap location
+# AI & Machine Learning
+Allow: /ai-machine-learning.html
+Allow: /agent-x-software.html
+Allow: /n8n-ai-keyword-generator.html
+Allow: /top-ai-tools-beginners-2026.html
+
+# AI Writing & Marketing
+Allow: /writelytic-lifetime-commissions.html
+Allow: /ai-writing-assistant-coaching.html
+Allow: /lingchat-ai-language.html
+Allow: /ai-army.html
+Allow: /ai-profit-sniper.html
+
+# Video & Screen Recording
+Allow: /tube-magic-ai.html
+Allow: /fast-screen-recorder.html
+Allow: /photo-blowup.html
+Allow: /video-creation.html
+Allow: /video-editing-guide.html
+
+# Marketing Tools
+Allow: /traffic-genius.html
+Allow: /funnelcockpit.html
+Allow: /social-poster.html
+Allow: /member-area-software.html
+Allow: /aas-software-package.html
+Allow: /pagewheel-promoter.html
+Allow: /marketing-tools.html
+
+# Affiliate & E-Commerce
+Allow: /amazon-affiliate-pro.html
+Allow: /notion-pro-ai-resell.html
+Allow: /dropshipping-masterkurs.html
+
+# Trading Software
+Allow: /forex-block-trader.html
+Allow: /forex-block-trader-strategy.html
+Allow: /mt4-ib-copier.html
+Allow: /x-profits.html
+
+# WordPress & SEO Tools
+Allow: /wordpress-automatic-plugin.html
+Allow: /digimember-wp-plugin.html
+Allow: /seo-tools-article.html
+Allow: /advanced-editor-finder.html
+
+# Productivity & Education
+Allow: /text-summarizer-java.html
+Allow: /mobile-app-guide.html
+Allow: /software-savings-calculator.html
+Allow: /scrum-career.html
+Allow: /learn-coding-platforms.html
+
+# German Market
+Allow: /german-diction-master.html
+Allow: /vertrag-agb-templates.html
+Allow: /42-email-vorlagen.html
+
+# Brain & Personal Development
+Allow: /genius-wave.html
+Allow: /torsten-jaeger.html
+
+# Security & PC Tools
+Allow: /secuperts-rescue.html
+
+# Digistore24 & Marketplace
+Allow: /software-market.html
+
+# Blog Posts
+Allow: /blog-1.html
+
+# ==================== NEW TOOLS (FREE ONLINE TOOLS) ====================
+# Free Online Tools Directory
+Allow: /free-online-tools.html
+
+# Screen Recorder
+Allow: /screen-recorder.html
+
+# Photo Editor
+Allow: /photo-editor.html
+
+# Video Editor
+Allow: /video-editing-software.html
+
+# PDF Editor
+Allow: /pdf-editor-software.html
+
+# OCR (Image to Text)
+Allow: /ocr-software.html
+
+# Background Remover
+Allow: /background-remover-software.html
+
+# Project Management (Kanban)
+Allow: /project-management-software.html
+
+# Wireframing Tool
+Allow: /wireframing-software.html
+
+# ==================== MORE DEALS & EXTRA PAGES ====================
+Allow: /more-software-deals.html
+Allow: /software-market.html
+
+# ==================== SITEMAP LOCATION ====================
 Sitemap: https://softwaretoolguide.com/sitemap.xml
 
-# Crawl delay to avoid server overload
+# ==================== CRAWL DELAY ====================
 Crawl-delay: 1
 
-# Google-specific rules
+# ==================== GOOGLE-SPECIFIC RULES ====================
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0.5
 
-# Bing-specific rules
+# ==================== BING-SPECIFIC RULES ====================
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Block bad bots (spam scrapers)
+# ==================== BLOCK BAD BOTS (SPAM SCRAPERS) ====================
 User-agent: AhrefsBot
 Disallow: /
 
@@ -55,7 +157,7 @@ Disallow: /
 User-agent: DataForSeoBot
 Disallow: /
 
-# Block AI training bots from scraping content
+# ==================== BLOCK AI TRAINING BOTS ====================
 User-agent: GPTBot
 Disallow: /
 
@@ -65,7 +167,7 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-# Block email harvesters
+# ==================== BLOCK EMAIL HARVESTERS ====================
 User-agent: EmailCollector
 Disallow: /
 
