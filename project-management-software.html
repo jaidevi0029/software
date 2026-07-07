@@ -73,6 +73,11 @@
         .btn-primary { background:var(--accent); color:#0f0f1a; }
         .btn-danger { background:#ff3333; color:#fff; }
         .btn-success { background:#00c853; color:#0f0f1a; }
+        .btn-download { background:#3b82f6; color:#fff; }
+        .btn-translate { background:#8b5cf6; color:#fff; }
+        .btn-summarize { background:#f59e0b; color:#0f0f1a; }
+        .btn-audio { background:#ec4899; color:#fff; }
+        .btn-chat { background:#10b981; color:#0f0f1a; }
         .theme-toggle { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:6px 14px; border-radius:30px; cursor:pointer; }
 
         .board { display:flex; flex-wrap:wrap; gap:16px; margin-top:14px; }
@@ -82,16 +87,81 @@
         .task:hover { border-color:var(--accent); }
         .task .title { font-weight:600; font-size:14px; }
         .task .desc { font-size:12px; color:var(--text2); margin-top:4px; }
+        .task .meta { display:flex; gap:6px; flex-wrap:wrap; margin-top:4px; font-size:11px; }
+        .task .priority { padding:2px 8px; border-radius:12px; font-weight:600; }
+        .task .priority.low { background:#4ade80; color:#0f0f1a; }
+        .task .priority.medium { background:#facc15; color:#0f0f1a; }
+        .task .priority.high { background:#f87171; color:#fff; }
+        .task .due-date { color:var(--text2); }
         .task .actions { display:flex; gap:6px; margin-top:6px; justify-content:flex-end; }
         .task .actions button { background:transparent; border:none; color:var(--text2); cursor:pointer; font-size:12px; }
         .task .actions button:hover { color:var(--accent); }
         .add-task { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
-        .add-task input, .add-task textarea { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:8px; font-size:13px; }
+        .add-task input, .add-task textarea, .add-task select { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:8px; font-size:13px; }
         .add-task textarea { resize:vertical; min-height:40px; }
         .add-task button { align-self:flex-start; }
         .status-msg { margin-top:14px; padding:8px 14px; background:var(--surface2); border-radius:8px; border-left:4px solid var(--accent); font-size:14px; color:var(--text2); }
         .footer { margin-top:16px; text-align:center; border-top:1px solid var(--border); padding-top:14px; font-size:12px; color:var(--text2); }
         .footer a { color:var(--accent); text-decoration:none; }
+
+        /* Chat UI */
+        .chat-container {
+            display: none;
+            background: var(--surface2);
+            border-radius: var(--radius);
+            padding: 14px;
+            border: 1px solid var(--border);
+            margin-top: 14px;
+        }
+        .chat-container.visible { display: block; }
+        .chat-messages {
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding-right: 6px;
+        }
+        .chat-message {
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            max-width: 85%;
+        }
+        .chat-message.user {
+            background: var(--accent);
+            color: #0f0f1a;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .chat-message.ai {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            align-self: flex-start;
+        }
+        .chat-input-row {
+            display: flex;
+            gap: 8px;
+        }
+        .chat-input-row input {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .chat-input-row button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #0f0f1a;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .chat-input-row button:hover { opacity: 0.9; }
         @media(max-width:700px){ .board { flex-direction:column; } }
     </style>
 </head>
@@ -110,6 +180,27 @@
         <!-- Columns will be injected by JS -->
     </div>
 
+    <div class="btn-row" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+        <button class="btn btn-download" id="downloadTxtBtn" disabled>⬇ .txt</button>
+        <button class="btn btn-download" id="downloadDocxBtn" disabled>📄 .docx</button>
+        <button class="btn btn-translate" id="translateBtn" disabled>🌍 Translate</button>
+        <button class="btn btn-summarize" id="summarizeBtn" disabled>📝 Summarize</button>
+        <button class="btn btn-audio" id="audioBtn" disabled>🔊 Listen</button>
+        <button class="btn btn-chat" id="chatToggleBtn" disabled>🤖 AI Chat</button>
+        <button class="btn btn-danger" id="clearBoardBtn2">🗑 Clear</button>
+    </div>
+
+    <!-- AI Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message ai">🤖 Hello! Ask me anything about your board tasks. I'll answer based on your tasks and notes.</div>
+        </div>
+        <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Ask about your tasks..." />
+            <button id="chatSendBtn">Send</button>
+        </div>
+    </div>
+
     <div class="status-msg" id="statusMsg">✅ Welcome! Add tasks, drag & drop to organize.</div>
     <div class="footer">Made with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% free · No signup</div>
 </div>
@@ -122,6 +213,17 @@
         const themeToggle = document.getElementById('themeToggle');
         const addColumnBtn = document.getElementById('addColumnBtn');
         const clearBoardBtn = document.getElementById('clearBoardBtn');
+        const clearBoardBtn2 = document.getElementById('clearBoardBtn2');
+        const downloadTxtBtn = document.getElementById('downloadTxtBtn');
+        const downloadDocxBtn = document.getElementById('downloadDocxBtn');
+        const translateBtn = document.getElementById('translateBtn');
+        const summarizeBtn = document.getElementById('summarizeBtn');
+        const audioBtn = document.getElementById('audioBtn');
+        const chatToggleBtn = document.getElementById('chatToggleBtn');
+        const chatContainer = document.getElementById('chatContainer');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSendBtn = document.getElementById('chatSendBtn');
 
         // Load from localStorage or default
         let columns = JSON.parse(localStorage.getItem('kanbanColumns')) || [
@@ -130,6 +232,8 @@
             { id: 'col3', title: 'Done', tasks: [] }
         ];
         let taskIdCounter = Date.now();
+        let isChatOpen = false;
+        let boardNotes = '';
 
         // ---- Save state ----
         function saveState() {
@@ -189,6 +293,21 @@
             setStatus(`✅ Moved task to "${targetCol.title}"`);
         }
 
+        // ---- Get all tasks text for notes ----
+        function getAllTasksText() {
+            let text = '';
+            columns.forEach(col => {
+                text += `\n${col.title}:\n`;
+                col.tasks.forEach(task => {
+                    text += `- ${task.title} (Priority: ${task.priority || 'Normal'}, Due: ${task.dueDate || 'No due date'})\n`;
+                    if (task.desc) text += `  Description: ${task.desc}\n`;
+                    if (task.note) text += `  Note: ${task.note}\n`;
+                });
+            });
+            boardNotes = text;
+            return text;
+        }
+
         // ---- Render board ----
         function renderBoard() {
             board.innerHTML = '';
@@ -213,10 +332,20 @@
                     taskDiv.draggable = true;
                     taskDiv.dataset.col = col.id;
                     taskDiv.dataset.task = task.id;
+                    
+                    const priorityClass = task.priority === 'High' ? 'high' : 
+                                        task.priority === 'Medium' ? 'medium' : 'low';
+                    
                     taskDiv.innerHTML = `
                         <div class="title">${task.title}</div>
                         ${task.desc ? `<div class="desc">${task.desc}</div>` : ''}
+                        <div class="meta">
+                            <span class="priority ${priorityClass}">${task.priority || 'Low'}</span>
+                            ${task.dueDate ? `<span class="due-date">📅 ${task.dueDate}</span>` : ''}
+                            ${task.note ? `<span class="due-date">📝 Note added</span>` : ''}
+                        </div>
                         <div class="actions">
+                            <button class="add-note" data-col="${col.id}" data-task="${task.id}">📝 Add Note</button>
                             <button class="edit-task" data-col="${col.id}" data-task="${task.id}">✏️</button>
                             <button class="delete-task" data-col="${col.id}" data-task="${task.id}">✕</button>
                         </div>
@@ -232,7 +361,15 @@
                 addDiv.innerHTML = `
                     <input type="text" placeholder="Task title" class="task-title" data-col="${col.id}" />
                     <textarea placeholder="Description (optional)" class="task-desc" data-col="${col.id}"></textarea>
-                    <button class="btn btn-primary add-task-btn" data-col="${col.id}">+ Add Task</button>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                        <select class="task-priority" data-col="${col.id}">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                        <input type="date" class="task-due" data-col="${col.id}" />
+                        <button class="btn btn-primary add-task-btn" data-col="${col.id}">+ Add Task</button>
+                    </div>
                 `;
                 colDiv.appendChild(addDiv);
                 board.appendChild(colDiv);
@@ -255,6 +392,9 @@
                     const colId = this.dataset.col;
                     const titleInput = document.querySelector(`.task-title[data-col="${colId}"]`);
                     const descInput = document.querySelector(`.task-desc[data-col="${colId}"]`);
+                    const prioritySelect = document.querySelector(`.task-priority[data-col="${colId}"]`);
+                    const dueInput = document.querySelector(`.task-due[data-col="${colId}"]`);
+                    
                     const title = titleInput.value.trim();
                     if (!title) {
                         setStatus('⚠️ Please enter a task title', true);
@@ -265,13 +405,17 @@
                         col.tasks.push({
                             id: `task_${taskIdCounter++}`,
                             title: title,
-                            desc: descInput.value.trim()
+                            desc: descInput.value.trim(),
+                            priority: prioritySelect.value,
+                            dueDate: dueInput.value || null,
+                            note: ''
                         });
                         saveState();
                         renderBoard();
                         setStatus(`✅ Task added: "${title}"`);
                         titleInput.value = '';
                         descInput.value = '';
+                        dueInput.value = '';
                     }
                 });
             });
@@ -306,13 +450,214 @@
                         task.title = newTitle.trim();
                         const newDesc = prompt('Edit description:', task.desc);
                         if (newDesc !== null) task.desc = newDesc.trim();
+                        const newPriority = prompt('Enter priority (Low/Medium/High):', task.priority);
+                        if (newPriority && ['Low','Medium','High'].includes(newPriority)) {
+                            task.priority = newPriority;
+                        }
+                        const newDue = prompt('Enter due date (YYYY-MM-DD):', task.dueDate);
+                        if (newDue !== null) task.dueDate = newDue.trim() || null;
                         saveState();
                         renderBoard();
                         setStatus('✏️ Task updated');
                     }
                 });
             });
+
+            // Add Note to Task
+            document.querySelectorAll('.add-note').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const colId = this.dataset.col;
+                    const taskId = this.dataset.task;
+                    const col = columns.find(c => c.id === colId);
+                    if (!col) return;
+                    const task = col.tasks.find(t => t.id === taskId);
+                    if (!task) return;
+
+                    const note = prompt('Enter a note for this task:');
+                    if (note !== null) {
+                        task.note = note.trim();
+                        saveState();
+                        renderBoard();
+                        setStatus('📝 Note added to task!');
+                        getAllTasksText();
+                        enableButtons();
+                    }
+                });
+            });
+
+            // Enable buttons if tasks exist
+            const hasTasks = columns.some(col => col.tasks.length > 0);
+            if (hasTasks) {
+                getAllTasksText();
+                enableButtons();
+            }
         }
+
+        // ---- Enable AI buttons ----
+        function enableButtons() {
+            downloadTxtBtn.disabled = false;
+            downloadDocxBtn.disabled = false;
+            translateBtn.disabled = false;
+            summarizeBtn.disabled = false;
+            audioBtn.disabled = false;
+            chatToggleBtn.disabled = false;
+        }
+
+        // ---- Translate ----
+        translateBtn.addEventListener('click', async () => {
+            const text = boardNotes;
+            if (!text.trim()) {
+                setStatus('⚠️ No tasks to translate. Add tasks first.', true);
+                return;
+            }
+            setStatus('⏳ Translating...');
+            try {
+                const response = await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=hi&dt=t&q=' + encodeURIComponent(text));
+                const data = await response.json();
+                if (data && data[0] && data[0][0]) {
+                    const translated = data[0].map(item => item[0]).join('');
+                    setStatus(`🌍 Translated to Hindi: ${translated.substring(0, 100)}...`);
+                } else {
+                    setStatus('⚠️ Translation failed.', true);
+                }
+            } catch(err) {
+                setStatus('⚠️ Translation error: ' + err.message, true);
+            }
+        });
+
+        // ---- Summarize ----
+        summarizeBtn.addEventListener('click', () => {
+            const text = boardNotes;
+            if (!text.trim()) {
+                setStatus('⚠️ No tasks to summarize. Add tasks first.', true);
+                return;
+            }
+            const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+            let summary;
+            if (sentences.length <= 3) {
+                summary = text.substring(0, 200) + (text.length > 200 ? '...' : '');
+            } else {
+                summary = sentences.slice(0, 3).join('. ') + '.';
+                if (summary.length > 300) summary = summary.substring(0, 300) + '...';
+            }
+            setStatus(`📝 Summary: ${summary}`);
+        });
+
+        // ---- Text-to-Speech ----
+        audioBtn.addEventListener('click', () => {
+            const text = boardNotes;
+            if (!text.trim()) {
+                setStatus('⚠️ No tasks to listen to. Add tasks first.', true);
+                return;
+            }
+            const utterance = new SpeechSynthesisUtterance(text.substring(0, 1000));
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(utterance);
+            setStatus('🔊 Speaking tasks...');
+        });
+
+        // ---- AI Chat ----
+        async function askAI(question) {
+            if (!boardNotes.trim()) {
+                setStatus('⚠️ No tasks to chat about. Add tasks first.', true);
+                return;
+            }
+            addChatMessage('user', question);
+            setStatus('🤖 AI is thinking...');
+
+            try {
+                const context = `You are a helpful AI assistant. The user has these tasks and notes: ${boardNotes}. Answer based on this data. User question: ${question}`;
+                const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC8I4Q5qyGmZm2ZgB3l5G9kFwXZ2HkFcLw', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: context }] }]
+                    })
+                });
+                if (!response.ok) throw new Error('API request failed');
+                const data = await response.json();
+                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a response.';
+                addChatMessage('ai', reply);
+                setStatus('✅ AI response ready!');
+            } catch (err) {
+                console.error(err);
+                addChatMessage('ai', '⚠️ Error: ' + err.message);
+                setStatus('⚠️ AI error: ' + err.message, true);
+            }
+        }
+
+        function addChatMessage(role, text) {
+            const div = document.createElement('div');
+            div.className = `chat-message ${role}`;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // ---- Chat Toggle ----
+        chatToggleBtn.addEventListener('click', () => {
+            isChatOpen = !isChatOpen;
+            chatContainer.classList.toggle('visible', isChatOpen);
+            if (isChatOpen && chatMessages.children.length === 1) {
+                addChatMessage('ai', '🤖 Hello! Ask me anything about your tasks and notes.');
+            }
+            setStatus(isChatOpen ? '💬 Chat open. Ask anything!' : '💬 Chat closed.');
+        });
+
+        // ---- Chat Send ----
+        chatSendBtn.addEventListener('click', () => {
+            const question = chatInput.value.trim();
+            if (!question) { setStatus('⚠️ Enter a question.', true); return; }
+            chatInput.value = '';
+            askAI(question);
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') chatSendBtn.click();
+        });
+
+        // ---- Download .txt ----
+        downloadTxtBtn.addEventListener('click', () => {
+            const text = boardNotes;
+            if (!text.trim()) {
+                setStatus('⚠️ No tasks to download.', true);
+                return;
+            }
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `kanban-board-${Date.now()}.txt`;
+            a.click();
+            setStatus('✅ .txt file downloaded!');
+        });
+
+        // ---- Download .docx ----
+        downloadDocxBtn.addEventListener('click', () => {
+            const text = boardNotes;
+            if (!text.trim()) {
+                setStatus('⚠️ No tasks to download.', true);
+                return;
+            }
+            const htmlContent = `
+                <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                      xmlns:w="urn:schemas-microsoft-com:office:word" 
+                      xmlns="http://www.w3.org/TR/REC-html40">
+                <head><meta charset="UTF-8" /><title>Kanban Board</title>
+                <style>body { font-family: Arial; font-size: 12pt; line-height: 1.5; }</style></head>
+                <body>${text.replace(/\n/g, '<br />')}</body></html>
+            `;
+            const blob = new Blob([htmlContent], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `kanban-board-${Date.now()}.docx`;
+            a.click();
+            setStatus('✅ .docx file downloaded!');
+        });
 
         // ---- Add Column ----
         addColumnBtn.addEventListener('click', () => {
@@ -330,14 +675,28 @@
         });
 
         // ---- Clear Board ----
-        clearBoardBtn.addEventListener('click', () => {
+        function clearBoard() {
             if (confirm('Delete all columns and tasks?')) {
                 columns = [];
                 saveState();
                 renderBoard();
                 setStatus('🗑 Board cleared');
+                downloadTxtBtn.disabled = true;
+                downloadDocxBtn.disabled = true;
+                translateBtn.disabled = true;
+                summarizeBtn.disabled = true;
+                audioBtn.disabled = true;
+                chatToggleBtn.disabled = true;
+                boardNotes = '';
+                chatMessages.innerHTML = '';
+                chatContainer.classList.remove('visible');
+                isChatOpen = false;
+                window.speechSynthesis.cancel();
             }
-        });
+        }
+
+        clearBoardBtn.addEventListener('click', clearBoard);
+        clearBoardBtn2.addEventListener('click', clearBoard);
 
         // ---- Theme Toggle ----
         themeToggle.addEventListener('click', () => {
