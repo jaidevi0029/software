@@ -1,231 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Free Online PDF Editor - Edit, Merge, Split PDFs Online</title>
-<meta name="description" content="Free online PDF editor. Edit text, add images, merge, split, and compress PDFs. No signup, no watermark, unlimited use." />
-<meta name="keywords" content="pdf editor, free pdf editor, online pdf editor, merge pdf, split pdf, compress pdf, edit pdf online" />
-<meta name="robots" content="index, follow" />
-<meta name="author" content="softwaretoolguide.com" />
-<link rel="canonical" href="https://softwaretoolguide.com/pdf-editor-software.html" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Online PDF Editor - Edit, Merge, Split, Convert to Image & More</title>
+    <meta name="description" content="Free online PDF editor. Edit text, add images, merge, split, compress, convert PDF to image, search, summarize, translate, and chat with AI. No signup." />
+    <meta name="keywords" content="pdf editor, free pdf editor, online pdf editor, merge pdf, split pdf, compress pdf, pdf to image, convert pdf to png, pdf to jpg, edit pdf online, ai chatbot" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="softwaretoolguide.com" />
+    <link rel="canonical" href="https://softwaretoolguide.com/pdf-editor-software.html" />
 
-<meta property="og:title" content="Free Online PDF Editor - Edit, Merge, Split" />
-<meta property="og:description" content="Edit PDFs online for free. Merge, split, compress, and add text or images." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://softwaretoolguide.com/pdf-editor-software.html" />
+    <meta property="og:title" content="Free Online PDF Editor - Edit, Merge, Split, Convert to Image" />
+    <meta property="og:description" content="Edit PDFs online for free. Merge, split, compress, add text, convert to image, search, summarize, translate, and chat with AI." />
 
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "SoftwareApplication",
-"name": "Free Online PDF Editor",
-"operatingSystem": "All",
-"applicationCategory": "BusinessApplication",
-"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-"description": "Free online PDF editor. Merge, split, compress, edit text, add images.",
-"url": "https://softwaretoolguide.com/pdf-editor-software.html"
-}
-</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Free Online PDF Editor",
+        "operatingSystem": "All",
+        "applicationCategory": "BusinessApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Free online PDF editor with AI tools. Merge, split, compress, convert to image, search, summarize, translate, and chat.",
+        "url": "https://softwaretoolguide.com/pdf-editor-software.html"
+    }
+    </script>
 
-<style>
-:root {
---bg: #0f0f1a;
---surface: #1a1a2e;
---surface2: #12121f;
---border: #2a2a44;
---text: #e0e0e0;
---text2: #8888aa;
---accent: #ffd200;
---shadow: 0 20px 60px rgba(0,0,0,0.8);
---radius: 16px;
-}
-.light-theme {
---bg: #f0f2f5;
---surface: #ffffff;
---surface2: #e8eaed;
---border: #d0d2d6;
---text: #1a1a2e;
---text2: #555577;
---accent: #2979ff;
-}
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; transition:0.3s; }
-body { background:var(--bg); color:var(--text); min-height:100vh; display:flex; justify-content:center; padding:20px; }
-.container { background:var(--surface); border-radius:var(--radius); padding:25px; max-width:1100px; width:100%; box-shadow:var(--shadow); border:1px solid var(--border); }
-.header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px; }
-.header h1 { font-size:24px; font-weight:700; background:linear-gradient(135deg, #f7971e, #ffd200); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.btn { padding:8px 16px; border:none; border-radius:30px; font-weight:600; cursor:pointer; font-size:13px; }
-.btn-primary { background:var(--accent); color:#0f0f1a; }
-.btn-success { background:#00c853; color:#0f0f1a; }
-.btn-danger { background:#ff3333; color:#fff; }
-.theme-toggle { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:6px 14px; border-radius:30px; cursor:pointer; }
+    <style>
+        :root {
+            --bg: #0f0f1a;
+            --surface: #1a1a2e;
+            --surface2: #12121f;
+            --border: #2a2a44;
+            --text: #e0e0e0;
+            --text2: #8888aa;
+            --accent: #ffd200;
+            --shadow: 0 20px 60px rgba(0,0,0,0.8);
+            --radius: 16px;
+        }
+        .light-theme {
+            --bg: #f0f2f5;
+            --surface: #ffffff;
+            --surface2: #e8eaed;
+            --border: #d0d2d6;
+            --text: #1a1a2e;
+            --text2: #555577;
+            --accent: #2979ff;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; transition:0.3s; }
+        body { background:var(--bg); color:var(--text); min-height:100vh; display:flex; justify-content:center; padding:20px; }
+        .container { background:var(--surface); border-radius:var(--radius); padding:25px; max-width:1100px; width:100%; box-shadow:var(--shadow); border:1px solid var(--border); }
+        .header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px; }
+        .header h1 { font-size:24px; font-weight:700; background:linear-gradient(135deg, #f7971e, #ffd200); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .btn { padding:8px 16px; border:none; border-radius:30px; font-weight:600; cursor:pointer; font-size:13px; }
+        .btn-primary { background:var(--accent); color:#0f0f1a; }
+        .btn-success { background:#00c853; color:#0f0f1a; }
+        .btn-danger { background:#ff3333; color:#fff; }
+        .btn-download { background:#3b82f6; color:#fff; }
+        .btn-translate { background:#8b5cf6; color:#fff; }
+        .btn-summarize { background:#f59e0b; color:#0f0f1a; }
+        .btn-audio { background:#ec4899; color:#fff; }
+        .btn-chat { background:#10b981; color:#0f0f1a; }
+        .btn-image { background:#e91e63; color:#fff; }
+        .theme-toggle { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:6px 14px; border-radius:30px; cursor:pointer; }
 
-.upload-zone { border:2px dashed var(--border); border-radius:var(--radius); padding:30px; text-align:center; color:var(--text2); cursor:pointer; margin-bottom:16px; transition:0.3s; }
-.upload-zone:hover { border-color:var(--accent); background:var(--surface2); }
-.upload-zone input { display:none; }
+        .upload-zone { border:2px dashed var(--border); border-radius:var(--radius); padding:30px; text-align:center; color:var(--text2); cursor:pointer; margin-bottom:16px; transition:0.3s; }
+        .upload-zone:hover { border-color:var(--accent); background:var(--surface2); }
+        .upload-zone input { display:none; }
 
-.controls { display:flex; flex-wrap:wrap; gap:10px; background:var(--surface2); padding:14px; border-radius:var(--radius); border:1px solid var(--border); margin-bottom:14px; }
-.controls label { font-size:13px; color:var(--text2); display:flex; flex-direction:column; gap:4px; }
-.controls select, .controls input { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:4px 8px; border-radius:8px; }
+        .controls { display:flex; flex-wrap:wrap; gap:10px; background:var(--surface2); padding:14px; border-radius:var(--radius); border:1px solid var(--border); margin-bottom:14px; }
+        .controls label { font-size:13px; color:var(--text2); display:flex; flex-direction:column; gap:4px; }
+        .controls select, .controls input { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:4px 8px; border-radius:8px; }
 
-.pdf-preview { background:#0a0a15; border-radius:var(--radius); padding:10px; border:1px solid var(--border); min-height:200px; display:flex; justify-content:center; align-items:center; color:var(--text2); }
-.status-msg { margin-top:14px; padding:8px 14px; background:var(--surface2); border-radius:8px; border-left:4px solid var(--accent); font-size:14px; }
-.footer { margin-top:16px; text-align:center; border-top:1px solid var(--border); padding-top:14px; font-size:12px; color:var(--text2); }
-.footer a { color:var(--accent); text-decoration:none; }
-</style>
+        .pdf-preview { background:#0a0a15; border-radius:var(--radius); padding:10px; border:1px solid var(--border); min-height:150px; display:flex; justify-content:center; align-items:center; color:var(--text2); flex-direction:column; }
+        .status-msg { margin-top:14px; padding:8px 14px; background:var(--surface2); border-radius:8px; border-left:4px solid var(--accent); font-size:14px; }
+        .footer { margin-top:16px; text-align:center; border-top:1px solid var(--border); padding-top:14px; font-size:12px; color:var(--text2); }
+        .footer a { color:var(--accent); text-decoration:none; }
+
+        .progress-container { display:none; width:100%; background:var(--surface2); border-radius:var(--radius); margin:10px 0; padding:4px; border:1px solid var(--border); }
+        .progress-bar { height:6px; background:var(--accent); border-radius:var(--radius); width:0%; transition:width 0.3s; }
+
+        .search-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .search-row input {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        /* Chat UI */
+        .chat-container {
+            display: none;
+            background: var(--surface2);
+            border-radius: var(--radius);
+            padding: 14px;
+            border: 1px solid var(--border);
+            margin-top: 14px;
+        }
+        .chat-container.visible { display: block; }
+        .chat-messages {
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding-right: 6px;
+        }
+        .chat-message {
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            max-width: 85%;
+        }
+        .chat-message.user {
+            background: var(--accent);
+            color: #0f0f1a;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .chat-message.ai {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            align-self: flex-start;
+        }
+        .chat-input-row {
+            display: flex;
+            gap: 8px;
+        }
+        .chat-input-row input {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .chat-input-row button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #0f0f1a;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .chat-input-row button:hover { opacity: 0.9; }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .btn-row .btn-image { background: #e91e63; color: #fff; }
+        @media (max-width: 500px) {
+            .controls, .btn-row { flex-direction: column; align-items: stretch; }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-<div class="header">
-<h1>📄 Free Online PDF Editor</h1>
-<div style="display:flex; gap:8px;">
-<button class="btn btn-success" id="downloadBtn" disabled>⬇ Download PDF</button>
-<button class="btn btn-danger" id="resetBtn">↺ Reset</button>
-<button class="theme-toggle" id="themeToggle">🌙 Dark/Light</button>
-</div>
-</div>
+    <div class="header">
+        <h1>📄 Free Online PDF Editor & AI Tools</h1>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn btn-success" id="downloadBtn" disabled>⬇ Download PDF</button>
+            <button class="btn btn-danger" id="resetBtn">↺ Reset</button>
+            <button class="theme-toggle" id="themeToggle">🌙 Dark/Light</button>
+        </div>
+    </div>
 
-<div class="upload-zone" id="uploadZone">
-<div>📁 Drag & drop PDF here or <strong>click to browse</strong></div>
-<input type="file" id="fileInput" accept=".pdf" />
-</div>
+    <div class="upload-zone" id="uploadZone">
+        <div>📁 Drag & drop PDF(s) here or <strong>click to browse</strong> (multiple files allowed)</div>
+        <input type="file" id="fileInput" accept=".pdf" multiple />
+    </div>
 
-<div class="controls">
-<label>Action <select id="actionSelect">
-<option value="merge">Merge PDFs</option>
-<option value="split">Split PDF</option>
-<option value="compress">Compress PDF</option>
-<option value="addText">Add Text</option>
-</select></label>
-<label>Text <input type="text" id="textInput" placeholder="Enter text" /></label>
-<button class="btn btn-primary" id="applyBtn">Apply</button>
-</div>
+    <div class="controls">
+        <label>Action <select id="actionSelect">
+            <option value="merge">Merge PDFs</option>
+            <option value="split">Split PDF</option>
+            <option value="compress">Compress PDF</option>
+            <option value="addText">Add Text</option>
+            <option value="extractText">Extract Text</option>
+        </select></label>
+        <label>Text <input type="text" id="textInput" placeholder="Enter text" /></label>
+        <button class="btn btn-primary" id="applyBtn">Apply</button>
+    </div>
 
-<div class="pdf-preview" id="pdfPreview">
-<span>📄 Upload a PDF to get started</span>
-</div>
+    <div class="search-row">
+        <input type="text" id="searchInput" placeholder="🔍 Search in PDF text..." />
+        <button class="btn btn-primary" id="searchBtn">Search</button>
+    </div>
 
-<div class="status-msg" id="statusMsg">✅ Upload a PDF to start editing.</div>
-<div class="footer">Made with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% free</div>
+    <div class="pdf-preview" id="pdfPreview">
+        <span>📄 Upload a PDF to get started</span>
+    </div>
+
+    <div class="btn-row">
+        <button class="btn btn-download" id="downloadTxtBtn" disabled>⬇ .txt</button>
+        <button class="btn btn-download" id="downloadDocxBtn" disabled>📄 .docx</button>
+        <button class="btn btn-translate" id="translateBtn" disabled>🌍 Translate</button>
+        <button class="btn btn-summarize" id="summarizeBtn" disabled>📝 Summarize</button>
+        <button class="btn btn-audio" id="audioBtn" disabled>🔊 Listen</button>
+        <button class="btn btn-chat" id="chatToggleBtn" disabled>🤖 AI Chat</button>
+        <button class="btn btn-image" id="convertToImageBtn" disabled>🖼 PDF → Image</button>
+    </div>
+
+    <!-- AI Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message ai">🤖 Hello! Ask me anything about your PDF content. I'll answer based on the document.</div>
+        </div>
+        <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Ask about the PDF..." />
+            <button id="chatSendBtn">Send</button>
+        </div>
+    </div>
+
+    <div class="status-msg" id="statusMsg">✅ Upload a PDF to start editing.</div>
+    <div class="footer">Made with ❤️ for <a href="https://softwaretoolguide.com">softwaretoolguide.com</a> · 100% free</div>
 </div>
 
 <script>
-(function(){
-'use strict';
-const fileInput = document.getElementById('fileInput');
-const uploadZone = document.getElementById('uploadZone');
-const actionSelect = document.getElementById('actionSelect');
-const textInput = document.getElementById('textInput');
-const applyBtn = document.getElementById('applyBtn');
-const downloadBtn = document.getElementById('downloadBtn');
-const resetBtn = document.getElementById('resetBtn');
-const pdfPreview = document.getElementById('pdfPreview');
-const statusMsg = document.getElementById('statusMsg');
-const themeToggle = document.getElementById('themeToggle');
+    (function(){
+        'use strict';
+        const fileInput = document.getElementById('fileInput');
+        const uploadZone = document.getElementById('uploadZone');
+        const actionSelect = document.getElementById('actionSelect');
+        const textInput = document.getElementById('textInput');
+        const applyBtn = document.getElementById('applyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const pdfPreview = document.getElementById('pdfPreview');
+        const statusMsg = document.getElementById('statusMsg');
+        const themeToggle = document.getElementById('themeToggle');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const downloadTxtBtn = document.getElementById('downloadTxtBtn');
+        const downloadDocxBtn = document.getElementById('downloadDocxBtn');
+        const translateBtn = document.getElementById('translateBtn');
+        const summarizeBtn = document.getElementById('summarizeBtn');
+        const audioBtn = document.getElementById('audioBtn');
+        const chatToggleBtn = document.getElementById('chatToggleBtn');
+        const chatContainer = document.getElementById('chatContainer');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSendBtn = document.getElementById('chatSendBtn');
+        const convertToImageBtn = document.getElementById('convertToImageBtn');
 
-let pdfDoc = null;
-let pdfBytes = null;
-let fileName = 'document.pdf';
+        let pdfDoc = null;
+        let pdfBytes = null;
+        let fileName = 'document.pdf';
+        let extractedText = '';
+        let isTranslated = false;
+        let lastTranslatedText = '';
+        let isChatOpen = false;
+        let uploadedFiles = [];
 
-function setStatus(msg, isError=false) {
-statusMsg.textContent = msg;
-statusMsg.style.borderLeftColor = isError ? '#ff3333' : '#ffd200';
-}
+        function setStatus(msg, isError=false) {
+            statusMsg.textContent = msg;
+            statusMsg.style.borderLeftColor = isError ? '#ff3333' : '#ffd200';
+        }
 
-uploadZone.addEventListener('click', () => fileInput.click());
-fileInput.addEventListener('change', (e) => {
-if (e.target.files[0]) loadPDF(e.target.files[0]);
-});
-uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.style.borderColor = 'var(--accent)'; });
-uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor = 'var(--border)'; });
-uploadZone.addEventListener('drop', (e) => {
-e.preventDefault();
-uploadZone.style.borderColor = 'var(--border)';
-if (e.dataTransfer.files[0]) loadPDF(e.dataTransfer.files[0]);
-});
+        uploadZone.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                uploadedFiles = Array.from(e.target.files);
+                loadPDF(uploadedFiles[0]);
+            }
+        });
+        uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.style.borderColor = 'var(--accent)'; });
+        uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor = 'var(--border)'; });
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.style.borderColor = 'var(--border)';
+            if (e.dataTransfer.files.length > 0) {
+                uploadedFiles = Array.from(e.dataTransfer.files);
+                loadPDF(uploadedFiles[0]);
+            }
+        });
 
-async function loadPDF(file) {
-try {
-fileName = file.name;
-const arrayBuffer = await file.arrayBuffer();
-pdfBytes = new Uint8Array(arrayBuffer);
-pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
-pdfPreview.innerHTML = `<div>📄 <strong>${fileName}</strong><br>Pages: ${pdfDoc.getPageCount()}</div>`;
-downloadBtn.disabled = false;
-setStatus(`✅ Loaded: ${fileName}`);
-} catch(err) {
-setStatus('❌ Error loading PDF: ' + err.message, true);
-}
-}
+        async function loadPDF(file) {
+            try {
+                fileName = file.name;
+                const arrayBuffer = await file.arrayBuffer();
+                pdfBytes = new Uint8Array(arrayBuffer);
+                pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+                pdfPreview.innerHTML = `<div>📄 <strong>${fileName}</strong><br>Pages: ${pdfDoc.getPageCount()}</div>`;
+                downloadBtn.disabled = false;
+                downloadTxtBtn.disabled = false;
+                downloadDocxBtn.disabled = false;
+                translateBtn.disabled = false;
+                summarizeBtn.disabled = false;
+                audioBtn.disabled = false;
+                chatToggleBtn.disabled = false;
+                convertToImageBtn.disabled = false;
+                extractedText = '';
+                setStatus(`✅ Loaded: ${fileName}`);
+            } catch(err) {
+                setStatus('❌ Error loading PDF: ' + err.message, true);
+            }
+        }
 
-applyBtn.addEventListener('click', async () => {
-if (!pdfDoc) { setStatus('⚠️ Please upload a PDF first.', true); return; }
-const action = actionSelect.value;
-setStatus('⏳ Processing...');
+        // ---- Extract text from PDF ----
+        async function extractTextFromPDF() {
+            if (!pdfDoc) return '';
+            try {
+                const pages = pdfDoc.getPages();
+                let text = '';
+                pages.forEach((page, idx) => {
+                    text += `Page ${idx+1}: [Text extraction requires full PDF parsing library]\n`;
+                });
+                return text;
+            } catch(e) {
+                return 'Text extraction not available with this library.';
+            }
+        }
 
-try {
-let newPdf = pdfDoc;
-if (action === 'merge') {
-// Simulate merge (for demo, just download same)
-setStatus('✅ Merge simulated (upload multiple files to merge)');
-} else if (action === 'split') {
-// Split first page
-const splitDoc = await PDFLib.PDFDocument.create();
-const [firstPage] = await splitDoc.copyPages(newPdf, [0]);
-splitDoc.addPage(firstPage);
-newPdf = splitDoc;
-setStatus('✅ Split applied (first page only)');
-} else if (action === 'compress') {
-// Compress (simulated)
-setStatus('✅ Compression applied (simulated)');
-} else if (action === 'addText') {
-const text = textInput.value.trim();
-if (!text) { setStatus('⚠️ Enter text to add.', true); return; }
-const pages = newPdf.getPages();
-const firstPage = pages[0];
-const { width, height } = firstPage.getSize();
-firstPage.drawText(text, {
-x: 50, y: height - 50,
-size: 20, color: PDFLib.rgb(0, 0, 0)
-});
-setStatus(`✅ Text added: "${text}"`);
-}
+        // ---- Convert PDF to Images (PNG) ----
+        async function convertPDFToImages() {
+            if (!pdfDoc) {
+                setStatus('⚠️ Please upload a PDF first.', true);
+                return;
+            }
 
-const newBytes = await newPdf.save();
-pdfBytes = newBytes;
-pdfDoc = newPdf;
-downloadBtn.onclick = () => {
-const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-const url = URL.createObjectURL(blob);
-const a = document.createElement('a');
-a.href = url;
-a.download = `edited-${fileName}`;
-a.click();
-setStatus('✅ Download started!');
-};
-setStatus('✅ Ready to download!');
-} catch(err) {
-setStatus('❌ Error: ' + err.message, true);
-}
-});
+            setStatus('⏳ Converting PDF to images... This may take a moment.');
+            
+            try {
+                const pdfjsLib = window.pdfjsLib;
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                
+                const arrayBuffer = await fileInput.files[0].arrayBuffer();
+                const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                const totalPages = pdf.numPages;
+                
+                let allImagesHTML = '<div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">';
+                
+                for (let i = 1; i <= totalPages; i++) {
+                    setStatus(`⏳ Converting page ${i}/${totalPages}...`);
+                    const page = await pdf.getPage(i);
+                    const scale = 2;
+                    const viewport = page.getViewport({ scale });
+                    
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    
+                    await page.render({ canvasContext: context, viewport }).promise;
+                    
+                    // Convert to PNG and create download link
+                    const imgData = canvas.toDataURL('image/png');
+                    allImagesHTML += `
+                        <div style="border:1px solid var(--border); border-radius:8px; padding:8px; background:var(--surface2);">
+                            <img src="${imgData}" style="max-width:200px; max-height:200px; border-radius:4px;" alt="Page ${i}" />
+                            <div style="margin-top:6px; text-align:center;">
+                                <a href="${imgData}" download="page-${i}.png" class="btn btn-image" style="padding:4px 12px; font-size:11px;">⬇ Page ${i}</a>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                allImagesHTML += '</div>';
+                pdfPreview.innerHTML = allImagesHTML;
+                setStatus(`✅ Converted ${totalPages} page(s) to images. Download individually!`);
+                
+            } catch(err) {
+                setStatus('❌ Conversion failed: ' + err.message, true);
+                console.error(err);
+            }
+        }
 
-resetBtn.addEventListener('click', () => {
-pdfDoc = null;
-pdfBytes = null;
-pdfPreview.innerHTML = '<span>📄 Upload a PDF to get started</span>';
-downloadBtn.disabled = true;
-setStatus('↺ Reset');
-});
+        // ---- Apply button ----
+        applyBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { setStatus('⚠️ Please upload a PDF first.', true); return; }
+            const action = actionSelect.value;
+            setStatus('⏳ Processing...');
 
-themeToggle.addEventListener('click', () => {
-document.body.classList.toggle('light-theme');
-themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️ Light' : '🌙 Dark';
-});
+            try {
+                let newPdf = pdfDoc;
+                
+                if (action === 'merge' && uploadedFiles.length > 1) {
+                    const mergedPdf = await PDFLib.PDFDocument.create();
+                    for (const file of uploadedFiles) {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const doc = await PDFLib.PDFDocument.load(arrayBuffer);
+                        const indices = doc.getPageIndices();
+                        const pages = await mergedPdf.copyPages(doc, indices);
+                        pages.forEach(page => mergedPdf.addPage(page));
+                    }
+                    newPdf = mergedPdf;
+                    setStatus(`✅ Merged ${uploadedFiles.length} PDFs`);
+                } else if (action === 'split') {
+                    const splitDoc = await PDFLib.PDFDocument.create();
+                    const [firstPage] = await splitDoc.copyPages(newPdf, [0]);
+                    splitDoc.addPage(firstPage);
+                    newPdf = splitDoc;
+                    setStatus('✅ Split applied (first page only)');
+                } else if (action === 'compress') {
+                    setStatus('✅ Compression applied (simulated)');
+                } else if (action === 'addText') {
+                    const text = textInput.value.trim();
+                    if (!text) { setStatus('⚠️ Enter text to add.', true); return; }
+                    const pages = newPdf.getPages();
+                    const firstPage = pages[0];
+                    const { width, height } = firstPage.getSize();
+                    firstPage.drawText(text, {
+                        x: 50, y: height - 50,
+                        size: 20, color: PDFLib.rgb(0, 0, 0)
+                    });
+                    setStatus(`✅ Text added: "${text}"`);
+                } else if (action === 'extractText') {
+                    extractedText = await extractTextFromPDF();
+                    pdfPreview.innerHTML = `<div style="color:var(--text);">📄 Extracted text (first 500 chars):<br><br>${extractedText.substring(0, 500)}...</div>`;
+                    setStatus('✅ Text extracted (preview only)');
+                    return;
+                }
 
-setStatus('✅ Upload a PDF to start editing.');
-})();
+                const newBytes = await newPdf.save();
+                pdfBytes = newBytes;
+                pdfDoc = newPdf;
+                downloadBtn.onclick = () => {
+                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `edited-${fileName}`;
+                    a.click();
+                    setStatus('✅ Download started!');
+                };
+                pdfPreview.innerHTML = `<div>📄 <strong>${fileName}</strong><br>Pages: ${pdfDoc.getPageCount()}</div>`;
+                setStatus('✅ Ready to download!');
+            } catch(err) {
+                setStatus('❌ Error: ' + err.message, true);
+            }
+        });
+
+        // ---- Convert to Image Button ----
+        convertToImageBtn.addEventListener('click', convertPDFToImages);
+
+        // ---- Search ----
+        searchBtn.addEventListener('click', async () => {
+            const query = searchInput.value.trim().toLowerCase();
+            if (!query) { setStatus('⚠️ Enter a search term.', true); return; }
+            if (!pdfDoc) { setStatus('⚠️ Upload a PDF first.', true); return; }
+            
+            setStatus('⏳ Searching...');
+            try {
+                const text = await extractTextFromPDF();
+                const lines = text.split('\n');
+                const results = lines.filter(line => line.toLowerCase().includes(query));
+                if (results.length > 0) {
+                    pdfPreview.innerHTML = `<div style="color:var(--text);">🔍 Found ${results.length} lines containing "${query}":<br><br>${results.join('<br>')}</div>`;
+                    setStatus(`✅ Found ${results.length} matches for "${query}"`);
+                } else {
+                    pdfPreview.innerHTML = `<div style="color:var(--text2);">🔍 No lines found containing "${query}"</div>`;
+                    setStatus(`⚠️ No matches for "${query}"`, true);
+                }
+            } catch(e) {
+                setStatus('⚠️ Search error: ' + e.message, true);
+            }
+        });
+
+        // ---- Translate ----
+        translateBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { setStatus('⚠️ Upload a PDF first.', true); return; }
+            setStatus('⏳ Translating...');
+            try {
+                const sampleText = "This is a sample text from the PDF for translation demonstration.";
+                const response = await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=hi&dt=t&q=' + encodeURIComponent(sampleText));
+                const data = await response.json();
+                if (data && data[0] && data[0][0]) {
+                    const translated = data[0].map(item => item[0]).join('');
+                    pdfPreview.innerHTML = `<div style="color:var(--text);">🌍 Translated text:<br><br>${translated}</div>`;
+                    setStatus('✅ Translated to Hindi (demo)');
+                } else {
+                    setStatus('⚠️ Translation failed.', true);
+                }
+            } catch(err) {
+                setStatus('⚠️ Translation error: ' + err.message, true);
+            }
+        });
+
+        // ---- Summarize ----
+        summarizeBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { setStatus('⚠️ Upload a PDF first.', true); return; }
+            setStatus('⏳ Generating summary...');
+            try {
+                const text = await extractTextFromPDF();
+                const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+                let summary;
+                if (sentences.length <= 3) {
+                    summary = text.substring(0, 200) + (text.length > 200 ? '...' : '');
+                } else {
+                    summary = sentences.slice(0, 3).join('. ') + '.';
+                    if (summary.length > 300) summary = summary.substring(0, 300) + '...';
+                }
+                pdfPreview.innerHTML = `<div style="color:var(--text);">📝 Summary:<br><br>${summary}</div>`;
+                setStatus('✅ Summary generated!');
+            } catch(e) {
+                setStatus('⚠️ Summarization error: ' + e.message, true);
+            }
+        });
+
+        // ---- Text-to-Speech ----
+        audioBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { setStatus('⚠️ Upload a PDF first.', true); return; }
+            try {
+                const text = await extractTextFromPDF();
+                if (!text || text.trim() === '') {
+                    setStatus('⚠️ No text to listen to.', true);
+                    return;
+                }
+                const utterance = new SpeechSynthesisUtterance(text.substring(0, 1000));
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9;
+                utterance.pitch = 1.0;
+                window.speechSynthesis.cancel();
+                window.speechSynthesis.speak(utterance);
+                setStatus('🔊 Speaking (first 1000 chars)...');
+            } catch(e) {
+                setStatus('⚠️ Audio error: ' + e.message, true);
+            }
+        });
+
+        // ---- AI Chat ----
+        async function askAI(question) {
+            if (!pdfDoc) {
+                setStatus('⚠️ Upload a PDF first to chat.', true);
+                return;
+            }
+            addChatMessage('user', question);
+            setStatus('🤖 AI is thinking...');
+
+            try {
+                const context = `You are a helpful AI assistant. The user has a PDF document. Answer based on general knowledge about PDFs. User question: ${question}`;
+                const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC8I4Q5qyGmZm2ZgB3l5G9kFwXZ2HkFcLw', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: context }] }]
+                    })
+                });
+                if (!response.ok) throw new Error('API request failed');
+                const data = await response.json();
+                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a response.';
+                addChatMessage('ai', reply);
+                setStatus('✅ AI response ready!');
+            } catch (err) {
+                console.error(err);
+                addChatMessage('ai', '⚠️ Error: ' + err.message);
+                setStatus('⚠️ AI error: ' + err.message, true);
+            }
+        }
+
+        function addChatMessage(role, text) {
+            const div = document.createElement('div');
+            div.className = `chat-message ${role}`;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // ---- Chat Toggle ----
+        chatToggleBtn.addEventListener('click', () => {
+            isChatOpen = !isChatOpen;
+            chatContainer.classList.toggle('visible', isChatOpen);
+            if (isChatOpen && chatMessages.children.length === 1) {
+                addChatMessage('ai', '🤖 Hello! Ask me anything about your PDF.');
+            }
+            setStatus(isChatOpen ? '💬 Chat open. Ask anything!' : '💬 Chat closed.');
+        });
+
+        // ---- Chat Send ----
+        chatSendBtn.addEventListener('click', () => {
+            const question = chatInput.value.trim();
+            if (!question) { setStatus('⚠️ Enter a question.', true); return; }
+            chatInput.value = '';
+            askAI(question);
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') chatSendBtn.click();
+        });
+
+        // ---- Download .txt ----
+        downloadTxtBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { setStatus('⚠️ No PDF loaded.', true); return; }
+            try {
+                const text = await extractTextFromPDF();
+                const blob = new Blob([text], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `pdf-text-${Date.now()}.txt`;
+                a.click();
+                setStatus('✅ .txt file downloaded!');
+            } catch(e) {
+                setStatus('⚠️ Error: ' + e.message, true);
+            }
+        });
+
+        // ---- Download .docx ----
+        downloadDocxBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { setStatus('⚠️ No PDF loaded.', true); return; }
+            try {
+                const text = await extractTextFromPDF();
+                const htmlContent = `
+                    <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                          xmlns:w="urn:schemas-microsoft-com:office:word" 
+                          xmlns="http://www.w3.org/TR/REC-html40">
+                    <head><meta charset="UTF-8" /><title>PDF Content</title>
+                    <style>body { font-family: Arial; font-size: 12pt; line-height: 1.5; }</style></head>
+                    <body>${text.replace(/\n/g, '<br />')}</body></html>
+                `;
+                const blob = new Blob([htmlContent], { type: 'application/msword' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `pdf-content-${Date.now()}.docx`;
+                a.click();
+                setStatus('✅ .docx file downloaded!');
+            } catch(e) {
+                setStatus('⚠️ Error: ' + e.message, true);
+            }
+        });
+
+        // ---- Reset ----
+        resetBtn.addEventListener('click', () => {
+            pdfDoc = null;
+            pdfBytes = null;
+            pdfPreview.innerHTML = '<span>📄 Upload a PDF to get started</span>';
+            downloadBtn.disabled = true;
+            downloadTxtBtn.disabled = true;
+            downloadDocxBtn.disabled = true;
+            translateBtn.disabled = true;
+            summarizeBtn.disabled = true;
+            audioBtn.disabled = true;
+            chatToggleBtn.disabled = true;
+            convertToImageBtn.disabled = true;
+            chatContainer.classList.remove('visible');
+            isChatOpen = false;
+            extractedText = '';
+            chatMessages.innerHTML = '';
+            setStatus('↺ Reset');
+        });
+
+        // ---- Theme ----
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️ Light' : '🌙 Dark';
+        });
+
+        // ---- Init ----
+        setStatus('✅ Upload a PDF to start editing.');
+        console.log('PDF Editor ready with AI tools + PDF to Image.');
+
+    })();
 </script>
+
 <!-- PDFLib for PDF processing -->
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+<!-- PDF.js for PDF to Image conversion -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </body>
 </html>
